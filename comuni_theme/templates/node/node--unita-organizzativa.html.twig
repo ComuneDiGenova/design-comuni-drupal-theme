@@ -293,14 +293,12 @@
         {% endif %}
 
         {% if drupal_view_result('servizi_collegati', 'block_2', node.id) %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="elenco-servizi-offerti">Servizi offerti</h2>
-            <div class="container my-3">
-              <div class="row row-cols-lg-2 row-cols-1 g-4">
+          <section class="it-page-section mb-30">
+            <h2 class="title-xxlarge mb-3" id="elenco-servizi-offerti">Servizi offerti</h2>
+              <div class="container my-3">
                 {{ drupal_view('servizi_collegati', 'block_2', node.id) }}
               </div>
-            </div>
-        </section>
+          </section>
         {% endif %}
         
         {% if content.field_sede_principale[0] is not empty %}

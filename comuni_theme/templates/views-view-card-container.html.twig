@@ -1,0 +1,10 @@
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+<div class="row row-cols-lg-{{ view.style_plugin.options.columns }} row-cols-1 g-4">
+    {% for row in rows %}
+        <div class="{{ view.style_plugin.options.row_class }}">
+            {{- row -}}
+        </div>
+    {% endfor %}
+</div>
