@@ -265,13 +265,16 @@
                             </a>
                           </li>
                           {% endif %}
-                          {#% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %#}
                           <li class="nav-item">
                             <a class="nav-link" href="#contacts">
                               <span class="title-medium">Contatti</span>
                             </a>
                           </li>
-                          {#% endif %#}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#field_unita_org_responsabile">
+                              <span class="title-medium">Ufficio responsabile</span>
+                            </a>
+                          </li>
                           {% if content.field_documenti[0] is not empty %}
                           <li class="nav-item">
                             <a class="nav-link" href="#documents">
@@ -463,48 +466,52 @@
         </section>
         {% endif %}
         {% if content.field_condizioni_di_servizio_par[0] is not empty %}
-        <section class="it-page-section  mb-30">
+        <section class="it-page-section  mb-30" data-element="service-file">
           <h2 class="title-xxlarge mb-3" id="conditions">Condizioni di servizio</h2>
           <p class="text-paragraph lora mb-1">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
-          {{ content.field_condizioni_di_servizio_par }}
+          <div class="container mt-3">
+            {{ content.field_condizioni_di_servizio_par }}
+          </div>
         </section>
         {% endif %}
 
         {% if content.field_contatti[0] is not empty or content.field_unita_org_responsabile[0] is not empty %}
         <section class="it-page-section mb-30">
-            <div class="container my-3">
-              <div class="row row-cols-lg-2 row-cols-1 g-4">
+            <div class="container p-0 my-3">
+              <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
               
                 {% if content.field_contatti[0] is not empty %}
-                  <div class="col">
+                  <div class="col px-0">
                     <h2 class="mb-3" id="contacts">Contatti</h2>
-                    <div class="row row-cols-1 g-4">
+                    <div class="container">
                       {{ content.field_contatti }}
                     </div>
                   </div>
                 {% else %}
-                  {% if drupal_view_result('punti_di_contatto_collegati', 'block_1', node.field_unita_org_responsabile[0].target_id) %}
-                    <div class="col">
-                      <h2 class="mb-3" id="contacts">Contatti</h2>
-                      <div class="row row-cols-1 g-4">
-                          {{ drupal_view('punti_di_contatto_collegati', 'block_1', node.field_unita_org_responsabile[0].target_id) }}
-                        </div>
+                  <div class="col px-0">
+                    <h2 class="mb-3" id="contacts">Contatti</h2>
+                    <div class="container">
+                      <div class="row g-4">
+                        {% for item in node.field_unita_org_responsabile %}
+                          {% if drupal_field('field_contatti', 'node', item.target_id)[0] is not empty %}
+                            <div class="col">
+                              {{ drupal_field('field_contatti', 'node', item.target_id) }}
+                            </div>
+                          {% else %}
+                            <div class="col">
+                              {{ drupal_view('punti_di_contatto_collegati', 'block_2', item.target_id) }}
+                            </div>
+                          {% endif %}
+                        {% endfor %}
                       </div>
                     </div>
-                  {% else %}
-                    <div class="col">
-                      <h2 class="mb-3" id="contacts">Contatti</h2>
-                      <div class="row row-cols-1 g-4">
-                        {{ drupal_view('punti_di_contatto_collegati', 'block_2', node.field_unita_org_responsabile[0].target_id) }}
-                      </div>
-                    </div>
-                  {% endif %}
+                  </div>
                 {% endif %}
 
                 {% if content.field_unita_org_responsabile[0] is not empty %}
-                  <div class="col">
-                    <h2 class="mb-3" id="contacts">Ufficio responsabile</h2>
-                    <div class="row row-cols-1 g-4">
+                  <div class="col px-0">
+                    <h2 class="mb-3" id="field_unita_org_responsabile">Ufficio responsabile</h2>
+                    <div class="container">
                       {{ content.field_unita_org_responsabile }}
                     </div>
                   </div>
@@ -516,12 +523,10 @@
 
 
         {% if content.field_documenti[0] is not empty %}
-        <section class="it-page-section  mb-30">
+        <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="documents">Documenti</h2>
-          <div class="container my-3">
-            <div class="row row-cols-lg-2 row-cols-1 g-4">
-              {{ content.field_documenti }}
-            </div>
+          <div class="container">
+            {{ content.field_documenti }}
           </div>
         </section>
         {% endif %}

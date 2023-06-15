@@ -20,37 +20,85 @@ dependencies:
     - field.field.node.unita_organizzativa.field_ulteriori_informazioni
     - field.field.node.unita_organizzativa.field_unita_org_genitore
     - node.type.unita_organizzativa
+    - views.view.contenuto_collegato
   module:
     - text
     - user
+    - views_field_formatter
 id: node.unita_organizzativa.default
 targetEntityType: node
 bundle: unita_organizzativa
 mode: default
 content:
   field_allegati_doc_pubblico:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_1'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 115
     region: content
   field_altre_sedi:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_1'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 113
     region: content
   field_argomenti:
-    type: entity_reference_label
+    type: views_field_formatter
     label: hidden
     settings:
-      link: true
+      view: 'contenuto_collegato::block_1'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 110
     region: content
@@ -62,18 +110,34 @@ content:
     weight: 103
     region: content
   field_contatti:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 108
     region: content
   field_descrizione_breve:
-    type: basic_string
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 102
     region: content
@@ -123,11 +187,26 @@ content:
     weight: 121
     region: content
   field_sede_principale:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_1'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 112
     region: content
@@ -155,11 +234,26 @@ content:
     weight: 109
     region: content
   field_unita_org_genitore:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 104
     region: content

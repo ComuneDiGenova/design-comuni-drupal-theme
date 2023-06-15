@@ -1,21 +1,3 @@
-{% set persone_responsabili = [] %}
-{% for item in drupal_view_result('incarichi_collegati', 'block_4', node.id) %}
-  {% for item2 in drupal_view_result('persone_collegate', 'block_2', item.nid) %}
-    {% if item2.node_field_data_node__field_persona_nid not in persone_responsabili %}
-      {% set persone_responsabili = persone_responsabili|merge([item2.node_field_data_node__field_persona_nid]) %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
-
-{% set persone = [] %}
-{% for item in drupal_view_result('incarichi_collegati', 'block_2', node.id) %}
-  {% for item2 in drupal_view_result('persone_collegate', 'block_2', item.nid) %}
-    {% if item2.node_field_data_node__field_persona_nid not in persone and item2.node_field_data_node__field_persona_nid not in persone_responsabili %}
-      {% set persone = persone|merge([item2.node_field_data_node__field_persona_nid]) %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
-
 <div class="container" id="main-container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-10">
@@ -180,21 +162,14 @@
                             </a>
                           </li>
                           {% endif %}
-                          {% if content.field_unita_org_genitore[0] is not empty %}
-                          <li class="nav-item">
-                            <a class="nav-link" href="#unita-org-genitore">
-                              <span class="title-medium">Unità organizzativa genitore</span>
-                            </a>
-                          </li>
-                          {% endif %}
-                          {% if persone_responsabili is not empty %}
+                          {% if drupal_view_result('persone_collegate', 'block_3', node.id) %}
                           <li class="nav-item">
                             <a class="nav-link" href="#persone-responsabili">
                               <span class="title-medium">Responsabili</span>
                             </a>
                           </li>
                           {% endif %}
-                          {% if persone is not empty %}
+                          {% if drupal_view_result('persone_collegate', 'block_4', node.id) %}
                           <li class="nav-item">
                             <a class="nav-link" href="#persone">
                               <span class="title-medium">Persone che compongono la struttura</span>
@@ -226,6 +201,13 @@
                           <li class="nav-item">
                             <a class="nav-link" href="#contatti">
                               <span class="title-medium">Contatti</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          {% if content.field_unita_org_genitore[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#unita-org-genitore">
+                              <span class="title-medium">Ufficio responsabile</span>
                             </a>
                           </li>
                           {% endif %}
@@ -265,29 +247,21 @@
           </div>
         </section>
         {% endif %}
-        
-        {% if persone_responsabili is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="persone-responsabili">Responsabili</h2>
-          <div class="container my-3">
-            <div class="row row-cols-lg-2 row-cols-1 g-4">
-              {% for item in persone_responsabili %}
-                {{ drupal_entity('node', item, 'card') }}
-              {% endfor %}
-            </div>
-          </div>
-        </section>
+
+        {% if drupal_view_result('persone_collegate', 'block_3', node.id) %}
+          <section class="it-page-section mb-30">
+            <h2 class="title-xxlarge mb-3" id="persone-responsabili">Responsabili</h2>
+              <div class="container my-3">
+                {{ drupal_view('persone_collegate', 'block_3', node.id) }}
+              </div>
+          </section>
         {% endif %}
 
-        {% if persone is not empty %}
+        {% if drupal_view_result('persone_collegate', 'block_4', node.id) %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="persone">Persone che compongono la struttura</h2>
           <div class="container my-3">
-            <div class="row row-cols-lg-2 row-cols-1 g-4">
-              {% for item in persone %}
-                {{ drupal_entity('node', item, 'card') }}
-              {% endfor %}
-            </div>
+            {{ drupal_view('persone_collegate', 'block_4', node.id) }}
           </div>
         </section>
         {% endif %}
@@ -305,9 +279,7 @@
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="sede-principale">Sede principale</h2>
           <div class="container my-3">
-            <div class="row row-cols-lg-2 row-cols-1 g-4">
-              {{ content.field_sede_principale }}
-            </div>
+            {{ content.field_sede_principale }}
           </div>
         </section>
         {% endif %}
@@ -315,37 +287,36 @@
         {% if content.field_altre_sedi[0] is not empty %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="altre-sedi">Altre sedi</h2>
-          <div class="container">
-            <div class="row row-cols-lg-2 row-cols-1 g-4">
-              {{ content.field_altre_sedi }}
-            </div>
+          <div class="container my-3">
+            {{ content.field_altre_sedi }}
           </div>
         </section>
         {% endif %}
-
-
+        
         <section class="it-page-section mb-30">
-            <h2 class="mb-3" id="contacts">Contatti</h2>
-            <div class="container my-3">
-              <div class="row row-cols-lg-2 row-cols-1 g-4">
-              
-                {% if drupal_view_result('punti_di_contatto_collegati', 'block_1', node.id) %}
-                  <div class="col">
-                    <div class="row row-cols-1 g-4">
-                      {{ drupal_view('punti_di_contatto_collegati', 'block_1', node.id) }}
+            <div class="container p-0 my-3">
+              <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
+                {% if content.field_contatti[0] is not empty %}
+                  <div class="col px-0">
+                    <h2 class="mb-3" id="contacts">Contatti</h2>
+                    <div class="container">
+                      {{ content.field_contatti }}
                     </div>
                   </div>
                 {% else %}
-                  <div class="col">
-                    <div class="row row-cols-1 g-4">
-                      {{ drupal_view('punti_di_contatto_collegati', 'block_2', node.id) }}
+                  <div class="col px-0">
+                    <h2 class="mb-3" id="contacts">Contatti</h2>
+                    <div class="container">
+                      {% set arg_id = content.field_sede_principale["#object"].field_sede_principale[0].target_id %}
+                      {{ drupal_field('field_punti_di_contatto', 'node', arg_id) }}
                     </div>
                   </div>
                 {% endif %}
 
                 {% if content.field_unita_org_genitore[0] is not empty %}
-                  <div class="col">
-                    <div class="row row-cols-1 g-4">
+                  <div class="col px-0">
+                    <h2 class="mb-3" id="unita-org-genitore">Ufficio responsabile</h2>
+                    <div class="container">
                       {{ content.field_unita_org_genitore }}
                     </div>
                   </div>
@@ -358,9 +329,7 @@
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="allegati-doc-pubblico">Allegati</h2>
           <div class="container my-3">
-            <div class="row row-cols-lg-2 row-cols-1 g-4">
-              {{ content.field_allegati_doc_pubblico }}
-            </div>
+            {{ content.field_allegati_doc_pubblico }}
           </div>
         </section>
         {% endif %}
@@ -373,11 +342,7 @@
           </div>
         </section>
         {% endif %}
-
       </div>
-    
     </div>
-
-
   </div>
 </div>

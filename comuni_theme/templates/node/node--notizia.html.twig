@@ -251,68 +251,61 @@
         <article class="it-page-section mb-30" id="field_luoghi">
           <h2 class="mb-3">Luoghi</h2>
             <div class="container my-3">
-              <div class="row row-cols-lg-2 row-cols-1 g-4">
-                {{ content.field_luoghi }}
-              </div>
+              {{ content.field_luoghi }}
             </div>
         </article>
       {% endif %}
 
       {% if content.field_documenti[0] is not empty %}
-        <article class="it-page-section mt-5" id="documenti">
+        <article class="it-page-section mb-30" id="documenti">
           <h2 class="mb-3">Documenti</h2>
-          <div class="container my-3">
-            <div class="row row-cols-lg-2 row-cols-1 g-4">
-              {{ content.field_documenti }}
-            </div>
+          <div class="container">
+            {{ content.field_documenti }}
           </div>
         </article>
       {% endif %}
 
       {% if content.field_allegati[0] is not empty %}
-        <article id="allegati" class="it-page-section mt-5">
+        <article id="allegati" class="it-page-section mb-30">
           <h2 class="mb-3">Allegati</h2>
           <div class="container">
-            <div class="row row-cols-lg-2 row-cols-1 g-4">
-              {{ content.field_allegati }}
-            </div>
+            {{ content.field_allegati }}
           </div>
         </article>
       {% endif %}
 
       {% if content.field_dataset[0] is not empty %}
-        <article id="dataset" class="it-page-section mt-5">
+        <article id="dataset" class="it-page-section mb-30">
           <h2 class="mb-3">Dataset</h2>
-          <div class="container my-3">
-            <div class="row row-cols-lg-2 row-cols-1 g-4">
-              {{ content.field_dataset }}
-            </div>
+          <div class="container">
+            {{ content.field_dataset }}
           </div>
         </article>
       {% endif %}
 
       {% if content.field_a_cura_di[0] is not empty or content.field_unita_org_responsabile[0] is not empty %}
-        <article id="a-cura-di" class="it-page-section mt-5">
-          <h2 class="mb-3">A cura di</h2>
-          <div class="container my-3">
-            <div class="row row-cols-lg-2 row-cols-1 g-4">
+        <article id="a-cura-di" class="it-page-section mb-30">
+          <div class="container p-0 my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
               {% if content.field_a_cura_di[0] is not empty %}
-                <div class="col">
-                  <div class="row row-cols-1 g-4">
+                <div class="col px-0">
+                  <h2 class="mb-3">A cura di</h2>
+                  <div class="container">
                     {{ content.field_a_cura_di }}
                   </div>
                 </div>
               {% endif %}
               {% if content.field_persone[0] is not empty %}
-                <div class="col">
-                  <div class="row row-cols-1 g-4">
+                <div class="col px-0">
+                  <h2 class="mb-3">&nbsp;</h2>
+                  <div class="container">
                     {{ content.field_persone }}
                   </div>
                 </div>
               {% endif %}
             </div>
           </div>
-      </article>
+        </article>
       {% endif %}
 
       {% if content.field_ulteriori_informazioni[0] is not empty %}

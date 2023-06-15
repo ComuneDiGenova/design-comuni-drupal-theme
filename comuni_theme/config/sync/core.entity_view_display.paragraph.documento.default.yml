@@ -5,17 +5,35 @@ dependencies:
   config:
     - field.field.paragraph.documento.field_documento
     - paragraphs.paragraphs_type.documento
+    - views.view.media_collegato
+  module:
+    - views_field_formatter
 id: paragraph.documento.default
 targetEntityType: paragraph
 bundle: documento
 mode: default
 content:
   field_documento:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      view: 'media_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 0
     region: content

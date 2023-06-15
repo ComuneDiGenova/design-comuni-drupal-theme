@@ -1,14 +1,3 @@
-{% set uo = [] %}
-{% set incarichi = [] %}
-{% for item in drupal_view_result('incarichi_collegati', 'block_1', node.id) %}
-  {% set incarichi = incarichi|merge([item.nid]) %}
-  {% for item2 in drupal_view_result('unita_organizzative_collegate', 'block_3', item.nid) %}
-    {% if item2.node__field_unita_organizzativa_field_unita_organizzativa_ta not in uo %}
-      {% set uo = uo|merge([item2.node__field_unita_organizzativa_field_unita_organizzativa_ta]) %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
-
 <div class="container" id="main-container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-10">
@@ -23,6 +12,10 @@
                   <a href="{{ url('<front>') }}amministrazione">Amministrazione</a>
                   <span class="separator">/</span>
                 </li>
+                {% set incarichi = [] %}
+                {% for item in drupal_view_result('incarichi_collegati', 'block_1', node.id) %}
+                  {% set incarichi = incarichi|merge([item.nid]) %}
+                {% endfor %}
                 {% set incarichi_padri = [] %}
                 {% for incarico in incarichi %}
                   {% set id_tipo_incarico = drupal_field('field_tipo_di_incarico', 'node', incarico)["#items"].parent.entity.field_tipo_di_incarico.target_id %}
@@ -160,7 +153,7 @@
                           </li>
                           {% endif %}
                           
-                          {% if uo is not empty %}
+                          {% if drupal_view_result('unita_organizzative_collegate', 'block_4', node.id) is not empty %}
                           <li class="nav-item">
                             <a class="nav-link" href="#organizzazioni">
                               <span class="title-medium">Organizzazioni</span>
@@ -262,22 +255,21 @@
         {% if drupal_view_result('incarichi_collegati', 'block_1', node.id) %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="incarichi">Incarichi</h2>
-          <div class="row row-cols-2 g-4">
+          <div class="container">
             {{ drupal_view('incarichi_collegati', 'block_1', node.id) }}
           </div>
         </section>
         {% endif %}
 
-        {% if uo is not empty %}
+        {% if drupal_view_result('unita_organizzative_collegate', 'block_4', node.id) is not empty %}
           <section class="it-page-section  mb-30">
             <h2 class="title-xxlarge mb-3" id="organizzazioni">Organizzazioni</h2>
-            <div class="card-wrapper card-teaser-wrapper">
-              {% for item in uo %}
-                {{ drupal_entity('node', item, 'card') }}
-              {% endfor %}
+            <div class="container">
+              {{ drupal_view('unita_organizzative_collegate', 'block_4', node.id) }}
             </div>
           </section>
         {% endif %}
+
 
         {% if content.field_competenze[0] is not empty %}
         <section class="it-page-section  mb-30">
@@ -309,7 +301,7 @@
         {% if content.field_punti_di_contatto[0] is not empty %}
         <section class="it-page-section mb-30">
             <h2 class="mb-3" id="punti_di_contatto">Contatti</h2>
-            <div class="card-wrapper card-teaser-wrapper my-3">
+            <div class="container">
               {{ content.field_punti_di_contatto }}
             </div>
         </section>
@@ -318,7 +310,7 @@
         {% if content.field_curriculum_vitae[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="curriculum_vitae">Curriculum Vitae</h2>
-          <div class="card-wrapper card-teaser-wrapper">
+          <div class="container">
             {{ content.field_curriculum_vitae }}
           </div>
         </section>
@@ -327,7 +319,7 @@
         {% if content.field_situazione_patrimoniale[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="situazione_patrimoniale">Situazione patrimoniale</h2>
-          <div class="card-wrapper card-teaser-wrapper">
+          <div class="container">
             {{ content.field_situazione_patrimoniale }}
           </div>
         </section>
@@ -336,7 +328,7 @@
         {% if content.field_dichiarazione_dei_redditi[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="dichiarazione_dei_redditi">Dichiarazione dei redditi</h2>
-          <div class="card-wrapper card-teaser-wrapper">
+          <div class="container">
             {{ content.field_dichiarazione_dei_redditi }}
           </div>
         </section>
@@ -345,7 +337,7 @@
         {% if content.field_spese_elettorali[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="spese_elettorali">Spese elettorali</h2>
-          <div class="card-wrapper card-teaser-wrapper">
+          <div class="container">
             {{ content.field_spese_elettorali }}
           </div>
         </section>
@@ -354,7 +346,7 @@
         {% if content.field_v_situazione_patrimoniale[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="v_situazione_patrimoniale">Variazioni situazione patrimoniale</h2>
-          <div class="card-wrapper card-teaser-wrapper">
+          <div class="container">
             {{ content.field_v_situazione_patrimoniale }}
           </div>
         </section>
@@ -363,7 +355,7 @@
         {% if content.field_altre_cariche[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="altre_cariche">Altre cariche</h2>
-          <div class="card-wrapper card-teaser-wrapper">
+          <div class="container">
             {{ content.field_altre_cariche }}
           </div>
         </section>
@@ -377,11 +369,7 @@
           </div>
         </section>
         {% endif %}
-
       </div>
-    
     </div>
-
-
   </div>
 </div>

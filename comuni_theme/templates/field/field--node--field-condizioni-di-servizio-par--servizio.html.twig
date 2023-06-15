@@ -1,0 +1,7 @@
+{% if items[0]['content']['#paragraph'].field_link is not empty %}
+  <div class="row row-cols-2 row-cols-1 g-4">
+    {{ items[0]['content']['#paragraph'].field_link|view }}  
+  <div>
+{% else %}
+  {{ items[0]['content']['#paragraph'].field_documento|view }}
+{% endif %}

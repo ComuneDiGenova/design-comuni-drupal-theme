@@ -24,22 +24,39 @@ dependencies:
     - field.field.node.persona.field_v_situazione_patrimoniale
     - image.style.avatar
     - node.type.persona
+    - views.view.media_collegato
   module:
     - entity_reference_revisions
     - media
     - text
     - user
+    - views_field_formatter
 id: node.persona.default
 targetEntityType: node
 bundle: persona
 mode: default
 content:
   field_altre_cariche:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: above
     settings:
-      view_mode: card
-      link: false
+      view: 'media_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 16
     region: content
@@ -66,11 +83,26 @@ content:
     weight: 7
     region: content
   field_curriculum_vitae:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: above
     settings:
-      view_mode: card
-      link: false
+      view: 'media_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 11
     region: content
@@ -82,18 +114,34 @@ content:
     weight: 8
     region: content
   field_descrizione_breve:
-    type: basic_string
+    type: string
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 3
     region: content
   field_dichiarazione_dei_redditi:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: above
     settings:
-      view_mode: card
-      link: false
+      view: 'media_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 13
     region: content
@@ -144,11 +192,26 @@ content:
     weight: 6
     region: content
   field_punti_di_contatto:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: above
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_1'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 10
     region: content
@@ -161,20 +224,50 @@ content:
     weight: 0
     region: content
   field_situazione_patrimoniale:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: above
     settings:
-      view_mode: card
-      link: false
+      view: 'media_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 12
     region: content
   field_spese_elettorali:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: above
     settings:
-      view_mode: card
-      link: false
+      view: 'media_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 14
     region: content
@@ -186,11 +279,26 @@ content:
     weight: 17
     region: content
   field_v_situazione_patrimoniale:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: above
     settings:
-      view_mode: card
-      link: false
+      view: 'media_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
     weight: 15
     region: content

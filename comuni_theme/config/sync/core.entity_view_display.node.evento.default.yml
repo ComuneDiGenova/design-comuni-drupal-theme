@@ -25,11 +25,13 @@ dependencies:
     - field.field.node.evento.field_ulteriori_informazioni
     - field.field.node.evento.field_video_esterno
     - node.type.evento
+    - views.view.contenuto_collegato
   module:
     - datetime
     - entity_reference_revisions
     - text
     - user
+    - views_field_formatter
 id: node.evento.default
 targetEntityType: node
 bundle: evento
@@ -40,16 +42,31 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 122
+    weight: 14
     region: content
   field_allegati:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view: 'media_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
-    weight: 117
+    weight: 11
     region: content
   field_argomenti:
     type: entity_reference_label
@@ -57,7 +74,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 106
+    weight: 6
     region: content
   field_costo:
     type: entity_reference_revisions_entity_view
@@ -66,7 +83,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 125
+    weight: 15
     region: content
   field_data_e_orario_di_fine:
     type: datetime_default
@@ -75,7 +92,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   field_data_e_orario_di_inizio:
     type: datetime_default
@@ -84,39 +101,46 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_descrizione_breve:
-    type: basic_string
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 108
+    weight: 8
     region: content
   field_descrizione_completa:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 109
+    weight: 9
     region: content
   field_evento_genitore:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_1'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
-    weight: 107
-    region: content
-  field_galleria_immagini:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 134
+    weight: 7
     region: content
   field_immagine:
     type: entity_reference_entity_view
@@ -125,25 +149,55 @@ content:
       view_mode: full
       link: false
     third_party_settings: {  }
-    weight: 105
+    weight: 5
     region: content
   field_luogo:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_1'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
-    weight: 115
+    weight: 10
     region: content
   field_organizzato_da:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
-    weight: 118
+    weight: 12
     region: content
   field_patrocinato_da:
     type: entity_reference_revisions_entity_view
@@ -152,25 +206,55 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 126
+    weight: 16
     region: content
   field_persone:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_1'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
-    weight: 129
+    weight: 19
     region: content
   field_punti_di_contatto:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
-    weight: 128
+    weight: 18
     region: content
   field_sottotitolo:
     type: string
@@ -178,7 +262,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   field_sponsor:
     type: entity_reference_revisions_entity_view
@@ -187,7 +271,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 127
+    weight: 17
     region: content
   field_tipo_di_evento:
     type: entity_reference_label
@@ -195,28 +279,19 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   field_ulteriori_informazioni:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 121
-    region: content
-  field_video_esterno:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 132
+    weight: 13
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
   sharing_buttons:
     settings: {  }
@@ -224,6 +299,8 @@ content:
     weight: 100
     region: content
 hidden:
+  field_galleria_immagini: true
+  field_video_esterno: true
   langcode: true
   node_read_time: true
   search_api_excerpt: true

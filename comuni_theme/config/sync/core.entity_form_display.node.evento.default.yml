@@ -38,13 +38,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_a_chi_e_rivolto:
     type: text_textarea
-    weight: 142
+    weight: 21
     region: content
     settings:
       rows: 5
@@ -52,20 +52,20 @@ content:
     third_party_settings: {  }
   field_allegati:
     type: media_library_widget
-    weight: 137
+    weight: 18
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_argomenti:
     type: options_select
-    weight: 126
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_costo:
     type: paragraphs
-    weight: 145
+    weight: 22
     region: content
     settings:
       title: Paragraph
@@ -84,19 +84,19 @@ content:
     third_party_settings: {  }
   field_data_e_orario_di_fine:
     type: datetime_default
-    weight: 124
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_data_e_orario_di_inizio:
     type: datetime_default
-    weight: 123
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_descrizione_breve:
     type: string_textarea
-    weight: 128
+    weight: 15
     region: content
     settings:
       rows: 5
@@ -104,7 +104,7 @@ content:
     third_party_settings: {  }
   field_descrizione_completa:
     type: text_textarea
-    weight: 129
+    weight: 16
     region: content
     settings:
       rows: 5
@@ -112,7 +112,7 @@ content:
     third_party_settings: {  }
   field_evento_genitore:
     type: entity_reference_autocomplete
-    weight: 127
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
@@ -120,35 +120,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_galleria_immagini:
-    type: paragraphs
-    weight: 154
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        add_above: '0'
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings: {  }
   field_immagine:
     type: media_library_widget
-    weight: 125
+    weight: 12
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_luogo:
     type: entity_reference_autocomplete
-    weight: 135
+    weight: 17
     region: content
     settings:
       match_operator: CONTAINS
@@ -158,7 +139,7 @@ content:
     third_party_settings: {  }
   field_organizzato_da:
     type: entity_reference_autocomplete
-    weight: 138
+    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -168,7 +149,7 @@ content:
     third_party_settings: {  }
   field_patrocinato_da:
     type: paragraphs
-    weight: 147
+    weight: 24
     region: content
     settings:
       title: Paragraph
@@ -186,7 +167,7 @@ content:
     third_party_settings: {  }
   field_persone:
     type: entity_reference_autocomplete
-    weight: 149
+    weight: 26
     region: content
     settings:
       match_operator: CONTAINS
@@ -196,7 +177,7 @@ content:
     third_party_settings: {  }
   field_punti_di_contatto:
     type: entity_reference_autocomplete
-    weight: 148
+    weight: 25
     region: content
     settings:
       match_operator: CONTAINS
@@ -206,7 +187,7 @@ content:
     third_party_settings: {  }
   field_sottotitolo:
     type: string_textfield
-    weight: 122
+    weight: 9
     region: content
     settings:
       size: 60
@@ -214,7 +195,7 @@ content:
     third_party_settings: {  }
   field_sponsor:
     type: paragraphs
-    weight: 146
+    weight: 23
     region: content
     settings:
       title: Paragraph
@@ -233,74 +214,55 @@ content:
     third_party_settings: {  }
   field_tipo_di_evento:
     type: options_select
-    weight: 121
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
-    weight: 141
+    weight: 20
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_video_esterno:
-    type: paragraphs
-    weight: 152
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        add_above: '0'
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -308,7 +270,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -316,4 +278,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_galleria_immagini: true
+  field_video_esterno: true

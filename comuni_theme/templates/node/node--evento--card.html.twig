@@ -1,4 +1,5 @@
 <div class="card card-img no-after border border-light shadow-sm mt-0">
+{% if node.field_immagine.entity.field_media_image.entity.fileuri is not empty %}
   <div class="img-responsive-wrapper">
     <div class="img-responsive">
       <figure class="img-wrapper">
@@ -13,23 +14,28 @@
       </div>
     </div>
   </div>
+  {% endif %}
   <div class="card-body">
-    <h5 class="card-title">
+    <h3 class="card-title text-paragraph-medium u-grey-light">
       <a href="{{ url }}"
         class="text-decoration-none"
       >{{ node.label }}</a>
-    </h5>
-    <p class="card-text"></p>
+    </h3>
+    {% if node.field_immagine.entity.field_media_image.entity.fileuri is empty %}
+      <div class="mb-3">
+        <span class="card-date">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('d') }}</span>
+        <span class="card-day">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('M')|monthEn2It(false) }}</span>
+      </div>
+    {% endif %}
+    <div class="card-text">{{ content.field_descrizione_breve }}</div>
     <a href="{{ url }}"
       title="Leggi di più - {{ node.label }}"
       aria-label="Leggi di più - {{ node.label }}"
-      class="read-more" 
+      class="read-more bottom-0 position-relative d-block mt-4" 
     >
       <span class="text">Leggi di più</span>
       <span class="visually-hidden">{{ content.field_sottotitolo }}</span>
-      <svg class="icon">
-        <use href="#it-arrow-right" />
-      </svg>
+      <svg class="icon"><use href="#it-arrow-right" /></svg>
     </a>
   </div>
 </div>

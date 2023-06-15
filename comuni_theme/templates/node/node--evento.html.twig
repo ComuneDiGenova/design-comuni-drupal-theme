@@ -1,5 +1,4 @@
 
-{% set evento_genitore_id = content.field_evento_genitore.0['#plain_text'] ? content.field_evento_genitore.0['#plain_text'] : 'all' %}
 <div class="container px-4 my-4">
   <div class="row justify-content-center">
     <div class="col-lg-12 px-lg-4 py-lg-2">
@@ -205,7 +204,7 @@
                                 </a>
                               </li>
                             {% endif %}
-                            {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
+                            {% if drupal_view_result('eventi_collegati', 'block_1', node.id) is not empty %}
                               <li class="nav-item">
                                 <a class="nav-link" href="#appuntamenti">
                                   <span class="title-medium">Appuntamenti</span>
@@ -239,7 +238,7 @@
     </aside>
     <section class="col-lg-8 it-page-sections-container border-light">
         {% if content.field_descrizione_completa [0] is not empty %}
-          <article id="cos-e" class="it-page-section" data-audio>
+          <article id="cos-e" class="it-page-section mb-30" data-audio>
             <h2 class="title-xxlarge mb-3">Cos'è?</h2>
             <div class="font-serif">
                 {{ content.field_descrizione_completa }}
@@ -247,7 +246,7 @@
             {% if content.field_persone[0] is not empty %}
               <div class="pt-3 mb-4">
                 <h2 class="title-xxlarge mb-3">Parteciperanno</h2>
-                <div class="card-wrapper card-teaser-wrapper">
+                <div class="container">
                   {{ content.field_persone }}
                 </div>
               </div>
@@ -264,7 +263,7 @@
         {% endif %}
 
         {% if content.field_a_chi_e_rivolto [0] is not empty %}
-          <article id="destinatari" class="it-page-section mb-5">
+          <article id="destinatari" class="it-page-section mb-30">
             <h2 class="mb-3">A chi è rivolto</h2>
             <div class="richtext-wrapper lora">
               {{ content.field_a_chi_e_rivolto }}
@@ -273,9 +272,9 @@
         {% endif %}
 
         {% if node.field_luogo[0] is not empty %}
-          <article id="luogo" class="it-page-section">
+          <article id="luogo" class="it-page-section mb-30">
             <h2 class="mb-3">Luogo</h2>
-            <div class="card-wrapper card-teaser-wrapper">
+            <div class="container mb-30">
               {{ content.field_luogo }}
             </div>
               {# TODO: check map controls at https://openlayers.org/en/latest/examples/ #}
@@ -312,16 +311,16 @@
                 });
 
             </script>
-            <div class="map-wrapper map-column mt-4 mb-5">
+            <div class="map-wrapper map-column mb-30">
               <div style="width:100%; height:476px; position: relative;" id="map" tabindex="1"></div>
             </div>
           </article>
         {% endif %}
 
         {% if content.field_data_e_orario_di_inizio[0] is not empty %}
-          <article id="date-e-orari" class="it-page-section">
+          <article id="date-e-orari" class="it-page-section mb-30">
             <h2 class="mb-3">Date e orari</h2>
-            <div class="point-list-wrapper my-4">
+            <div class="point-list-wrapper">
               <div class="point-list">
                 <h3 class="point-list-aside point-list-primary fw-normal">
                   <div class="point-date font-monospace">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('d') }}</div>
@@ -336,7 +335,7 @@
                 </div>
               </div>
               {% if content.field_data_e_orario_di_fine[0] is not empty %}
-                <div class="point-list">
+                <div class="point-list mb-30">
                   <h3 class="point-list-aside point-list-primary fw-normal">
                     <div class="point-date font-monospace">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('d') }}</div>
                     <div class="point-month font-monospace">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('M')|monthEn2It }}</div>
@@ -374,51 +373,57 @@
         {% endif %}
 
         {% if content.field_costo[0] is not empty %}
-          <article id="costi" class="it-page-section mt-5">
+          <article id="costi" class="it-page-section mb-30">
             <h2 class="mb-3">Costi</h2>
               {{ content.field_costo }}
           </article>
         {% endif %}
 
         {% if content.field_allegati[0] is not empty %}
-          <article id="allegati" class="it-page-section mt-5">
+          <article id="allegati" class="it-page-section mb-30">
             <h2 class="mb-3">Allegati</h2>
+            <div class="container">
               {{ content.field_allegati }}
+            </div>
           </article>
         {% endif %}
 
         {% if content.field_evento_genitore[0] is not empty %}
-              <div class="pt-3 mb-4">
+              <div class="pt-3 mb-30">
                 <h2 class="title-xxlarge mb-3">Evento principale</h2>
-                <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
-                    {{ content.field_evento_genitore }}
+                <div class="container">
+                  {{ content.field_evento_genitore }}
                 </div>
               </div>
         {% endif %}
 
-        {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
-          <article id="appuntamenti" class="it-page-section mt-5">
+        {% if drupal_view_result('eventi_collegati', 'block_1', node.id) is not empty %}
+          <article id="appuntamenti" class="it-page-section mb-30">
             <h2 class="mb-3">Appuntamenti</h2>
-            <div class="row row-cols-2 g-4">
-              {{ drupal_view('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) }}
+            <div class="container">
+              {{ drupal_view('eventi_collegati', 'block_1', node.id) }}
             </div>
           </article>
         {% endif %}
 
         {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
-          <article id="contatti" class="it-page-section mt-5">
-              <div class="card-wrapper card-column my-3">
-                <div class="row">
+          <article id="contatti" class="it-page-section mb-30">
+              <div class="container p-0 my-3">
+                <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
                   {% if content.field_punti_di_contatto[0] is not empty %}
-                    <div class="col-md-6">
+                    <div class="col px-0">
                       <h2 class="mb-3" id="contacts">Contatti</h2>
-                      {{ content.field_punti_di_contatto }}
+                      <div class="container">
+                        {{ content.field_punti_di_contatto }}
+                      </div>
                     </div>
                   {% endif %}
-                  {% if content.field_punti_di_contatto[0] is not empty %}
-                    <div class="col-md-6 mt-4 mt-md-0">
-                      <h2 class="mb-3" id="contacts">Con il supporto di</h2>
-                      {{ content.field_organizzato_da }}
+                  {% if content.field_organizzato_da[0] is not empty %}
+                    <div class="col px-0">
+                      <h2 class="mb-3">Con il supporto di</h2>
+                      <div class="container">
+                        {{ content.field_organizzato_da }}
+                      </div>
                     </div>
                   {% endif %}
                 </div>
@@ -426,43 +431,45 @@
           </article>
         {% endif %}
 
-      <article id="ulteriori-informazioni" class="it-page-section mb-5">
-        <h2 class="mb-3">Ulteriori informazioni</h2>
+      <article id="ulteriori-informazioni" class="it-page-section">
           {% if content.field_patrocinato_da[0] is not empty %}
-            <div class="mb-3">
-              <h3 class="h5">Patrocinato da:</h3>
-              <div class="link-list-wrapper">
-                <ul class="link-list">
-                    {{ content.field_patrocinato_da }}
-                </ul>
+            <div class="mb-30">
+              <h2 class="mb-3">Patrocinato da:</h2>
+              <div class="container">
+                <div class="row row-cols-lg-2 row-cols-1 g-4">
+                  {{ content.field_patrocinato_da }}
+                </div>
               </div>
             </div>
           {% endif %}
           {% if content.field_sponsor[0] is not empty %}
-            <div class="mb-3">
-              <h3 class="h5 ">Sponsor:</h3>
-              <div class="link-list-wrapper">
-                <ul class="link-list">
-                    {{ content.field_sponsor }}
-                </ul>
+            <div class="mb-30">
+              <h2 class="mb-3">Sponsor:</h2>
+              <div class="container">
+                <div class="row row-cols-lg-2 row-cols-1 g-4">
+                  {{ content.field_sponsor }}
+                </div>
               </div>
             </div>
           {% endif %}
           {% if content.field_ulteriori_informazioni[0] is not empty %}
-            <div class="mt-4">
-              <div class="callout">
-                <div class="callout-title">
-                    <svg class="icon">
-                        <use href="#it-info-circle" />
-                    </svg>
+            <div class="mb-30">
+              <h2 class="mb-3">Ulteriori informazioni</h2>
+              <div class="mt-4">
+                <div class="callout">
+                  <div class="callout-title">
+                      <svg class="icon">
+                          <use href="#it-info-circle" />
+                      </svg>
+                  </div>
+                    {{ content.field_ulteriori_informazioni }}
                 </div>
-                  {{ content.field_ulteriori_informazioni }}
               </div>
             </div>
           {% endif %}
       </article>
         {% if node.changed.value %}
-          <article id="ultimo-aggiornamento" class="it-page-section mt-5">
+          <article id="ultimo-aggiornamento" class="it-page-section mb-30">
             <h4 class="h6">Ultimo aggiornamento: <span class="h6 fw-normal">{{ node.changed.value|date("d/m/Y, H:i",'UTC') }}</span></h4>
           </article>
         {% endif %}

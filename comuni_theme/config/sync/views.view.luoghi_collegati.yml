@@ -1,17 +1,17 @@
-uuid: 32a945b6-a1b4-49e1-8f10-36a98f1afd75
+uuid: 95256d82-17ec-4ef7-9a0e-3385f7a11f32
 langcode: it
 status: true
 dependencies:
   config:
-    - field.storage.node.field_contatti
-    - field.storage.node.field_punti_di_contatto
+    - field.storage.node.field_altre_sedi
+    - field.storage.node.field_sede_principale
     - node.type.unita_organizzativa
   module:
     - comuni_module
     - node
     - user
-id: punti_di_contatto_collegati
-label: 'Punti di contatto collegati'
+id: luoghi_collegati
+label: 'Luoghi collegati'
 module: views
 description: ''
 tag: ''
@@ -25,10 +25,10 @@ display:
     position: 0
     display_options:
       fields:
-        field_contatti:
-          id: field_contatti
-          table: node__field_contatti
-          field: field_contatti
+        field_altre_sedi:
+          id: field_altre_sedi
+          table: node__field_altre_sedi
+          field: field_altre_sedi
           relationship: none
           group_type: group
           admin_label: ''
@@ -68,7 +68,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: col
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -85,7 +85,7 @@ display:
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: separator
+          multi_type: ul
           separator: ', '
           field_api_classes: false
       pager:
@@ -128,22 +128,21 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        created:
-          id: created
+        title:
+          id: title
           table: node_field_data
-          field: created
-          relationship: none
+          field: title
+          relationship: reverse__node__field_altre_sedi
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: created
-          plugin_id: date
-          order: DESC
+          entity_field: title
+          plugin_id: standard
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
-          granularity: second
       arguments:
         nid:
           id: nid
@@ -212,13 +211,13 @@ display:
         type: card_container
         options:
           grouping: {  }
-          row_class: col
-          default_row_class: true
-          columns: '1'
+          row_class: ''
+          default_row_class: false
+          columns: '2'
       row:
         type: fields
         options:
-          default_field_elements: false
+          default_field_elements: true
           inline: {  }
           separator: ''
           hide_empty: false
@@ -230,7 +229,17 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        reverse__node__field_altre_sedi:
+          id: reverse__node__field_altre_sedi
+          table: node_field_data
+          field: reverse__node__field_altre_sedi
+          relationship: none
+          group_type: group
+          admin_label: field_altre_sedi
+          entity_type: node
+          plugin_id: entity_reverse
+          required: false
       use_ajax: false
       header: {  }
       footer: {  }
@@ -245,10 +254,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_contatti'
+        - 'config:field.storage.node.field_altre_sedi'
   block_1:
     id: block_1
-    display_title: '1 Card - Da Unità Organizzativa'
+    display_title: '2 Card - Altre sedi - Da Unità Organizzativa'
     display_plugin: block
     position: 2
     display_options:
@@ -346,57 +355,11 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_contatti_target_id:
-          id: field_contatti_target_id
-          table: node__field_contatti
-          field: field_contatti_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: numeric
-          operator: 'not empty'
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       filter_groups:
         operator: AND
         groups:
           1: AND
       defaults:
-        style: true
-        row: true
         arguments: false
         filters: false
         filter_groups: false
@@ -412,19 +375,19 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_contatti'
+        - 'config:field.storage.node.field_altre_sedi'
   block_2:
     id: block_2
-    display_title: '1 Card - Da Unità Organizzativa a punto di contatto dentro al luogo'
+    display_title: '2 Card - Sede principale - Da Unità Organizzativa'
     display_plugin: block
     position: 2
     display_options:
       fields:
-        field_punti_di_contatto:
-          id: field_punti_di_contatto
-          table: node__field_punti_di_contatto
-          field: field_punti_di_contatto
-          relationship: field_sede_principale
+        field_sede_principale:
+          id: field_sede_principale
+          table: node__field_sede_principale
+          field: field_sede_principale
+          relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
@@ -483,17 +446,22 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-      empty:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: reverse__node__field_sede_principale
           group_type: group
           admin_label: ''
-          plugin_id: result
-          empty: true
-          content: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         nid:
           id: nid
@@ -532,20 +500,83 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-      defaults:
-        empty: false
-        relationships: false
-        fields: false
-        arguments: false
-      relationships:
-        field_sede_principale:
-          id: field_sede_principale
-          table: node__field_sede_principale
-          field: field_sede_principale
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
           relationship: none
           group_type: group
-          admin_label: 'field_sede_principale: Content'
-          plugin_id: standard
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            unita_organizzativa: unita_organizzativa
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        relationships: false
+        fields: false
+        sorts: false
+        arguments: false
+        filters: false
+        filter_groups: false
+      relationships:
+        reverse__node__field_sede_principale:
+          id: reverse__node__field_sede_principale
+          table: node_field_data
+          field: reverse__node__field_sede_principale
+          relationship: none
+          group_type: group
+          admin_label: field_sede_principale
+          entity_type: node
+          plugin_id: entity_reverse
           required: false
       display_description: ''
       display_extenders: {  }
@@ -559,4 +590,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_punti_di_contatto'
+        - 'config:field.storage.node.field_sede_principale'

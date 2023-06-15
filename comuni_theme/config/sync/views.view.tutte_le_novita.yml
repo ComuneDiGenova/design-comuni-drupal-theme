@@ -5,6 +5,7 @@ dependencies:
   config:
     - search_api.index.novita
   module:
+    - comuni_module
     - search_api
     - views_show_more
 id: tutte_le_novita
@@ -228,13 +229,18 @@ display:
             default_group_multiple: {  }
             group_items: {  }
       style:
-        type: default
+        type: card_container
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+          columns: '3'
       row:
         type: search_api
         options:
           view_modes:
             'entity:node':
-              notizia: default
+              notizia: card
       query:
         type: search_api_query
         options:
@@ -242,23 +248,14 @@ display:
           skip_access: false
           preserve_facet_query_args: false
       relationships: {  }
+      css_class: ''
       use_ajax: true
       use_more: false
       use_more_always: false
       use_more_text: 'Carica altri risultati'
       link_display: '0'
       link_url: /tutte_le_novità
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: true
-          content: '@total'
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:

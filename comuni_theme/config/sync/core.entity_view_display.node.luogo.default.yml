@@ -27,10 +27,12 @@ dependencies:
     - field.field.node.luogo.field_ulteriori_informazioni
     - field.field.node.luogo.field_video_esterno
     - node.type.luogo
+    - views.view.contenuto_collegato
   module:
     - entity_reference_revisions
     - text
     - user
+    - views_field_formatter
 id: node.luogo.default
 targetEntityType: node
 bundle: luogo
@@ -42,7 +44,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   field_cap:
     type: string
@@ -50,7 +52,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 117
+    weight: 13
     region: content
   field_circoscrizione:
     type: string
@@ -58,7 +60,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 114
+    weight: 12
     region: content
   field_descrizione_breve:
     type: string
@@ -66,14 +68,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 105
+    weight: 5
     region: content
   field_descrizione_estesa:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 106
+    weight: 6
     region: content
   field_galleria_immagini:
     type: entity_reference_revisions_entity_view
@@ -82,7 +84,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 128
+    weight: 21
     region: content
   field_gps_latitude:
     type: string
@@ -90,7 +92,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 124
+    weight: 18
     region: content
   field_gps_longitude:
     type: string
@@ -98,7 +100,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 125
+    weight: 19
     region: content
   field_identificativo:
     type: string
@@ -106,7 +108,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 123
+    weight: 17
     region: content
   field_immagine:
     type: entity_reference_entity_view
@@ -115,7 +117,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   field_indirizzo:
     type: string
@@ -123,23 +125,38 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 112
+    weight: 10
     region: content
   field_luoghi_collegati:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: above
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_1'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
-    weight: 107
+    weight: 7
     region: content
   field_modalita_di_accesso:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 111
+    weight: 9
     region: content
   field_nome_alternativo:
     type: string
@@ -147,23 +164,38 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   field_orario_per_il_pubblico:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 118
+    weight: 14
     region: content
   field_punti_di_contatto:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: above
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
-    weight: 127
+    weight: 20
     region: content
   field_quartiere:
     type: string
@@ -171,32 +203,38 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 113
-    region: content
-  field_sede_di:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: card
-      link: false
-    third_party_settings: {  }
-    weight: 121
+    weight: 11
     region: content
   field_servizi_presenti_nel_luogo:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 110
+    weight: 8
     region: content
   field_struttura_responsabile:
-    type: entity_reference_entity_view
+    type: views_field_formatter
     label: above
     settings:
-      view_mode: card
-      link: false
+      view: 'contenuto_collegato::block_2'
+      arguments:
+        field_value:
+          checked: true
+          weight: 0
+        entity_id:
+          checked: false
+          weight: 0
+        delta:
+          checked: false
+          weight: 0
+        entity_revision_id:
+          checked: false
+          weight: 0
+      hide_empty: true
+      multiple: true
+      implode_character: +
     third_party_settings: {  }
-    weight: 120
+    weight: 15
     region: content
   field_tipo_di_luogo:
     type: entity_reference_label
@@ -204,14 +242,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_ulteriori_informazioni:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 122
+    weight: 16
     region: content
   field_video_esterno:
     type: entity_reference_revisions_entity_view
@@ -220,14 +258,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 129
+    weight: 22
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_sede_di: true
   langcode: true
   node_read_time: true
   search_api_excerpt: true

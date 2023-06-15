@@ -1,16 +1,27 @@
-<div class="card card-teaser card-teaser-image card-flex shadow-sm mb-0 border border-light p-0">
-  <div class="card-image-wrapper d-flex">
-    <div class="card-body p-3 pb-5">
-      <h3 class="card-title text-paragraph-medium u-grey-light">{{ label }}</h3>
-      <div class="text-paragraph-card u-grey-light m-0">
-        <div class="mb-3">{{ content.field_descrizione_breve }}</div>
-      </div>
+<div class="card card-img no-after border border-light shadow-sm mt-0">
+  {% if node.field_immagine.entity.field_media_image.entity.fileuri is not empty %}
+  <div class="img-responsive-wrapper">
+    <div class="img-responsive">
+      <figure class="img-wrapper">
+        <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}"
+          title="{{ node.field_immagine.entity.field_media_image.alt }}"
+          alt="{{ node.field_immagine.entity.field_media_image.alt }}"
+        >
+      </figure>
     </div>
-    <div class="card-image card-image-rounded pb-5">{{ content.field_immagine }}</div>
   </div>
-  <a class="read-more ps-3 position-absolute bottom-0 mb-3" href="{{ url }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span>
-    <svg  class="icon ms-0">
-      <use href="#it-arrow-right" />
-    </svg>
-  </a>
+  {% endif %}
+  <div class="card-body">
+    <h3 class="card-title text-paragraph-medium u-grey-light">
+      <a href="{{ url }}" class="text-decoration-none">{{ node.label }}</a>
+    </h3>
+    <div class="card-text">{{ content.field_descrizione_breve }}</div>
+    <a href="{{ url }}"
+      title="Leggi di più - {{ node.label }}"
+      aria-label="Leggi di più - {{ node.label }}"
+      class="read-more bottom-0 position-relative d-block mt-4" >
+      <span class="text">Leggi di più</span>
+      <svg class="icon"><use href="#it-arrow-right" /></svg>
+    </a>
+  </div>
 </div>

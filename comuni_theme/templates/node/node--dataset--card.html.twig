@@ -1,9 +1,7 @@
 <div class="col">
   <div class="card card-teaser white-bg shadow-sm rounded border border-light h-100">
-    <svg class="icon">
-      <use href="#it-clip" />
-    </svg>
-    <div class="card-body mb-4">
+    <svg class="icon"><use href="#it-clip" /></svg>
+    <div class="card-body">
       <h5 class="card-title">
       {% set item_name = content.field_url_dataset["#items"].entity.field_dataset.entity.field_media_file.entity.filename.value %}
       {% if content.field_url_dataset["#items"].entity.field_dataset.entity.field_media_file[0].description is not empty %}
@@ -18,7 +16,7 @@
       <div class="card-text">
         <p>{{ content.field_descrizione_breve }}</p>
       </div>
-      <a class="read-more pt-0" href="{{ ( url('entity.node.canonical', {'node':  (node.id)  }) ) }}" data-focus-mouse="false" title="Vai al contenuto {{ node.label }}">
+      <a class="read-more bottom-0 position-relative d-block mt-4" href="{{ ( url('entity.node.canonical', {'node':  (node.id)  }) ) }}" data-focus-mouse="false" title="Vai al contenuto {{ node.label }}">
         <span class="text">Ulteriori informazioni</span>
         <svg class="icon">
           <use href="#it-arrow-right" />

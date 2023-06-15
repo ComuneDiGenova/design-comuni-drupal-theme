@@ -44,7 +44,6 @@ module:
   history: 0
   image: 0
   image_widget_crop: 0
-  integrazioni: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
@@ -91,6 +90,8 @@ module:
   tour: 0
   twig_tweak: 0
   user: 0
+  views_arg_order_sort: 0
+  views_field_formatter: 0
   views_field_view: 0
   views_show_more: 0
   views_ui: 0

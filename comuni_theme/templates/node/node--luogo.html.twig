@@ -180,7 +180,7 @@
                             </a>
                           </li>
                           {% endif %}
-                          {% if content.field_servizi_presenti_nel_luogo[0] is not empty %}
+                          {% if drupal_view_result('servizi_collegati', 'block_3', node.id) or (content.field_servizi_presenti_nel_luogo[0] is not empty) %}
                           <li class="nav-item">
                             <a class="nav-link" href="#servizi_presenti_nel_luogo">
                               <span class="title-medium">Servizi presenti nel luogo</span>
@@ -262,18 +262,25 @@
         {% if content.field_luoghi_collegati[0] is not empty %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="luoghi_collegati">Luoghi collegati</h2>
-          <div class="card-wrapper card-teaser-wrapper">
+          <div class="container">
             {{ content.field_luoghi_collegati }}
           </div>
         </section>
         {% endif %}
 
-        {% if content.field_servizi_presenti_nel_luogo[0] is not empty %}
+        {% if drupal_view_result('servizi_collegati', 'block_3', node.id) or (content.field_servizi_presenti_nel_luogo[0] is not empty) %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="servizi_presenti_nel_luogo">Servizi presenti nel luogo</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_servizi_presenti_nel_luogo }}
-          </div>
+          {% if content.field_servizi_presenti_nel_luogo[0] is not empty %}
+            <div class="richtext-wrapper lora mb-3">
+              {{ content.field_servizi_presenti_nel_luogo }}
+            </div>
+          {% endif %}
+          {% if drupal_view_result('servizi_collegati', 'block_3', node.id) %}
+            <div class="container">
+              {{ drupal_view('servizi_collegati', 'block_3', node.id) }}
+            </div>
+          {% endif %}
         </section>
         {% endif %}
 
@@ -289,8 +296,8 @@
         {% if content.field_indirizzo[0] is not empty %}
         <section class="it-page-section mb-30 card-indirizzo-luogo">
           <h2 class="title-xxlarge mb-3" id="modalita_di_accesso">Indirizzo</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ drupal_entity('node', node.id, 'card') }}
+          <div class="container">
+            {{ drupal_view('contenuto_collegato', 'block_1', node.id) }}
           </div>
         </section>
         {% endif %}
@@ -322,32 +329,38 @@
         </section>
         {% endif %}
 
-        {% if content.field_struttura_responsabile[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="struttura_responsabile">Struttura responsabile</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_struttura_responsabile }}
-          </div>
-        </section>
-        {% endif %}
-
         {% if drupal_view_result('unita_organizzative_collegate', 'block_1', node.id) %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="sede_di">Sede di</h2>
-          <div class="row row-cols-2 g-4">
+          <div class="container">
             {{ drupal_view('unita_organizzative_collegate', 'block_1', node.id) }}
           </div>
         </section>
         {% endif %}
 
-        {% if content.field_punti_di_contatto[0] is not empty %}
         <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="punti_di_contatto">Contatti</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_punti_di_contatto }}
+          <div class="container p-0 my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
+              {% if content.field_punti_di_contatto[0] is not empty %}
+                <div class="col px-0">
+                  <h2 class="title-xxlarge mb-3" id="punti_di_contatto">Contatti</h2>
+                  <div class="container">
+                    {{ content.field_punti_di_contatto }}
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if content.field_struttura_responsabile[0] is not empty %}
+                <div class="col px-0">
+                  <h2 class="title-xxlarge mb-3" id="struttura_responsabile">Struttura responsabile</h2>
+                  <div class="container">
+                    {{ content.field_struttura_responsabile }}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
           </div>
         </section>
-        {% endif %}
 
         {% if content.field_ulteriori_informazioni[0] is not empty %}
         <section class="it-page-section  mb-30">

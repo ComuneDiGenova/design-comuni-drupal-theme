@@ -1,5 +1,5 @@
-<div class="card card-teaser card-flex shadow-sm mb-0 border border-light">
-  <div class="card-body pb-5">
+<div class="card card-teaser white-bg shadow-sm rounded border border-light h-100 d-block">
+  <div class="card-body">
     <h3 class="card-title text-paragraph-medium">{{ label }}</h3>
     <div class="text-paragraph-card u-grey-light m-0">
       {% if content.field_unita_organizzativa[0] is not empty %}
@@ -17,7 +17,7 @@
       {% endif %}
     </div>
   </div>
-  <a class="read-more position-absolute bottom-0 mb-3" href="{{ url }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span>
+  <a class="read-more bottom-0 position-relative d-block mt-4" href="{{ url }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span>
       <svg class="icon ms-0">
           <use href="#it-arrow-right" />
       </svg>
