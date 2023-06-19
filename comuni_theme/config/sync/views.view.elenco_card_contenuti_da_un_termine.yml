@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
   module:
+    - comuni_module
     - node
     - taxonomy
     - user
@@ -220,11 +221,12 @@ display:
             operator_limit_selection: false
             operator_list: {  }
       style:
-        type: default
+        type: card_container
         options:
           row_class: col
-          default_row_class: false
+          default_row_class: true
           uses_fields: false
+          columns: '3'
       row:
         type: 'entity:node'
         options:

@@ -139,6 +139,9 @@ settings:
       argomenti_in_evidenza_ct:
         weight: 58
         enabled: true
+      backend_info:
+        weight: 66
+        enabled: false
       biglietto_evento:
         weight: 59
         enabled: true
@@ -214,6 +217,9 @@ settings:
       fase_semplice:
         weight: 79
         enabled: true
+      gallery:
+        weight: 92
+        enabled: false
       hero_immagine:
         weight: 80
         enabled: true

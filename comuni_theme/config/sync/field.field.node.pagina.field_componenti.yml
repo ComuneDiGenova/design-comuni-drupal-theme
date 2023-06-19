@@ -43,7 +43,6 @@ dependencies:
     - paragraphs.paragraphs_type.link_esterno
     - paragraphs.paragraphs_type.links_con_icona
     - paragraphs.paragraphs_type.prenotazione_appuntamento
-    - paragraphs.paragraphs_type.punto_di_contatto
     - paragraphs.paragraphs_type.ricerca
     - paragraphs.paragraphs_type.ricerca_documenti_e_dati
     - paragraphs.paragraphs_type.ricerca_novita
@@ -115,7 +114,6 @@ settings:
       elenco_card_da_termine: elenco_card_da_termine
       link_esterno: link_esterno
       prenotazione_appuntamento: prenotazione_appuntamento
-      punto_di_contatto: punto_di_contatto
       ricerca_documenti_e_dati: ricerca_documenti_e_dati
       ricerca_novita: ricerca_novita
       ricerca_servizi: ricerca_servizi

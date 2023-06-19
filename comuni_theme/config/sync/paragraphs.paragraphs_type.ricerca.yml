@@ -6,5 +6,5 @@ id: ricerca
 label: Ricerca
 icon_uuid: null
 icon_default: null
-description: ''
+description: "Crea un blocco contente un campo di ricerca che rimanda alla pagina di ricerca del sito.\r\nSotto vengono visualizzati i link utili\r\nQuesto blocco viene attualmente utilizzato nella Home"
 behavior_plugins: {  }

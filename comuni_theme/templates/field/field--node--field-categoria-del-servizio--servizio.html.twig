@@ -39,10 +39,7 @@
 #}
 
 {% for item in items %}
-    <li class="breadcrumb-item">
-        {{ item.content }}
-        {% if not loop.last %}
-        &nbsp;-&nbsp;
-        {% endif %}
-    </li>
+	<li class="breadcrumb-item">
+		{{ item.content }}{% if not loop.last %}&nbsp;-&nbsp;{% endif %}
+	</li>
 {% endfor %}

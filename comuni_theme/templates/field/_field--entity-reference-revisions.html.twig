@@ -37,7 +37,6 @@
  * @see template_preprocess_field()
  */
 #}
-
 {% for item in items %}
-    <p class="card-title text-paragraph-regular-medium-semi mt-2 mb-0"><span class="field field--name-title field--type-string field--label-hidden">{{ item.content }} </span></p>
+    {{ item.content }}
 {% endfor %}

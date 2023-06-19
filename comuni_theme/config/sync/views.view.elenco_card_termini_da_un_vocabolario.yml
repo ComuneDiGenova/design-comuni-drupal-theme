@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.card
   module:
+    - comuni_module
     - taxonomy
     - user
 id: elenco_card_termini_da_un_vocabolario
@@ -222,11 +223,12 @@ display:
             default_group_multiple: {  }
             group_items: {  }
       style:
-        type: default
+        type: card_container
         options:
           row_class: col
           default_row_class: true
           uses_fields: false
+          columns: '3'
       row:
         type: 'entity:taxonomy_term'
         options:

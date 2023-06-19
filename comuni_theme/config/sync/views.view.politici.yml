@@ -9,6 +9,7 @@ dependencies:
   content:
     - 'taxonomy_term:tipi_di_incarico:a5cf0a6c-a033-46f5-87ae-99d592e8b44d'
   module:
+    - comuni_module
     - datetime
     - node
     - taxonomy
@@ -468,11 +469,12 @@ display:
           1: AND
           2: OR
       style:
-        type: default
+        type: card_container
         options:
           row_class: col
           default_row_class: true
           uses_fields: false
+          columns: '3'
       row:
         type: 'entity:node'
         options:

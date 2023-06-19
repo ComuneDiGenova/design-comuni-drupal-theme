@@ -87,7 +87,7 @@ footer .it-brand-wrapper img {
 .row-cols-6>.card{flex:0 0 auto;width:16.6666666667%}
 
 /* Rimuove titolo da homepage */
-main.homepage h1{display: none;}
+main.homepage .container.page-name {display: none;}
 
 /* Stile cursore tutto ciò che porta a una modal (es. ricerca) */
 *[data-bs-toggle="modal"]{

@@ -46,20 +46,22 @@
   "section  py-5"
 ] %}
 
-{% from directory ~ "/templates/macros/sito-tematico.html.twig" import sito_tematico %}
+{% from directory ~ "/templates/siti-tematici/macros/sito-tematico.html.twig" import sito_tematico %}
 
 {% block paragraph %}
   {# <div{{ attributes.addClass(classes) }}> #}
     {% block content %}
       {% if sito_tematico is defined %}
-      <div class="row pt-5">
-        <h2 class="mb-0 u-grey-light">{{ content.field_titolo }}</h2>
-      </div>
-      <div class="pt-4 pt-lg-30">
-        <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 pb-0">
-          {% for sito_tematico in attribute(content.field_contenuti, "#items") %}
-            {{ sito_tematico(sito_tematico.entity, loop.index0) }}
-          {% endfor %}
+      <div class="container">
+        <div class="row pt-5">
+          <h2 class="mb-0 u-grey-light">{{ content.field_titolo }}</h2>
+        </div>
+        <div class="pt-4 pt-lg-30">
+          <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 pb-0">
+            {% for sito_tematico in attribute(content.field_contenuti, "#items") %}
+              {{ sito_tematico(sito_tematico.entity, loop.index0) }}
+            {% endfor %}
+          </div>
         </div>
       </div>
       {% endif %}

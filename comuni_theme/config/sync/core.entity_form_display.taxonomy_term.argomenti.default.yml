@@ -3,8 +3,6 @@ langcode: it
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.argomenti.field_area_di_appartenenza
-    - field.field.taxonomy_term.argomenti.field_assessorato_di_riferimento
     - field.field.taxonomy_term.argomenti.field_immagine
     - field.field.taxonomy_term.argomenti.field_link_a_eurovoc
     - taxonomy.vocabulary.argomenti
@@ -22,26 +20,6 @@ content:
     region: content
     settings:
       rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_area_di_appartenenza:
-    type: entity_reference_autocomplete
-    weight: 5
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_assessorato_di_riferimento:
-    type: entity_reference_autocomplete
-    weight: 6
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_immagine:

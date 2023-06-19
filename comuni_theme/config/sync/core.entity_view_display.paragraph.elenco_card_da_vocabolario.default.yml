@@ -14,7 +14,7 @@ mode: default
 content:
   field_esplora_vocabolario:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -22,7 +22,7 @@ content:
     region: content
   field_tipi_di_stili:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -30,7 +30,7 @@ content:
     region: content
   field_titolo:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

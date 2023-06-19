@@ -7,13 +7,6 @@
 <main{{ attributes.addClass(classes) }}>
   {{ page.content|without('title') }}
   {{ page.rating }}
-  {% set url = url('<current>') %}
-  {% if '/servizi/' in url|render|render  %}
-    {% include '@comuni_theme/inc/servizi-correlati.html.twig' with {'idServizio': node.nid.value,'unitaServizio': node.field_unita_org_responsabile} %}
-  {% endif %}
-  {% if  '/vivere-il-comune/' in url|render|render  %}
-    {% include '@comuni_theme/inc/servizi-correlati.html.twig' with {'idServizio': node.field_organizzato_da.entity.nid.value,'unitaServizio': node.field_organizzato_da} %}
-  {% endif %}
   {{ page.contacts }}
 </main>
 {{ page.footer }}

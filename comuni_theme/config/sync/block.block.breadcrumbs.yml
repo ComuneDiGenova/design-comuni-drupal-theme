@@ -38,9 +38,7 @@ visibility:
       notizia: notizia
       pagamento: pagamento
       page: page
-      pagina: pagina
       pratica: pratica
-      punto_di_contatto: punto_di_contatto
       servizio: servizio
       sito_tematico: sito_tematico
       ticket: ticket
