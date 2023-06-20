@@ -1,0 +1,11 @@
+uuid: 2197c001-e474-48b7-9c7b-ab313b364501
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.persona
+id: node.persona
+target_entity_type_id: node
+target_bundle: persona
+default_langcode: site_default
+language_alterable: false

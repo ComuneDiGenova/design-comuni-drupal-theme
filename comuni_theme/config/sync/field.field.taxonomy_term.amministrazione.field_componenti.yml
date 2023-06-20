@@ -4,26 +4,9 @@ status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_componenti
-    - paragraphs.paragraphs_type.biglietto_evento
-    - paragraphs.paragraphs_type.calendario
-    - paragraphs.paragraphs_type.dataset
-    - paragraphs.paragraphs_type.documento
+    - paragraphs.paragraphs_type.card_in_evidenza
     - paragraphs.paragraphs_type.elenco_card_da_termine
     - paragraphs.paragraphs_type.elenco_card_da_vocabolario
-    - paragraphs.paragraphs_type.faq
-    - paragraphs.paragraphs_type.fase_intitolata
-    - paragraphs.paragraphs_type.fase_semplice
-    - paragraphs.paragraphs_type.link
-    - paragraphs.paragraphs_type.link_con_icona
-    - paragraphs.paragraphs_type.prenotazione_appuntamento
-    - paragraphs.paragraphs_type.punto_di_contatto
-    - paragraphs.paragraphs_type.ricerca
-    - paragraphs.paragraphs_type.ricerca_documenti_e_dati
-    - paragraphs.paragraphs_type.ricerca_novita
-    - paragraphs.paragraphs_type.ricerca_servizi
-    - paragraphs.paragraphs_type.richiesta_assistenza
-    - paragraphs.paragraphs_type.testo
-    - paragraphs.paragraphs_type.ultima_notizia
     - paragraphs.paragraphs_type.vista
     - taxonomy.vocabulary.amministrazione
   module:
@@ -43,151 +26,56 @@ settings:
   handler_settings:
     target_bundles:
       elenco_card_da_termine: elenco_card_da_termine
-      biglietto_evento: biglietto_evento
-      calendario: calendario
-      dataset: dataset
-      documento: documento
-      faq: faq
-      fase_intitolata: fase_intitolata
+      card_in_evidenza: card_in_evidenza
       elenco_card_da_vocabolario: elenco_card_da_vocabolario
-      fase_semplice: fase_semplice
-      link: link
-      link_con_icona: link_con_icona
-      prenotazione_appuntamento: prenotazione_appuntamento
-      punto_di_contatto: punto_di_contatto
-      ricerca: ricerca
-      ricerca_documenti_e_dati: ricerca_documenti_e_dati
-      ricerca_novita: ricerca_novita
-      ricerca_servizi: ricerca_servizi
-      richiesta_assistenza: richiesta_assistenza
-      testo: testo
-      ultima_notizia: ultima_notizia
       vista: vista
     negate: 0
     target_bundles_drag_drop:
-      amministrazione_ref_in_evidenza:
-        weight: 53
-        enabled: false
-      amministrazione_view_in_evidenza:
-        weight: 54
-        enabled: false
-      argomenti:
-        weight: 55
-        enabled: true
-      argomenti_in_evidenza:
-        weight: 56
-        enabled: true
-      argomenti_in_evidenza_card:
-        weight: 57
-        enabled: true
-      argomenti_in_evidenza_ct:
-        weight: 58
-        enabled: true
       backend_info:
         weight: 66
         enabled: false
       biglietto_evento:
         weight: 59
-        enabled: true
+        enabled: false
       blocco:
         weight: 65
         enabled: false
       calendario:
         weight: 60
-        enabled: true
+        enabled: false
       card_assistenza:
         weight: 61
         enabled: false
-      card_foto_gallery:
-        weight: 62
-        enabled: true
       card_in_evidenza:
         weight: 69
-        enabled: false
-      collection_multimediale:
-        weight: 63
-        enabled: true
-      collegamenti_unita_organizzative:
-        weight: 64
-        enabled: true
-      comuni_altri_argomenti:
-        weight: 65
-        enabled: true
-      container_argomenti_in_evidenza:
-        weight: 66
-        enabled: true
-      container_assistenza:
-        weight: 67
-        enabled: true
-      container_calendario:
-        weight: 68
-        enabled: true
-      container_contenuti_in_evidenza:
-        weight: 69
-        enabled: true
-      container_foto_gallery:
-        weight: 70
-        enabled: true
-      container_vuoto:
-        weight: 71
-        enabled: true
-      contenuto_allegati_per_tipo:
-        weight: 72
         enabled: true
       dataset:
         weight: 73
-        enabled: true
+        enabled: false
       documento:
         weight: 74
-        enabled: true
-      elemento_video:
-        weight: 75
-        enabled: true
+        enabled: false
       elenco_card_da_termine:
         weight: 54
         enabled: true
       elenco_card_da_vocabolario:
         weight: 79
         enabled: true
-      esplora:
-        weight: 76
-        enabled: true
-      faq:
-        weight: 77
-        enabled: true
       fase_intitolata:
         weight: 78
-        enabled: true
+        enabled: false
       fase_semplice:
         weight: 79
-        enabled: true
+        enabled: false
       gallery:
         weight: 92
         enabled: false
-      hero_immagine:
-        weight: 80
-        enabled: true
-      homepage_top_card:
-        weight: 81
-        enabled: true
-      homepage_top_cards:
-        weight: 82
-        enabled: true
-      intestazione_ricerca_e_preferiti:
-        weight: 83
-        enabled: true
       link:
         weight: 84
-        enabled: true
+        enabled: false
       link_con_icona:
         weight: 86
-        enabled: true
-      link_esterno:
-        weight: 87
-        enabled: true
-      links_con_icona:
-        weight: 85
-        enabled: true
+        enabled: false
       orari_giorni:
         weight: 88
         enabled: false
@@ -196,49 +84,28 @@ settings:
         enabled: false
       prenotazione_appuntamento:
         weight: 90
-        enabled: true
+        enabled: false
       punto_di_contatto:
         weight: 91
-        enabled: true
+        enabled: false
       ricerca:
         weight: 92
-        enabled: true
-      ricerca_documenti_e_dati:
-        weight: 93
-        enabled: true
+        enabled: false
       ricerca_novita:
         weight: 94
-        enabled: true
+        enabled: false
       ricerca_servizi:
         weight: 95
-        enabled: true
+        enabled: false
       richiesta_assistenza:
         weight: 96
-        enabled: true
-      servizi_ref_in_evidenza:
-        weight: 97
-        enabled: true
-      siti_tematici:
-        weight: 98
-        enabled: true
+        enabled: false
       testo:
         weight: 99
-        enabled: true
-      testo_e_lista:
-        weight: 100
-        enabled: true
-      titolo_descrizione_link:
-        weight: 101
         enabled: false
-      titolo_e_descrizione:
-        weight: 102
-        enabled: true
       ultima_notizia:
         weight: 103
-        enabled: true
-      valutazione:
-        weight: 104
-        enabled: true
+        enabled: false
       vista:
         weight: 110
         enabled: true

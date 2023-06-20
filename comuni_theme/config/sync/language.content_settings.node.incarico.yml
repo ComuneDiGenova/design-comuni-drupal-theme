@@ -1,0 +1,11 @@
+uuid: f13d13d4-abd5-481b-a401-34d7fa192634
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.incarico
+id: node.incarico
+target_entity_type_id: node
+target_bundle: incarico
+default_langcode: site_default
+language_alterable: false

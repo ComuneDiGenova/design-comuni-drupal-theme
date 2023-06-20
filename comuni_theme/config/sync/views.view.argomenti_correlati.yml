@@ -3,18 +3,19 @@ langcode: it
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card_template_argomento
+    - core.entity_view_mode.node.card
     - node.type.documento_pubblico
     - node.type.notizia
     - node.type.servizio
     - node.type.unita_organizzativa
   module:
+    - comuni_module
     - node
     - user
 id: argomenti_correlati
 label: 'Argomenti - Correlati'
 module: views
-description: ''
+description: 'Usata in /tutti-gli-argomenti/*'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -223,12 +224,17 @@ display:
             default_group_multiple: {  }
             group_items: {  }
       style:
-        type: default
+        type: card_container
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+          columns: '3'
       row:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card_template_argomento
+          view_mode: card
       query:
         type: views_query
         options:

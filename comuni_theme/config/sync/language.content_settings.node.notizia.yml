@@ -1,0 +1,11 @@
+uuid: c9fd8367-1800-4040-aee4-435d632afb04
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.notizia
+id: node.notizia
+target_entity_type_id: node
+target_bundle: notizia
+default_langcode: site_default
+language_alterable: false

@@ -1,6 +1,6 @@
 uuid: 95256d82-17ec-4ef7-9a0e-3385f7a11f32
 langcode: it
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.field_altre_sedi

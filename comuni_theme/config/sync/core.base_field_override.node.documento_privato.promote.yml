@@ -1,0 +1,22 @@
+uuid: ec912403-34d0-460c-a0ba-f706b6cf90a4
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.documento_privato
+id: node.documento_privato.promote
+field_name: promote
+entity_type: node
+bundle: documento_privato
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

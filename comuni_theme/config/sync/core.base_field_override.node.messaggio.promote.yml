@@ -1,0 +1,22 @@
+uuid: 3a6ac38a-bc4a-42b4-a83f-c8eb49240288
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.messaggio
+id: node.messaggio.promote
+field_name: promote
+entity_type: node
+bundle: messaggio
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

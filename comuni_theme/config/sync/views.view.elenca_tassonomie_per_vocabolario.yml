@@ -8,7 +8,7 @@ dependencies:
 id: elenca_tassonomie_per_vocabolario
 label: 'Elenca tassonomie per vocabolario'
 module: views
-description: ''
+description: 'Usata in Richiesta d''assistenza'
 tag: ''
 base_table: taxonomy_term_field_data
 base_field: tid

@@ -1,0 +1,11 @@
+uuid: cfd3b204-e756-426b-88a7-604089de0299
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.dataset
+id: node.dataset
+target_entity_type_id: node
+target_bundle: dataset
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,22 @@
+uuid: 5728da5e-d079-4b0f-af87-746069e7855e
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.luogo
+id: node.luogo.promote
+field_name: promote
+entity_type: node
+bundle: luogo
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

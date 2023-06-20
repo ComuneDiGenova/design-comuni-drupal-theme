@@ -1,0 +1,11 @@
+uuid: b46acbbb-2530-43a6-8852-3abe1250f1af
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.sito_tematico
+id: node.sito_tematico
+target_entity_type_id: node
+target_bundle: sito_tematico
+default_langcode: site_default
+language_alterable: false

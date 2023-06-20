@@ -1,6 +1,6 @@
 uuid: 3f9cb8ca-8e18-4de7-b9f1-1c1935587a69
 langcode: it
-status: true
+status: false
 dependencies:
   config:
     - taxonomy.vocabulary.tipi_di_documento

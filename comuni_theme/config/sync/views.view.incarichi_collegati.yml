@@ -469,6 +469,7 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      enabled: false
       fields:
         view_node:
           id: view_node
@@ -687,6 +688,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      enabled: false
       arguments:
         field_responsabile_struttura_target_id:
           id: field_responsabile_struttura_target_id

@@ -1,0 +1,11 @@
+uuid: 0ebaac2c-bb81-44e6-8d3b-ebca81e08292
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.unita_organizzativa
+id: node.unita_organizzativa
+target_entity_type_id: node
+target_bundle: unita_organizzativa
+default_langcode: site_default
+language_alterable: false

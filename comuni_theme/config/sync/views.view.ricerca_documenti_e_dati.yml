@@ -9,7 +9,7 @@ dependencies:
 id: ricerca_documenti_e_dati
 label: 'Ricerca documenti e dati'
 module: views
-description: ''
+description: 'Usata in Paragraph Ricerca documenti e dati'
 tag: ''
 base_table: search_api_index_documenti_e_dati
 base_field: search_api_id

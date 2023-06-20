@@ -252,6 +252,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      enabled: false
       arguments:
         nid:
           id: nid

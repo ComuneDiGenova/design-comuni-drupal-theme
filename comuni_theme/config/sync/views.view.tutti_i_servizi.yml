@@ -12,7 +12,7 @@ dependencies:
 id: tutti_i_servizi
 label: 'Tutti i servizi'
 module: views
-description: ''
+description: 'Usata in Paragraph Ricerca Servizi'
 tag: ''
 base_table: search_api_index_servizi
 base_field: search_api_id

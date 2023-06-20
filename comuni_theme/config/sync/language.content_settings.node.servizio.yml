@@ -1,0 +1,11 @@
+uuid: 17005050-aa9b-49ef-a21e-89aa82e82768
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.servizio
+id: node.servizio
+target_entity_type_id: node
+target_bundle: servizio
+default_langcode: site_default
+language_alterable: false

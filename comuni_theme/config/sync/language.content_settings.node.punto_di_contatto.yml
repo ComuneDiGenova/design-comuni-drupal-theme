@@ -1,0 +1,11 @@
+uuid: 600793e4-e7ef-4b4f-907a-4d3299a19762
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.punto_di_contatto
+id: node.punto_di_contatto
+target_entity_type_id: node
+target_bundle: punto_di_contatto
+default_langcode: site_default
+language_alterable: false

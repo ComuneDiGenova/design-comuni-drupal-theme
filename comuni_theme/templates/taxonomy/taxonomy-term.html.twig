@@ -1,32 +1,32 @@
 {#
 /**
- * @file
- * Theme override to display a taxonomy term.
- *
- * Available variables:
- * - url: URL of the current term.
- * - name: (optional) Name of the current term.
- * - content: Items for the content of the term (fields and description).
- *   Use 'content' to print them all, or print a subset such as
- *   'content.description'. Use the following code to exclude the
- *   printing of a given child element:
- *   @code
- *   {{ content|without('description') }}
- *   @endcode
- * - attributes: HTML attributes for the wrapper.
- * - page: Flag for the full page state.
- * - term: The taxonomy term entity, including:
- *   - id: The ID of the taxonomy term.
- *   - bundle: Machine name of the current vocabulary.
- * - view_mode: View mode, e.g. 'full', 'teaser', etc.
- *
- * @see template_preprocess_taxonomy_term()
- */
+* @file
+* Theme override to display a taxonomy term.
+*
+* Available variables:
+* - url: URL of the current term.
+* - name: (optional) Name of the current term.
+* - content: Items for the content of the term (fields and description).
+* Use 'content' to print them all, or print a subset such as
+* 'content.description'. Use the following code to exclude the
+* printing of a given child element:
+* @code
+* {{ content|without('description') }}
+* @endcode
+* - attributes: HTML attributes for the wrapper.
+* - page: Flag for the full page state.
+* - term: The taxonomy term entity, including:
+* - id: The ID of the taxonomy term.
+* - bundle: Machine name of the current vocabulary.
+* - view_mode: View mode, e.g. 'full', 'teaser', etc.
+*
+* @see template_preprocess_taxonomy_term()
+*/
 #}
 {%
-  set classes = [
-  'taxonomy-term',
-  'vocabulary-' ~ term.bundle|clean_class,
+set classes = [
+'taxonomy-term',
+'vocabulary-' ~ term.bundle|clean_class,
 ]
 %}
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
@@ -36,9 +36,9 @@
       <div class="img-responsive">
         <div class="img-wrapper">
           {% if content.field_immagine[0] is not empty %}
-            <img src="{{ file_url(content.field_immagine[0]['#media'].field_media_image.entity.fileuri) }}" class="figure-img img-fluid"
-              title="{{ content.field_immagine[0]['#media'].field_media_image.alt }}" alt="{{ content.field_immagine[0]['#media'].field_media_image.alt }}"
-            >
+          <img src="{{ file_url(content.field_immagine[0]['#media'].field_media_image.entity.fileuri) }}"
+            class="figure-img img-fluid" title="{{ content.field_immagine[0]['#media'].field_media_image.alt }}"
+            alt="{{ content.field_immagine[0]['#media'].field_media_image.alt }}">
           {% endif %}
         </div>
       </div>
@@ -47,7 +47,9 @@
       <div class="row">
         <div class="col-12 px-0 px-lg-2 drop-shadow">
           <div class="it-hero-card it-hero-bottom-overlapping rounded hero-p pb-lg-80">
-            <div class="row justify-content-center"><div class="col-12 col-lg-10">{{ drupal_block('system_breadcrumb_block') }}</div></div>
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10">{{ drupal_block('system_breadcrumb_block') }}</div>
+            </div>
             <div class="row sport-wrapper justify-content-between mt-lg-2">
               <div class="col-12 col-lg-5 offset-lg-1">
                 <h1 class="mb-3 mb-lg-4 title-xxlarge">{{ name.0['#context'].value }}</h1>
@@ -78,17 +80,15 @@
       <div class="container">
         <div class="row row-title">
           <div class="col-12">
-            <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 mt-lg-3 title-large-semi-bold">Novità</h3>
+            <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 mt-lg-3 title-large-semi-bold">Novità
+            </h3>
           </div>
         </div>
         {{ drupal_view('argomenti_correlati', 'block_1', term.id) }}
-
         <div class="row mt-lg-2">
           <div class="col-12 col-lg-3 offset-lg-9">
-            <a href="{{ url('<front>') }}novita"
-              class="btn btn-primary text-button w-100"
-              aria-label="vai a tutti le novità"
-            >
+            <a href="{{ url('<front>') }}novita" class="btn btn-primary text-button w-100"
+              aria-label="vai a tutti le novità">
               Tutte le novità
             </a>
           </div>
@@ -102,20 +102,15 @@
       <div class="container">
         <div class="row row-title">
           <div class="col-12">
-            <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Amministrazione</h3>
+            <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Amministrazione
+            </h3>
           </div>
         </div>
-        <div class="row mx-0">
-          <div class="card-wrapper px-0 card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3">
-            {{ drupal_view('argomenti_correlati', 'block_2', term.id) }}
-          </div>
-        </div>
+        {{ drupal_view('argomenti_correlati', 'block_2', term.id) }}
         <div class="row mt-4">
           <div class="col-12 col-lg-3 offset-lg-9">
-            <a href="{{ url('<front>') }}amministrazione"
-              class="btn btn-primary text-button w-100"
-              aria-label="vai a tutta l’amministrazione"
-            >
+            <a href="{{ url('<front>') }}amministrazione" class="btn btn-primary text-button w-100"
+              aria-label="vai a tutta l’amministrazione">
               Tutta l’amministrazione
             </a>
           </div>
@@ -130,20 +125,15 @@
       <div class="container">
         <div class="row row-title">
           <div class="col-12">
-            <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Servizi</h3>{# TODO Label #}
+            <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Servizi</h3>{#
+            TODO Label #}
           </div>
         </div>
-        <div class="row mx-0">
-          <div class="card-wrapper px-0 card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3">
-            {{ drupal_view('argomenti_correlati', 'block_3', term.id) }}
-          </div>
-        </div>
+        {{ drupal_view('argomenti_correlati', 'block_3', term.id) }}
         <div class="row mt-4">
           <div class="col-12 col-lg-3 offset-lg-9">
-            <a href="{{ url('<front>') }}servizi"
-              class="btn btn-primary text-button w-100"
-              aria-label="vai a tutti i servizi"
-            >
+            <a href="{{ url('<front>') }}servizi" class="btn btn-primary text-button w-100"
+              aria-label="vai a tutti i servizi">
               Tutti i servizi
             </a>{# TODO Label #}
           </div>
@@ -160,17 +150,11 @@
             <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Documenti</h3>
           </div>
         </div>
-        <div class="row mx-0">
-          <div class="card-wrapper px-0 card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3">
-            {{ drupal_view('argomenti_correlati', 'block_4', term.id) }}
-          </div>
-        </div>
+        {{ drupal_view('argomenti_correlati', 'block_4', term.id) }}
         <div class="row mt-4">
           <div class="col-12 col-lg-3 offset-lg-9">
-            <a href="{{ url('<front>') }}documenti-e-dati"
-              class="btn btn-primary text-button w-100"
-              aria-label="vai a tutti i documenti"
-            >
+            <a href="{{ url('<front>') }}documenti-e-dati" class="btn btn-primary text-button w-100"
+              aria-label="vai a tutti i documenti">
               Tutti i documenti
             </a>
           </div>

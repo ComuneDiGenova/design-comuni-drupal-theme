@@ -1,0 +1,22 @@
+uuid: 3e404acd-d943-4992-bf34-40455f9e0d4e
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.fase_del_servizio
+id: node.fase_del_servizio.promote
+field_name: promote
+entity_type: node
+bundle: fase_del_servizio
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

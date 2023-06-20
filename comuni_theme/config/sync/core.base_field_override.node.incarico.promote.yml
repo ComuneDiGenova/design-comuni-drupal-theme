@@ -1,0 +1,22 @@
+uuid: 7933d8c6-7d7e-4f58-b6ba-31c9f666f1b7
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.incarico
+id: node.incarico.promote
+field_name: promote
+entity_type: node
+bundle: incarico
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

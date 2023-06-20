@@ -3,13 +3,6 @@
 use Drupal\comuni_module\Controller\NodeController;
 use Drupal\Core\Form\FormStateInterface;
 
-function comuni_module_entity_form_mode_alter(&$form_mode, \Drupal\Core\Entity\EntityInterface $entity) {
-  if ($entity->getEntityTypeId() == 'user') {
-    $form_mode = 'comuni_default';
-  }
-}
-
-
 /**
  * Impelemts hook_entity_presave
  */

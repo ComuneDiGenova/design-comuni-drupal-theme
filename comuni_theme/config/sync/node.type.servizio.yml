@@ -4,11 +4,25 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - node_revision_delete
 third_party_settings:
   menu_ui:
     available_menus:
       - main
     parent: 'main:'
+  node_revision_delete:
+    amount:
+      status: true
+      settings:
+        amount: 1
+    created:
+      status: false
+      settings:
+        age: 1
+    drafts:
+      status: false
+      settings:
+        age: 1
 name: Servizio
 type: servizio
 description: 'Struttura delle informazioni relative a un servizio pubblico, funzionale alla creazione di una scheda servizio'

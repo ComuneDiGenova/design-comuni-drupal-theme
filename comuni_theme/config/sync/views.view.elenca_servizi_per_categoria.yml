@@ -1,6 +1,6 @@
 uuid: 0aab9929-a15f-44f0-ae7b-bd1806d46363
 langcode: it
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.field_categoria_del_servizio

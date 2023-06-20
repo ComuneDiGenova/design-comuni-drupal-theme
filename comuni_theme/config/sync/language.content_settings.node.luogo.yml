@@ -1,0 +1,11 @@
+uuid: 8e63d5f7-ba5a-4cc9-87b4-8d1b201b61fb
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.luogo
+id: node.luogo
+target_entity_type_id: node
+target_bundle: luogo
+default_langcode: site_default
+language_alterable: false

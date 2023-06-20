@@ -354,6 +354,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      enabled: false
       fields:
         rendered_entity:
           id: rendered_entity
@@ -546,69 +547,26 @@ display:
         - user.permissions
       tags:
         - 'config:core.entity_view_display.node.appuntamento.default'
-        - 'config:core.entity_view_display.node.appuntamento.teaser'
         - 'config:core.entity_view_display.node.article.default'
-        - 'config:core.entity_view_display.node.article.rss'
-        - 'config:core.entity_view_display.node.article.teaser'
         - 'config:core.entity_view_display.node.dataset.default'
-        - 'config:core.entity_view_display.node.dataset.teaser'
-        - 'config:core.entity_view_display.node.dataset.teaser_in_evidenza'
-        - 'config:core.entity_view_display.node.dataset.teaser_in_evidenza_1'
-        - 'config:core.entity_view_display.node.dataset.teaser_in_evidenza_2'
-        - 'config:core.entity_view_display.node.documento_privato.default'
-        - 'config:core.entity_view_display.node.documento_privato.teaser'
         - 'config:core.entity_view_display.node.documento_pubblico.default'
-        - 'config:core.entity_view_display.node.documento_pubblico.teaser'
-        - 'config:core.entity_view_display.node.documento_pubblico.teaser_in_evidenza'
-        - 'config:core.entity_view_display.node.documento_pubblico.teaser_in_evidenza_1'
-        - 'config:core.entity_view_display.node.documento_pubblico.teaser_in_evidenza_2'
         - 'config:core.entity_view_display.node.evento.default'
-        - 'config:core.entity_view_display.node.evento.search_index'
-        - 'config:core.entity_view_display.node.evento.teaser'
-        - 'config:core.entity_view_display.node.evento.teaser_calendario'
         - 'config:core.entity_view_display.node.faq.default'
-        - 'config:core.entity_view_display.node.faq.teaser'
-        - 'config:core.entity_view_display.node.fase_del_servizio.default'
-        - 'config:core.entity_view_display.node.fase_del_servizio.teaser'
         - 'config:core.entity_view_display.node.incarico.default'
-        - 'config:core.entity_view_display.node.incarico.teaser'
         - 'config:core.entity_view_display.node.luogo.default'
-        - 'config:core.entity_view_display.node.luogo.teaser'
         - 'config:core.entity_view_display.node.messaggio.default'
-        - 'config:core.entity_view_display.node.messaggio.teaser'
-        - 'config:core.entity_view_display.node.notizia.card_template_argomento'
         - 'config:core.entity_view_display.node.notizia.default'
-        - 'config:core.entity_view_display.node.notizia.teaser'
-        - 'config:core.entity_view_display.node.notizia.teaser_in_evidenza'
         - 'config:core.entity_view_display.node.pagamento.default'
-        - 'config:core.entity_view_display.node.pagamento.teaser'
-        - 'config:core.entity_view_display.node.page.default'
-        - 'config:core.entity_view_display.node.page.teaser'
         - 'config:core.entity_view_display.node.pagina.default'
-        - 'config:core.entity_view_display.node.pagina.teaser'
         - 'config:core.entity_view_display.node.persona.card'
         - 'config:core.entity_view_display.node.persona.default'
-        - 'config:core.entity_view_display.node.persona.teaser'
-        - 'config:core.entity_view_display.node.persona.teaser_in_evidenza'
         - 'config:core.entity_view_display.node.pratica.default'
-        - 'config:core.entity_view_display.node.pratica.teaser'
         - 'config:core.entity_view_display.node.punto_di_contatto.card'
         - 'config:core.entity_view_display.node.punto_di_contatto.default'
-        - 'config:core.entity_view_display.node.punto_di_contatto.teaser'
         - 'config:core.entity_view_display.node.servizio.card'
         - 'config:core.entity_view_display.node.servizio.default'
-        - 'config:core.entity_view_display.node.servizio.teaser'
-        - 'config:core.entity_view_display.node.sito_tematico.default'
-        - 'config:core.entity_view_display.node.sito_tematico.teaser'
-        - 'config:core.entity_view_display.node.ticket.default'
-        - 'config:core.entity_view_display.node.ticket.teaser'
         - 'config:core.entity_view_display.node.unita_organizzativa.card'
         - 'config:core.entity_view_display.node.unita_organizzativa.default'
-        - 'config:core.entity_view_display.node.unita_organizzativa.teaser'
-        - 'config:core.entity_view_display.node.unita_organizzativa.teaser_dettaglio_notizia'
-        - 'config:core.entity_view_display.node.unita_organizzativa.teaser_in_evidenza'
-        - 'config:core.entity_view_display.node.unita_organizzativa.teaser_in_evidenza_1'
-        - 'config:core.entity_view_display.node.unita_organizzativa.teaser_in_evidenza_2'
         - 'config:core.entity_view_display.node.valutazione.default'
         - 'config:core.entity_view_display.node.valutazione.teaser'
   block_3:
@@ -617,6 +575,7 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      enabled: false
       fields:
         field_unita_organizzativa:
           id: field_unita_organizzativa

@@ -1,0 +1,11 @@
+uuid: a94e9dd8-f113-473e-b0af-7d1d55cd6e45
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.appuntamento
+id: node.appuntamento
+target_entity_type_id: node
+target_bundle: appuntamento
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,11 @@
+uuid: 4fdbaffa-e050-40ad-a675-cce37acbfedb
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.fase_del_servizio
+id: node.fase_del_servizio
+target_entity_type_id: node
+target_bundle: fase_del_servizio
+default_langcode: site_default
+language_alterable: false

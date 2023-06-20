@@ -11,7 +11,7 @@ dependencies:
 id: tutte_le_novita
 label: 'Tutte le novità'
 module: views
-description: ''
+description: "Usata in Paragraph \tRicerca novità"
 tag: ''
 base_table: search_api_index_novita
 base_field: search_api_id

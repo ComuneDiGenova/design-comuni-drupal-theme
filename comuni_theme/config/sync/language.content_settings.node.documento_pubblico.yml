@@ -1,0 +1,11 @@
+uuid: e20aaded-e5e8-44bc-9b67-5cc63dcd985e
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.documento_pubblico
+id: node.documento_pubblico
+target_entity_type_id: node
+target_bundle: documento_pubblico
+default_langcode: site_default
+language_alterable: false

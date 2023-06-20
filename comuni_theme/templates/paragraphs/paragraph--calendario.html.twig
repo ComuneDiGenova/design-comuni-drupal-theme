@@ -45,7 +45,8 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    "container"
+    "container",
+    'my-5'
   ]
 %}
 
@@ -61,7 +62,7 @@
 %}
 
 {% block paragraph %}
-  {# <div{{ attributes.addClass(classes) }}> #}
+  <div{{ attributes.addClass(classes) }}>
     <div class="row row-calendar">
       <div class="it-carousel-wrapper it-carousel-landscape-abstract-four-cols it-calendar-wrapper splide" data-bs-carousel-splide>
         <div class="it-header-block">
@@ -107,5 +108,5 @@
         </div>
       </div>
     </div>
-  {# </div> #}
+  </div>
 {% endblock paragraph %}

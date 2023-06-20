@@ -1,0 +1,22 @@
+uuid: 5ecb6a60-2fdb-4112-9ed1-6aa4a64bb009
+langcode: it
+status: true
+dependencies:
+  config:
+    - node.type.pagina
+id: node.pagina.promote
+field_name: promote
+entity_type: node
+bundle: pagina
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

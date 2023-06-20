@@ -4,11 +4,25 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - node_revision_delete
 third_party_settings:
   menu_ui:
     available_menus:
       - main
     parent: 'main:'
+  node_revision_delete:
+    amount:
+      status: true
+      settings:
+        amount: 1
+    created:
+      status: false
+      settings:
+        age: 1
+    drafts:
+      status: false
+      settings:
+        age: 1
 name: Pratica
 type: pratica
 description: '“Content type utile per l’ implementazione dell’AREA RISERVATA”'

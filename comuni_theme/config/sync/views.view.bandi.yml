@@ -6,10 +6,10 @@ dependencies:
     - node.type.documento_pubblico
     - taxonomy.vocabulary.documenti_albo_pretorio
   content:
-    - 'taxonomy_term:documenti_albo_pretorio:32e8abd5-607f-4a54-a790-9fd7728cf4cb'
-    - 'taxonomy_term:documenti_albo_pretorio:53fff89f-f835-46fb-a516-55cc6cdb50f9'
-    - 'taxonomy_term:documenti_albo_pretorio:b3331759-e57d-41e6-b5f8-6bb492a40c45'
-    - 'taxonomy_term:documenti_albo_pretorio:fbf0adf0-1847-4f87-a925-2434ca4f0dc6'
+    - 'taxonomy_term:documenti_albo_pretorio:150e4dcf-f68f-4103-9655-b3b16c0c5fd1'
+    - 'taxonomy_term:documenti_albo_pretorio:61b51905-2bf6-41e7-af0b-7cfe0710bcfc'
+    - 'taxonomy_term:documenti_albo_pretorio:6f21d77c-d1f9-4b8c-b1c7-ab36d5098639'
+    - 'taxonomy_term:documenti_albo_pretorio:dfdc44e3-57d1-4dcf-a88c-60db1e483e45'
   module:
     - node
     - taxonomy
@@ -17,7 +17,7 @@ dependencies:
 id: bandi
 label: Bandi
 module: views
-description: ''
+description: 'Usata in /servizi'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -202,10 +202,10 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            345: 345
-            346: 346
-            348: 348
-            347: 347
+            111: 111
+            112: 112
+            114: 114
+            113: 113
           group: 1
           exposed: false
           expose:
