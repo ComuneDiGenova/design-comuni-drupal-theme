@@ -44,7 +44,6 @@ module:
   history: 0
   image: 0
   image_widget_crop: 0
-  integrazioni: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
@@ -103,11 +102,8 @@ module:
   paragraphs: 11
   standard: 1000
 theme:
-  bartik: 0
-  seven: 0
   stable: 0
   classy: 0
   comuni_theme: 0
   claro: 0
-  olivero: 0
 profile: standard
