@@ -46,7 +46,7 @@
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
     "container",
-    'my-5'
+    'mb-5'
   ]
 %}
 
@@ -61,6 +61,11 @@
   }
 %}
 
+{% if content.field_titolo[0] is not empty %}
+<div class="container mb-4">
+  <h2 class="text-secondary">{{ content.field_titolo[0]['#context'].value }}</h2>
+</div>
+{% endif %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     <div class="row row-calendar">
