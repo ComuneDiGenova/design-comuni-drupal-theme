@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.field_argomenti
     - field.storage.node.field_meta_tag
     - search_api.server.drupal_db
-    - core.entity_view_mode.node.search_index
   module:
     - taxonomy
     - node
@@ -50,24 +49,7 @@ field_settings:
       roles:
         - anonymous
       view_mode:
-        'entity:node':
-          appuntamento: search_index
-          dataset: search_index
-          documento_privato: search_index
-          documento_pubblico: search_index
-          evento: search_index
-          fase_del_servizio: search_index
-          incarico: search_index
-          luogo: search_index
-          messaggio: search_index
-          notizia: search_index
-          pagamento: search_index
-          persona: search_index
-          pratica: search_index
-          punto_di_contatto: search_index
-          servizio: search_index
-          sito_tematico: search_index
-          unita_organizzativa: search_index
+        'entity:node': {  }
   status:
     label: Published
     datasource_id: 'entity:node'

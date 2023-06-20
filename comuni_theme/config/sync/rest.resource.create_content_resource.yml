@@ -1,6 +1,6 @@
 uuid: 82e30d52-e6b2-428c-bb68-db42b5007cdc
 langcode: it
-status: true
+status: false
 dependencies:
   module:
     - comuni_module

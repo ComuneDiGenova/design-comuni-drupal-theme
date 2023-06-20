@@ -4,7 +4,7 @@ langcode: it
 and_or_limit: 7
 index:
   cron_limit: 100
-  overlap_cjk: true
+  overlap_cjk: false
   minimum_word_size: 3
   tag_weights:
     h1: 25

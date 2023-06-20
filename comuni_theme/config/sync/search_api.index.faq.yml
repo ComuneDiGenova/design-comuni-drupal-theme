@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.body
     - search_api.server.drupal_db
-    - core.entity_view_mode.node.teaser
   module:
     - node
     - search_api
@@ -30,8 +29,7 @@ field_settings:
       roles:
         - anonymous
       view_mode:
-        'entity:node':
-          faq: teaser
+        'entity:node': {  }
   status:
     label: Published
     datasource_id: 'entity:node'
