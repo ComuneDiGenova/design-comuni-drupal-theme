@@ -1,0 +1,11 @@
+{% set attributi = "" %}
+{% for item in  content.field_link_par[0]['#paragraph'].field_attributi %}
+	{% set attributi = attributi ~ " " ~ item.value %}
+{% endfor %}
+
+<li class="list-inline-item me-3">
+	<a class="text-white" href="{{ content.field_link_par[0]['#paragraph'].field_link[0].uri }}" target="_blank" {{ attributi|raw }}>
+		<svg class="icon icon-sm icon-white align-top ms-0" aria-hidden="true"><use href="#{{ content.field_icona[0]["#context"].value }}"></use></svg>
+		<span class="visually-hidden">{{ content.field_link_par[0]['#paragraph'].field_link[0].title }}</span>
+	</a>
+</li>

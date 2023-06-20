@@ -1,0 +1,9 @@
+{% set attributi = [] %}
+{% for item in  content.field_link_par[0]['#paragraph'].field_attributi %}
+	{% set attributi = attributi|merge({ (item.value|split('=')[0]|raw): (item.value|split('=')[1]|replace({'"': ''})) }) %}
+{% endfor %}
+
+<li>
+	<svg class="icon icon-primary icon-sm" aria-hidden="true"><use href="#{{ content.field_icona[0]["#context"].value }}"></use></svg>
+	{{ link(content.field_link_par[0]['#paragraph'].field_link[0].title, content.field_link_par[0]['#paragraph'].field_link[0].uri, attributi)}}
+</li>

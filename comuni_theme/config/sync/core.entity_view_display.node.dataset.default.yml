@@ -35,14 +35,14 @@ content:
     region: content
   field_distribuzione:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
   field_frequenza_di_aggiornamento:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -50,7 +50,7 @@ content:
     region: content
   field_licenza:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -58,7 +58,7 @@ content:
     region: content
   field_sezione_amministrazione:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -66,7 +66,7 @@ content:
     region: content
   field_temi:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -74,7 +74,7 @@ content:
     region: content
   field_titolare:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'contenuto_collegato::block_1'
       arguments:
@@ -98,7 +98,7 @@ content:
     region: content
   field_ultima_modifica:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: medium
@@ -107,7 +107,7 @@ content:
     region: content
   field_url_dataset:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''

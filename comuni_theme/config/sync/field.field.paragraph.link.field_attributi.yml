@@ -1,0 +1,19 @@
+uuid: 403ddf79-825d-400b-8d32-1d131c63c2c7
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_attributi
+    - paragraphs.paragraphs_type.link
+id: paragraph.link.field_attributi
+field_name: field_attributi
+entity_type: paragraph
+bundle: link
+label: Attributi
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

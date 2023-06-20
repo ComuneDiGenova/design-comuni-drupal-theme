@@ -1,0 +1,20 @@
+uuid: 83fd8747-8e80-4466-9729-71fd5a0ef7ea
+langcode: it
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.field_link_par
+field_name: field_link_par
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

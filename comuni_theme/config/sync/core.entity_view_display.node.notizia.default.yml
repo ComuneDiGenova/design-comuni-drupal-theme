@@ -244,7 +244,7 @@ content:
     region: content
   field_ulteriori_informazioni:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 15

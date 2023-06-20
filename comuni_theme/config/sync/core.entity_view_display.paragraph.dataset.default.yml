@@ -15,7 +15,7 @@ mode: default
 content:
   field_dataset:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'media_collegato::block_2'
       arguments:

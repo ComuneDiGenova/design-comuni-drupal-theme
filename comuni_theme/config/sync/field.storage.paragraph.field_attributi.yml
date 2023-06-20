@@ -1,11 +1,11 @@
-uuid: 8d3c6f46-ea87-4cf0-b64e-819d03abf803
+uuid: bd8a33e0-5e09-4f17-b23f-41704bfa852b
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_icona
-field_name: field_icona
+id: paragraph.field_attributi
+field_name: field_attributi
 entity_type: paragraph
 type: string
 settings:
@@ -14,7 +14,7 @@ settings:
   is_ascii: false
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

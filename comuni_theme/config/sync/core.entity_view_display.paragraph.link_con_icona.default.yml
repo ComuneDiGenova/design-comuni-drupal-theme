@@ -4,35 +4,31 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.link_con_icona.field_icona
-    - field.field.paragraph.link_con_icona.field_link
+    - field.field.paragraph.link_con_icona.field_link_par
     - paragraphs.paragraphs_type.link_con_icona
   module:
-    - fontawesome
-    - link
+    - entity_reference_revisions
 id: paragraph.link_con_icona.default
 targetEntityType: paragraph
 bundle: link_con_icona
 mode: default
 content:
   field_icona:
-    type: fontawesome_icon_formatter
+    type: string
     label: hidden
     settings:
-      layers: false
+      link_to_entity: false
     third_party_settings: {  }
     weight: 2
     region: content
-  field_link:
-    type: link
+  field_link_par:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
 hidden:
   search_api_excerpt: true

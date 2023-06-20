@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_video_esterno
     - node.type.evento
-    - paragraphs.paragraphs_type.elemento_video
   module:
     - entity_reference_revisions
 id: node.evento.field_video_esterno
@@ -21,8 +20,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles:
-      elemento_video: elemento_video
+    target_bundles: {  }
     negate: 0
     target_bundles_drag_drop:
       amministrazione_ref_in_evidenza:

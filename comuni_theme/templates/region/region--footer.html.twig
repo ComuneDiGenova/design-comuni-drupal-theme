@@ -97,7 +97,7 @@
           <h3 class="footer-heading-title">Seguici su</h3>
           <ul class="list-inline text-start social">
             {% for social in site_settings.infocomune.info_comune.field_icone_social %}
-              {{ drupal_entity('paragraph', social['target_id'], 'social_footer') }}
+              {{ drupal_entity('paragraph', social.target_id, 'social') }}
             {% endfor %}
           </ul>
         </div>

@@ -40,7 +40,7 @@ mode: default
 content:
   field_argomenti:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -64,7 +64,7 @@ content:
     region: content
   field_descrizione_breve:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -72,14 +72,14 @@ content:
     region: content
   field_descrizione_estesa:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 6
     region: content
   field_galleria_immagini:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -88,7 +88,7 @@ content:
     region: content
   field_gps_latitude:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -96,7 +96,7 @@ content:
     region: content
   field_gps_longitude:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -104,7 +104,7 @@ content:
     region: content
   field_identificativo:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -112,7 +112,7 @@ content:
     region: content
   field_immagine:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: true
@@ -129,7 +129,7 @@ content:
     region: content
   field_luoghi_collegati:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'contenuto_collegato::block_1'
       arguments:
@@ -153,14 +153,14 @@ content:
     region: content
   field_modalita_di_accesso:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 9
     region: content
   field_nome_alternativo:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -168,14 +168,14 @@ content:
     region: content
   field_orario_per_il_pubblico:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 14
     region: content
   field_punti_di_contatto:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'contenuto_collegato::block_2'
       arguments:
@@ -207,14 +207,14 @@ content:
     region: content
   field_servizi_presenti_nel_luogo:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 8
     region: content
   field_struttura_responsabile:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'contenuto_collegato::block_2'
       arguments:
@@ -238,7 +238,7 @@ content:
     region: content
   field_tipo_di_luogo:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -246,14 +246,14 @@ content:
     region: content
   field_ulteriori_informazioni:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 16
     region: content
   field_video_esterno:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''

@@ -3,6 +3,7 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.paragraph.link.field_attributi
     - field.field.paragraph.link.field_link
     - paragraphs.paragraphs_type.link
   module:
@@ -12,6 +13,14 @@ targetEntityType: paragraph
 bundle: link
 mode: default
 content:
+  field_attributi:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_link:
     type: link_default
     weight: 0

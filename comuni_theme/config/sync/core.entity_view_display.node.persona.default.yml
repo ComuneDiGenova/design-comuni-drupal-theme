@@ -38,7 +38,7 @@ mode: default
 content:
   field_altre_cariche:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'media_collegato::block_2'
       arguments:
@@ -62,14 +62,14 @@ content:
     region: content
   field_biografia:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 9
     region: content
   field_cognome:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -77,14 +77,14 @@ content:
     region: content
   field_competenze:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 7
     region: content
   field_curriculum_vitae:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'media_collegato::block_2'
       arguments:
@@ -108,14 +108,14 @@ content:
     region: content
   field_deleghe:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 8
     region: content
   field_descrizione_breve:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -123,7 +123,7 @@ content:
     region: content
   field_dichiarazione_dei_redditi:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'media_collegato::block_2'
       arguments:
@@ -147,7 +147,7 @@ content:
     region: content
   field_galleria_immagini:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -156,7 +156,7 @@ content:
     region: content
   field_immagine:
     type: media_thumbnail
-    label: above
+    label: hidden
     settings:
       image_link: ''
       image_style: avatar
@@ -167,7 +167,7 @@ content:
     region: content
   field_incarichi:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: card
       link: false
@@ -176,7 +176,7 @@ content:
     region: content
   field_nome:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -184,7 +184,7 @@ content:
     region: content
   field_organizzazioni:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: card
       link: false
@@ -193,7 +193,7 @@ content:
     region: content
   field_punti_di_contatto:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'contenuto_collegato::block_1'
       arguments:
@@ -217,7 +217,7 @@ content:
     region: content
   field_sezione_amministrazione:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -225,7 +225,7 @@ content:
     region: content
   field_situazione_patrimoniale:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'media_collegato::block_2'
       arguments:
@@ -249,7 +249,7 @@ content:
     region: content
   field_spese_elettorali:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'media_collegato::block_2'
       arguments:
@@ -273,14 +273,14 @@ content:
     region: content
   field_ulteriori_informazioni:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 17
     region: content
   field_v_situazione_patrimoniale:
     type: views_field_formatter
-    label: above
+    label: hidden
     settings:
       view: 'media_collegato::block_2'
       arguments:

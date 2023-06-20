@@ -98,10 +98,10 @@
               </div>
               <div class="it-right-zone">
                 <div class="it-socials d-none d-lg-flex">
-                  <span>Seguici su</span>
+                  <span class="me-3">Seguici su</span>
                   <ul>
                       {% for social in site_settings.infocomune.info_comune.field_icone_social %}
-                          {{ drupal_entity('paragraph',social.target_id,'social_header') }}
+                          {{ drupal_entity('paragraph',social.target_id,'social') }}
                       {% endfor %}
                   </ul>
                 </div>
@@ -159,7 +159,7 @@
                     <span>Seguici su</span>
                     <ul>
                         {% for social in site_settings.infocomune.info_comune.field_icone_social %}
-                            {{ drupal_entity('paragraph',social.target_id,'social_header_mobile') }}
+                            {{ drupal_entity('paragraph',social.target_id,'social') }}
                         {% endfor %}
                     </ul>
                   </div>

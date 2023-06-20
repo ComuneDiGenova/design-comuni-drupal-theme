@@ -1,20 +1,20 @@
-uuid: 5ef643c7-6bd6-40b8-ae71-8a08a2d213be
+uuid: cc367dde-beee-45e7-acc5-355ca1729b19
 langcode: it
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_links_group
-    - paragraphs.paragraphs_type.card_assistenza
+    - field.storage.paragraph.field_link_par
+    - paragraphs.paragraphs_type.link
     - paragraphs.paragraphs_type.link_con_icona
   module:
     - entity_reference_revisions
-id: paragraph.card_assistenza.field_links_group
-field_name: field_links_group
+id: paragraph.link_con_icona.field_link_par
+field_name: field_link_par
 entity_type: paragraph
-bundle: card_assistenza
-label: Links
+bundle: link_con_icona
+label: Link
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -22,7 +22,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      link_con_icona: link_con_icona
+      link: link
     negate: 0
     target_bundles_drag_drop:
       backend_info:
@@ -35,10 +35,10 @@ settings:
         weight: 31
         enabled: false
       calendario:
-        weight: 35
+        weight: 32
         enabled: false
       card_assistenza:
-        weight: 36
+        weight: 33
         enabled: false
       card_in_evidenza:
         weight: 34
@@ -47,7 +47,7 @@ settings:
         weight: 35
         enabled: false
       documento:
-        weight: 46
+        weight: 36
         enabled: false
       elenco_card_da_termine:
         weight: 37
@@ -59,7 +59,7 @@ settings:
         weight: 39
         enabled: false
       fase_intitolata:
-        weight: 49
+        weight: 40
         enabled: false
       fase_semplice:
         weight: 41
@@ -68,11 +68,11 @@ settings:
         weight: 42
         enabled: false
       link:
-        weight: 54
-        enabled: false
-      link_con_icona:
-        weight: 55
+        weight: 43
         enabled: true
+      link_con_icona:
+        weight: 44
+        enabled: false
       orari_giorni:
         weight: 45
         enabled: false
@@ -86,7 +86,7 @@ settings:
         weight: 48
         enabled: false
       ricerca:
-        weight: 59
+        weight: 49
         enabled: false
       ricerca_documenti_e_dati:
         weight: 50
@@ -104,7 +104,7 @@ settings:
         weight: 54
         enabled: false
       ultima_notizia:
-        weight: 64
+        weight: 55
         enabled: false
       vista:
         weight: 56
