@@ -6,7 +6,6 @@ dependencies:
     - filter.format.basic_html
     - rest.resource.create_content_resource
   module:
-    - comment
     - contact
     - filter
     - fontawesome
@@ -24,16 +23,13 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
   - 'access fontawesome additional settings'
   - 'access metatag basic__keywords'
   - 'access shortcuts'
   - 'access site-wide contact form'
-  - 'post comments'
   - 'restful post create_content_resource'
   - 'search content'
-  - 'skip comment approval'
   - 'use text format basic_html'
   - 'view media'
   - 'view published site setting entities'

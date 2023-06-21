@@ -20,7 +20,6 @@ dependencies:
     - node.type.servizio
     - node.type.unita_organizzativa
   module:
-    - comment
     - contextual
     - file
     - media
@@ -113,7 +112,6 @@ permissions:
   - 'edit any punto_di_contatto content'
   - 'edit any servizio content'
   - 'edit any unita_organizzativa content'
-  - 'edit own comments'
   - 'revert all revisions'
   - 'view all revisions'
   - 'view own unpublished content'
