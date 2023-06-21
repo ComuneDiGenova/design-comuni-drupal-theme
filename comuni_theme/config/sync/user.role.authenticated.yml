@@ -6,7 +6,6 @@ dependencies:
     - filter.format.basic_html
     - rest.resource.create_content_resource
   module:
-    - contact
     - filter
     - fontawesome
     - media
@@ -27,7 +26,6 @@ permissions:
   - 'access fontawesome additional settings'
   - 'access metatag basic__keywords'
   - 'access shortcuts'
-  - 'access site-wide contact form'
   - 'restful post create_content_resource'
   - 'search content'
   - 'use text format basic_html'

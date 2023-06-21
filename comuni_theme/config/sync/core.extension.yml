@@ -19,7 +19,6 @@ module:
   comuni_module: 0
   conditional_fields: 0
   config: 0
-  contact: 0
   content_synchronizer: 0
   contextual: 0
   crop: 0
