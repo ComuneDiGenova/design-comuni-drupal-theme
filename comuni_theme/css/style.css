@@ -28,6 +28,12 @@ body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .it-header-wrapper.it-he
 	top: 78px !important;
 }
 
+/* Fix z-index Toolbar Amministrativa*/
+body header.it-header-wrapper,
+body header.it-header-wrapper.bs-is-fixed{
+	z-index:5 !important;
+}
+
 /* Fix default logo */
 header .it-brand-wrapper a, header .it-brand-wrapper img {
 	max-height: initial;
