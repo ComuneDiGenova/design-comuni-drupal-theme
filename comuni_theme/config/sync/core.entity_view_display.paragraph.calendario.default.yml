@@ -1,0 +1,22 @@
+uuid: d95d336e-a73d-4a3e-914a-5b5e822351d9
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.calendario.field_titolo
+    - paragraphs.paragraphs_type.calendario
+id: paragraph.calendario.default
+targetEntityType: paragraph
+bundle: calendario
+mode: default
+content:
+  field_titolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
