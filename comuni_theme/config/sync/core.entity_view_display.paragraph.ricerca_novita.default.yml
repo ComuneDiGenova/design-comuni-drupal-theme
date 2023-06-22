@@ -1,0 +1,22 @@
+uuid: a18fce21-e559-48f8-a11d-da2ae5ea667f
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ricerca_novita.field_titolo
+    - paragraphs.paragraphs_type.ricerca_novita
+id: paragraph.ricerca_novita.default
+targetEntityType: paragraph
+bundle: ricerca_novita
+mode: default
+content:
+  field_titolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

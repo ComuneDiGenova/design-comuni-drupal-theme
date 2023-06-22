@@ -9,7 +9,7 @@ dependencies:
     - search_api
     - views_show_more
 id: tutte_le_novita
-label: 'Tutte le novità'
+label: 'Ricerca novità'
 module: views
 description: "Usata in Paragraph \tRicerca novità"
 tag: ''
@@ -22,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Tutte le novità'
+      title: ''
       fields:
         rendered_item:
           id: rendered_item
@@ -83,7 +83,7 @@ display:
         type: show_more
         options:
           offset: 0
-          items_per_page: 3
+          items_per_page: 6
           total_pages: null
           id: 0
           tags:
@@ -128,15 +128,15 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        title:
-          id: title
+        field_data_della_notizia:
+          id: field_data_della_notizia
           table: search_api_index_novita
-          field: title
+          field: field_data_della_notizia
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: search_api
-          order: ASC
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
@@ -157,7 +157,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Fulltext search'
+            label: ''
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -169,11 +169,11 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
               content_editor: '0'
               administrator: '0'
+              anonymous: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Cerca per parola chiave'
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -249,7 +249,7 @@ display:
           preserve_facet_query_args: false
       relationships: {  }
       css_class: ''
-      use_ajax: true
+      use_ajax: false
       use_more: false
       use_more_always: false
       use_more_text: 'Carica altri risultati'
@@ -268,13 +268,14 @@ display:
       tags:
         - 'config:search_api.index.novita'
         - 'search_api_list:novita'
-  tutte_le_novita:
-    id: tutte_le_novita
-    display_title: 'Tutte le novità'
+  novita:
+    id: novita
+    display_title: Novità
     display_plugin: block
     position: 1
     display_options:
       display_description: ''
+      exposed_block: true
       display_extenders: {  }
     cache_metadata:
       max-age: -1

@@ -3,6 +3,7 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.storage.node.field_data_della_notizia
     - search_api.server.drupal_db
   module:
     - node
@@ -12,6 +13,14 @@ name: Novità
 description: ''
 read_only: false
 field_settings:
+  field_data_della_notizia:
+    label: 'Data della notizia'
+    datasource_id: 'entity:node'
+    property_path: field_data_della_notizia
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_data_della_notizia
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item
@@ -20,20 +29,13 @@ field_settings:
       roles:
         - anonymous
       view_mode:
-        'entity:node': {  }
+        'entity:node':
+          notizia: default
   status:
     label: Published
     datasource_id: 'entity:node'
     property_path: status
     type: boolean
-    dependencies:
-      module:
-        - node
-  title:
-    label: Title
-    datasource_id: 'entity:node'
-    property_path: title
-    type: string
     dependencies:
       module:
         - node

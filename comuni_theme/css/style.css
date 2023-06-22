@@ -104,6 +104,7 @@ main.homepage .container.page-name {display: none;}
 	flex-basis: 100%;
 }
 
+/* Fix per "Show More" nelle viste */
 .view-content > .row + .row {
 	margin-top: 12px;
 }
