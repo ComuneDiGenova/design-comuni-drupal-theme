@@ -22,7 +22,7 @@ content:
     weight: 1
     region: content
   field_link:
-    type: link
+    type: link_separate
     label: above
     settings:
       trim_length: 80
