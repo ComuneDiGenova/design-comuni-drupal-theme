@@ -1,4 +1,4 @@
-uuid: ddc833ba-cd98-4825-905a-c696f49ab80c
+uuid: 5661e736-f7af-4823-9900-be19d7aeb1c9
 langcode: it
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - comuni_module
     - search_api
     - views_show_more
-id: tutte_le_novita
+id: ricerca_novita
 label: 'Ricerca novità'
 module: views
 description: "Usata in Paragraph \tRicerca novità"
@@ -268,9 +268,9 @@ display:
       tags:
         - 'config:search_api.index.novita'
         - 'search_api_list:novita'
-  novita:
-    id: novita
-    display_title: Novità
+  ricerca:
+    id: ricerca
+    display_title: Ricerca
     display_plugin: block
     position: 1
     display_options:

@@ -261,9 +261,9 @@ display:
       tags:
         - 'config:search_api.index.documenti_e_dati'
         - 'search_api_list:documenti_e_dati'
-  documenti_e_dataset:
-    id: documenti_e_dataset
-    display_title: 'Ricerca documenti e dataset'
+  ricerca:
+    id: ricerca
+    display_title: Ricerca
     display_plugin: block
     position: 1
     display_options:

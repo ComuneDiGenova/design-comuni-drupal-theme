@@ -1,4 +1,4 @@
-uuid: ec5811ee-2fc1-4902-beab-be2995060263
+uuid: a559e410-7c36-4853-8276-8c2b7ec25f40
 langcode: it
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
     - comuni_module
     - search_api
     - views_show_more
-id: tutti_i_servizi
+id: ricerca_servizi
 label: 'Ricerca servizi'
 module: views
 description: ''
@@ -359,9 +359,9 @@ display:
       tags:
         - 'config:search_api.index.servizi'
         - 'search_api_list:servizi'
-  servizi:
-    id: servizi
-    display_title: Servizi
+  ricerca:
+    id: ricerca
+    display_title: Ricerca
     display_plugin: block
     position: 1
     display_options:
