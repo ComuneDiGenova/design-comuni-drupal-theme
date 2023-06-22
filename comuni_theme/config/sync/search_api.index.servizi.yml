@@ -3,11 +3,11 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.storage.node.field_argomenti
     - field.storage.node.field_categoria_del_servizio
     - field.storage.node.field_meta_tag
     - search_api.server.drupal_db
   module:
-    - taxonomy
     - node
     - search_api
 id: servizi
@@ -15,6 +15,22 @@ name: Servizi
 description: ''
 read_only: false
 field_settings:
+  field_argomenti:
+    label: Argomenti
+    datasource_id: 'entity:node'
+    property_path: field_argomenti
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_argomenti
+  field_categoria_del_servizio:
+    label: 'Categoria del servizio'
+    datasource_id: 'entity:node'
+    property_path: field_categoria_del_servizio
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_categoria_del_servizio
   keywords:
     label: 'Meta tag » Parole chiave'
     datasource_id: 'entity:node'
@@ -41,16 +57,6 @@ field_settings:
     dependencies:
       module:
         - node
-  tid:
-    label: 'Categoria del servizio » Taxonomy term » Term ID'
-    datasource_id: 'entity:node'
-    property_path: 'field_categoria_del_servizio:entity:tid'
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_categoria_del_servizio
-      module:
-        - taxonomy
 datasource_settings:
   'entity:node':
     bundles:
@@ -71,6 +77,6 @@ tracker_settings:
     indexing_order: fifo
 options:
   cron_limit: 50
-  index_directly: true
+  index_directly: false
   track_changes_in_references: true
 server: drupal_db
