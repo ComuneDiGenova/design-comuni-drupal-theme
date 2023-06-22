@@ -12,9 +12,17 @@
                   <a href="{{ url('<front>') }}servizi">Servizi</a>
                   <span class="separator">/</span>
                 </li>
-                {{content.field_categoria_del_servizio }}
+                {% if content.field_categoria_del_servizio[0] is not empty %}
+                  <li class="breadcrumb-item">
+                      {% for item in content.field_categoria_del_servizio["#items"] %}
+                          {{ item|view }}
+                          {% if not loop.last %} - {% endif %}
+                      {% endfor %}
+                      <span class="separator">/</span>
+                  </li>
+                {% endif %}
                 <li class="breadcrumb-item active" aria-current="page">
-                    <span class="separator">/</span>{{label}}
+                    {{label}}
                 </li>
               </ol>
             </nav>
