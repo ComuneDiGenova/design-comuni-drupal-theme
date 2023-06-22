@@ -2,12 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="title-xxlarge mb-4 mt-5 mb-lg-10">Esplora tutti i servizi</h2>
+        <h2 class="title-xxlarge mb-0 mt-5">{{ paragraph.field_titolo[0].value }}</h2>
       </div>
-      <div class="col-12 col-lg-4 pt-30 pt-lg-5">
+      <div class="col-12 col-lg-4 pt-0">
           {{ drupal_block('views_exposed_filter_block:tutti_i_servizi-servizi').content }}
       </div>
-      <div class="col pt-lg-50 pb-lg-50">
+      <div class="col mt-3">
         {{ drupal_view('tutti_i_servizi', 'servizi') }}
       </div>
     </div>

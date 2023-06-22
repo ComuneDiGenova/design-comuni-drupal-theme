@@ -3,12 +3,21 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.paragraph.ricerca_servizi.field_titolo
     - paragraphs.paragraphs_type.ricerca_servizi
 id: paragraph.ricerca_servizi.default
 targetEntityType: paragraph
 bundle: ricerca_servizi
 mode: default
-content: {  }
+content:
+  field_titolo:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

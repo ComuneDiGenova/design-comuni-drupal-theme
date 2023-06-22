@@ -3,7 +3,7 @@ langcode: it
 status: true
 dependencies: {  }
 id: ricerca_servizi
-label: 'Ricerca Servizi'
+label: 'Ricerca servizi'
 icon_uuid: null
 icon_default: null
 description: ''
