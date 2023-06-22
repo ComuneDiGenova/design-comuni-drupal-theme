@@ -12,5 +12,6 @@ global-styling:
       css/fonts.css: {},
       node_modules/bootstrap-italia/dist/css/bootstrap-italia-comuni.min.css: {},
       css/styles.css: {},
+      css/chosen.css: {},
       css/style.css: {},
       css/drupal.css: {},
