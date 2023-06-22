@@ -249,7 +249,7 @@ display:
           preserve_facet_query_args: false
       relationships: {  }
       css_class: ''
-      use_ajax: false
+      use_ajax: true
       use_more: false
       use_more_always: false
       use_more_text: 'Carica altri risultati'

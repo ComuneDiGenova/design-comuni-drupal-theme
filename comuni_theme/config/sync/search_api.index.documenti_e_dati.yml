@@ -8,7 +8,7 @@ dependencies:
     - node
     - search_api
 id: documenti_e_dati
-name: 'Documenti e Dati'
+name: 'Documenti e Dataset'
 description: ''
 read_only: false
 field_settings:
@@ -20,7 +20,9 @@ field_settings:
       roles:
         - anonymous
       view_mode:
-        'entity:node': {  }
+        'entity:node':
+          dataset: default
+          documento_pubblico: default
   status:
     label: Published
     datasource_id: 'entity:node'

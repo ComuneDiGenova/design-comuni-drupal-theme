@@ -34,24 +34,19 @@ settings:
     auto_create: 0
   plugin_types:
     default: default
-    page: page
     block: block
-    feed: 0
+    page: page
+    entity_reference: 0
   preselect_views:
     faq: faq
     politici: politici
-    ricerca_documenti_e_dati: ricerca_documenti_e_dati
+    ricerca_documenti_e_dataset: ricerca_documenti_e_dataset
     tutte_le_novita: tutte_le_novita
     tutti_i_servizi: tutti_i_servizi
-    appuntamenti: 0
     appuntamenti_eventi: 0
     argomenti_correlati: 0
-    assistenza: 0
     bandi: 0
     block_content: 0
-    calendario: 0
-    comment: 0
-    comments_recent: 0
     content: 0
     content_recent: 0
     content_servizi: 0
@@ -63,7 +58,7 @@ settings:
     elenco_chip_termini_da_un_termine: 0
     eventi_collegati: 0
     files: 0
-    frontpage: 0
+    filtro_contenuti: 0
     incarichi_collegati: 0
     manutenzione_files: 0
     media: 0
@@ -73,10 +68,8 @@ settings:
     punti_di_contatto_collegati: 0
     ricerca: 0
     servizi_collegati: 0
-    taxonomy_term: 0
     unita_organizzative_collegate: 0
     user_admin_people: 0
-    valutazione: 0
     watchdog: 0
     who_s_new: 0
     who_s_online: 0

@@ -13,8 +13,6 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.prenotazione_appuntamento
     - paragraphs.paragraphs_type.ricerca
-    - paragraphs.paragraphs_type.ricerca_novita
-    - paragraphs.paragraphs_type.ricerca_servizi
     - paragraphs.paragraphs_type.richiesta_assistenza
     - paragraphs.paragraphs_type.testo
     - paragraphs.paragraphs_type.ultima_notizia
@@ -43,8 +41,6 @@ settings:
       ricerca: ricerca
       elenco_card_da_termine: elenco_card_da_termine
       prenotazione_appuntamento: prenotazione_appuntamento
-      ricerca_novita: ricerca_novita
-      ricerca_servizi: ricerca_servizi
       richiesta_assistenza: richiesta_assistenza
       gallery: gallery
       testo: testo

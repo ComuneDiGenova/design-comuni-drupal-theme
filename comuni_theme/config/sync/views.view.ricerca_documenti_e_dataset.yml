@@ -1,15 +1,17 @@
-uuid: 8761fd30-bcb7-4fd0-9eef-e26b4cc64271
+uuid: c781aed3-1166-4921-8bef-c03a00dff2a4
 langcode: it
 status: true
 dependencies:
   config:
     - search_api.index.documenti_e_dati
   module:
+    - comuni_module
     - search_api
-id: ricerca_documenti_e_dati
-label: 'Ricerca documenti e dati'
+    - views_show_more
+id: ricerca_documenti_e_dataset
+label: 'Ricerca documenti e dataset'
 module: views
-description: 'Usata in Paragraph Ricerca documenti e dati'
+description: 'Usata nella sezione Documenti e dati'
 tag: ''
 base_table: search_api_index_documenti_e_dati
 base_field: search_api_id
@@ -20,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Ricerca documenti e dati'
+      title: ''
       fields:
         rendered_item:
           id: rendered_item
@@ -78,10 +80,36 @@ display:
           multi_type: separator
           multi_separator: ', '
       pager:
-        type: some
+        type: show_more
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 6
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          result_display_method: append
+          show_more_text: 'Show more'
+          show_more_empty_text: ''
+          initial: '0'
+          effects:
+            type: none
+            speed_type: slow
+            speed_value: ''
+            scroll_offset: '50'
+            speed: slow
+          advance:
+            content_selector: ''
+            pager_selector: ''
       exposed_form:
         type: basic
         options:
@@ -116,7 +144,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Fulltext search'
+            label: ''
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -128,11 +156,11 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
               content_editor: '0'
               administrator: '0'
+              anonymous: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Cerca per parola chiave'
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -189,14 +217,19 @@ display:
             default_group_multiple: {  }
             group_items: {  }
       style:
-        type: default
+        type: card_container
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+          columns: '3'
       row:
         type: search_api
         options:
           view_modes:
             'entity:node':
-              dataset: default
-              documento_pubblico: default
+              dataset: card
+              documento_pubblico: card
       query:
         type: search_api_query
         options:
@@ -215,7 +248,7 @@ display:
           admin_label: ''
           plugin_id: result
           empty: true
-          content: '@total'
+          content: '<div class="mb-2"><strong>@total</strong> contenuti trovati.</div>'
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -223,22 +256,26 @@ display:
       contexts:
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.documenti_e_dati'
         - 'search_api_list:documenti_e_dati'
-  block_1:
-    id: block_1
-    display_title: Block
+  documenti_e_dataset:
+    id: documenti_e_dataset
+    display_title: 'Ricerca documenti e dataset'
     display_plugin: block
     position: 1
     display_options:
+      display_description: ''
+      exposed_block: true
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.documenti_e_dati'
