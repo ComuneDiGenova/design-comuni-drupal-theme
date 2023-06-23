@@ -100,7 +100,7 @@ display:
             offset: false
             offset_label: Offset
           result_display_method: append
-          show_more_text: 'Show more'
+          show_more_text: 'Show More'
           show_more_empty_text: ''
           initial: '0'
           effects:

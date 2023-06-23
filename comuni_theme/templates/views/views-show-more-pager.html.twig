@@ -1,38 +1,23 @@
-{#
-/**
- * @file
- * The views show more pager template.
- *
- * Available variables:
- * - heading_id: Pagination heading ID.
- * - item: Show more pager item.
- *
- * @see views_show_more_preprocess_views_show_more_pager()
- *
- * @ingroup themeable
- */
-#}
 {% if item.text %}
-  <nav class="mt-4" role="navigation" aria-labelledby="{{ heading_id }}">
+  <nav role="navigation" aria-labelledby="{{ heading_id }}">
     <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
-    <ul{{ attributes }}>
+    <ul{{ attributes.addClass('mt-4') }}>
       <li class="pager__item">
+        {% set show_more = '@show_more' |t({'@show_more': item.text}) %}
         {% if item.href %}
-        {% set path = url('<current>')['#markup']|split('/')|last %}
-        {% if path == 'servizi' %}
-          {% set dataElem = 'load-other-cards' %}
+          {% set path = url('<current>')['#markup']|split('/')|last %}
+          {% if path == 'servizi' %}
+            {% set dataElem = 'load-other-cards' %}
+          {% else %}
+            {% set dataElem = '' %}
+          {% endif %}            
+          <a href="{{ item.href }}" rel="next">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#" data-element="{{ dataElem }}" class="btn btn-outline-primary pt-15 pb-15 pl-90 pr-90 full-mb text-button">
+              {{ show_more }}
+            </button>
+          </a>
         {% else %}
-          {% set dataElem = '' %}
-        {% endif %}            
-        <a class="" href="{{ item.href }}" rel="next">
-          <button type="button" data-bs-toggle="modal" data-bs-target="#" data-element="{{ dataElem }}"
-            class="btn btn-outline-primary pt-15 pb-15 pl-90 pr-90 mb-30 mb-lg-50 full-mb text-button"
-          >
-            <span class="">{{ item.text }}</span>
-          </button>
-        </a>
-        {% else %}
-          <p class="text-center text-paragraph-regular-medium mt-4 mb-0">{{ item.text }}</p>
+          <p class="text-center text-paragraph-regular-medium mt-4 mb-0">{{ show_more }}</p>
         {% endif %}
       </li>
     </ul>
