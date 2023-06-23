@@ -30,9 +30,9 @@
                 <li class="breadcrumb-item">
                     {% for item in incarichi_padri %}
                       {% if item == "Politici" %}
-                        <a href="/pollo">{{ item }}</a>
+                        <a href="{{ url('<front>') }}amministrazione/politici">{{ item }}</a>
                       {% elseif item == "Personale amministrativo" %}                        
-                        <a href="/persammo">{{ item }}</a>
+                        <a href="{{ url('<front>') }}amministrazione/personale-amministrativo">{{ item }}</a>
                       {% else %}
                         Altro personale
                       {% endif %}

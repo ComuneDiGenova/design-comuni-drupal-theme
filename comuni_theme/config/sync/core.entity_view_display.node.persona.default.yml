@@ -22,10 +22,11 @@ dependencies:
     - field.field.node.persona.field_spese_elettorali
     - field.field.node.persona.field_ulteriori_informazioni
     - field.field.node.persona.field_v_situazione_patrimoniale
+    - image.style.4_3
     - node.type.persona
     - views.view.media_collegato
   module:
-    - entity_reference_revisions
+    - media
     - text
     - user
     - views_field_formatter
@@ -71,7 +72,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_competenze:
     type: text_default
@@ -117,7 +118,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_dichiarazione_dei_redditi:
     type: views_field_formatter
@@ -143,12 +144,14 @@ content:
     third_party_settings: {  }
     weight: 13
     region: content
-  field_galleria_immagini:
-    type: entity_reference_revisions_entity_view
+  field_immagine:
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: ''
+      image_link: ''
+      image_style: '4_3'
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 18
     region: content
@@ -167,7 +170,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_organizzazioni:
     type: entity_reference_entity_view
@@ -292,10 +295,10 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
-  field_immagine: true
+  field_galleria_immagini: true
   langcode: true
   node_read_time: true
   search_api_excerpt: true
