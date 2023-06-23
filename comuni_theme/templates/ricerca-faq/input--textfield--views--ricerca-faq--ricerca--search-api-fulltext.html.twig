@@ -1,0 +1,15 @@
+<div class="input-group">
+  <label for="autocomplete-autocomplete-three" class="visually-hidden">cerca</label>
+  <input{{ attributes.addClass(['autocomplete', 'form-control', 'mt-0']).setAttribute('data-bs-autocomplete', '[]') }} />{{ children }}
+  
+
+  <div class="input-group-append">
+    <button class="btn btn-primary" type="submit" id="button-3">Invio</button>
+  </div>
+
+  <span class="autocomplete-icon" aria-hidden="true">
+    <svg class="icon icon-sm icon-primary">
+      <use href="#it-search" />
+    </svg>
+  </span>
+</div>

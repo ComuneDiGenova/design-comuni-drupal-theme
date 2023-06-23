@@ -41,6 +41,7 @@ settings:
     faq: faq
     politici: politici
     ricerca_documenti_e_dataset: ricerca_documenti_e_dataset
+    ricerca_faq: ricerca_faq
     ricerca_novita: ricerca_novita
     ricerca_servizi: ricerca_servizi
     appuntamenti_eventi: 0
@@ -68,8 +69,6 @@ settings:
     punti_di_contatto_collegati: 0
     ricerca: 0
     servizi_collegati: 0
-    tutte_le_novita: 0
-    tutti_i_servizi: 0
     unita_organizzative_collegate: 0
     user_admin_people: 0
     watchdog: 0
