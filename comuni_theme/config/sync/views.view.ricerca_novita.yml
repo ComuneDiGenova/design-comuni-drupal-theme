@@ -98,8 +98,8 @@ display:
             offset: false
             offset_label: Offset
           result_display_method: append
-          show_more_text: 'Carica altri risultati'
-          show_more_empty_text: 'Nessun altro risultato'
+          show_more_text: 'Show More'
+          show_more_empty_text: ''
           initial: '0'
           effects:
             type: none
@@ -151,7 +151,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: search_api_fulltext
-          operator: or
+          operator: and
           value: ''
           group: 1
           exposed: true

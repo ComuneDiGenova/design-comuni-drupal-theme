@@ -108,3 +108,6 @@ main.homepage .container.page-name {display: none;}
 .view-content > .row + .row {
 	margin-top: 0px;
 }
+
+/* Rimosso temporaneamente il bottone per svuotare un campo di testo */
+.clean-input { display: none; }

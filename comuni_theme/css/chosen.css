@@ -525,7 +525,7 @@ input[type=text].chosen-focus-input {
 }
 
 
-
+/* customizzazioni */
 .chosen-container :focus:not(.focus--mouse){
 	box-shadow: none !important;
 	outline: none !important;
@@ -533,8 +533,6 @@ input[type=text].chosen-focus-input {
 }
 .chosen-container {
 	width: 100% !important;
-	font-size: 1rem;
-	font-weight: normal;
 	border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
     border-radius: var(--bs-border-radius);
 }
@@ -547,4 +545,7 @@ input[type=text].chosen-focus-input {
 .chosen-container-active {
 	border: 1px solid #80bdff;
 	transition: border linear 0ms,box-shadow linear 0ms;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+	font-family: inherit !important;
 }
