@@ -1,0 +1,92 @@
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+
+
+{% set title = view.build_info.title %}
+{#{dd(view)}#}
+<div{{ attributes.addClass(classes) }}>
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="cmp-breadcrumbs">
+          {{ drupal_block('system_breadcrumb_block') }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+          {{ title_prefix }}
+          {% if title %}
+            <h1 class="text-black hero-title" data-element="page-name">{{ title }}</h1>
+          {% endif %}
+          {{ title_suffix }}
+      </div>
+    </div>
+  </div>
+  <div class="bg-grey py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-4 pt-0">
+          {{ drupal_block('views_exposed_filter_block:ricerca-ricerca').content }}
+        </div>
+        <div class="col mt-3">
+          {% if header %}
+            <div class="view-header">
+              {{ header }}
+            </div>
+          {% endif %}
+          {% if exposed %}
+            <div class="view-filters">
+              {{ exposed }}
+            </div>
+                
+          {% endif %}
+          {% if attachment_before %}
+            <div class="attachment attachment-before">
+              {{ attachment_before }}
+            </div>
+          {% endif %}
+
+          {% if rows %}
+            <div class="view-content">
+              {{ rows }}
+            </div>
+          {% elseif empty %}
+            <div class="view-empty">
+              {{ empty }}
+            </div>
+          {% endif %}
+
+          {% if pager %}
+            {{ pager }}
+          {% endif %}
+          {% if attachment_after %}
+            <div class="attachment attachment-after">
+              {{ attachment_after }}
+            </div>
+          {% endif %}
+          {% if more %}
+            {{ more }}
+          {% endif %}
+          {% if footer %}
+            <div class="view-footer">
+              {{ footer }}
+            </div>
+          {% endif %}
+          {% if feed_icons %}
+            <div class="feed-icons">
+              {{ feed_icons }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>    
+</div>

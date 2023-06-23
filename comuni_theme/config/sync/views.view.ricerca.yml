@@ -6,7 +6,7 @@ dependencies:
     - search_api.index.all
     - taxonomy.vocabulary.argomenti
   module:
-    - better_exposed_filters
+    - comuni_module
     - search_api
     - views_show_more
 id: ricerca
@@ -84,7 +84,7 @@ display:
         type: show_more
         options:
           offset: 0
-          items_per_page: 5
+          items_per_page: 10
           total_pages: null
           id: 0
           tags:
@@ -99,8 +99,8 @@ display:
             offset: false
             offset_label: Offset
           result_display_method: append
-          show_more_text: 'Carica altri risultati'
-          show_more_empty_text: 'Nessun altro risultato'
+          show_more_text: 'Show More'
+          show_more_empty_text: ''
           initial: '0'
           effects:
             type: none
@@ -112,7 +112,7 @@ display:
             content_selector: ''
             pager_selector: ''
       exposed_form:
-        type: bef
+        type: basic
         options:
           submit_button: Apply
           reset_button: true
@@ -121,56 +121,6 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: basic_html
-          bef:
-            general:
-              autosubmit: true
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: false
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-              reset_button_always_show: false
-            filter:
-              type:
-                plugin_id: bef
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
-              search_api_fulltext:
-                plugin_id: default
-                advanced:
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-              field_argomenti:
-                plugin_id: bef
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
-              name:
-                plugin_id: default
-                advanced:
-                  placeholder_text: ''
-                  collapsible: false
-                  is_secondary: false
       access:
         type: none
         options: {  }
@@ -215,6 +165,53 @@ display:
           conjunction: AND
           fields: {  }
       filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_all
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: and
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Cerca nel testo'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search_api_fulltext
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              content_editor: '0'
+              administrator: '0'
+              anonymous: '0'
+            expose_fields: false
+            placeholder: 'Cerca per parola chiave'
+            searched_fields_id: search_api_fulltext_searched_fields
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields: {  }
         type:
           id: type
           table: search_api_index_all
@@ -267,53 +264,6 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_all
-          field: search_api_fulltext
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_fulltext
-          operator: and
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: search_api_fulltext_op
-            label: 'Fulltext search'
-            description: ''
-            use_operator: false
-            operator: search_api_fulltext_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: search_api_fulltext
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            expose_fields: false
-            placeholder: ''
-            searched_fields_id: search_api_fulltext_searched_fields
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          parse_mode: terms
-          min_length: null
-          fields: {  }
         field_argomenti:
           id: field_argomenti
           table: search_api_index_all
@@ -359,56 +309,9 @@ display:
           reduce_duplicates: false
           vid: argomenti
           type: select
-          hierarchy: false
+          hierarchy: true
           limit: true
           error_message: true
-        name:
-          id: name
-          table: search_api_index_all
-          field: name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_string
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: name_op
-            label: 'Argomenti » Taxonomy term » Name'
-            description: ''
-            use_operator: false
-            operator: name_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: name
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
         status:
           id: status
           table: search_api_index_all
@@ -452,17 +355,25 @@ display:
         groups:
           1: AND
       style:
-        type: default
+        type: card_container
         options:
-          row_class: ''
+          row_class: col
           default_row_class: true
           uses_fields: false
+          columns: '2'
       row:
         type: search_api
         options:
           view_modes:
             'entity:node':
-              evento: search_index
+              dataset: card
+              documento_pubblico: card
+              evento: card
+              luogo: card
+              notizia: card
+              persona: card
+              servizio: card
+              unita_organizzativa: card
       query:
         type: search_api_query
         options:
@@ -470,6 +381,7 @@ display:
           skip_access: false
           preserve_facet_query_args: false
       relationships: {  }
+      css_class: ''
       use_ajax: true
       use_more: false
       use_more_always: false
@@ -486,7 +398,7 @@ display:
           admin_label: ''
           plugin_id: result
           empty: true
-          content: '@total'
+          content: '<div class="mb-2"><strong>@total</strong> risultati trovati.</div>'
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -500,13 +412,14 @@ display:
       tags:
         - 'config:search_api.index.all'
         - 'search_api_list:all'
-  risultati:
-    id: risultati
-    display_title: Page
+  ricerca:
+    id: ricerca
+    display_title: Ricerca
     display_plugin: page
     position: 2
     display_options:
-      exposed_block: false
+      display_description: ''
+      exposed_block: true
       display_extenders: {  }
       path: risultati-ricerca
     cache_metadata:
