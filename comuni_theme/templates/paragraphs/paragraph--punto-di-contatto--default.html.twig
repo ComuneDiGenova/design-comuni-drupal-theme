@@ -3,41 +3,42 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'd-flex',
+    'gap-1'
   ]
 %}
 
 {% block paragraph %}
 	<div{{attributes.addClass(classes)}}>
 		{% block content %}
-      {{ content.field_tipo_punto_di_contatto }}
+      <span class="fw-bold">{{ content.field_tipo_punto_di_contatto[0] }}:</span>
 
       {% set tipo_punto_di_contatto %}{{ content.field_tipo_punto_di_contatto }}{% endset %}
-      {% set tipo_punto_di_contatto %}{{ content.field_tipo_punto_di_contatto }}{% endset %}
-
-      {% for item in content.field_valore_punto_di_cont['#items'] %}
-
-        {% if (tipo_punto_di_contatto|striptags|trim) == 'Email' %}
-          <p class="mb-0"><a class="text-break" href="mailto:{{ item.value }}">{{ item.value }}</a></p>
-        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'PEC' %}
-          <p class="mb-0"><a class="text-break" href="mailto:{{ item.value }}">{{ item.value }}</a></p>
-        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Telefono' %}
-          <p class="mb-0"><a class="text-break" href="tel:{{ item.value }}">{{ item.value }}</a></p>
-        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Linkedin' %}
-          <p class="mb-0"><a class="text-break" href="{{ item.value }}">{{ item.value }}</a></p>
-        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Telegram' %}
-          <p class="mb-0"><a class="text-break" href="{{ item.value }}">{{ item.value }}</a></p>
-        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Twitter' %}
-          <p class="mb-0"><a class="text-break" href="{{ item.value }}">{{ item.value }}</a></p>
-        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'URL' %}
-          <p class="mb-0"><a class="text-break" href="{{ item.value }}">{{ item.value }}</a></p>
-        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Whatsapp' %}
-          <p class="mb-0"><a class="text-break" href="https://wa.me/{{ item.value }}">{{ item.value }}</a></p>
-        {% else %}
-          <p class="mb-0"><span class="text-break">{{ item.value }}</span></p>
-        {% endif %}
-       
-      {% endfor %}
+      <p class="mb-0">
+        {% for item in content.field_valore_punto_di_cont['#items'] %}
+          {% if (tipo_punto_di_contatto|striptags|trim) == 'Email' %}
+            {% set href = "mailto: " ~ item.value %}
+          {% elseif (tipo_punto_di_contatto|striptags|trim) == 'PEC' %}
+            {% set href = "mailto: " ~ item.value %}
+          {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Telefono' %}
+            {% set href = "tel: " ~ item.value %}
+          {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Linkedin' %}
+            {% set href = item.value %}
+          {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Telegram' %}
+            {% set href = item.value %}
+          {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Twitter' %}
+            {% set href = item.value %}
+          {% elseif (tipo_punto_di_contatto|striptags|trim) == 'URL' %}
+            {% set href = item.value %}
+          {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Whatsapp' %}
+            {% set href = "https://wa.me/ " ~ item.value %}
+          {% else %}
+            {% set href = "#" %}
+          {% endif %}
+          <a class="text-break" href="{{ href }}">{{ item.value }}</a>{% if loop.last == false %}, {% endif %}
+        {% endfor %}
+      </p>
 		{% endblock %}
 	</div>
 {% endblock paragraph %}

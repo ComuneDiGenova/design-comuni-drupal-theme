@@ -20,10 +20,12 @@ dependencies:
     - field.field.node.notizia.field_tipo_di_notizia
     - field.field.node.notizia.field_ulteriori_informazioni
     - field.field.node.notizia.field_video_esterno
+    - image.style.hero_desktop
     - node.type.notizia
     - views.view.contenuto_collegato
   module:
     - datetime
+    - media
     - text
     - user
     - views_field_formatter
@@ -163,11 +165,13 @@ content:
     weight: 13
     region: content
   field_immagine:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      image_link: ''
+      image_style: hero_desktop
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 5
     region: content

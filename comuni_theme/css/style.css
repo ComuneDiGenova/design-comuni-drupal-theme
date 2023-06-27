@@ -111,3 +111,14 @@ main.homepage .container.page-name {display: none;}
 
 /* Rimosso temporaneamente il bottone per svuotare un campo di testo */
 .clean-input { display: none; }
+
+/* Corregge min width con icone piccole*/
+.card.card-teaser .icon-sm { min-width: 24px; }
+
+/* Aggiunge funzionalità caret */
+[aria-expanded] > .rotable {
+	transition: transform .2s ease-in-out;
+}
+[aria-expanded="false"] > .rotable {
+	transform: rotate(-180deg);
+}

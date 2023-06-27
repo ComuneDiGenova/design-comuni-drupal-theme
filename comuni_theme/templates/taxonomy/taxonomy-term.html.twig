@@ -22,9 +22,7 @@
       <div class="row">
         <div class="col-12 px-0 px-lg-2 drop-shadow">
           <div class="it-hero-card it-hero-bottom-overlapping rounded hero-p pb-lg-80">
-            <div class="row justify-content-center">
-              <div class="col-12 col-lg-10">{{ drupal_block('system_breadcrumb_block') }}</div>
-            </div>
+            {% include directory ~ '/templates/breadcrumb/breadcrumb-taxonomy-term.html.twig' %}
             <div class="row sport-wrapper justify-content-between mt-lg-2">
               <div class="col-12 col-lg-5 offset-lg-1">
                 <h1 class="mb-3 mb-lg-4 title-xxlarge">{{ name.0['#context'].value }}</h1>

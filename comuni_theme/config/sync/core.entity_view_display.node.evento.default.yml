@@ -24,11 +24,13 @@ dependencies:
     - field.field.node.evento.field_tipo_di_evento
     - field.field.node.evento.field_ulteriori_informazioni
     - field.field.node.evento.field_video_esterno
+    - image.style.4_3
     - node.type.evento
     - views.view.contenuto_collegato
   module:
     - datetime
     - entity_reference_revisions
+    - media
     - text
     - user
     - views_field_formatter
@@ -143,11 +145,13 @@ content:
     weight: 7
     region: content
   field_immagine:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: full
-      link: false
+      image_link: ''
+      image_style: '4_3'
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 5
     region: content

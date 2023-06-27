@@ -1,20 +1,61 @@
-<div class="col-12 col-md-6 col-lg-4">
-  <div class="cmp-card-simple card-wrapper pb-0 rounded border border-light">
-    <div class="card white-bg shadow-sm rounded">
-      <div class="card-body">
-        <a href="{{ url }}" class="text-decoration-none">
-          <h3 class="card-title t-primary title-xlarge">
-            {{ label }}
-          </h3>
-        </a>
-        <div class="titillium text-paragraph mb-0">
-          {% if content.field_descrizione_breve %}
-            <div class="text-paragraph-card u-grey-light m-0">
-                {{ content.field_descrizione_breve }}
-            </div>
-          {% endif %}
+<div class="card card-teaser no-after rounded shadow-sm mb-0 border border-light h-100">{{ title_suffix }}
+
+  <div class="container p-0 pb-5">
+    <div class="row m-0 gap-3 mb-1">
+
+      <div class="col p-0">
+        <div class="card-body">
+          <div class="category-top d-flex gap-2">
+            <svg class="icon">
+              <use href="#it-folder" xlink:href="#it-folder"></use>
+            </svg>
+            <div class="title-xsmall-semi-bold fw-semibold mt-1">{% for item in content.field_tipo_di_dataset["#items"] %}{{ item.entity.name.value }}{% if not loop.last %}, {% endif %}{% endfor %}</div>
+          </div>
+          <h3 class="card-title text-paragraph-medium u-grey-light mb-0">{{ label }}</h3>
+
+
+
+
+
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
     </div>
+
+    <div class="row mb-3 mx-0">
+      <div class="col p-0">
+        <p class="text-paragraph-card u-grey-light m-0">{{ content.field_descrizione_breve[0] }}</p>
+        
+
+        
+      </div>
+    </div>
+
+
   </div>
+
+  <a class="read-more" href="{{ url }}">
+    <span class="text">Vai alla pagina</span>
+    <svg class="icon ms-0">
+      <use xlink:href="#it-arrow-right"></use>
+    </svg>
+  </a>
+  
 </div>

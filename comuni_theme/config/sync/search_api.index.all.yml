@@ -53,9 +53,12 @@ field_settings:
           dataset: default
           documento_pubblico: default
           evento: default
+          incarico: default
           luogo: default
           notizia: default
+          pagina: default
           persona: default
+          punto_di_contatto: default
           servizio: default
           unita_organizzativa: default
   status:
@@ -82,9 +85,12 @@ datasource_settings:
         - dataset
         - documento_pubblico
         - evento
+        - incarico
         - luogo
         - notizia
+        - pagina
         - persona
+        - punto_di_contatto
         - servizio
         - unita_organizzativa
     languages:

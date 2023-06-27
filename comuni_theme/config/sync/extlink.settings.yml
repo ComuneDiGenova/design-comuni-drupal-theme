@@ -12,7 +12,7 @@ extlink_subdomains: true
 extlink_alert: false
 extlink_alert_text: 'This link will take you to an external web site. We are not responsible for their content.'
 extlink_exclude: ''
-extlink_include: ''
+extlink_include: \.pdf|\.xls|\.xlsx|\.csv|\.doc|\.docx|\.odt|\.zip|\.ppt|\.gif|\.jpeg|\.png|\.bmp|\.tif
 extlink_class: '0'
 extlink_label: '(link is external)'
 extlink_img_class: false

@@ -225,9 +225,12 @@ display:
             dataset: dataset
             documento_pubblico: documento_pubblico
             evento: evento
+            incarico: incarico
             luogo: luogo
             notizia: notizia
+            pagina: pagina
             persona: persona
+            punto_di_contatto: punto_di_contatto
             servizio: servizio
             unita_organizzativa: unita_organizzativa
           group: 1
@@ -247,9 +250,9 @@ display:
             multiple: true
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
               content_editor: '0'
               administrator: '0'
+              anonymous: '0'
             reduce: true
           is_grouped: false
           group_info:
@@ -369,9 +372,12 @@ display:
               dataset: card
               documento_pubblico: card
               evento: card
+              incarico: card
               luogo: card
               notizia: card
+              pagina: card
               persona: card
+              punto_di_contatto: card
               servizio: card
               unita_organizzativa: card
       query:
