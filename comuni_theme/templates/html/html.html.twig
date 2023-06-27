@@ -14,6 +14,10 @@
     {{ page }}
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token }}">
-    <script>bootstrap.loadFonts('{{ url('<front>') }}modules/custom/design-comuni-drupal-theme/comuni_theme/fonts')</script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        bootstrap.loadFonts('{{ url('<front>') }}modules/custom/design-comuni-drupal-theme/comuni_theme/fonts');
+      });
+    </script>
   </body>
 </html>
