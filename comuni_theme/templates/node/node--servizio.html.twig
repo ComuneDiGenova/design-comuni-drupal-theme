@@ -468,7 +468,7 @@
                   <div class="col px-0">
                     <h2 class="mb-3" id="contacts">Contatti</h2>
                     <div class="container">
-                      <div class="row g-4">
+                      <div class="row row-cols-1 g-4">
                         {% for item in node.field_unita_org_responsabile %}
                           {% if drupal_field('field_contatti', 'node', item.target_id)[0] is not empty %}
                             <div class="col">
