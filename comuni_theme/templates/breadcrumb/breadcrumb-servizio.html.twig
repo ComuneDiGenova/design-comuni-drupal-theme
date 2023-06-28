@@ -10,12 +10,12 @@
               <span class="separator">/</span>
             </li>
             <li class="breadcrumb-item">
-              <a href="{{ url('<front>') }}amministrazione">Amministrazione</a>
+              <a href="{{ url('<front>') }}servizi">Servizi</a>
               <span class="separator">/</span>
             </li>
-            {% if content.field_tipo_di_organizzazione[0] is not empty %}
+            {% if content.field_categoria_del_servizio[0] is not empty %}
               <li class="breadcrumb-item">
-                {% for item in content.field_tipo_di_organizzazione["#items"] %}
+                {% for item in content.field_categoria_del_servizio["#items"] %}
                     {{ item|view }}
                     {% if not loop.last %} - {% endif %}
                 {% endfor %}
