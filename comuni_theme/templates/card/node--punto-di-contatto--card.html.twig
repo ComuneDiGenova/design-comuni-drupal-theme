@@ -1,0 +1,60 @@
+<div class="card py-3 px-4 h-100 rounded shadow-sm border border-light">{{ title_suffix }}
+
+  <div class="container px-0">
+    <div class="row mx-0 gap-3">
+      <div class="col px-0">
+        
+        <div class="category-top mb-3 d-flex gap-2">
+          <svg class="icon flex-shrink-0"><use href="#it-share" xlink:href="#it-share"></use></svg>
+          <div class="title-xsmall-semi-bold mt-1 fw-semibold text-uppercase">
+            Punti di contatto
+          </div>
+        </div>
+
+        {% include directory ~ '/templates/card/parts/card--parts--title.html.twig' with { 'label': label } %}
+        
+        {% if content.field_contatto[0] is not empty %}
+          <div class="mb-1">
+            {{ content.field_contatto }}
+          </div>
+        {% endif %}
+
+        {% if drupal_view_result('persone_collegate', 'block_1', node.id) %}
+          <div class="text-paragraph-card u-grey-light">
+            <div class="title-xsmall-semi-bold text-uppercase">
+              Contatto:
+            </div>
+            {#{ drupal_view('persone_collegate', 'block_1', node.id) }#}
+            {% for item in drupal_view_result('persone_collegate', 'block_1', node.id) %}
+              <div class="d-flex gap-1 ps-2">
+                <svg class="icon icon-xs flex-shrink-0 mt-1"><use href="#it-user" xlink:href="#it-user"></use></svg>
+                <a class="text-paragraph-card u-grey-light text-decoration-none text-break" href="{{ path('entity.node.canonical', {'node': item._entity.nid.value}) }}">{{ item._entity.title.value }}</a>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+
+  {% if content.field_orari_note[0] is not empty or attribute(content.field_orari, "#items")|length %}
+    <div class="position-absolute bottom-0 mb-3 start-0 end-0 ps-3 pt-0">
+      <a class="btn btn-xs btn-primary card-title py-1 mx-2 mt-0" href="javascript: void(0);" data-bs-toggle="collapse" data-bs-target="#punto-di-contatto-{{ node.id }}" aria-expanded="false">Vedi orari <svg class="icon icon-sm rotable" fill="#fff" aria-hidden="true"><use href="#it-collapse" xlink:href="#it-collapse"></use></svg></a>
+      <div id="punto-di-contatto-{{ node.id }}" class="position-absolute collapse text-paragraph-card u-grey-light m-0 bg-white start-0 end-0 p-3 rounded shadow-sm mb-0 border ms-3" style="z-index: 1; width: 80%;">
+        <div class="mb-1">{{ content.field_orari_note[0] }}</div>
+        {% for item in attribute(content.field_orari, "#items") %}
+          <dl class="servizio-contatto-orari row mb-0">
+            <dt class="col-6 text-nowrap"><span>{{ item.entity.field_orari_giorni.value }}</span></dt>
+            <dd class="col-6">
+              {% for item_ora in item.entity.field_orari_giorni.entity.field_fascia_oraria %}
+                <span class="text-nowrap">{{ item_ora.entity.field_orari_fascia_oraria.from|date('H:i','UTC') }} - {{ item_ora.entity.field_orari_fascia_oraria.to|date('H:i','UTC') }}</span>{% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </dd>
+          </dl>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+</div>

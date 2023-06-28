@@ -1,0 +1,27 @@
+<div class="card py-3 px-4 h-100 rounded shadow-sm border border-light">{{ title_suffix }}
+
+  <div class="container px-0">
+    <div class="row mx-0 gap-3">
+      <div class="col px-0">
+        {% include directory ~ '/templates/card/parts/card--parts--category.html.twig' with { 'icon': 'it-file', 'taxonomy': content.field_tipo_di_documento } %}
+        {% include directory ~ '/templates/card/parts/card--parts--title.html.twig' with { 'label': label } %}
+        {% include directory ~ '/templates/card/parts/card--parts--text.html.twig' with { 'content': content.field_descrizione_breve[0] } %}
+      </div>
+    </div>
+  </div>
+
+  {% include directory ~ '/templates/card/parts/card--parts--read-more.html.twig' with { 'url': url } %}
+
+  {%
+    set tmp = [
+      drupal_entity('paragraph', node.field_paragraph_documento[0].target_id)["#paragraph"].field_documento[0]|file_url,
+      drupal_entity('paragraph', node.field_paragraph_documento[0].target_id)["#paragraph"].field_link.uri
+    ]
+  %}
+  {% for item in tmp %}
+    {% if item is not empty %}
+      {% include directory ~ '/templates/card/parts/card--parts--download.html.twig' with { 'url': item } %}
+    {% endif %}
+  {% endfor %}
+
+</div>

@@ -1,0 +1,8 @@
+{% if content is not empty %}
+  <div class="d-flex gap-1 mb-1">
+    <svg class="icon icon-xs flex-shrink-0 mt-1"><use href="#it-clock" xlink:href="#it-clock"></use></svg>
+    <div class="title-xsmall-semi-bold text-uppercase">
+      {{ content|date('d') }} {{ content|date('F')|t({}, {'context' : 'Long month name'}) }} {{ content|date('Y') }}
+    </div>
+  </div>
+{% endif %}

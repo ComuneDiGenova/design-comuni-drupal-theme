@@ -1,0 +1,13 @@
+<div class="category-top mb-3 d-flex gap-2">
+
+  {% if icon is not empty %}
+    <svg class="icon flex-shrink-0"><use href="#{{ icon }}" xlink:href="#{{ icon }}"></use></svg>
+  {% endif %}
+
+  {% if taxonomy is not empty %}
+    <div class="title-xsmall-semi-bold mt-1 fw-semibold text-uppercase">
+      {% for item in taxonomy["#items"] %}{{ item.entity.name.value }}{% if not loop.last %}, {% endif %}{% endfor %}
+    </div>
+  {% endif %}
+  
+</div>

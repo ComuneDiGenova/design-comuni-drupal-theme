@@ -1,0 +1,7 @@
+{% if image is not empty %}
+  <div class="col col-4 px-0">
+    <div class="mb-3 rounded border border-light shadow-sm">
+      {{ drupal_image(image["#item"].target_id, '4_3', {loading: 'lazy', class: 'w-100 h-auto', alt: image["#item"].alt|t, title: image["#item"].alt|t}) }}
+    </div>
+  </div>
+{% endif %}

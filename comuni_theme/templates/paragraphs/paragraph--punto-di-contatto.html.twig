@@ -3,42 +3,52 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-    'd-flex',
-    'gap-1'
+    not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
 
 {% block paragraph %}
 	<div{{attributes.addClass(classes)}}>
 		{% block content %}
-      <span class="fw-bold">{{ content.field_tipo_punto_di_contatto[0] }}:</span>
-
+      <div class="title-xsmall-semi-bold text-uppercase">
+        {{ content.field_tipo_punto_di_contatto[0] }}:
+      </div>
       {% set tipo_punto_di_contatto %}{{ content.field_tipo_punto_di_contatto }}{% endset %}
-      <p class="mb-0">
+      <div>
         {% for item in content.field_valore_punto_di_cont['#items'] %}
           {% if (tipo_punto_di_contatto|striptags|trim) == 'Email' %}
-            {% set href = "mailto: " ~ item.value %}
+            {% set href = 'mailto: ' ~ item.value %}
+            {% set icon = 'it-mail' %}
           {% elseif (tipo_punto_di_contatto|striptags|trim) == 'PEC' %}
-            {% set href = "mailto: " ~ item.value %}
+            {% set href = 'mailto: ' ~ item.value %}
+            {% set icon = 'it-mail' %}
           {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Telefono' %}
-            {% set href = "tel: " ~ item.value %}
+            {% set href = 'tel: ' ~ item.value %}
+            {% set icon = 'it-telephone' %}
           {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Linkedin' %}
             {% set href = item.value %}
+            {% set icon = 'it-linkedin-square' %}
           {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Telegram' %}
             {% set href = item.value %}
+            {% set icon = 'it-telegram' %}
           {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Twitter' %}
             {% set href = item.value %}
+            {% set icon = 'it-twitter-square' %}
           {% elseif (tipo_punto_di_contatto|striptags|trim) == 'URL' %}
             {% set href = item.value %}
+            {% set icon = 'it-external-link' %}
           {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Whatsapp' %}
-            {% set href = "https://wa.me/ " ~ item.value %}
+            {% set href = 'https://wa.me/ ' ~ item.value %}
+            {% set icon = 'it-whatsapp-square' %}
           {% else %}
-            {% set href = "#" %}
+            {% set href = '#' %}
           {% endif %}
-          <a class="text-break" href="{{ href }}">{{ item.value }}</a>{% if loop.last == false %}, {% endif %}
+          <div class="d-flex gap-1 ps-2">
+            <svg class="icon icon-xs flex-shrink-0 mt-1"><use href="#{{ icon }}" xlink:href="#{{ icon }}"></use></svg>
+            <a class="text-paragraph-card u-grey-light text-decoration-none text-break" href="{{ href }}">{{ item.value }}</a>
+          </div>
         {% endfor %}
-      </p>
+      </div>
 		{% endblock %}
 	</div>
 {% endblock paragraph %}

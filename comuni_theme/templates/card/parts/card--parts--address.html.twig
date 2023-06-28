@@ -1,0 +1,12 @@
+{% if address is not empty %}
+  <div class="d-flex gap-1 mb-1">
+    <svg class="icon icon-xs flex-shrink-0 mt-1"><use href="#it-map-marker-circle" xlink:href="#it-map-marker-circle"></use></svg>
+    <div class="title-xsmall-semi-bold">
+      {% if url is not empty %}
+        <a class="text-decoration-none" href="{{ url }}">{{ address }}</a>
+      {% else %}
+        {{ address }}
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

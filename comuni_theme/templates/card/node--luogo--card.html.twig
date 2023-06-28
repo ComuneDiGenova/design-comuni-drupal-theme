@@ -1,0 +1,29 @@
+<div class="card py-3 px-4 h-100 rounded shadow-sm border border-light">{{ title_suffix }}
+
+  <div class="container px-0">
+    <div class="row mx-0 gap-3">
+      <div class="col px-0">
+
+        <div class="row mx-0 gap-2">
+          <div class="col px-0">
+            {% include directory ~ '/templates/card/parts/card--parts--category.html.twig' with { 'icon': 'it-pin', 'taxonomy': content.field_tipo_di_luogo } %}
+          </div>
+          {% include directory ~ '/templates/card/parts/card--parts--image.html.twig' with { 'image': content.field_immagine[0] } %}
+        </div>
+
+        {% include directory ~ '/templates/card/parts/card--parts--title.html.twig' with { 'label': label } %}
+        {% if content.field_nome_alternativo[0] is not empty %}
+          <h4 class="title-xsmall-semi-bold text-uppercase mb-1">{{ content.field_nome_alternativo[0] }}</h4>
+        {% endif %}
+
+        {% include directory ~ '/templates/card/parts/card--parts--address.html.twig' with { 'address': content.field_indirizzo[0]["#context"].value, 'url': ('https://www.google.com/maps/place/' ~ content.field_indirizzo[0]["#context"].value|replace({' ': "+"}) ~ ',' ~ content.field_cap[0]["#context"].value) } %}
+        {% include directory ~ '/templates/card/parts/card--parts--text.html.twig' with { 'content': content.field_descrizione_breve[0] } %}
+        
+      </div>
+    </div>
+  </div>
+
+  {% include directory ~ '/templates/card/parts/card--parts--read-more.html.twig' with { 'url': url } %}
+  {% include directory ~ '/templates/card/parts/card--parts--map.html.twig' with { 'url': ('https://www.google.com/maps/place/' ~ content.field_indirizzo[0]["#context"].value|replace({' ': "+"}) ~ ',' ~ content.field_cap[0]["#context"].value) } %}
+
+</div>
