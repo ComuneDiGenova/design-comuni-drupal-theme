@@ -29,6 +29,7 @@ dependencies:
     - node.type.luogo
   module:
     - media_library
+    - media_library_edit
     - path
     - text
 id: node.luogo.default
@@ -110,7 +111,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_indirizzo:
     type: string_textfield
     weight: 17
