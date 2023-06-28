@@ -31,7 +31,7 @@ body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .it-header-wrapper.it-he
 /* Fix z-index Toolbar Amministrativa*/
 body header.it-header-wrapper,
 body header.it-header-wrapper.bs-is-fixed{
-	z-index:5 !important;
+	z-index:501 !important;
 }
 
 /* Fix default logo */
@@ -71,19 +71,7 @@ footer .it-brand-wrapper img {
 	margin-right: 8px;
 }
 
-/* Template blocco orari nel punto di contatto */
-.striato > *:nth-child(odd) { background-color: #f7f9fa; }
-.striato > *:nth-child(even) { background-color: #fff; }
-
-/* Gestione separatore automatico */
-.nascondi-ultimo:last-child  { display:none; }
-
-/* Evitare visualizzazione link ulteriori dettagli che punta a se stesso nelle card Indirizzo dentro il luogo */
-.card-indirizzo-luogo .read-more { display:none; }
-.card-indirizzo-luogo .pb-4 { padding-bottom:0 !important; }
-
-
-/* Ridefiniamo la funzionalità bootstrapo "row-cols" poichè bootstrap italia la sovrascrive*/
+/* Ridefiniamo la funzionalità bootstrap "row-cols" poichè bootstrap italia la sovrascrive*/
 .row-cols-auto>.card{flex:0 0 auto;width:auto}
 .row-cols-1>.card{flex:0 0 auto;width:100%}
 .row-cols-2>.card{flex:0 0 auto;width:50%}
@@ -91,9 +79,6 @@ footer .it-brand-wrapper img {
 .row-cols-4>.card{flex:0 0 auto;width:25%}
 .row-cols-5>.card{flex:0 0 auto;width:20%}
 .row-cols-6>.card{flex:0 0 auto;width:16.6666666667%}
-
-/* Rimuove titolo da homepage */
-main.homepage .container.page-name {display: none;}
 
 /* Stile cursore tutto ciò che porta a una modal (es. ricerca) */
 *[data-bs-toggle="modal"]{

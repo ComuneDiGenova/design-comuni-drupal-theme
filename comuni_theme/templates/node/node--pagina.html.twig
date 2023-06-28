@@ -1,33 +1,32 @@
 {% include directory ~ '/templates/breadcrumb/breadcrumb-pagina.html.twig' with {'content': content, 'label': label} %}
 
 {%
-set classes = [
-'node',
-'node--type-' ~ node.bundle|clean_class,
-node.isPromoted() ? 'node--promoted',
-node.isSticky() ? 'node--sticky',
-not node.isPublished() ? 'node--unpublished',
-view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-]
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
 %}
+{% set isFront = (path('<current>') == '/homepage') %}
 <article{{ attributes.addClass(classes) }}>
-    <div class="container page-name">
-        <div class="row justify-content-center row-shadow">
-            <div class="col-12 col-lg-10">
-                <div class="cmp-hero">
-                    <section class="it-hero-wrapper bg-white align-items-start">
-                        <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
-                            {% if not is_front %}
-                            <h1 class="text-black hero-title" data-element="page-name">{{ node.label }}</h1>
-                            {% endif %}
-                            {% if content.field_descrizione_breve %}
-                            <div class="hero-text">{{ content.field_descrizione_breve }}</div>
-                            {% endif %}
-                        </div>
-                    </section>
-                </div>
+  <div class="container page-name {% if isFront %}visually-hidden{% endif %}">
+    <div class="row justify-content-center row-shadow">
+      <div class="col-12 col-lg-10">
+        <div class="cmp-hero">
+          <section class="it-hero-wrapper bg-white align-items-start">
+            <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
+              <h1 class="text-black hero-title" data-element="page-name">{{ node.label }}</h1>
+              {% if content.field_descrizione_breve %}
+                <div class="hero-text">{{ content.field_descrizione_breve }}</div>
+              {% endif %}
             </div>
+          </section>
         </div>
+      </div>
     </div>
-    {{ content|without('field_descrizione_breve') }}
-    </article>
+  </div>
+  {{ content|without('field_descrizione_breve') }}
+</article>
