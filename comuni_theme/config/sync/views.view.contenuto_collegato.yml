@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - node.type.appuntamento
-    - node.type.article
     - node.type.dataset
     - node.type.documento_privato
     - node.type.documento_pubblico
@@ -17,7 +16,6 @@ dependencies:
     - node.type.messaggio
     - node.type.notizia
     - node.type.pagamento
-    - node.type.page
     - node.type.pagina
     - node.type.persona
     - node.type.pratica
@@ -218,8 +216,6 @@ display:
           value:
             all: all
             appuntamento: appuntamento
-            article: article
-            page: page
             dataset: dataset
             documento_privato: documento_privato
             documento_pubblico: documento_pubblico
