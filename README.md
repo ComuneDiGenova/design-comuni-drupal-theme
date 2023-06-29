@@ -100,16 +100,10 @@ npm install
 Nella cartella che precedentemente definita in $settings['file_private_path'] creare la sottocartella "content_synchronizer" ed eseguire i seguenti comandi per importare i contenuti:
 
 ~~~
-drush csci modules/custom/design-comuni-drupal-theme/content/Taxonomy.tar.gz
-drush cslim 1
-drush csci modules/custom/design-comuni-drupal-theme/content/Block.tar.gz
-drush cslim 2
-drush csci modules/custom/design-comuni-drupal-theme/content/SiteSetting.tar.gz
-drush cslim 3
 drush csci modules/custom/design-comuni-drupal-theme/content/Homepage.tar.gz
-drush cslim 4
-drush csci modules/custom/design-comuni-drupal-theme/content/Pages.tar.gz
-drush cslim 5
+drush cslim 1
+drush csci modules/custom/design-comuni-drupal-theme/content/Contenuti.tar.gz
+drush cslim 2
 ~~~
 
 Per importare i menu, dall'admin di Drupal andare nella sezione struttura e selezionare *Menu Export*, successivamente *Importa* e infine Import Menu Links e ripulire la cache corrente con il seguente comando drush:
