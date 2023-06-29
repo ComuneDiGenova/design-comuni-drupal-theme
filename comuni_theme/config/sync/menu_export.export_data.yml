@@ -922,18 +922,16 @@
     value: '1674174783'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Avvisi
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/tipi-di-notizia/avviso'
+    uri: 'internal:/tipi-di-notizia/avvisi'
     title: ''
     options: {  }
   external:
@@ -947,7 +945,7 @@
   parent:
     value: 'menu_link_content:57504d6c-5c93-4c23-8eef-d26829e68381'
   changed:
-    value: '1674600090'
+    value: '1688022306'
   default_langcode:
     value: '1'
   revision_default:
@@ -970,18 +968,16 @@
     value: '1674174784'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Comunicati
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/tipi-di-notizia/comunicato-stampa'
+    uri: 'internal:/tipi-di-notizia/comunicati'
     title: ''
     options: {  }
   external:
@@ -995,7 +991,7 @@
   parent:
     value: 'menu_link_content:57504d6c-5c93-4c23-8eef-d26829e68381'
   changed:
-    value: '1674600090'
+    value: '1688022302'
   default_langcode:
     value: '1'
   revision_default:
@@ -1018,18 +1014,16 @@
     value: '1674174876'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Notizie
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/tipi-di-notizia/news'
+    uri: 'internal:/tipi-di-notizia/notizie'
     title: ''
     options: {  }
   external:
@@ -1043,7 +1037,7 @@
   parent:
     value: 'menu_link_content:57504d6c-5c93-4c23-8eef-d26829e68381'
   changed:
-    value: '1674600090'
+    value: '1688022297'
   default_langcode:
     value: '1'
   revision_default:

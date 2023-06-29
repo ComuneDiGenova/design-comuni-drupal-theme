@@ -9,83 +9,64 @@
 ## **Installazione e supporto**
 #### **Come installare il tema**
 
-Prepara un'installazione in locale di Drupal con il seguente comando composer:
+Preparare un'installazione in locale di Drupal con il seguente comando composer:
 
 ~~~
 composer create-project drupal/recommended-project:^9 my_site_name_dir
 ~~~
 
-Procedi con il normale processo di installazione di Drupal in lingua italiana caricando il sito e seguendo le istruzioni nel browser
+Procedere con il normale processo di installazione di Drupal tramite browser, in lingua italiana, scegliendo il profilo "Minimale", seguendo le varie istruzioni nel browser.
 
-All'interno della cartella *modules* crea la cartella *custom*, poi al suo interno scarica il progetto con il seguente comando git:
+All'interno della cartella *modules* creare la cartella *custom*, poi al suo interno scaricare il progetto con il seguente comando git:
 
 ~~~
 git clone https://github.com/italia/design-comuni-drupal-theme.git
 ~~~
 
-Nel file *settings.php* che puoi trovare in */web/sites/default/settings.php* modifica la riga che contiene la chiave `$settings['config_sync_directory']` in questo modo:
+Nel file *settings.php* che si trova in */web/sites/default/settings.php* modificare la riga contenente la chiave `$settings['config_sync_directory']` in questo modo:
 
 ~~~
 $settings['config_sync_directory'] = 'modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync';
 ~~~
 
-Nello stesso file cerca la riga che contiene la chiave `$settings['file_private_path']` e modificala assegnandole una path a una cartella con permssi di scrittura al di fuori della cartella di Drupal:
+Nello stesso file cercare la riga che contiene la chiave `$settings['file_private_path']` e modificarla assegnandole una path a una cartella con permssi di scrittura al di fuori della cartella di Drupal:
 
 ~~~
 $settings['file_private_path'] = 'path/to/your/folder';
 ~~~
 
-Nella cartella principale di drupal che si è selezionata durante l'installazione con composer esegui il seguente comando:
+Nella cartella principale di drupal selezionata durante l'installazione con composer, eseguire il seguente comando:
 
 ~~~
-composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush drupal/menu_export:^1.3 drupal/chosen:^3.0 drupal/force_password_change:^2.0 drupal/smtp:^1.2 drupal/field_group:~3.4 drupal/time_field:^2.1 drupal/mix:^1.2 drupal/metatag:^1.23 drupal/textarea_widget_for_text:^1.2 drupal/conditional_fields:^4.0@alpha drupal/node_revision_delete:^2.0@alpha drupal/file_delete:^2.0 drupal/admin_toolbar:^3.4 drupal/viewsreference:^1.8 drupal/media_library_edit:^3.0 drupal/image_widget_crop:^2.4 drupal/extlink:^1.7 drupal/views_arg_order_sort:^2.0@alpha drupal/views_field_formatter:^4.0
+composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1 cweagans/composer-patches drupal/menu_trail_by_path:^2.0 drupal/better_exposed_filters:^6.0 drupal/better_social_sharing_buttons:^4.0 drupal/color_field:^3.0 drupal/content_synchronizer:^3.1 drupal/devel:^5.0 drupal/fontawesome:^2.25 drupal/jquery_ui_touch_punch:^1.1 drupal/node_read_time:^1.11 drupal/paragraphs:^1.15 drupal/pathauto:^1.11 drupal/quick_node_clone:^1.16 drupal/restui:^1.21 drupal/search_api:^1.29 drupal/site_settings:^1.20 drupal/twig_tweak:^3.2  drupal/views_show_more:^1.0 drush/drush drupal/menu_export:^1.4 drupal/chosen:^4.0 drupal/force_password_change:^2.0 drupal/smtp:^1.2 drupal/field_group:^3.4 drupal/time_field:^2.1 drupal/mix:^1.5 drupal/metatag:^2.0 drupal/textarea_widget_for_text:^1.2 drupal/conditional_fields:^4.0@alpha drupal/node_revision_delete:^2.0@alpha drupal/file_delete:^2.0 drupal/admin_toolbar:^3.4 drupal/viewsreference:^1.8 drupal/media_library_edit:^3.0 drupal/image_widget_crop:^2.4 drupal/extlink:^1.7 drupal/views_arg_order_sort:^2.0@alpha drupal/views_field_formatter:^4.0 drupal/formdazzle:^3.0
 ~~~
 
-Nel file *composer.json* inserire la seguente patch all'interno della chiave `extra`:
-
-~~~
-"enable-patching": true,
-    "patches": {
-      "drupal/views_show_more": {
-        "<After update to Drupal 9.3.0 on second click on Show more button page reloads and shows 404 error>": "https://www.drupal.org/files/issues/2021-12-17/views_show_more-3254931_4.patch"
-    }
-},
-~~~
-
-Sempre nella cartella principale di Drupal esegui l'installazione delle dipendenze di composer con il seguente comando:
-
-~~~
-composer install
-~~~
-
-Spostati alla pagina di admin del sito e attiva il modulo *Design Comuni Italia*, poi verifica che il modulo *Update Manager* sia disabilitato e nel caso contrario disinstallalo, quindi attiva il tema *Comuni Theme*
-
-Rimuovi gli shortcut nell'admin con il seguente comando drush:
-
-~~~
-drush entity:delete shortcut_set -y
-~~~
-
-Imposta l'*uuid* del sito con il seguente comando drush:
+Impostare l'*uuid* del sito con il seguente comando drush:
 
 ~~~
 drush cset system.site uuid 94d95421-24ae-4514-bfd3-7b52524a23cd -y
 ~~~
 
-Prepara la configurazione per la lingua italiana:
+Abilitare il modulo config con il seguente comando drush:
+
+~~~
+drush -y pm:enable config
+~~~
+
+Resettare la configurazione per la lingua:
 
 ~~~
 drush cdel language.entity.it
 ~~~
 
-Abilita il modulo "chosen" e scarica la libreria necessaria al modulo:
+Abilitare il modulo "chosen" per scaricare la libreria necessaria:
 
 ~~~
-drush pm:enable chosen
+drush -y pm:enable chosen
 drush chosenplugin
 ~~~
 
-Scarica librerie cropper (image_widget_crop):
+Scaricare libreria cropper (image_widget_crop):
 
 ~~~
 cd web/libraries/
@@ -95,38 +76,46 @@ curl https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js -o crop
 curl https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css -o cropper.min.css
 ~~~
 
-Importa i file di configurazione del sito con il seguentecomando drush (se necessario il comando può essere ripetuto più volte):
+Importare i file di configurazione del sito con il seguente comando drush (se necessario il comando può essere ripetuto più volte):
 
 ~~~
-drush cim --partial --source=modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync -y
+drush cim --source=modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync -y
 ~~~
 
-Dalla cartella *comuni-theme* lancia il comando 
+Dalla cartella *comuni-theme* lanciare il comando per installare Bootstrap Italia:
 
 ~~~
 npm install
 ~~~
 
-per installare Bootstrap Italia
+Nella cartella che precedentemente definita in $settings['file_private_path'] creare la sottocartella "content_synchronizer" ed eseguire i seguenti comandi per importare i contenuti:
 
-Nella sezione contenuti dall'admin di Drupal selezionare la tab *Content Synchronizer* ed importare i quattro bundle di contenuti, presenti nella cartella *content* della cartella del tema Design Comuni Drupal nel seguente ordine (se necessario aumentare il valore della dimensione massima consentita per gli upload in php.ini):
+~~~
+drush csci modules/custom/design-comuni-drupal-theme/content/Taxonomy.tar.gz
+drush cslim 1
+drush csci modules/custom/design-comuni-drupal-theme/content/Block.tar.gz
+drush cslim 2
+drush csci modules/custom/design-comuni-drupal-theme/content/SiteSetting.tar.gz
+drush cslim 3
+drush csci modules/custom/design-comuni-drupal-theme/content/Homepage.tar.gz
+drush cslim 4
+drush csci modules/custom/design-comuni-drupal-theme/content/Pages.tar.gz
+drush cslim 5
+~~~
 
-- Taxonomy
-- Block 
-- SiteSetting
-- Pages
-
-Per importare i menu, nella sezione struttura dall'admin di Drupal selezionare *Menu Export*, successivamente *Importa* e infine Import Menu Links.
-
-Ripulire la cache corrente con il seguente comando drush:
+Per importare i menu, dall'admin di Drupal andare nella sezione struttura e selezionare *Menu Export*, successivamente *Importa* e infine Import Menu Links e ripulire la cache corrente con il seguente comando drush:
 
 ~~~
 drush cr
 ~~~
 
-Importa il logo svg del comune spostando il file svg nella cartella */web/sites/default/files*, poi dalla sezione *site settings* dei contenuti modifica l'entry *Info Comune* e inserisci la path al file svg nella sezione *Logo svg*
+Importare il logo svg del comune spostando il file svg nella cartella *web/sites/default/files*, poi dalla sezione *site settings* dei contenuti modificare l'entry *Info Comune* e inserire il percorso al file svg nella sezione *Logo svg*
 
 Se necessario ripulire la cache di drupal un'ultima volta.
+
+~~~
+drush cr
+~~~
 
 #### Per popolare le pagine di secondo livello (le prime quattro sono necessarie al superamento della valutazione tramite "APP valutazione comuni")
 - In modifica della pagina Amministrazione, nel componente "Elenco card termini da un vocabolario", selezionare il vocabolario "Amministrazione".

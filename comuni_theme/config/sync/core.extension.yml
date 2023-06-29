@@ -98,10 +98,10 @@ module:
   formdazzle: 10
   views: 10
   paragraphs: 11
-  standard: 1000
+  minimal: 1000
 theme:
   stable: 0
   classy: 0
   comuni_theme: 0
   claro: 0
-profile: standard
+profile: minimal
