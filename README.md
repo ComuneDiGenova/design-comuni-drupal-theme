@@ -15,7 +15,7 @@ Preparare un'installazione in locale di Drupal con il seguente comando composer:
 composer create-project drupal/recommended-project:^9 my_site_name_dir
 ~~~
 
-Procedere con il normale processo di installazione di Drupal tramite browser, in lingua italiana, scegliendo il profilo "Minimale", seguendo le varie istruzioni nel browser.
+Procedere con il normale processo di installazione di Drupal tramite browser, in lingua italiana, scegliendo il profilo "Standard", seguendo le varie istruzioni nel browser.
 
 All'interno della cartella *modules* creare la cartella *custom*, poi al suo interno scaricare il progetto con il seguente comando git:
 
@@ -47,12 +47,6 @@ Impostare l'*uuid* del sito con il seguente comando drush:
 drush cset system.site uuid 94d95421-24ae-4514-bfd3-7b52524a23cd -y
 ~~~
 
-Abilitare il modulo config con il seguente comando drush:
-
-~~~
-drush -y pm:enable config
-~~~
-
 Resettare la configurazione per la lingua:
 
 ~~~
@@ -76,10 +70,25 @@ curl https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js -o crop
 curl https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css -o cropper.min.css
 ~~~
 
+Eseguire i seguenti comandi drush per preparare il sito all'importazione:
+
+~~~
+drush entity:delete node_type article
+drush entity:delete node_type page
+drush entity:delete shortcut_set
+drush pm:uninstall comment
+drush pm:uninstall tour
+drush pm:uninstall contact
+drush pm:enable comuni_module
+drush theme:enable comuni_theme
+drush -y cset system.theme default comuni_theme
+drush theme:uninstall olivero
+~~~
+
 Importare i file di configurazione del sito con il seguente comando drush (se necessario il comando può essere ripetuto più volte):
 
 ~~~
-drush cim --source=modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync -y
+drush cim --partial -y
 ~~~
 
 Dalla cartella *comuni-theme* lanciare il comando per installare Bootstrap Italia:
@@ -91,16 +100,10 @@ npm install
 Nella cartella che precedentemente definita in $settings['file_private_path'] creare la sottocartella "content_synchronizer" ed eseguire i seguenti comandi per importare i contenuti:
 
 ~~~
-drush csci modules/custom/design-comuni-drupal-theme/content/Taxonomy.tar.gz
-drush cslim 1
-drush csci modules/custom/design-comuni-drupal-theme/content/Block.tar.gz
-drush cslim 2
-drush csci modules/custom/design-comuni-drupal-theme/content/SiteSetting.tar.gz
-drush cslim 3
 drush csci modules/custom/design-comuni-drupal-theme/content/Homepage.tar.gz
-drush cslim 4
-drush csci modules/custom/design-comuni-drupal-theme/content/Pages.tar.gz
-drush cslim 5
+drush cslim 1
+drush csci modules/custom/design-comuni-drupal-theme/content/Contenuti.tar.gz
+drush cslim 2
 ~~~
 
 Per importare i menu, dall'admin di Drupal andare nella sezione struttura e selezionare *Menu Export*, successivamente *Importa* e infine Import Menu Links e ripulire la cache corrente con il seguente comando drush:

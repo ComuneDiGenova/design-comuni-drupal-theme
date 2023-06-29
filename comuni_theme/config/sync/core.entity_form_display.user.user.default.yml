@@ -40,3 +40,4 @@ content:
     third_party_settings: {  }
 hidden:
   langcode: true
+  user_picture: true
