@@ -92,7 +92,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: html_datetime
     third_party_settings: {  }
     weight: 4
     region: content
@@ -101,7 +101,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: html_datetime
     third_party_settings: {  }
     weight: 3
     region: content

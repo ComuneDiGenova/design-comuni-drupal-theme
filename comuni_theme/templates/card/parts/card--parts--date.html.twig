@@ -2,7 +2,11 @@
   <div class="d-flex gap-1 mb-1">
     <svg class="icon icon-xs flex-shrink-0 mt-1"><use href="#it-clock" xlink:href="#it-clock"></use></svg>
     <div class="title-xsmall-semi-bold text-uppercase">
-      {{ content|date('d') }} {{ content|date('F')|t({}, {'context' : 'Long month name'}) }} {{ content|date('Y') }}
+      {% if content|date('H') == '00' and content|date('i') == '00' and content|date('s') == '00' %}
+        {{ prefix ~ ' ' ~ content|date('U')|format_date('medium') }}
+      {% else %}
+        {{ prefix ~ ' ' ~ content|date('U')|format_date('medium_datetime') }}
+      {% endif %}
     </div>
   </div>
 {% endif %}

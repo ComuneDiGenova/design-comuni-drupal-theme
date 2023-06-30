@@ -12,7 +12,12 @@
         </div>
 
         {% include directory ~ '/templates/card/parts/card--parts--title.html.twig' with { 'label': label } %}
-        {% include directory ~ '/templates/card/parts/card--parts--date.html.twig' with { 'content': content.field_data_e_orario_di_inizio['#items'].0.value } %}
+        {% include directory ~ '/templates/card/parts/card--parts--date.html.twig' with { 'content': content.field_data_e_orario_di_inizio[0]["#text"], 'prefix': 'Da' } %}
+
+        {% if content.field_data_e_orario_di_inizio[0]["#text"] != content.field_data_e_orario_di_fine[0]["#text"] %}
+          {% include directory ~ '/templates/card/parts/card--parts--date.html.twig' with { 'content': content.field_data_e_orario_di_fine[0]["#text"], 'prefix': 'Fino a' } %}
+        {% endif %}
+
         {% include directory ~ '/templates/card/parts/card--parts--text.html.twig' with { 'content': content.field_descrizione_breve[0] } %}
         
       </div>
