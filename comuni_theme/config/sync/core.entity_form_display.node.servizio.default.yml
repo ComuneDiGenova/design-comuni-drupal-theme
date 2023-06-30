@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.servizio.field_cosa_serve
     - field.field.node.servizio.field_cosa_si_ottiene
     - field.field.node.servizio.field_costi
+    - field.field.node.servizio.field_costi_allegati
     - field.field.node.servizio.field_descrizione_breve
     - field.field.node.servizio.field_descrizione_estesa
     - field.field.node.servizio.field_documenti
@@ -64,6 +65,21 @@ third_party_settings:
         id: ''
         description: ''
         required_fields: true
+    group_costi:
+      children:
+        - field_costi
+        - field_costi_allegati
+      label: Costi
+      region: content
+      parent_name: ''
+      weight: 21
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
 id: node.servizio.default
 targetEntityType: node
 bundle: servizio
@@ -85,13 +101,13 @@ content:
     third_party_settings: {  }
   field_argomenti:
     type: options_select
-    weight: 31
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }
   field_backend_info:
     type: paragraphs
-    weight: 36
+    weight: 38
     region: content
     settings:
       title: Paragraph
@@ -110,13 +126,13 @@ content:
     third_party_settings: {  }
   field_business_events:
     type: options_select
-    weight: 33
+    weight: 35
     region: content
     settings: {  }
     third_party_settings: {  }
   field_canale_digitale:
     type: link_default
-    weight: 22
+    weight: 24
     region: content
     settings:
       placeholder_url: ''
@@ -124,7 +140,7 @@ content:
     third_party_settings: {  }
   field_casi_particolari:
     type: text_textarea
-    weight: 25
+    weight: 27
     region: content
     settings:
       rows: 5
@@ -138,7 +154,7 @@ content:
     third_party_settings: {  }
   field_codice_dell_ente_erogatore:
     type: string_textfield
-    weight: 34
+    weight: 36
     region: content
     settings:
       size: 60
@@ -154,7 +170,7 @@ content:
     third_party_settings: {  }
   field_condizioni_di_servizio_par:
     type: paragraphs
-    weight: 27
+    weight: 29
     region: content
     settings:
       title: Paragraph
@@ -173,7 +189,7 @@ content:
     third_party_settings: {  }
   field_contatti:
     type: entity_reference_autocomplete
-    weight: 28
+    weight: 30
     region: content
     settings:
       match_operator: CONTAINS
@@ -213,6 +229,25 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_costi_allegati:
+    type: paragraphs
+    weight: 21
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
   field_descrizione_breve:
     type: string_textarea
     weight: 12
@@ -231,7 +266,7 @@ content:
     third_party_settings: {  }
   field_documenti:
     type: entity_reference_autocomplete
-    weight: 30
+    weight: 32
     region: content
     settings:
       match_operator: CONTAINS
@@ -259,7 +294,7 @@ content:
     third_party_settings: {  }
   field_life_events:
     type: options_select
-    weight: 32
+    weight: 34
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -316,7 +351,7 @@ content:
             selector: ''
   field_procedure_collegate_esito:
     type: text_textarea
-    weight: 21
+    weight: 23
     region: content
     settings:
       rows: 5
@@ -332,7 +367,7 @@ content:
     third_party_settings: {  }
   field_settore_merceologico:
     type: string_textfield
-    weight: 35
+    weight: 37
     region: content
     settings:
       size: 60
@@ -357,7 +392,7 @@ content:
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
-    weight: 26
+    weight: 28
     region: content
     settings:
       rows: 5
@@ -365,7 +400,7 @@ content:
     third_party_settings: {  }
   field_unita_org_responsabile:
     type: entity_reference_autocomplete
-    weight: 29
+    weight: 31
     region: content
     settings:
       match_operator: CONTAINS
@@ -375,7 +410,7 @@ content:
     third_party_settings: {  }
   field_unita_organizzative:
     type: entity_reference_autocomplete
-    weight: 23
+    weight: 25
     region: content
     settings:
       match_operator: CONTAINS
@@ -385,7 +420,7 @@ content:
     third_party_settings: {  }
   field_vincoli:
     type: text_textarea
-    weight: 24
+    weight: 26
     region: content
     settings:
       rows: 5

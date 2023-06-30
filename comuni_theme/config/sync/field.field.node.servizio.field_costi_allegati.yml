@@ -1,0 +1,102 @@
+uuid: cc96b493-3e4f-442c-9d25-4ba9d9c25c4f
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_costi_allegati
+    - node.type.servizio
+    - paragraphs.paragraphs_type.documento
+    - paragraphs.paragraphs_type.link
+  module:
+    - entity_reference_revisions
+id: node.servizio.field_costi_allegati
+field_name: field_costi_allegati
+entity_type: node
+bundle: servizio
+label: 'Costi (allegati)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      documento: documento
+      link: link
+    negate: 0
+    target_bundles_drag_drop:
+      backend_info:
+        weight: 25
+        enabled: false
+      biglietto_evento:
+        weight: 26
+        enabled: false
+      blocco:
+        weight: 27
+        enabled: false
+      calendario:
+        weight: 28
+        enabled: false
+      card_assistenza:
+        weight: 29
+        enabled: false
+      card_in_evidenza:
+        weight: 30
+        enabled: false
+      dataset:
+        weight: 31
+        enabled: false
+      documento:
+        weight: 32
+        enabled: true
+      elenco_card_da_termine:
+        weight: 33
+        enabled: false
+      elenco_card_da_vocabolario:
+        weight: 34
+        enabled: false
+      fase_intitolata:
+        weight: 35
+        enabled: false
+      fase_semplice:
+        weight: 36
+        enabled: false
+      gallery:
+        weight: 37
+        enabled: false
+      link:
+        weight: 38
+        enabled: true
+      link_con_icona:
+        weight: 39
+        enabled: false
+      orari_giorni:
+        weight: 40
+        enabled: false
+      orari_ore:
+        weight: 41
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 42
+        enabled: false
+      punto_di_contatto:
+        weight: 43
+        enabled: false
+      ricerca:
+        weight: 44
+        enabled: false
+      richiesta_assistenza:
+        weight: 45
+        enabled: false
+      testo:
+        weight: 46
+        enabled: false
+      ultima_notizia:
+        weight: 47
+        enabled: false
+      vista:
+        weight: 48
+        enabled: false
+field_type: entity_reference_revisions

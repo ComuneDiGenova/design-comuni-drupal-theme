@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.servizio.field_cosa_serve
     - field.field.node.servizio.field_cosa_si_ottiene
     - field.field.node.servizio.field_costi
+    - field.field.node.servizio.field_costi_allegati
     - field.field.node.servizio.field_descrizione_breve
     - field.field.node.servizio.field_descrizione_estesa
     - field.field.node.servizio.field_documenti
@@ -272,6 +273,7 @@ hidden:
   field_canale_fisico: true
   field_codice_dell_ente_erogatore: true
   field_condizioni_di_servizio: true
+  field_costi_allegati: true
   field_immagine: true
   field_life_events: true
   field_meta_tag: true
