@@ -1,145 +1,34 @@
 <?php
 
-use Drupal\comuni_module\Controller\CalendarController;
-use Drupal\comuni_module\Controller\NodeController;
 use Drupal\comuni_module\Controller\ThemeController;
 
-/*function comuni_theme_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
-  // Work-around for a core bug affecting admin themes. See issue #943212.
-  if (isset($form_id)) {
-    return;
-  }
+/* SUGGESTION per aggiungere "view_mode" alle taxonomy */
+function comuni_theme_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+	$term = $variables['elements']['#taxonomy_term'];
+	$sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+	// Add view mode theme suggestions.
+	$suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+	$suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+	//$suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
 
-  //Hide default theme settings.
-  //$form['logo']['#access'] = FALSE;
-  $form['favicon']['#access'] = FALSE;
-  $form['theme_settings']['#access'] = FALSE;
-
-
-  $themeHandler = \Drupal::service('theme_handler');
-  $form['dettagli_comune'] = [
-    '#type' => 'details',
-    '#title' => t('Comune'),
-    //'#open' => TRUE,
-  ];
-  $form['dettagli_comune']['nome_regione'] = [
-    '#type' => 'textfield',
-    '#title' => t('Nome della regione'),
-    //'#description' => t('Nome della Regione di appartenenza.'),
-  ];
-  $form['dettagli_comune']['nome_comune'] = [
-    '#type' => 'textfield',
-    '#title' => t('Nome del comune'),
-    //'#description' => t('Nome del comune.'),
-  ];
-  $form['dettagli_comune']['motto'] = [
-    '#type' => 'textarea',
-    '#title' => t('Motto del comune'),
-    //'#description' => t('Motto del comune.'),
-  ];
-  $form['social'] = [
-    '#type' => 'details',
-    '#title' => t('Social'),
-    //'#open' => TRUE,
-  ];
-  $form['social']['twitter'] = [
-    '#type' => 'textfield',
-    '#title' => t('Twitter'),
-  ];
-  $form['social']['facebook'] = [
-    '#type' => 'textfield',
-    '#title' => t('Facebook'),
-  ];
-  $form['social']['youtube'] = [
-    '#type' => 'textfield',
-    '#title' => t('Youtube'),
-  ];
-  $form['social']['telegram'] = [
-    '#type' => 'textfield',
-    '#title' => t('Telegram'),
-  ];
-  $form['social']['whatsapp'] = [
-    '#type' => 'textfield',
-    '#title' => t('Whatsapp'),
-  ];
-  $form['social']['rss'] = [
-    '#type' => 'textfield',
-    '#title' => t('Rss'),
-  ];
-}*/
-
-/*function comuni_theme_preprocess_page(&$variables) {
-  if (\Drupal::service('path.matcher')->isFrontPage()) {
-    $variables['is_front'] = TRUE;
-    $variables['last_news'] = NodeController::getLastNews();
-    $variables['homepage'] = ThemeController::getHomepage();
-  }
-  $variables['current_path'] = \Drupal::service('path.current')->getPath();
-  $variables['current_uri'] = \Drupal::request()->getRequestUri();
-  $variables["info_comune"] = ThemeController::getInfoComune();
-  $variables['site_name'] = \Drupal::config('system.site')->get('name');
-  $variables['site_slogan'] = \Drupal::config('system.site')->get('slogan');
-}*/
-
-/*function comuni_theme_preprocess_region(&$variables) {
-  switch ($variables['region']) {
-    case "header":
-      $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
-      $variables['current_path'] = \Drupal::service('path.current')->getPath();
-      $variables['current_uri'] = \Drupal::request()->getRequestUri();
-      $variables["info_comune"] = ThemeController::getInfoComune();
-      break;
-    case "footer":
-      $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
-      $variables['current_path'] = \Drupal::service('path.current')->getPath();
-      $variables['current_uri'] = \Drupal::request()->getRequestUri();
-      $variables["info_comune"] = ThemeController::getInfoComune();
-      break;
-    case "content":
-      break;
-    default:
-      break;
-  }
-}*/
-
-/*function comuni_theme_preprocess_block(&$variables) {
-  switch ($variables['plugin_id']) {
-    case "views_block:comuni_calendario_eventi-calendario_eventi":
-      $calendar = CalendarController::getCalendarEvents();
-      $variables["calendario_eventi"] = $calendar;
-      break;
-    default:
-      break;
-  }
-}*/
-
-/*function comuni_module_preprocess_views_view(&$variables) {
-  switch ($variables['id']) {
-    case 'comuni_amministrazione':
-      break;
-    case 'frontpage':
-      break;
-    case 'comuni_calendario_eventi':
-    default:
-      break;
-  }
-}*/
-
-
+/*
 function comuni_module_preprocess_block(&$vars)
 {
     if ($vars['plugin_id'] == 'system_breadcrumb_block') {
         $vars['content']['#cache']['max-age'] = 0;
     }
-}
+}*/
 
+/*
 function comuni_module_preprocess_esplora(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof \Drupal\node\NodeInterface) {
     $variables['title'] = $node->title->value;
   }
-}
+}*/
 
+/*
 function comuni_module_preprocess_breadcrumb(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof \Drupal\node\NodeInterface) {
@@ -157,8 +46,9 @@ function comuni_module_preprocess_breadcrumb(&$variables) {
     $variables['pageTaxName'] = ucfirst(str_replace('-', ' ', $aliasSplit[1]));
     $variables['pageTaxUrl'] = '/' . $aliasSplit[1];
   }
-}
+}*/
 
+/*
 function comuni_theme_theme_suggestions_block_alter(array &$suggestions, array $variables)
 {
 	$element_id = $region_suggestion = $page_suggestion = '';
@@ -198,61 +88,4 @@ function comuni_theme_theme_suggestions_block_alter(array &$suggestions, array $
 		$new_suggestion = $variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id)));
 		$suggestions[] = preg_replace('/\d+/', '%', $new_suggestion);
 	}
-	
-}
-
-function comuni_theme_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
-  $term = $variables['elements']['#taxonomy_term'];
-  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
-  // Add view mode theme suggestions.
-  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
-  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
-  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
-  
-}
-
-
-/*
-function comuni_theme_theme_suggestions_alter(array &$suggestions, array $variables)
-{
-
-	$element_id = $region_suggestion = $page_suggestion = '';
-	
-	if ($current_path = (Drupal::service('path.current')->getPath())) {
-		$parts = explode('/', $current_path);
-		$page_suggestion = 'page';
-		foreach ($parts as $part) {
-			$page_suggestion .= '_'.$part;
-		}
-		$page_suggestion = str_replace('-', '_', $page_suggestion);
-	}
-
-	if ($variables['theme_hook_original'] == 'block' && !empty($variables['elements']['#id'])) {
-		$block = \Drupal\block\Entity\Block::load($variables['elements']['#id']);
-		$region = $block->getRegion();
-		$regionParts = explode('_', $region);
-		array_pop($regionParts);
-		if ($regionParts) {
-			$region_suggestion = '__' . implode('_', $regionParts) . '__' . $variables['elements']['#id'];
-		}
-	}
-
-	$element_id = (@$variables['elements']['#id'] ? $variables['elements']['#id'] : (@$variables['element']['#id'] ? $variables['element']['#id'] : ''));
-
-	if ($element_id && $page_suggestion && !in_array($variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id, $region_suggestion, $page_suggestion))), $suggestions)){
-		$new_suggestion = $variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id, $region_suggestion, $page_suggestion)));
-		$suggestions[] = preg_replace('/\d+/', '%', $new_suggestion);
-	}
-
-	if ($element_id && $region_suggestion && !in_array($variables['theme_hook_original'] . '__'	. implode('__',	array_filter(array($element_id,	$region_suggestion)), $suggestions))){
-		$new_suggestion = $variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id, $region_suggestion)));
-		$suggestions[] = preg_replace('/\d+/', '%', $new_suggestion);
-	}
-
-	if ($element_id && !in_array($variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id))), $suggestions)){
-		$new_suggestion = $variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id)));
-		$suggestions[] = preg_replace('/\d+/', '%', $new_suggestion);
-	}
-	
-}
-*/
+}*/

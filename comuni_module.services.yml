@@ -4,7 +4,3 @@ services:
     arguments: []
     tags:
       - { name: twig.extension }
-  create_menu.commands:
-    class: \Drupal\comuni_module\Commands\CreateMenuCommands
-    tags:
-      - { name: drush.command }
