@@ -17,5 +17,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:image_style'
-  handler_settings: {  }
+  handler_settings:
+    target_bundles: null
+    auto_create: false
 field_type: entity_reference

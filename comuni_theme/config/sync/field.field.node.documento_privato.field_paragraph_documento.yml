@@ -27,31 +27,76 @@ settings:
       link: link
     negate: 0
     target_bundles_drag_drop:
-      collection_multimediale:
-        weight: 10
+      backend_info:
+        weight: 25
         enabled: false
-      collegamenti_unita_organizzative:
-        weight: 11
+      biglietto_evento:
+        weight: 26
+        enabled: false
+      blocco:
+        weight: 27
+        enabled: false
+      calendario:
+        weight: 28
+        enabled: false
+      card_assistenza:
+        weight: 29
+        enabled: false
+      card_in_evidenza:
+        weight: 30
+        enabled: false
+      dataset:
+        weight: 31
         enabled: false
       documento:
         weight: 12
         enabled: true
-      elemento_immagine:
-        weight: 13
+      elenco_card_da_termine:
+        weight: 33
         enabled: false
-      elemento_video:
-        weight: 14
+      elenco_card_da_vocabolario:
+        weight: 34
         enabled: false
       fase_intitolata:
         weight: 15
         enabled: false
+      fase_semplice:
+        weight: 36
+        enabled: false
+      gallery:
+        weight: 37
+        enabled: false
       link:
         weight: 16
         enabled: true
-      links:
-        weight: 17
+      link_con_icona:
+        weight: 39
         enabled: false
-      testo_e_lista:
-        weight: 18
+      orari_giorni:
+        weight: 40
+        enabled: false
+      orari_ore:
+        weight: 41
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 42
+        enabled: false
+      punto_di_contatto:
+        weight: 43
+        enabled: false
+      ricerca:
+        weight: 44
+        enabled: false
+      richiesta_assistenza:
+        weight: 45
+        enabled: false
+      testo:
+        weight: 46
+        enabled: false
+      ultima_notizia:
+        weight: 47
+        enabled: false
+      vista:
+        weight: 48
         enabled: false
 field_type: entity_reference_revisions

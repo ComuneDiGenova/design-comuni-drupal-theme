@@ -25,26 +25,14 @@ settings:
       fase_semplice: fase_semplice
     negate: 0
     target_bundles_drag_drop:
-      amministrazione_ref_in_evidenza:
-        weight: 50
-        enabled: false
-      amministrazione_view_in_evidenza:
-        weight: 51
-        enabled: false
-      argomenti:
-        weight: 52
-        enabled: false
-      argomenti_in_evidenza:
-        weight: 53
-        enabled: false
-      argomenti_in_evidenza_card:
-        weight: 54
-        enabled: false
-      argomenti_in_evidenza_ct:
-        weight: 55
+      backend_info:
+        weight: 25
         enabled: false
       biglietto_evento:
         weight: 56
+        enabled: false
+      blocco:
+        weight: 27
         enabled: false
       calendario:
         weight: 57
@@ -52,35 +40,8 @@ settings:
       card_assistenza:
         weight: 58
         enabled: false
-      card_foto_gallery:
-        weight: 59
-        enabled: false
-      collection_multimediale:
-        weight: 60
-        enabled: false
-      collegamenti_unita_organizzative:
-        weight: 61
-        enabled: false
-      comuni_altri_argomenti:
-        weight: 62
-        enabled: false
-      container_argomenti_in_evidenza:
-        weight: 63
-        enabled: false
-      container_assistenza:
-        weight: 64
-        enabled: false
-      container_calendario:
-        weight: 65
-        enabled: false
-      container_contenuti_in_evidenza:
-        weight: 66
-        enabled: false
-      container_foto_gallery:
-        weight: 67
-        enabled: false
-      contenuto_allegati_per_tipo:
-        weight: 68
+      card_in_evidenza:
+        weight: 30
         enabled: false
       dataset:
         weight: 69
@@ -88,14 +49,11 @@ settings:
       documento:
         weight: 70
         enabled: false
-      elemento_video:
-        weight: 71
+      elenco_card_da_termine:
+        weight: 33
         enabled: false
-      esplora:
-        weight: 72
-        enabled: false
-      faq:
-        weight: 73
+      elenco_card_da_vocabolario:
+        weight: 34
         enabled: false
       fase_intitolata:
         weight: 74
@@ -103,17 +61,8 @@ settings:
       fase_semplice:
         weight: 49
         enabled: true
-      hero_immagine:
-        weight: 75
-        enabled: false
-      homepage_top_card:
-        weight: 76
-        enabled: false
-      homepage_top_cards:
-        weight: 77
-        enabled: false
-      intestazione_ricerca_e_preferiti:
-        weight: 78
+      gallery:
+        weight: 37
         enabled: false
       link:
         weight: 79
@@ -121,11 +70,11 @@ settings:
       link_con_icona:
         weight: 80
         enabled: false
-      link_esterno:
-        weight: 81
+      orari_giorni:
+        weight: 40
         enabled: false
-      links_con_icona:
-        weight: 82
+      orari_ore:
+        weight: 41
         enabled: false
       prenotazione_appuntamento:
         weight: 83
@@ -136,37 +85,16 @@ settings:
       ricerca:
         weight: 85
         enabled: false
-      ricerca_documenti_e_dati:
-        weight: 86
-        enabled: false
-      ricerca_novita:
-        weight: 87
-        enabled: false
-      ricerca_servizi:
-        weight: 88
-        enabled: false
       richiesta_assistenza:
         weight: 89
         enabled: false
-      servizi_ref_in_evidenza:
-        weight: 90
-        enabled: false
-      siti_tematici:
-        weight: 91
-        enabled: false
-      testo_e_lista:
-        weight: 92
-        enabled: false
-      titolo_descrizione_link:
-        weight: 93
-        enabled: false
-      titolo_e_descrizione:
-        weight: 94
+      testo:
+        weight: 46
         enabled: false
       ultima_notizia:
         weight: 95
         enabled: false
-      valutazione:
-        weight: 96
+      vista:
+        weight: 48
         enabled: false
 field_type: entity_reference_revisions

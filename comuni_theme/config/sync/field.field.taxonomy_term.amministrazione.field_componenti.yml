@@ -91,12 +91,6 @@ settings:
       ricerca:
         weight: 92
         enabled: false
-      ricerca_novita:
-        weight: 94
-        enabled: false
-      ricerca_servizi:
-        weight: 95
-        enabled: false
       richiesta_assistenza:
         weight: 96
         enabled: false

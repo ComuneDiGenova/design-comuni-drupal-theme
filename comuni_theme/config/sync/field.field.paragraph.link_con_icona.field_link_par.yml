@@ -55,9 +55,6 @@ settings:
       elenco_card_da_vocabolario:
         weight: 38
         enabled: false
-      faq:
-        weight: 39
-        enabled: false
       fase_intitolata:
         weight: 40
         enabled: false
@@ -87,15 +84,6 @@ settings:
         enabled: false
       ricerca:
         weight: 49
-        enabled: false
-      ricerca_documenti_e_dati:
-        weight: 50
-        enabled: false
-      ricerca_novita:
-        weight: 51
-        enabled: false
-      ricerca_servizi:
-        weight: 52
         enabled: false
       richiesta_assistenza:
         weight: 53

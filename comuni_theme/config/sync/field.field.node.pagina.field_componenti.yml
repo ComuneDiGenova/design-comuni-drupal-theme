@@ -107,12 +107,6 @@ settings:
       ricerca:
         weight: 58
         enabled: true
-      ricerca_novita:
-        weight: 87
-        enabled: true
-      ricerca_servizi:
-        weight: 88
-        enabled: true
       richiesta_assistenza:
         weight: 89
         enabled: true
