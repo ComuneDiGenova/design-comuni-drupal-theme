@@ -1,0 +1,24 @@
+{%
+  set classes = [
+    is_front ? 'homepage',
+  ]
+%}
+{{ page.header }}
+<main{{ attributes.addClass(classes) }}>
+  
+  {{ page.content.tabs }}
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        
+        <h2 class="mb-5">{{ page["#title"] }}</h2>
+        {{ page.content|without('tabs') }}
+        
+      </div>
+    </div>
+  </div>
+  {{ page.rating }}
+  {{ page.contacts }}
+</main>
+{{ page.footer }}
