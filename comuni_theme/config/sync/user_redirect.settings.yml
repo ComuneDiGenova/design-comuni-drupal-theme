@@ -1,0 +1,20 @@
+login:
+  administrator:
+    redirect_url: /
+    weight: '-10'
+  content_editor:
+    redirect_url: /
+    weight: '-9'
+  authenticated:
+    redirect_url: /
+    weight: '-8'
+logout:
+  administrator:
+    redirect_url: /
+    weight: '-10'
+  content_editor:
+    redirect_url: /
+    weight: '-9'
+  authenticated:
+    redirect_url: /
+    weight: '-8'
