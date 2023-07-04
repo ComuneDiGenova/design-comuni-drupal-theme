@@ -1060,24 +1060,22 @@
     value: '1674174928'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Eventi
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/eventi'
+    uri: 'entity:node/8'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '1'
+    value: '0'
   weight:
     value: '-49'
   expanded:
@@ -1085,7 +1083,7 @@
   parent:
     value: 'menu_link_content:a4f0f73b-fc92-46d8-af5e-35d136e548da'
   changed:
-    value: '1684422297'
+    value: '1688456496'
   default_langcode:
     value: '1'
   revision_default:
@@ -1108,24 +1106,22 @@
     value: '1674174945'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Luoghi
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/luoghi'
+    uri: 'entity:node/65'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '1'
+    value: '0'
   weight:
     value: '-50'
   expanded:
@@ -1133,7 +1129,7 @@
   parent:
     value: 'menu_link_content:a4f0f73b-fc92-46d8-af5e-35d136e548da'
   changed:
-    value: '1684422318'
+    value: '1688456505'
   default_langcode:
     value: '1'
   revision_default:
@@ -1963,32 +1959,29 @@
     value: '1674596233'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Amministrazione
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topleft
   link:
-    uri: 'internal:/amministrazione'
+    uri: 'entity:node/16'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '1'
+    value: '0'
   weight:
     value: '-50'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1675082735'
+    value: '1688052113'
   default_langcode:
     value: '1'
   revision_default:
