@@ -7,12 +7,12 @@ dependencies:
 id: luogo
 label: Luogo
 type: 'canonical_entities:node'
-pattern: '/luogo/[node:title]'
+pattern: '/vivere-il-comune/luoghi/[node:title]'
 selection_criteria:
-  26ed82b0-be64-42e6-aafd-c1307f1aaaa8:
+  7d62d34c-fe1e-4884-af8e-3ecd940234f2:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 26ed82b0-be64-42e6-aafd-c1307f1aaaa8
+    uuid: 7d62d34c-fe1e-4884-af8e-3ecd940234f2
     context_mapping:
       node: node
     bundles:
