@@ -276,10 +276,11 @@ content:
     weight: 2
     region: content
   field_tempi_e_scadenze:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 14
     region: content

@@ -1,0 +1,42 @@
+uuid: 5f3dc5f5-9ff7-4545-8633-8360592c1bcc
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.node.fase_del_servizio.field_data
+    - field.field.node.fase_del_servizio.field_descrizione_breve
+    - node.type.fase_del_servizio
+  module:
+    - datetime
+    - user
+id: node.fase_del_servizio.default
+targetEntityType: node
+bundle: fase_del_servizio
+mode: default
+content:
+  field_data:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: html_datetime
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descrizione_breve:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true
