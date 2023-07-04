@@ -1,34 +1,45 @@
-{% for i in 0..3 %}
-  {% set item = attribute(rows[0], "#rows") %}
-  {% set node = attribute(item[i], "#node") %}
-  {% if node is defined and node is not null %}
-    {% if loop.first %}
-      {% if node.field_immagine.target_id is defined and node.field_immagine.target_id is not empty %}
-        <p class="card-text px-2 pb-10 mb-10 d-flex">
-          <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}" alt="{{ node.field_immagine.entity.field_media_image.alt }}" class="me-3 rounded">
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+  <div{{ attributes.addClass(classes) }}>
+  {% for i in 0..3 %}
+    {% set item = attribute(rows[0], "#rows") %}
+    {% set node = attribute(item[i], "#node") %}
+    {% if node is defined and node is not null %}
+      {% if loop.first %}
+        {% if node.field_immagine.target_id is defined and node.field_immagine.target_id is not empty %}
+          <p class="card-text px-2 pb-10 mb-10 d-flex">
+            <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}" alt="{{ node.field_immagine.entity.field_media_image.alt }}" class="me-3 rounded">
+        {% else %}
+          <p class="card-text px-2 pb-10 mb-10">
+        {% endif %}
+      {% elseif loop.last %}
+        {% if node.field_immagine.target_id is defined and node.field_immagine.target_id is not empty %}
+          <p class="card-text px-2 d-flex">
+            <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}" alt="{{ node.field_immagine.entity.field_media_image.alt }}" class="me-3 rounded">
+        {% else %}
+          <p class="card-text px-2">
+        {% endif %}
       {% else %}
-        <p class="card-text px-2 pb-10 mb-10">
+        {% if node.field_immagine.target_id is defined and node.field_immagine.target_id is not empty %}
+          <p class="card-text px-2 pb-10 mb-10 d-flex">
+            <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}" alt="{{ node.field_immagine.entity.field_media_image.alt }}" class="me-3 rounded">
+        {% else %}
+          <p class="card-text px-2 pb-10 mb-10">
+        {% endif %}
       {% endif %}
-    {% elseif loop.last %}
-      {% if node.field_immagine.target_id is defined and node.field_immagine.target_id is not empty %}
-        <p class="card-text px-2 d-flex">
-          <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}" alt="{{ node.field_immagine.entity.field_media_image.alt }}" class="me-3 rounded">
-      {% else %}
-        <p class="card-text px-2">
-      {% endif %}
-    {% else %}
-      {% if node.field_immagine.target_id is defined and node.field_immagine.target_id is not empty %}
-        <p class="card-text px-2 pb-10 mb-10 d-flex">
-          <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}" alt="{{ node.field_immagine.entity.field_media_image.alt }}" class="me-3 rounded">
-      {% else %}
-        <p class="card-text px-2 pb-10 mb-10">
-      {% endif %}
+        <a href="{{path('entity.node.canonical', {'node': node.nid.value})}}" class="text-success">{{node.title.value}}</a>
+      </p>
     {% endif %}
-      <a href="{{path('entity.node.canonical', {'node': node.nid.value})}}" class="text-success">{{node.title.value}}</a>
-    </p>
-  {% endif %}
-{% endfor %}
+  {% endfor %}
 
-{% if pager %}
-  {{ pager }}
-{% endif %}
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
+</div>
