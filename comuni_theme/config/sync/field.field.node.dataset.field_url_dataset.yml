@@ -15,7 +15,7 @@ entity_type: node
 bundle: dataset
 label: 'URL Dataset'
 description: 'Link al dataset vero e proprio in un formato standard (es. csv)'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
