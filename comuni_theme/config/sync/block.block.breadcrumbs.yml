@@ -30,15 +30,10 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       appuntamento: appuntamento
-      article: article
       documento_privato: documento_privato
-      fase_del_servizio: fase_del_servizio
       messaggio: messaggio
-      notizia: notizia
       pagamento: pagamento
-      page: page
       pratica: pratica
-      servizio: servizio
       sito_tematico: sito_tematico
       ticket: ticket
       valutazione: valutazione
