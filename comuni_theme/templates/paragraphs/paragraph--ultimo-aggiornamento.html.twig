@@ -1,0 +1,10 @@
+<div class="container mb-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+      <div id="ultimo-aggiornamento">
+        <h5 class="font-serif">Ultimo aggiornamento</h5>
+        <p class="h6"><strong>{{ drupal_entity('node',paragraph.parent_id[0].value)['#node'].changed.value | format_date('medium')}}</strong></p>
+      </div>
+    </div>
+  </div>
+</div>

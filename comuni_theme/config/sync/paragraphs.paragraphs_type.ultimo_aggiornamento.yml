@@ -1,0 +1,10 @@
+uuid: ebe427e3-cc4e-430d-a8cc-09c39be388c3
+langcode: it
+status: true
+dependencies: {  }
+id: ultimo_aggiornamento
+label: 'Ultimo aggiornamento'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
