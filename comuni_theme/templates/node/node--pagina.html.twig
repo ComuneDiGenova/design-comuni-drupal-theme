@@ -17,7 +17,7 @@
       <div class="col-12 col-lg-10">
         <div class="cmp-hero">
           <section class="it-hero-wrapper bg-white align-items-start">
-            <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
+            <div class="it-hero-text-wrapper pt-0 ps-0 mb-5">
               <h1 class="text-black hero-title" data-element="page-name">{{ node.label }}</h1>
               {% if content.field_descrizione_breve %}
                 <div class="hero-text">{{ content.field_descrizione_breve }}</div>
@@ -29,4 +29,17 @@
     </div>
   </div>
   {{ content|without('field_descrizione_breve') }}
+
+  {% if not isFront and node.changed[0] %}
+  <div class="container mb-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+        <div id="ultimo-aggiornamento">
+          <h5 class="font-serif">Ultimo aggiornamento</h5>
+          <p class="h6"><strong>{{ node.changed[0].value | format_date('medium') }}</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 </article>

@@ -417,38 +417,29 @@
               </div>
             </div>
           {% endif %}
-          {% if content.field_ulteriori_informazioni[0] is not empty %}
-            <div class="mb-30">
-              <h2 class="mb-3">Ulteriori informazioni</h2>
+
+      {% if content.field_ulteriori_informazioni[0] is not empty %}
+        <article id="ulteriori-informazioni" class="it-page-section mb-5">
+          <h2 class="mb-3">Ulteriori informazioni</h2>
               <div class="mt-4">
                 <div class="callout">
                   <div class="callout-title">
-                      <svg class="icon">
-                          <use href="#it-info-circle" />
-                      </svg>
+                    <svg class="icon">
+                      <use href="#it-info-circle" />
+                    </svg>
                   </div>
                     {{ content.field_ulteriori_informazioni }}
                 </div>
               </div>
-            </div>
-          {% endif %}
-      </article>
-        {% if node.changed.value %}
-          <article id="ultimo-aggiornamento" class="it-page-section mb-30">
-            <h4 class="h6">Ultimo aggiornamento: <span class="h6 fw-normal">{{ node.changed.value|date("d/m/Y, H:i",'UTC') }}</span></h4>
-          </article>
-        {% endif %}
+        </article>
+      {% endif %}
+
+      {% if node.changed[0] %}
+        <article id="ultimo-aggiornamento" class="anchor-offset mt-5">
+          <h5 class="font-serif">Ultimo aggiornamento</h5>
+          <p class="h6"><strong>{{ node.changed[0].value | format_date('medium') }}</strong></p>
+        </article>
+      {% endif %}
     </section>
   </div>
 </div>
-
-
-{% if display_submitted %}
-  <footer>
-      {{ author_picture }}
-    <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-    </div>
-  </footer>
-{% endif %}

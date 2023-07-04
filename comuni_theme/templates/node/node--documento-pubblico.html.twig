@@ -22,13 +22,13 @@
               {% if content.field_data_inizio[0] is not empty %}
                 <div class="col">
                   <span class="d-block text-nowrap">Data di inizio validità:</span>
-                  <p class="fw-semibold text-nowrap">{% set field_data_inizio %}{{ content.field_data_inizio }}{% endset %}{{ field_data_inizio|striptags }}</p>
+                  <p class="fw-semibold text-nowrap">{{ content.field_data_inizio[0]["#text"]|date('U')|format_date('medium') }}</p>
                 </div>
               {% endif %}
               {% if content.field_data_protocollo[0] is not empty %}
                 <div class="col">
                   <span class="d-block text-nowrap">Data protocollo:</span>
-                  <p class="fw-semibold text-nowrap">{% set field_data_protocollo %}{{ content.field_data_protocollo }}{% endset %}{{ field_data_protocollo|striptags }}</p>
+                  <p class="fw-semibold text-nowrap">{{ content.field_data_protocollo[0]["#text"]|date('U')|format_date('medium') }}</p>
                 </div>
               {% endif %}
               {% if content.field_protocollo[0] is not empty %}
@@ -363,7 +363,7 @@
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="field_data_inizio">Data inizio</h2>
           <div class="richtext-wrapper lora">
-            {{ content.field_data_inizio }}
+            {{ content.field_data_inizio[0]["#text"]|date('U')|format_date('medium') }}
           </div>
         </section>
         {% endif %}
@@ -372,7 +372,7 @@
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="field_data_fine">Data fine</h2>
           <div class="richtext-wrapper lora">
-            {{ content.field_data_fine }}
+            {{ content.field_data_fine[0]["#text"]|date('U')|format_date('medium') }}
           </div>
         </section>
         {% endif %}
@@ -405,11 +405,25 @@
         {% endif %}
 
         {% if content.field_ulteriori_informazioni[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="more-info">Ulteriori informazioni</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_ulteriori_informazioni }}
-          </div>
+          <section id="ulteriori-informazioni" class="it-page-section mb-5">
+            <h2 class="mb-3" id="more-info">Ulteriori informazioni</h2>
+                <div class="mt-4">
+                  <div class="callout">
+                    <div class="callout-title">
+                      <svg class="icon">
+                        <use href="#it-info-circle" />
+                      </svg>
+                    </div>
+                      {{ content.field_ulteriori_informazioni }}
+                  </div>
+                </div>
+          </section>
+        {% endif %}
+
+        {% if node.changed[0] %}
+        <section id="ultimo-aggiornamento" class="anchor-offset mt-5">
+          <h5 class="font-serif">Ultimo aggiornamento</h5>
+          <p class="h6"><strong>{{ node.changed[0].value | format_date('medium') }}</strong></p>
         </section>
         {% endif %}
       </div>

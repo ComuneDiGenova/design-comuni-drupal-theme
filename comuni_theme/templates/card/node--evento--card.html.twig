@@ -12,10 +12,24 @@
         </div>
 
         {% include directory ~ '/templates/card/parts/card--parts--title.html.twig' with { 'label': label } %}
-        {% include directory ~ '/templates/card/parts/card--parts--date.html.twig' with { 'content': content.field_data_e_orario_di_inizio[0]["#text"], 'prefix': 'Da' } %}
+
+
+        {% set tmp = content.field_data_e_orario_di_inizio[0]["#text"]|date('U') %}
+        {% if tmp|date('H') == '00' and tmp|date('i') == '00' and tmp|date('s') == '00' %}
+          {% set tmp = 'Da ' ~ tmp|format_date('medium') %}
+        {% else %}
+          {% set tmp = 'Da ' ~ tmp|format_date('medium_datetime') %}
+        {% endif %}
+        {% include directory ~ '/templates/card/parts/card--parts--date.html.twig' with { 'content': tmp } %}
 
         {% if content.field_data_e_orario_di_inizio[0]["#text"] != content.field_data_e_orario_di_fine[0]["#text"] %}
-          {% include directory ~ '/templates/card/parts/card--parts--date.html.twig' with { 'content': content.field_data_e_orario_di_fine[0]["#text"], 'prefix': 'Fino a' } %}
+          {% set tmp = content.field_data_e_orario_di_fine[0]["#text"]|date('U') %}
+          {% if tmp|date('H') == '00' and tmp|date('i') == '00' and tmp|date('s') == '00' %}
+            {% set tmp = 'Fino a ' ~ tmp|format_date('medium') %}
+          {% else %}
+            {% set tmp = 'Fino a ' ~ tmp|format_date('medium_datetime') %}
+          {% endif %}
+          {% include directory ~ '/templates/card/parts/card--parts--date.html.twig' with { 'content': tmp } %}
         {% endif %}
 
         {% include directory ~ '/templates/card/parts/card--parts--text.html.twig' with { 'content': content.field_descrizione_breve[0] } %}

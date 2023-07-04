@@ -16,19 +16,19 @@
         <div class="col">
           <small>Data:</small>
           {% if content.field_data_della_notizia %}
-            {% if content.field_data_della_notizia['#items'].0.value %}
-              {% set data_val = content.field_data_della_notizia['#items'].0.value %}
+            {% if content.field_data_della_notizia[0] %}
+              {% set data_val = content.field_data_della_notizia[0]["#text"]|date('U') %}
             {% else %}
-              {% set data_val = node.getCreatedTime| date('Y-m-d') %}
+              {% set data_val = node.created[0].value %}
             {% endif %}
-            <p class="fw-semibold font-monospace">{{ data_val|date('d') }} {{ data_val|date('M')|monthEn2It(false)|lower }} {{ data_val|date('Y') }}</p>
+            <p class="fw-semibold font-monospace">{{ data_val|date('d') }} {{ data_val|date('M')|t|lower }} {{ data_val|date('Y') }}</p>
           {% endif %}
         </div>
-        {% if content.field_data_di_scadenza %}
+        {% if content.field_data_di_scadenza[0] %}
         <div class="col">
           <small>Data scadenza:</small>
-          {% set data_al = content.field_data_di_scadenza['#items'].0.value %}
-          <p class="fw-semibold font-monospace">{{ data_al|date('d') }} {{ data_al|date('M')|monthEn2It(false)|lower }} {{ data_al|date('Y') }}</p>
+          {% set data_al = content.field_data_di_scadenza[0]["#text"]|date('U') %}
+          <p class="fw-semibold font-monospace">{{ data_al|date('d') }} {{ data_al|date('M')|t|lower }} {{ data_al|date('Y') }}</p>
         </div>
         {% endif %}
         <div class="col">
@@ -294,13 +294,12 @@
         </article>
       {% endif %}
 
-      {% if node.changed.value %}
-        <article id="ultimo-aggiornamento" class="anchor-offset mt-5">
-          <h5 class="font-serif">Ultimo aggiornamento</h5>
-          <p class="h6"><strong>{{ node.changed.value|date("d/m/Y, H:i",'UTC') }}</strong></p>
-        </article>
+      {% if node.changed[0] %}
+      <article id="ultimo-aggiornamento" class="anchor-offset mt-5">
+        <h5 class="font-serif">Ultimo aggiornamento</h5>
+        <p class="h6"><strong>{{ node.changed[0].value | format_date('medium') }}</strong></p>
+      </article>
       {% endif %}
-
     </section>
   </div>
 </div>

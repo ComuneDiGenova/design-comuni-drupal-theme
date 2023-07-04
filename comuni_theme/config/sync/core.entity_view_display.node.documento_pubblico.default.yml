@@ -69,7 +69,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: olivero_medium
+      format_type: html_datetime
     third_party_settings: {  }
     weight: 14
     region: content
@@ -78,7 +78,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: olivero_medium
+      format_type: html_datetime
     third_party_settings: {  }
     weight: 13
     region: content
@@ -87,7 +87,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: olivero_medium
+      format_type: html_datetime
     third_party_settings: {  }
     weight: 3
     region: content

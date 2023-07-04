@@ -123,6 +123,13 @@
                             </a>
                           </li>
                           {% endif %}
+                          {% if content.field_ultima_modifica[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#field_ultima_modifica">
+                              <span class="title-medium">Ultima modifica</span>
+                            </a>
+                          </li>
+                          {% endif %}
                           {% if content.field_distribuzione[0] is not empty %}
                           <li class="nav-item">
                             <a class="nav-link" href="#field_distribuzione">
@@ -141,13 +148,6 @@
                           <li class="nav-item">
                             <a class="nav-link" href="#field_titolare">
                               <span class="title-medium">Titolare</span>
-                            </a>
-                          </li>
-                          {% endif %}
-                          {% if content.field_ultima_modifica[0] is not empty %}
-                          <li class="nav-item">
-                            <a class="nav-link" href="#field_ultima_modifica">
-                              <span class="title-medium">Ultima modifica</span>
                             </a>
                           </li>
                           {% endif %}
@@ -184,6 +184,15 @@
         </section>
         {% endif %}
 
+        {% if content.field_ultima_modifica[0] is not empty %}
+        <section class="it-page-section mb-30">
+          <h2 class="title-xxlarge mb-3" id="field_ultima_modifica">Ultima modifica</h2>
+          <div class="card-wrapper card-teaser-wrapper">
+            {{ content.field_ultima_modifica }}
+          </div>
+        </section>
+        {% endif %}
+
         {% if content.field_distribuzione[0] is not empty %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="field_distribuzione">Distribuzione</h2>
@@ -211,19 +220,14 @@
         </section>
         {% endif %}
 
-        {% if content.field_ultima_modifica[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="field_ultima_modifica">Ultima modifica</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_ultima_modifica }}
-          </div>
+        {% if node.changed[0] %}
+        <section id="ultimo-aggiornamento" class="anchor-offset mt-5">
+          <h5 class="font-serif">Ultimo aggiornamento</h5>
+          <p class="h6"><strong>{{ node.changed[0].value | format_date('medium') }}</strong></p>
         </section>
         {% endif %}
 
       </div>
-    
     </div>
-
-
   </div>
 </div>

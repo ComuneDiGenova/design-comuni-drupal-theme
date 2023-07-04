@@ -14,7 +14,7 @@
               Incaricato dal:
             </div>
             <div class="ps-2">
-              {% include directory ~ '/templates/card/parts/card--parts--date.html.twig' with { 'content': content.field_data_inizio_incarico['#items'].0.value } %}
+              {% include directory ~ '/templates/card/parts/card--parts--date.html.twig' with { 'content': content.field_data_inizio_incarico[0]["#text"]|date('U')|format_date('medium') } %}
             </div>
           {% endif %}
 

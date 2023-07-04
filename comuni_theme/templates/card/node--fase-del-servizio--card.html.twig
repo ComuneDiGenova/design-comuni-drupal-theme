@@ -1,0 +1,16 @@
+{% set tmp = content.field_data[0]["#text"] %}
+<div class="calendar-date">
+  <div class="calendar-date-day">
+    <small class="calendar-date-day__year">{{ tmp|date('Y') }}</small>
+    <span class="title-xxlarge-regular d-flex justify-content-center">{{ tmp|date('d') }}</span>
+    <small class="calendar-date-day__month">{{ tmp|date('M')|t|lower }}</small>
+  </div>
+  <div class="calendar-date-description rounded mb-4">
+    <div class="calendar-date-description-content">
+      <h3 class="title-medium-2 mb-0">{{ label }}</h3>
+      {% if content.field_descrizione_breve[0] is not empty %}
+        <p class="info-text mt-1 mb-0">{{ content.field_descrizione_breve[0]['#context'].value }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
