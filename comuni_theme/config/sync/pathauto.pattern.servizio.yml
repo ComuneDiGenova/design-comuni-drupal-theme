@@ -18,5 +18,5 @@ selection_criteria:
     bundles:
       servizio: servizio
 selection_logic: and
-weight: -5
+weight: 5
 relationships: {  }

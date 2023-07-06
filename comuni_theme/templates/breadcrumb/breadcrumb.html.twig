@@ -1,19 +1,144 @@
 {% if breadcrumb %}
-  <div class="cmp-breadcrumbs" role="navigation">
-    <nav class="breadcrumb-container" aria-label="breadcrumb">
-      <h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
-      <ol data-element="breadcrumb" class="breadcrumb p-0">
-      {% for item in breadcrumb %}
-        <li class="breadcrumb-item">
-          {% if item.url %}
-            <a href="{{ item.url }}">{{ item.text }}</a>
-            <span class="separator">/</span>
-          {% else %}
-            {{ item.text }}
+
+  {% if false %}
+  {% elseif contesto['view_id'] == 'taxonomy_term' %}
+    {% if contesto.taxonomy_term.vid.value[0].target_id == 'argomenti' %}
+      {% set breadcrumb = [breadcrumb|first]|merge([{'text' : 'Tutti gli argomenti','url' : '/tutti-gli-argomenti'}])|merge(breadcrumb|slice(1)) %}
+
+    {% elseif contesto.taxonomy_term.vid.value[0].target_id == 'categorie_dei_servizi' %}
+      {% set breadcrumb = [breadcrumb|first]|merge([{'text' : 'Servizi','url' : '/servizi'}])|merge(breadcrumb|slice(1)) %}
+
+    {% elseif contesto.taxonomy_term.vid.value[0].target_id == 'tipi_di_notizia' %}
+      {% set breadcrumb = [breadcrumb|first]|merge([{'text' : 'Novità','url' : '/novita'}])|merge(breadcrumb|slice(1)) %}
+
+    {% elseif contesto.taxonomy_term.vid.value[0].target_id == 'tipi_di_luogo' %}
+      {% set breadcrumb = [breadcrumb|first]|merge([{'text' : 'Vivere il comune','url' : '/vivere-il-comune'}])|merge([{'text' : 'Luoghi','url' : '/vivere-il-comune/luoghi'}])|merge(breadcrumb|slice(1)) %}
+
+    {% elseif contesto.taxonomy_term.vid.value[0].target_id == 'tipi_di_evento' %}
+      {% set breadcrumb = [breadcrumb|first]|merge([{'text' : 'Vivere il comune','url' : '/vivere-il-comune'}])|merge([{'text' : 'Eventi','url' : '/vivere-il-comune/eventi'}])|merge(breadcrumb|slice(1)) %}
+
+    {% elseif contesto.taxonomy_term.vid.value[0].target_id == 'temi_di_un_dataset' %}
+      {% set breadcrumb = [breadcrumb|first]|merge([{'text' : 'Amministrazione','url' : '/amministrazione'}])|merge([{'text' : 'Documenti e dati','url' : '/amministrazione/documenti-e-dati'}])|merge([{'text' : 'Dataset','url' : '/amministrazione/documenti-e-dati/dataset'}])|merge(breadcrumb|slice(1)) %}
+
+    {% elseif contesto.taxonomy_term.vid.value[0].target_id == 'tipi_di_documento' %}
+      {% if 'Dataset' == contesto.taxonomy_term.name[0].value %}
+        {% set breadcrumb = [breadcrumb|first]|merge([{'text' : 'Amministrazione','url' : '/amministrazione'}])|merge([{'text' : 'Documenti e dati','url' : '/amministrazione/documenti-e-dati'}])|merge(breadcrumb|slice(1)) %}
+      {% endif %}
+
+    {% elseif contesto.taxonomy_term.vid.value[0].target_id == 'tipi_unita_organizzativa' %}
+      {% if 'Aree amministrative' == contesto.taxonomy_term.name[0].value %}
+        {% for item in breadcrumb %}
+          {% if 'Strutture amministrative' == item.text %}
+            {% set breadcrumb = breadcrumb|slice(0, (loop.index - 1))|merge(breadcrumb|slice(loop.index, loop.length)) %}
           {% endif %}
-        </li>
-      {% endfor %}
-      </ol>
-    </nav>
+        {% endfor %}
+      {% endif %}
+      {% if 'Enti e fondazioni' == contesto.taxonomy_term.name[0].value %}
+        {% for item in breadcrumb %}
+          {% if 'Altre strutture' == item.text %}
+            {% set breadcrumb = breadcrumb|slice(0, (loop.index - 1))|merge(breadcrumb|slice(loop.index, loop.length)) %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% if 'Uffici' == contesto.taxonomy_term.name[0].value %}
+        {% for item in breadcrumb %}
+          {% if 'Strutture amministrative' == item.text %}
+            {% set breadcrumb = breadcrumb|slice(0, (loop.index - 1))|merge(breadcrumb|slice(loop.index, loop.length)) %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% set breadcrumb = [breadcrumb|first]|merge([{'text' : 'Amministrazione','url' : '/amministrazione'}])|merge(breadcrumb|slice(1)) %}
+    
+    {% elseif contesto.taxonomy_term.vid.value[0].target_id == 'tipi_di_incarico' %}
+      {% set breadcrumb = [breadcrumb|first]|merge([{'text' : 'Amministrazione','url' : '/amministrazione'}])|merge(breadcrumb|slice(1)) %}
+
+    {% endif %}
+
+  {% elseif contesto['node'] is not empty %}
+    {% if contesto['node'].type[0].target_id == 'servizio' %}
+      {% set tags = (contesto['node'].field_categoria_del_servizio|map(e => "#{e|view|render}"))|join(' - ') %}
+      {% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : {"#markup" : tags}}])|merge([breadcrumb|last]) %}
+
+    {% elseif contesto['node'].type[0].target_id == 'notizia' %}
+      {% set tags = (contesto['node'].field_tipo_di_notizia|map(e => "#{e|view|render}"))|join(' - ') %}
+      {% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : {"#markup" : tags}}])|merge([breadcrumb|last]) %}
+      
+    {% elseif contesto['node'].type[0].target_id == 'dataset' %}
+      {% set tags = (contesto['node'].field_temi|map(e => "#{e|view|render}"))|join(' - ') %}
+      {% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : {"#markup" : tags}}])|merge([breadcrumb|last]) %}
+      
+    {% elseif contesto['node'].type[0].target_id == 'documento_pubblico' %}
+      {% set tags = (contesto['node'].field_tipo_di_documento|map(e => "#{e|view|render}"))|join(' - ') %}
+      {% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : {"#markup" : tags}}])|merge([breadcrumb|last]) %}
+      
+    {% elseif contesto['node'].type[0].target_id == 'evento' %}
+      {% set tags = (contesto['node'].field_tipo_di_evento|map(e => "#{e|view|render}"))|join(' - ') %}
+      {% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : {"#markup" : tags}}])|merge([breadcrumb|last]) %}
+      
+    {% elseif contesto['node'].type[0].target_id == 'fase_del_servizio' %}
+      {% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : 'Fasi del servizio'}])|merge([breadcrumb|last]) %}
+    
+    {% elseif contesto['node'].type[0].target_id == 'incarico' %}
+      {% set tag_incarico = drupal_entity('taxonomy_term',contesto['node'].field_tipo_di_incarico.target_id) %}
+      
+      {% set tags = (contesto['node'].field_tipo_di_incarico|map(e => "#{e|view|render}"))|join(' - ') %}
+      {% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : {"#markup" : tags}}])|merge([breadcrumb|last]) %}
+      {% if tag_incarico["#taxonomy_term"].parent[0].value.target_id != 0 %}
+        {% set tag_incarico_parent = drupal_entity('taxonomy_term', tag_incarico["#taxonomy_term"].parent[0].target_id) %}
+        {% set parent_breadcrumb = { 'text' : tag_incarico_parent["#taxonomy_term"].name.value, 'url' : path('entity.taxonomy_term.canonical', { 'taxonomy_term': tag_incarico_parent["#taxonomy_term"].tid.value })  } %}
+        {% set breadcrumb = [breadcrumb|first]|merge([parent_breadcrumb])|merge(breadcrumb|slice(1)) %}
+      {% endif %}
+      
+      {% set breadcrumb = [breadcrumb|first]|merge([{'text' : 'Amministrazione','url' : '/amministrazione'}])|merge(breadcrumb|slice(1)) %}
+
+    {% elseif contesto['node'].type[0].target_id == 'luogo' %}
+      {% set tags = (contesto['node'].field_tipo_di_luogo|map(e => "#{e|view|render}"))|join(' - ') %}
+      {% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : {"#markup" : tags}}])|merge([breadcrumb|last]) %}
+
+    {% elseif contesto['node'].type[0].target_id == 'persona' %}
+      {% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : 'Persone'}])|merge([breadcrumb|last]) %}
+      
+    {% elseif contesto['node'].type[0].target_id == 'punto_di_contatto' %}
+      {% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : 'Punti di contatto'}])|merge([breadcrumb|last]) %}
+
+    {% elseif contesto['node'].type[0].target_id == 'unita_organizzativa' %}
+      {% set tmp = drupal_entity('taxonomy_term', contesto['node'].field_tipo_di_organizzazione[0].target_id)["#taxonomy_term"].name[0].value %}
+      {% if 'Consiglio comunale' == tmp %}
+        {% set breadcrumb = breadcrumb|slice(0, -1)|merge([breadcrumb|last]) %}
+      {% elseif 'Giunta comunale' == tmp %}
+        {% set breadcrumb = breadcrumb|slice(0, -1)|merge([breadcrumb|last]) %}
+      {#% else %#}
+        {#% set tags = (contesto['node'].field_tipo_di_organizzazione|map(e => "#{e|view|render}"))|join(' - ') %#}
+        {#% set breadcrumb = breadcrumb|slice(0, -1)|merge([{'text' : {"#markup" : tags}}])|merge([breadcrumb|last]) %#}
+
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+  <div class="container" id="main-container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="cmp-breadcrumbs" role="navigation">
+          <nav class="breadcrumb-container" aria-label="breadcrumb">
+            <ol data-element="breadcrumb" class="breadcrumb p-0">
+              {% for item in breadcrumb %}
+                <li class="breadcrumb-item">
+                  {% if item.url %}
+                    <a href="{{ item.url }}">{{ item.text }}</a>
+                  {% else %}
+                    {{ item.text }}
+                  {% endif %}
+                  {% if not loop.last %}
+                    <span class="separator">/</span>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
   </div>
+
 {% endif %}

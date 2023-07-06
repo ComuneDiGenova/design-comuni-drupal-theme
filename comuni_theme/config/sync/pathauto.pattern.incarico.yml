@@ -5,18 +5,18 @@ dependencies:
   module:
     - node
 id: incarico
-label: Incarico
+label: Incarichi
 type: 'canonical_entities:node'
-pattern: '/incarico/[node:title]'
+pattern: '/incarichi/[node:title]'
 selection_criteria:
-  b432ed97-da83-43af-9aea-0a7be42c2885:
+  94b6b6e0-2e92-4fff-b426-45862d2d1a74:
     id: 'entity_bundle:node'
     negate: false
-    uuid: b432ed97-da83-43af-9aea-0a7be42c2885
+    uuid: 94b6b6e0-2e92-4fff-b426-45862d2d1a74
     context_mapping:
       node: node
     bundles:
       incarico: incarico
 selection_logic: and
-weight: -5
+weight: -4
 relationships: {  }

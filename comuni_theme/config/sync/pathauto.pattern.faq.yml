@@ -1,0 +1,22 @@
+uuid: e41af2c2-c9f3-450e-9fa0-fb1bf2f0a5be
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: faq
+label: Faq
+type: 'canonical_entities:node'
+pattern: '/domande-frequenti/[node:title]'
+selection_criteria:
+  b7c11a09-2c5f-4a79-a402-3b2b515ea882:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: b7c11a09-2c5f-4a79-a402-3b2b515ea882
+    context_mapping:
+      node: node
+    bundles:
+      faq: faq
+selection_logic: and
+weight: -5
+relationships: {  }

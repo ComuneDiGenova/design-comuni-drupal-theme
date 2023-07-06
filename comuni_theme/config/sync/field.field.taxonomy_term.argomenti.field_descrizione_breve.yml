@@ -1,0 +1,19 @@
+uuid: 10e11bbc-34d1-46ca-b0fb-f9639ecc844e
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_descrizione_breve
+    - taxonomy.vocabulary.argomenti
+id: taxonomy_term.argomenti.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: taxonomy_term
+bundle: argomenti
+label: 'Descrizione breve'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

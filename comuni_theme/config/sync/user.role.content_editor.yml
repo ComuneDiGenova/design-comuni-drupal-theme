@@ -39,6 +39,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access media overview'
   - 'access toolbar'
   - 'administer url aliases'
   - 'clone appuntamento content'

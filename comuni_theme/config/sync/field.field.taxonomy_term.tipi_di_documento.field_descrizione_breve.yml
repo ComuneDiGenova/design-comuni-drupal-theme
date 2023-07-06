@@ -1,0 +1,19 @@
+uuid: f6ae49ad-3858-4167-9d1c-9c6dc529bb7a
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_descrizione_breve
+    - taxonomy.vocabulary.tipi_di_documento
+id: taxonomy_term.tipi_di_documento.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: taxonomy_term
+bundle: tipi_di_documento
+label: 'Descrizione breve'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

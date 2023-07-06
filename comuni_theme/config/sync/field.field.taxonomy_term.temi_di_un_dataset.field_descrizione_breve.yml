@@ -1,0 +1,19 @@
+uuid: 3b505600-0bb6-4e33-882a-942d03bf1a87
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_descrizione_breve
+    - taxonomy.vocabulary.temi_di_un_dataset
+id: taxonomy_term.temi_di_un_dataset.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: taxonomy_term
+bundle: temi_di_un_dataset
+label: 'Descrizione breve'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

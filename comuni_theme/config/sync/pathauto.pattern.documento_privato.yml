@@ -18,5 +18,5 @@ selection_criteria:
     bundles:
       documento_privato: documento_privato
 selection_logic: and
-weight: -5
+weight: -6
 relationships: {  }

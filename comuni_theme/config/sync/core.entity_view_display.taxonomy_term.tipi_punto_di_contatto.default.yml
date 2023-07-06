@@ -1,0 +1,15 @@
+uuid: b0276eb0-391f-428b-bb5e-b77b6196ea2d
+langcode: it
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tipi_punto_di_contatto
+id: taxonomy_term.tipi_punto_di_contatto.default
+targetEntityType: taxonomy_term
+bundle: tipi_punto_di_contatto
+mode: default
+content: {  }
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

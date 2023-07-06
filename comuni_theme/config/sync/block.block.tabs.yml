@@ -7,7 +7,7 @@ dependencies:
 id: tabs
 theme: comuni_theme
 region: content
-weight: -11
+weight: -6
 provider: null
 plugin: local_tasks_block
 settings:

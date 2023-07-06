@@ -1,0 +1,22 @@
+uuid: 19a58050-19e5-49d0-b6e4-8f7ab7b9db22
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: fase_del_servizio
+label: 'Fase del servizio'
+type: 'canonical_entities:node'
+pattern: '/servizi/fasi-del-servizio/[node:title]'
+selection_criteria:
+  579ccc03-46a9-47ec-bc4e-a92006e5e193:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 579ccc03-46a9-47ec-bc4e-a92006e5e193
+    context_mapping:
+      node: node
+    bundles:
+      fase_del_servizio: fase_del_servizio
+selection_logic: and
+weight: -5
+relationships: {  }

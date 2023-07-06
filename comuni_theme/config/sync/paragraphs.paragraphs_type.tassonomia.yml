@@ -1,0 +1,10 @@
+uuid: 6ffa8e04-d21b-4cc8-90f9-a8333cef0302
+langcode: it
+status: true
+dependencies: {  }
+id: tassonomia
+label: Tassonomia
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

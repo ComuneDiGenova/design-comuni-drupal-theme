@@ -7,10 +7,16 @@
   'note legali': 'legal-notes'
   } %}
   {% if menu_item is defined and menu_item is not null %}
-    <a href="{{ menu_item.url.toString }}"
-      data-element="{{ map[menu_item.title|lower] }}"
-    >{{ menu_item.title }}
-    </a>
+    {% if map[menu_item.title|lower] %}
+      <a href="{{ menu_item.url.toString }}"
+        data-element="{{ map[menu_item.title|lower] }}"
+      >{{ menu_item.title }}
+      </a>
+    {% else %}
+      <a href="{{ menu_item.url.toString }}"
+      >{{ menu_item.title }}
+      </a>
+    {% endif %}
   {% endif %}
   {# {{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }} #}
   {# {{ url(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }} #}

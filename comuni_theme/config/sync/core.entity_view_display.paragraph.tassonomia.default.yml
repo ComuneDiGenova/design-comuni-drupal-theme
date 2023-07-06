@@ -1,0 +1,22 @@
+uuid: 08322c79-857c-4159-a2f3-93fbe9466783
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tassonomia.field_tassonomia
+    - paragraphs.paragraphs_type.tassonomia
+id: paragraph.tassonomia.default
+targetEntityType: paragraph
+bundle: tassonomia
+mode: default
+content:
+  field_tassonomia:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

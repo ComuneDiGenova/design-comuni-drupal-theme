@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "*/novita/*\r\n*/eventi/*"
+    pages: "*/novita/notizie/*\r\n*/novita/comunicati/*\r\n*/novita/avvisi/*\r\n*/eventi/*"

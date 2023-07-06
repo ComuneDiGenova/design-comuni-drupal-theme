@@ -3,24 +3,34 @@ langcode: it
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card_in_evidenza.field_contenuti
+    - field.field.paragraph.card_in_evidenza.field_contenuti_o_tassonomie
     - field.field.paragraph.card_in_evidenza.field_tipi_di_stili
     - field.field.paragraph.card_in_evidenza.field_titolo
     - paragraphs.paragraphs_type.card_in_evidenza
+  module:
+    - paragraphs
 id: paragraph.card_in_evidenza.default
 targetEntityType: paragraph
 bundle: card_in_evidenza
 mode: default
 content:
-  field_contenuti:
-    type: entity_reference_autocomplete
-    weight: 2
+  field_contenuti_o_tassonomie:
+    type: paragraphs
+    weight: 3
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_tipi_di_stili:
     type: options_select

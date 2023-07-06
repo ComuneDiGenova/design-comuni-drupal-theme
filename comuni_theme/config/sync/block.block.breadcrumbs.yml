@@ -1,16 +1,15 @@
-uuid: 450158ea-a2c3-4dfa-8e13-3a03d14ad701
+uuid: 9aca1f3f-a3d8-4eb2-be0c-1664029abb81
 langcode: it
 status: true
 dependencies:
   module:
-    - node
     - system
   theme:
     - comuni_theme
 id: breadcrumbs
 theme: comuni_theme
 region: content
-weight: -10
+weight: -5
 provider: null
 plugin: system_breadcrumb_block
 settings:
@@ -22,18 +21,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/tutti-gli-argomenti/*\r\n/categorie-dei-servizi/*\r\n/vivere-il-comune/*\r\n/novita/*\r\n<front>\r\n*/risultati-ricerca*\r\n/servizi/*\r\n"
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      appuntamento: appuntamento
-      documento_privato: documento_privato
-      messaggio: messaggio
-      pagamento: pagamento
-      pratica: pratica
-      sito_tematico: sito_tematico
-      ticket: ticket
-      valutazione: valutazione
+    pages: '<front>'

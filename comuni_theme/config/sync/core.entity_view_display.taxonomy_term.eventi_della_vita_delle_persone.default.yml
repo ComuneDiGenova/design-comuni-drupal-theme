@@ -1,0 +1,15 @@
+uuid: 210f6b35-8d09-463b-8037-0642b92a9cb7
+langcode: it
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.eventi_della_vita_delle_persone
+id: taxonomy_term.eventi_della_vita_delle_persone.default
+targetEntityType: taxonomy_term
+bundle: eventi_della_vita_delle_persone
+mode: default
+content: {  }
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

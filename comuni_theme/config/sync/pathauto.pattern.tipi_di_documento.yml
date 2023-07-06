@@ -1,0 +1,22 @@
+uuid: 894a0607-ecc2-442e-b435-f1eec250a836
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: tipi_di_documento
+label: 'Tipi di documento'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/amministrazione/documenti-e-dati/[term:name]'
+selection_criteria:
+  c363454e-27b8-4881-9897-86035df8f05e:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: c363454e-27b8-4881-9897-86035df8f05e
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      tipi_di_documento: tipi_di_documento
+selection_logic: and
+weight: -5
+relationships: {  }

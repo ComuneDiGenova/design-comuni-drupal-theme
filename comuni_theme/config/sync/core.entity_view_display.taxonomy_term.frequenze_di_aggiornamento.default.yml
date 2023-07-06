@@ -1,0 +1,15 @@
+uuid: fbc407da-d59a-46cd-9e66-29d0801ee06d
+langcode: it
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.frequenze_di_aggiornamento
+id: taxonomy_term.frequenze_di_aggiornamento.default
+targetEntityType: taxonomy_term
+bundle: frequenze_di_aggiornamento
+mode: default
+content: {  }
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

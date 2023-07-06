@@ -1,0 +1,66 @@
+uuid: aeaabdb2-5f9f-4cb4-9d72-942765fa1a3e
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tipi_unita_organizzativa.field_componenti
+    - field.field.taxonomy_term.tipi_unita_organizzativa.field_descrizione_breve
+    - taxonomy.vocabulary.tipi_unita_organizzativa
+  module:
+    - paragraphs
+    - path
+id: taxonomy_term.tipi_unita_organizzativa.default
+targetEntityType: taxonomy_term
+bundle: tipi_unita_organizzativa
+mode: default
+content:
+  field_componenti:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_descrizione_breve:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true

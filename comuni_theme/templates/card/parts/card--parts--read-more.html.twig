@@ -1,5 +1,24 @@
+{% if data_element is not defined %}
+  {% if '/amministrazione' == path('<current>') %}
+    {% set data_element = 'management-category-link' %}
+  {% elseif '/servizi' == path('<current>') %}
+    {% set data_element = 'service-category-link' %}
+  {% elseif '/novita' == path('<current>') %}
+    {% set data_element = 'news-category-link' %}
+  {% elseif '/tutti-gli-argomenti' == path('<current>') %}
+    {% set data_element = 'topic-element' %}
+  {% endif %}
+{% endif %}
+
 {% if url is not empty %}
-  <a class="read-more gap-1 bottom-0 mb-3 start-0 ms-4" href="{{ url }}" data-element="{{ data_element }}">
+  <a class="read-more gap-1 bottom-0 mb-3 start-0 ms-4 d-none" title="{{ title }}" href="{{ url }}" {% if data_element %}data-element="{{ data_element }}"{% endif %}>
+    <span class="text">{{ title }}</span>
+    <svg class="icon flex-shrink-0 ms-0"><use href="#it-arrow-right" xlink:href="#it-arrow-right"></use></svg>
+  </a>
+{% endif %}
+
+{% if url is not empty %}
+  <a class="read-more gap-1 bottom-0 mb-3 start-0 ms-4" title="{{ title }}" href="{{ url }}">
     <span class="text">Vai alla pagina</span>
     <svg class="icon flex-shrink-0 ms-0"><use href="#it-arrow-right" xlink:href="#it-arrow-right"></use></svg>
   </a>

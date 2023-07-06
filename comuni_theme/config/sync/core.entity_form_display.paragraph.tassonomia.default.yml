@@ -1,0 +1,25 @@
+uuid: 0a589dac-8aec-45f8-8044-9bffdf45dbf3
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tassonomia.field_tassonomia
+    - paragraphs.paragraphs_type.tassonomia
+id: paragraph.tassonomia.default
+targetEntityType: paragraph
+bundle: tassonomia
+mode: default
+content:
+  field_tassonomia:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,49 @@
+{% if "argomenti" == term.bundle %}
+  {% set icon = "it-bookmark" %}
+{% elseif "categorie_dei_servizi" == term.bundle %}
+  {% set icon = "it-settings" %}
+{% elseif "documenti_albo_pretorio" == term.bundle %}
+  {% set icon = "it-file" %}
+{% elseif "temi_di_un_dataset" == term.bundle %}
+  {% set icon = "it-chart-line" %}
+{% elseif "tipi_di_documento" == term.bundle %}
+  {% set icon = "it-file" %}
+{% elseif "tipi_di_evento" == term.bundle %}
+  {% set icon = "it-calendar" %}
+{% elseif "tipi_di_incarico" == term.bundle %}
+  {% set icon = "it-card" %}
+{% elseif "tipi_di_luogo" == term.bundle %}
+  {% set icon = "it-pin" %}
+{% elseif "tipi_di_notizia" == term.bundle %}
+  {% set icon = "it-horn" %}
+{% elseif "tipi_unita_organizzativa" == term.bundle %}
+  {% set icon = "it-pa" %}
+{% endif %}
+
+<div class="card py-3 px-4 h-100 rounded shadow-sm border border-light">{{ title_suffix }}
+
+  <div class="container px-0">
+    <div class="row mx-0 gap-3">
+      <div class="col px-0">
+
+        {% if name[0] is not empty %}
+          <div class="category-top mb-3 d-flex gap-2">
+            <svg class="icon flex-shrink-0"><use href="#{{ icon}}" xlink:href="#{{ icon }}"></use></svg>
+            <h3 class="title-xsmall-semi-bold mt-1 fw-semibold text-uppercase">
+              {{ name[0]["#context"].value }}
+            </h3>
+          </div>
+        {% endif %}
+
+        {% include directory ~ '/templates/card/parts/card--parts--text.html.twig' with { 'content': content.field_descrizione_breve[0]["#context"].value } %}
+        
+      </div>
+    </div>
+  </div>
+  
+  {% include directory ~ '/templates/card/parts/card--parts--read-more.html.twig' with { 'url': url, 'title': name[0]["#context"].value } %}
+
+  <div class="mt-4">
+    {{ drupal_view('elenco_chip_termini_da_un_termine', 'default', term.bundle, term.id) }}
+  </div>
+</div>

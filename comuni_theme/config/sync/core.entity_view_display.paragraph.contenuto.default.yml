@@ -1,0 +1,22 @@
+uuid: 5ff3a04f-1b71-43fe-ade1-a081217c7622
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contenuto.field_contenuto
+    - paragraphs.paragraphs_type.contenuto
+id: paragraph.contenuto.default
+targetEntityType: paragraph
+bundle: contenuto
+mode: default
+content:
+  field_contenuto:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

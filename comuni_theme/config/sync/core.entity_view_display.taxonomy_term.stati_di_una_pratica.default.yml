@@ -1,0 +1,15 @@
+uuid: e90d0d01-3515-41e2-b161-7b8568d9711e
+langcode: it
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.stati_di_una_pratica
+id: taxonomy_term.stati_di_una_pratica.default
+targetEntityType: taxonomy_term
+bundle: stati_di_una_pratica
+mode: default
+content: {  }
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

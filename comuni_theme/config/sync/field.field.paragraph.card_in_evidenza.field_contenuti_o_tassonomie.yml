@@ -1,0 +1,111 @@
+uuid: 6beb3ae9-485c-4e0d-a069-039e5bd827e6
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contenuti_o_tassonomie
+    - paragraphs.paragraphs_type.card_in_evidenza
+    - paragraphs.paragraphs_type.contenuto
+    - paragraphs.paragraphs_type.tassonomia
+  module:
+    - entity_reference_revisions
+id: paragraph.card_in_evidenza.field_contenuti_o_tassonomie
+field_name: field_contenuti_o_tassonomie
+entity_type: paragraph
+bundle: card_in_evidenza
+label: 'Contenuti o tassonomie'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      contenuto: contenuto
+      tassonomia: tassonomia
+    negate: 0
+    target_bundles_drag_drop:
+      backend_info:
+        weight: 28
+        enabled: false
+      biglietto_evento:
+        weight: 29
+        enabled: false
+      blocco:
+        weight: 30
+        enabled: false
+      calendario:
+        weight: 31
+        enabled: false
+      card_assistenza:
+        weight: 32
+        enabled: false
+      card_in_evidenza:
+        weight: 33
+        enabled: false
+      contenuto:
+        weight: 34
+        enabled: true
+      dataset:
+        weight: 35
+        enabled: false
+      documento:
+        weight: 36
+        enabled: false
+      elenco_card_da_termine:
+        weight: 37
+        enabled: false
+      elenco_card_da_vocabolario:
+        weight: 38
+        enabled: false
+      fase_intitolata:
+        weight: 39
+        enabled: false
+      fase_semplice:
+        weight: 40
+        enabled: false
+      gallery:
+        weight: 41
+        enabled: false
+      link:
+        weight: 42
+        enabled: false
+      link_con_icona:
+        weight: 43
+        enabled: false
+      orari_giorni:
+        weight: 44
+        enabled: false
+      orari_ore:
+        weight: 45
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 46
+        enabled: false
+      punto_di_contatto:
+        weight: 47
+        enabled: false
+      ricerca:
+        weight: 48
+        enabled: false
+      richiesta_assistenza:
+        weight: 49
+        enabled: false
+      tassonomia:
+        weight: 50
+        enabled: true
+      testo:
+        weight: 51
+        enabled: false
+      ultima_notizia:
+        weight: 52
+        enabled: false
+      ultimo_aggiornamento:
+        weight: 53
+        enabled: false
+      vista:
+        weight: 54
+        enabled: false
+field_type: entity_reference_revisions

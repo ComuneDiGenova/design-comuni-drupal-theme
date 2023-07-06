@@ -1,0 +1,10 @@
+uuid: a16b2e31-72f7-48e2-9764-bfc95b4b5de7
+langcode: it
+status: true
+dependencies: {  }
+id: contenuto
+label: Contenuto
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

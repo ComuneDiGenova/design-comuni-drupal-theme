@@ -1,0 +1,36 @@
+uuid: c39c8c3b-72d3-4287-a534-426b70cda971
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tipi_unita_organizzativa.field_componenti
+    - field.field.taxonomy_term.tipi_unita_organizzativa.field_descrizione_breve
+    - taxonomy.vocabulary.tipi_unita_organizzativa
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.tipi_unita_organizzativa.default
+targetEntityType: taxonomy_term
+bundle: tipi_unita_organizzativa
+mode: default
+content:
+  field_componenti:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descrizione_breve:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

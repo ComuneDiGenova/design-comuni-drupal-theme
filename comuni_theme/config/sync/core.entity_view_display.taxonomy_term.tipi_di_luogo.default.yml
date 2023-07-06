@@ -1,0 +1,24 @@
+uuid: edeefe07-6eb1-4836-88fb-420f3eaae9c2
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tipi_di_luogo.field_descrizione_breve
+    - taxonomy.vocabulary.tipi_di_luogo
+id: taxonomy_term.tipi_di_luogo.default
+targetEntityType: taxonomy_term
+bundle: tipi_di_luogo
+mode: default
+content:
+  field_descrizione_breve:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

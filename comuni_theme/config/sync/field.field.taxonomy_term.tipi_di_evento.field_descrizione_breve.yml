@@ -1,0 +1,19 @@
+uuid: 5559b7f3-c76a-41a3-a87e-6a1e4f1b688a
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_descrizione_breve
+    - taxonomy.vocabulary.tipi_di_evento
+id: taxonomy_term.tipi_di_evento.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: taxonomy_term
+bundle: tipi_di_evento
+label: 'Descrizione breve'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

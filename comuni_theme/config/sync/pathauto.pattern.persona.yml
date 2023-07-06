@@ -5,18 +5,18 @@ dependencies:
   module:
     - node
 id: persona
-label: Persona
+label: Persone
 type: 'canonical_entities:node'
-pattern: '/persona/[node:title]'
+pattern: '/persone/[node:title]'
 selection_criteria:
-  4e6da197-1114-4341-a207-7df6f363dfc6:
+  7b6cb1fb-b7c4-4e10-9b71-25c15f070e05:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 4e6da197-1114-4341-a207-7df6f363dfc6
+    uuid: 7b6cb1fb-b7c4-4e10-9b71-25c15f070e05
     context_mapping:
       node: node
     bundles:
       persona: persona
 selection_logic: and
-weight: -5
+weight: 2
 relationships: {  }

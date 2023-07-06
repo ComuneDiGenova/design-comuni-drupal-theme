@@ -8,19 +8,11 @@ dependencies:
     - taxonomy.vocabulary.colore
   module:
     - color_field
-    - text
 id: taxonomy_term.colore.default
 targetEntityType: taxonomy_term
 bundle: colore
 mode: default
 content:
-  description:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_colore:
     type: color_field_formatter_text
     label: above
@@ -28,7 +20,7 @@ content:
       format: hex
       opacity: true
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_esadecimale:
     type: string
@@ -36,8 +28,9 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
+  description: true
   langcode: true
   search_api_excerpt: true

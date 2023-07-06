@@ -7,16 +7,16 @@ dependencies:
 id: notizia
 label: Notizia
 type: 'canonical_entities:node'
-pattern: '/novita/[node:title]'
+pattern: '/novita/[node:field_tipo_di_notizia]/[node:title]'
 selection_criteria:
-  2a249769-2778-4afc-8905-b57536488843:
+  7e57b448-261b-4e47-91f8-4c90b8db7433:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 2a249769-2778-4afc-8905-b57536488843
+    uuid: 7e57b448-261b-4e47-91f8-4c90b8db7433
     context_mapping:
       node: node
     bundles:
       notizia: notizia
 selection_logic: and
-weight: -5
+weight: -1
 relationships: {  }

@@ -1,0 +1,43 @@
+uuid: 9710eeef-e9dd-4437-9ed1-f7945e81a3b9
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tipi_di_documento.field_componenti
+    - field.field.taxonomy_term.tipi_di_documento.field_descrizione_breve
+    - taxonomy.vocabulary.tipi_di_documento
+  module:
+    - entity_reference_revisions
+    - text
+id: taxonomy_term.tipi_di_documento.default
+targetEntityType: taxonomy_term
+bundle: tipi_di_documento
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_componenti:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descrizione_breve:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

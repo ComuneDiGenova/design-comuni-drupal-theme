@@ -3,21 +3,22 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.categorie_dei_servizi.field_descrizione_breve
     - taxonomy.vocabulary.categorie_dei_servizi
-  module:
-    - text
 id: taxonomy_term.categorie_dei_servizi.default
 targetEntityType: taxonomy_term
 bundle: categorie_dei_servizi
 mode: default
 content:
-  description:
-    type: text_default
+  field_descrizione_breve:
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  description: true
   langcode: true
   search_api_excerpt: true

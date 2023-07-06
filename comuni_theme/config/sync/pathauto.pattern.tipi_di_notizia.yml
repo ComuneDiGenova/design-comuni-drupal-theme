@@ -1,0 +1,22 @@
+uuid: 1d533c01-cdd0-45b0-94ce-ecd75548ec02
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: tipi_di_notizia
+label: 'Tipi di notizia'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/novita/[term:name]'
+selection_criteria:
+  ef7f5a9f-0fbf-45e4-aefb-6a38d6147ee1:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: ef7f5a9f-0fbf-45e4-aefb-6a38d6147ee1
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      tipi_di_notizia: tipi_di_notizia
+selection_logic: and
+weight: -5
+relationships: {  }

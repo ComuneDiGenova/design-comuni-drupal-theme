@@ -1,0 +1,25 @@
+uuid: 6394bb55-160e-49c6-9dca-0dc1170f488f
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contenuto.field_contenuto
+    - paragraphs.paragraphs_type.contenuto
+id: paragraph.contenuto.default
+targetEntityType: paragraph
+bundle: contenuto
+mode: default
+content:
+  field_contenuto:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

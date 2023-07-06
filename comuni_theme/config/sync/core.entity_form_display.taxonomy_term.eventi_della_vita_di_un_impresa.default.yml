@@ -1,0 +1,43 @@
+uuid: d5712b3f-23e9-4d6d-90a6-b31aced61d76
+langcode: it
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.eventi_della_vita_di_un_impresa
+  module:
+    - path
+id: taxonomy_term.eventi_della_vita_di_un_impresa.default
+targetEntityType: taxonomy_term
+bundle: eventi_della_vita_di_un_impresa
+mode: default
+content:
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true

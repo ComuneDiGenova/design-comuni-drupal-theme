@@ -1,0 +1,22 @@
+uuid: d39846a1-ddb2-479a-82f2-8a848cc8c43a
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: tipi_di_unita_organizzativa
+label: 'Tipi di unità organizzativa'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/amministrazione/[term:name]'
+selection_criteria:
+  7cb54bae-7252-4429-a116-e8ce259c1d9a:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 7cb54bae-7252-4429-a116-e8ce259c1d9a
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      tipi_unita_organizzativa: tipi_unita_organizzativa
+selection_logic: and
+weight: -5
+relationships: {  }

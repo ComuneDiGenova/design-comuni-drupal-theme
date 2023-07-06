@@ -5,18 +5,18 @@ dependencies:
   module:
     - node
 id: documento_pubblico
-label: 'Documento pubblico'
+label: 'Documenti pubblici'
 type: 'canonical_entities:node'
-pattern: '/documento-pubblico/[node:title]'
+pattern: '/amministrazione/documenti-e-dati/[node:title]'
 selection_criteria:
-  4dd86ce5-9f70-453d-aced-6c6337996331:
+  a79ce72c-bb21-49d7-b69f-0d2945dab129:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 4dd86ce5-9f70-453d-aced-6c6337996331
+    uuid: a79ce72c-bb21-49d7-b69f-0d2945dab129
     context_mapping:
       node: node
     bundles:
       documento_pubblico: documento_pubblico
 selection_logic: and
-weight: -5
+weight: -7
 relationships: {  }

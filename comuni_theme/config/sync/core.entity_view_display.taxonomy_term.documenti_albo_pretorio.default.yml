@@ -1,0 +1,15 @@
+uuid: 26886ed9-b31c-48fe-ad39-cf244336479f
+langcode: it
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.documenti_albo_pretorio
+id: taxonomy_term.documenti_albo_pretorio.default
+targetEntityType: taxonomy_term
+bundle: documenti_albo_pretorio
+mode: default
+content: {  }
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

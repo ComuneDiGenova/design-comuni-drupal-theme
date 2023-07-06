@@ -6,10 +6,16 @@
     {% elseif menu_item.url.routeName is same as "<button>" %}
         <button type="button">{{ menu_item.title }}</button>
     {% else %}
-        <a class="nav-link {{ menu_item.in_active_trail ? " active" : "" }}"
-          href="{{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }}"
-          data-element="{{ 'tutti gli argomenti' in menu_item.title|lower ? "all-topics" : "" }}"
-        ><span class="{{ 'tutti gli argomenti' in menu_item.title|lower ? "fw-bold" : ""  }}">{{ menu_item.title }}</span></a>
+        {% if 'tutti gli argomenti' in menu_item.title|lower %}
+            <a class="nav-link {{ menu_item.in_active_trail ? " active" : "" }}"
+            href="{{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }}"
+            data-element="{{ 'tutti gli argomenti' in menu_item.title|lower ? "all-topics" : "" }}"
+            ><span class="{{ 'tutti gli argomenti' in menu_item.title|lower ? "fw-bold" : ""  }}">{{ menu_item.title }}</span></a>
+        {% else %}
+            <a class="nav-link {{ menu_item.in_active_trail ? " active" : "" }}"
+            href="{{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }}"
+            ><span class="{{ 'tutti gli argomenti' in menu_item.title|lower ? "fw-bold" : ""  }}">{{ menu_item.title }}</span></a>
+        {% endif%}
     {% endif %}
 {% endmacro %}
 

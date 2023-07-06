@@ -29,6 +29,7 @@
   {% endfor %}    
 {% endfor %}
 
+{% if content.field_contenuti[0] is not empty %}
 <section{{attributes.addClass(classes).addClass(wrapper_classes)}}>
   <div class="{{ container_classes|join(' ') }} py-5">
     {% if content.field_titolo[0] is not empty %}
@@ -44,3 +45,30 @@
     </div>
   </div>
 </section>
+{% endif %}
+
+{% if content.field_contenuti_o_tassonomie[0] is not empty %}
+<section{{attributes.addClass(classes).addClass(wrapper_classes)}}>
+  <div class="{{ container_classes|join(' ') }} py-5">
+    {% if content.field_titolo[0] is not empty %}
+      <h2 class="mb-4 title-xxlarge">{{ content.field_titolo }}</h2>
+    {% endif %}
+    
+    <div class="row {{ row_classes|join(' ') }}">
+      {% for contenuto in content.field_contenuti_o_tassonomie["#items"] %}
+        <div class="col">
+          {% set tmp = drupal_entity('paragraph', contenuto.target_id)["#paragraph"] %}
+          
+          {% if tmp.type[0].value.target_id == "contenuto" %}
+            {{ drupal_entity('node', tmp.field_contenuto[0].target_id, 'card') }}
+
+          {% elseif tmp.type[0].value.target_id == "tassonomia" %}
+            {{ drupal_entity('taxonomy_term', tmp.field_tassonomia[0].target_id, 'card') }}
+
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

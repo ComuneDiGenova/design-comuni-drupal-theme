@@ -19,6 +19,6 @@
     </div>
   </div>
 
-  {% include directory ~ '/templates/card/parts/card--parts--read-more.html.twig' with { 'url': url } %}
+  {% include directory ~ '/templates/card/parts/card--parts--read-more.html.twig' with { 'url': url, 'title': label[0]["#context"].value, 'data_element': '' } %}
 
 </div>

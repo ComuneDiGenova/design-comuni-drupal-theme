@@ -3,20 +3,23 @@ langcode: it
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card_in_evidenza.field_contenuti
+    - field.field.paragraph.card_in_evidenza.field_contenuti_o_tassonomie
     - field.field.paragraph.card_in_evidenza.field_tipi_di_stili
     - field.field.paragraph.card_in_evidenza.field_titolo
     - paragraphs.paragraphs_type.card_in_evidenza
+  module:
+    - entity_reference_revisions
 id: paragraph.card_in_evidenza.default
 targetEntityType: paragraph
 bundle: card_in_evidenza
 mode: default
 content:
-  field_contenuti:
-    type: entity_reference_label
+  field_contenuti_o_tassonomie:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     weight: 1
     region: content

@@ -1,0 +1,22 @@
+uuid: f9a0cb3d-9432-4b92-be49-5a8d9b7910fe
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: tipi_di_luogo
+label: 'Tipi di luogo'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/vivere-il-comune/luoghi/[term:name]'
+selection_criteria:
+  d8be6464-b80a-4bee-b841-493657b546a7:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: d8be6464-b80a-4bee-b841-493657b546a7
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      tipi_di_luogo: tipi_di_luogo
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -18,6 +18,6 @@
     </div>
   </div>
 
-  {% include directory ~ '/templates/card/parts/card--parts--read-more.html.twig' with { 'url': url, 'data_element': 'service-area' } %}
+  {% include directory ~ '/templates/card/parts/card--parts--read-more.html.twig' with { 'url': url, 'title': label[0]["#context"].value, 'data_element': 'service-area' } %}
 
 </div>

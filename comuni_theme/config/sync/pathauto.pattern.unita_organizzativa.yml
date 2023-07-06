@@ -5,18 +5,18 @@ dependencies:
   module:
     - node
 id: unita_organizzativa
-label: 'Unità organizzativa'
+label: 'Unità organizzative'
 type: 'canonical_entities:node'
-pattern: '/unita-organizzativa/[node:title]'
+pattern: '/amministrazione/[node:field_tipo_di_organizzazione]/[node:title]'
 selection_criteria:
-  5d09e4d0-6911-4d77-8e5c-05434c5d1e48:
+  6ae8c752-6d63-47fe-ab68-983df6c45ea3:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 5d09e4d0-6911-4d77-8e5c-05434c5d1e48
+    uuid: 6ae8c752-6d63-47fe-ab68-983df6c45ea3
     context_mapping:
       node: node
     bundles:
       unita_organizzativa: unita_organizzativa
 selection_logic: and
-weight: -5
+weight: 7
 relationships: {  }

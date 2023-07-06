@@ -5,18 +5,18 @@ dependencies:
   module:
     - node
 id: punto_di_contatto
-label: 'Punto di contatto'
+label: 'Punti di contatto'
 type: 'canonical_entities:node'
-pattern: '/punto-di-contatto/[node:title]'
+pattern: '/punti-di-contatto/[node:title]'
 selection_criteria:
-  ca417bf3-aaaf-4f7a-97e7-e047e24b5239:
+  e01102c3-fbe7-4393-b94e-ea637bde8e29:
     id: 'entity_bundle:node'
     negate: false
-    uuid: ca417bf3-aaaf-4f7a-97e7-e047e24b5239
+    uuid: e01102c3-fbe7-4393-b94e-ea637bde8e29
     context_mapping:
       node: node
     bundles:
       punto_di_contatto: punto_di_contatto
 selection_logic: and
-weight: -5
+weight: 4
 relationships: {  }

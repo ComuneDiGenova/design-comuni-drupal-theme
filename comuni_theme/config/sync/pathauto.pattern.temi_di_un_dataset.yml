@@ -1,0 +1,22 @@
+uuid: 61c936a6-5f78-4277-8c09-0ce510b7cb05
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: temi_di_un_dataset
+label: 'Temi di un dataset'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/amministrazione/documenti-e-dati/dataset/[term:name]'
+selection_criteria:
+  3fa76026-3b54-47a8-99f5-3c163f743de5:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 3fa76026-3b54-47a8-99f5-3c163f743de5
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      temi_di_un_dataset: temi_di_un_dataset
+selection_logic: and
+weight: 6
+relationships: {  }

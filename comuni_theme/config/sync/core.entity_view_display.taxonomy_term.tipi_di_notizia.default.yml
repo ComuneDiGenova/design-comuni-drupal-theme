@@ -1,0 +1,32 @@
+uuid: a7ae369c-adb2-4bd3-a581-b086f2b89def
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tipi_di_notizia.field_descrizione_breve
+    - taxonomy.vocabulary.tipi_di_notizia
+  module:
+    - text
+id: taxonomy_term.tipi_di_notizia.default
+targetEntityType: taxonomy_term
+bundle: tipi_di_notizia
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descrizione_breve:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

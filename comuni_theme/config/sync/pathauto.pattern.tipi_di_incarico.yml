@@ -1,0 +1,22 @@
+uuid: 5189f2ef-13c4-4328-93a7-7dd4237b6eae
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: tipi_di_incarico
+label: 'Tipi di incarico'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/incarichi/[term:name]'
+selection_criteria:
+  87931f76-7183-40d7-99a6-4457bb14d613:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 87931f76-7183-40d7-99a6-4457bb14d613
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      tipi_di_incarico: tipi_di_incarico
+selection_logic: and
+weight: -5
+relationships: {  }

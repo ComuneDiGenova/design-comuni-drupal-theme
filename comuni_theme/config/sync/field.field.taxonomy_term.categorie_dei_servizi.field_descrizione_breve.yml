@@ -1,0 +1,19 @@
+uuid: 77b8dfe6-ab48-4747-9bd3-a83846a2e5d8
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_descrizione_breve
+    - taxonomy.vocabulary.categorie_dei_servizi
+id: taxonomy_term.categorie_dei_servizi.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: taxonomy_term
+bundle: categorie_dei_servizi
+label: 'Descrizione breve'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

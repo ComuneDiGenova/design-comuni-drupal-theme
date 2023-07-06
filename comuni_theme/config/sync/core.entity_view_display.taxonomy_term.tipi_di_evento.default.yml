@@ -1,0 +1,24 @@
+uuid: f449eb0a-fe9e-49aa-893d-90d826c79fe6
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tipi_di_evento.field_descrizione_breve
+    - taxonomy.vocabulary.tipi_di_evento
+id: taxonomy_term.tipi_di_evento.default
+targetEntityType: taxonomy_term
+bundle: tipi_di_evento
+mode: default
+content:
+  field_descrizione_breve:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true
