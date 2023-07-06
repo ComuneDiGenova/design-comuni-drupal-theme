@@ -23,7 +23,7 @@ content:
     region: content
   field_link:
     type: link_separate
-    label: above
+    label: hidden
     settings:
       trim_length: 255
       url_only: false
