@@ -13,9 +13,7 @@ dependencies:
     - field.field.node.persona.field_dichiarazione_dei_redditi
     - field.field.node.persona.field_galleria_immagini
     - field.field.node.persona.field_immagine
-    - field.field.node.persona.field_incarichi
     - field.field.node.persona.field_nome
-    - field.field.node.persona.field_organizzazioni
     - field.field.node.persona.field_punti_di_contatto
     - field.field.node.persona.field_situazione_patrimoniale
     - field.field.node.persona.field_spese_elettorali
@@ -208,5 +206,3 @@ content:
     third_party_settings: {  }
 hidden:
   field_galleria_immagini: true
-  field_incarichi: true
-  field_organizzazioni: true

@@ -9,11 +9,7 @@ dependencies:
     - field.field.node.unita_organizzativa.field_competenze
     - field.field.node.unita_organizzativa.field_contatti
     - field.field.node.unita_organizzativa.field_descrizione_breve
-    - field.field.node.unita_organizzativa.field_elenco_servizi_offerti
     - field.field.node.unita_organizzativa.field_immagine
-    - field.field.node.unita_organizzativa.field_persona
-    - field.field.node.unita_organizzativa.field_persone
-    - field.field.node.unita_organizzativa.field_persone_altre
     - field.field.node.unita_organizzativa.field_sede_principale
     - field.field.node.unita_organizzativa.field_tipo_di_organizzazione
     - field.field.node.unita_organizzativa.field_ulteriori_informazioni
@@ -142,15 +138,6 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  field_elenco_servizi_offerti:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: card
-      link: false
-    third_party_settings: {  }
-    weight: 114
-    region: content
   field_immagine:
     type: media_thumbnail
     label: hidden
@@ -161,33 +148,6 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 101
-    region: content
-  field_persona:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: card
-      link: false
-    third_party_settings: {  }
-    weight: 119
-    region: content
-  field_persone:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: card
-      link: false
-    third_party_settings: {  }
-    weight: 120
-    region: content
-  field_persone_altre:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: card
-      link: false
-    third_party_settings: {  }
-    weight: 121
     region: content
   field_sede_principale:
     type: views_field_formatter

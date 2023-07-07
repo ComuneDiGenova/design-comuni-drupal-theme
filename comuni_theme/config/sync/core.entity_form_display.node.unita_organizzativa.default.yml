@@ -9,11 +9,7 @@ dependencies:
     - field.field.node.unita_organizzativa.field_competenze
     - field.field.node.unita_organizzativa.field_contatti
     - field.field.node.unita_organizzativa.field_descrizione_breve
-    - field.field.node.unita_organizzativa.field_elenco_servizi_offerti
     - field.field.node.unita_organizzativa.field_immagine
-    - field.field.node.unita_organizzativa.field_persona
-    - field.field.node.unita_organizzativa.field_persone
-    - field.field.node.unita_organizzativa.field_persone_altre
     - field.field.node.unita_organizzativa.field_sede_principale
     - field.field.node.unita_organizzativa.field_tipo_di_organizzazione
     - field.field.node.unita_organizzativa.field_ulteriori_informazioni
@@ -182,8 +178,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_elenco_servizi_offerti: true
-  field_persona: true
-  field_persone: true
-  field_persone_altre: true
+hidden: {  }

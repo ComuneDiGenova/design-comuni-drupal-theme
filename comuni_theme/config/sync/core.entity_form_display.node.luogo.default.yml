@@ -20,7 +20,6 @@ dependencies:
     - field.field.node.luogo.field_orario_per_il_pubblico
     - field.field.node.luogo.field_punti_di_contatto
     - field.field.node.luogo.field_quartiere
-    - field.field.node.luogo.field_sede_di
     - field.field.node.luogo.field_servizi_presenti_nel_luogo
     - field.field.node.luogo.field_struttura_responsabile
     - field.field.node.luogo.field_tipo_di_luogo
@@ -260,5 +259,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_galleria_immagini: true
-  field_sede_di: true
   field_video_esterno: true

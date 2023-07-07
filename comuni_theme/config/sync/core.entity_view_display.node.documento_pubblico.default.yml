@@ -22,7 +22,6 @@ dependencies:
     - field.field.node.documento_pubblico.field_paragraph_documento
     - field.field.node.documento_pubblico.field_protocollo
     - field.field.node.documento_pubblico.field_riferimenti_normativi
-    - field.field.node.documento_pubblico.field_servizi
     - field.field.node.documento_pubblico.field_tipo_di_documento
     - field.field.node.documento_pubblico.field_tipo_doc_albo_pretorio
     - field.field.node.documento_pubblico.field_ufficio_respons_documento
@@ -279,7 +278,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_servizi: true
   langcode: true
   node_read_time: true
   search_api_excerpt: true

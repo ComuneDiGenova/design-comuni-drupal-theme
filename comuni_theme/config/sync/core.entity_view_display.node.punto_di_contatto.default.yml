@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.punto_di_contatto.field_contatto
     - field.field.node.punto_di_contatto.field_orari
     - field.field.node.punto_di_contatto.field_orari_note
-    - field.field.node.punto_di_contatto.field_persona
     - field.field.node.punto_di_contatto.field_tipo_punto_di_contatto
     - field.field.node.punto_di_contatto.field_valore_punto_di_contatto
     - node.type.punto_di_contatto
@@ -43,14 +42,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_persona:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
     region: content
   links:
     settings: {  }

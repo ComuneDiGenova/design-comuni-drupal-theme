@@ -13,9 +13,7 @@ dependencies:
     - field.field.node.persona.field_dichiarazione_dei_redditi
     - field.field.node.persona.field_galleria_immagini
     - field.field.node.persona.field_immagine
-    - field.field.node.persona.field_incarichi
     - field.field.node.persona.field_nome
-    - field.field.node.persona.field_organizzazioni
     - field.field.node.persona.field_punti_di_contatto
     - field.field.node.persona.field_situazione_patrimoniale
     - field.field.node.persona.field_spese_elettorali
@@ -154,15 +152,6 @@ content:
     third_party_settings: {  }
     weight: 18
     region: content
-  field_incarichi:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: card
-      link: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_nome:
     type: string
     label: hidden
@@ -170,15 +159,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_organizzazioni:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: card
-      link: false
-    third_party_settings: {  }
-    weight: 6
     region: content
   field_punti_di_contatto:
     type: views_field_formatter
