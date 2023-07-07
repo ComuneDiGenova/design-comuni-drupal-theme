@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_termini_di_tassonomia
     - paragraphs.paragraphs_type.elenco_card_da_termine
-    - taxonomy.vocabulary.amministrazione
     - taxonomy.vocabulary.argomenti
     - taxonomy.vocabulary.categorie_dei_servizi
     - taxonomy.vocabulary.documenti_albo_pretorio
@@ -31,7 +30,6 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      amministrazione: amministrazione
       argomenti: argomenti
       categorie_dei_servizi: categorie_dei_servizi
       documenti_albo_pretorio: documenti_albo_pretorio
@@ -47,5 +45,5 @@ settings:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: amministrazione
+    auto_create_bundle: null
 field_type: entity_reference

@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.dataset.field_distribuzione
     - field.field.node.dataset.field_frequenza_di_aggiornamento
     - field.field.node.dataset.field_licenza
-    - field.field.node.dataset.field_sezione_amministrazione
     - field.field.node.dataset.field_temi
     - field.field.node.dataset.field_titolare
     - field.field.node.dataset.field_ultima_modifica
@@ -55,14 +54,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 4
-    region: content
-  field_sezione_amministrazione:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
     region: content
   field_temi:
     type: entity_reference_label

@@ -18,7 +18,6 @@ dependencies:
     - field.field.node.persona.field_nome
     - field.field.node.persona.field_organizzazioni
     - field.field.node.persona.field_punti_di_contatto
-    - field.field.node.persona.field_sezione_amministrazione
     - field.field.node.persona.field_situazione_patrimoniale
     - field.field.node.persona.field_spese_elettorali
     - field.field.node.persona.field_ulteriori_informazioni
@@ -84,7 +83,6 @@ hidden:
   field_galleria_immagini: true
   field_organizzazioni: true
   field_punti_di_contatto: true
-  field_sezione_amministrazione: true
   field_situazione_patrimoniale: true
   field_spese_elettorali: true
   field_ulteriori_informazioni: true

@@ -17,7 +17,6 @@ dependencies:
     - field.field.node.persona.field_nome
     - field.field.node.persona.field_organizzazioni
     - field.field.node.persona.field_punti_di_contatto
-    - field.field.node.persona.field_sezione_amministrazione
     - field.field.node.persona.field_situazione_patrimoniale
     - field.field.node.persona.field_spese_elettorali
     - field.field.node.persona.field_ulteriori_informazioni
@@ -211,4 +210,3 @@ hidden:
   field_galleria_immagini: true
   field_incarichi: true
   field_organizzazioni: true
-  field_sezione_amministrazione: true

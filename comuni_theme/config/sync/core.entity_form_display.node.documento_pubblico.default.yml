@@ -23,7 +23,6 @@ dependencies:
     - field.field.node.documento_pubblico.field_protocollo
     - field.field.node.documento_pubblico.field_riferimenti_normativi
     - field.field.node.documento_pubblico.field_servizi
-    - field.field.node.documento_pubblico.field_sezione_amministrazione
     - field.field.node.documento_pubblico.field_tipo_di_documento
     - field.field.node.documento_pubblico.field_tipo_doc_albo_pretorio
     - field.field.node.documento_pubblico.field_ufficio_respons_documento
@@ -267,4 +266,3 @@ hidden:
   field_galleria_immagini: true
   field_immagine: true
   field_servizi: true
-  field_sezione_amministrazione: true

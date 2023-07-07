@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.unita_organizzativa.field_persone
     - field.field.node.unita_organizzativa.field_persone_altre
     - field.field.node.unita_organizzativa.field_sede_principale
-    - field.field.node.unita_organizzativa.field_sezione_amministrazione
     - field.field.node.unita_organizzativa.field_tipo_di_organizzazione
     - field.field.node.unita_organizzativa.field_ulteriori_informazioni
     - field.field.node.unita_organizzativa.field_unita_org_genitore
@@ -188,4 +187,3 @@ hidden:
   field_persona: true
   field_persone: true
   field_persone_altre: true
-  field_sezione_amministrazione: true

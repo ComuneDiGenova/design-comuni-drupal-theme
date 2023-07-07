@@ -17,7 +17,6 @@ dependencies:
     - field.field.node.persona.field_nome
     - field.field.node.persona.field_organizzazioni
     - field.field.node.persona.field_punti_di_contatto
-    - field.field.node.persona.field_sezione_amministrazione
     - field.field.node.persona.field_situazione_patrimoniale
     - field.field.node.persona.field_spese_elettorali
     - field.field.node.persona.field_ulteriori_informazioni
@@ -204,14 +203,6 @@ content:
       implode_character: +
     third_party_settings: {  }
     weight: 10
-    region: content
-  field_sezione_amministrazione:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 0
     region: content
   field_situazione_patrimoniale:
     type: views_field_formatter
