@@ -111,3 +111,13 @@ footer .it-brand-wrapper img {
 .columns-2 {
 	columns: 2;
 }
+/* Rendo important l'icona per visualizzarla correttamente */
+.alert-success {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='hsl(160deg, 100%, 25%)' d='M17.1 7.9l.7.7-7.8 7.6-4.7-4.6.7-.7 4 3.9zM22 12A10 10 0 1 1 12 2a10 10 0 0 1 10 10zm-1 0a9 9 0 1 0-9 9 9 9 0 0 0 9-9z'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+/* Correggo stile dei testi negli alert */
+.alert .placeholder {
+	background-color: transparent;
+	opacity: 1;
+	font-style: normal;
+}
