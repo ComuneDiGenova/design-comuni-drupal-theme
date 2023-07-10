@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-10">
+    <div class="col">
       <div class="cmp-heading pb-3 pb-lg-4">
         <div class="row">
           <div class="col-lg-8">
@@ -37,81 +37,93 @@
             {% endif %}
           </div>
           <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
-            {{ drupal_block("social_sharing_buttons_block") }}
-            <div class="dropdown">
-              <button type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0"
-                aria-label="vedi azioni da compiere sulla pagina"
-                >
-                <svg class="icon">
-                  <use href="#it-more-items" />
-                </svg>
-                <small>Vedi azioni</small>
-              </button>
-              <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
-                <div class="link-list-wrapper">
-                  <ul class="link-list">
-                    <li>
-                      <a class="list-item" href="javascript:window.print()">
-                        <svg class="icon">
-                          <use href="#it-print" />
-                        </svg>
-                        <span>Stampa</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="list-item" href="#">
-                        <svg class="icon">
-                          <use href="#it-hearing" />
-                        </svg>
-                        <span>Ascolta</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="list-item" href="mailto:?subject={{ node.label }}&body={{ url }}"
-                         target="_blank" rel="noopener">
-                        <svg class="icon">
-                          <use href="#it-mail" />
-                        </svg>
-                        <span>Invia</span>
-                      </a>
-                    </li>
-                  </ul>
+
+            <div class="callout p-4 border-primary mt-0">
+              <div class="callout-title px-3 me-0">
+                <svg class="icon icon-primary me-0"><use href="#it-info-circle"></use></svg>
+              </div>
+
+              {{ drupal_block("social_sharing_buttons_block") }}
+
+              <div class="dropdown pb-0">
+                <button type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0 px-0"
+                  aria-label="vedi azioni da compiere sulla pagina"
+                  >
+                  <svg class="icon">
+                    <use href="#it-more-items" />
+                  </svg>
+                  <small>Vedi azioni</small>
+                </button>
+                <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
+                  <div class="link-list-wrapper">
+                    <ul class="link-list">
+                      <li>
+                        <a class="list-item" href="javascript:window.print()">
+                          <svg class="icon">
+                            <use href="#it-print" />
+                          </svg>
+                          <span>Stampa</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="list-item" href="#">
+                          <svg class="icon">
+                            <use href="#it-hearing" />
+                          </svg>
+                          <span>Ascolta</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="list-item" href="mailto:?subject={{ node.label }}&body={{ url }}"
+                          target="_blank" rel="noopener">
+                          <svg class="icon">
+                            <use href="#it-mail" />
+                          </svg>
+                          <span>Invia</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
+
+              <div class="mt-4 mb-4">
+                {% if content.field_argomenti %}
+                  <span class="subtitle-small">Argomenti</span>
+                  <div class="chip-wrapper mt-2">
+                    {% for item in attribute(content.field_argomenti, "#items") %}
+                      {% set arg_name = item.entity.name.value %}
+                      <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
+                        data-element="service-topic"
+                      >
+                        <div class="chip chip-simple chip-primary">
+                          <span class="chip-label">{{ arg_name }}</span>
+                        </div>
+                      </a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="mt-4">
+                {% if content.field_categoria_del_servizio %}
+                  <span class="subtitle-small">Categoria del servizio</span>
+                  <div class="chip-wrapper mt-2">
+                    {% for item in attribute(content.field_categoria_del_servizio, "#items") %}
+                      {% set arg_name = item.entity.name.value %}
+                      <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
+                        <div class="chip chip-simple chip-primary">
+                          <span class="chip-label">{{ arg_name }}</span>
+                        </div>
+                      </a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+
             </div>
-            <div class="mt-4 mb-4">
-              {% if content.field_argomenti %}
-                <span class="subtitle-small">Argomenti</span>
-                <div class="chip-wrapper mt-2">
-                  {% for item in attribute(content.field_argomenti, "#items") %}
-                    {% set arg_name = item.entity.name.value %}
-                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
-                       data-element="service-topic"
-                    >
-                      <div class="chip chip-simple chip-primary">
-                        <span class="chip-label">{{ arg_name }}</span>
-                      </div>
-                    </a>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </div>
-            <div class="mt-4 mb-4">
-              {% if content.field_categoria_del_servizio %}
-                <span class="subtitle-small">Categoria del servizio</span>
-                <div class="chip-wrapper mt-2">
-                  {% for item in attribute(content.field_categoria_del_servizio, "#items") %}
-                    {% set arg_name = item.entity.name.value %}
-                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
-                      <div class="chip chip-simple chip-primary">
-                        <span class="chip-label">{{ arg_name }}</span>
-                      </div>
-                    </a>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </div>
+            
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@
               </h1>
             {% endif %}
             {{ title_suffix }}
-            {% if content.field_nome_alternativo %}
+            {% if content.field_nome_alternativo[0] is not empty %}
               <h2 class="h4 py-2">
                 {{ content.field_nome_alternativo }}
               </h2>

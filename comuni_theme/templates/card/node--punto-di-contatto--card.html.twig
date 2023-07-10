@@ -1,4 +1,9 @@
-<div class="card no-after py-3 px-4 h-100 rounded shadow-sm border border-light">{{ title_suffix }}
+{% if content.field_orari_note[0] is not empty or attribute(content.field_orari, "#items")|length %}
+  {% set no_after = " " %}
+{% else %}
+  {% set no_after = " no-after " %}
+{% endif %}
+<div class="card {{ no_after }} py-3 px-4 h-100 rounded shadow-sm border border-light">{{ title_suffix }}
 
   <div class="container px-0">
     <div class="row mx-0 gap-3">
