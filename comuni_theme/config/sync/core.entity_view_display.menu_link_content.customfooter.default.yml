@@ -1,0 +1,21 @@
+uuid: a25f4d99-3e6c-46fb-933b-e248f53d5d37
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.customfooter.field_attributi
+    - system.menu.customfooter
+id: menu_link_content.customfooter.default
+targetEntityType: menu_link_content
+bundle: customfooter
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_attributi: true
+  langcode: true
+  search_api_excerpt: true

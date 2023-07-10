@@ -17,7 +17,7 @@ plugin: 'system_menu_block:customfooter'
 settings:
   id: 'system_menu_block:customfooter'
   label: 'Footer - Navigazione'
-  label_display: visible
+  label_display: '0'
   provider: system
   level: 1
   depth: 0

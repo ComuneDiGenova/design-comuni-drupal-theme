@@ -1,0 +1,19 @@
+uuid: 30dc665d-195f-41e3-9bdc-c7c2220d69ec
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_attributi
+    - system.menu.topright
+id: menu_link_content.topright.field_attributi
+field_name: field_attributi
+entity_type: menu_link_content
+bundle: topright
+label: Attributi
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

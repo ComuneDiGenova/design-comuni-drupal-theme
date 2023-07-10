@@ -1,0 +1,21 @@
+uuid: 2d17fd43-7881-4ca0-ba65-ca15b8d9dd3b
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.footer---contatti.field_attributi
+    - system.menu.footer---contatti
+id: menu_link_content.footer---contatti.default
+targetEntityType: menu_link_content
+bundle: footer---contatti
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_attributi: true
+  langcode: true
+  search_api_excerpt: true

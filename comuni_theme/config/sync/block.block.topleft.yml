@@ -16,8 +16,8 @@ provider: null
 plugin: 'system_menu_block:topleft'
 settings:
   id: 'system_menu_block:topleft'
-  label: topleft
-  label_display: visible
+  label: Principale
+  label_display: '0'
   provider: system
   level: 1
   depth: 0

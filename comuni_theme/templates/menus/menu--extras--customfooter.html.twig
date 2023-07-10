@@ -1,0 +1,76 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - content.children: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - content: The field item content.
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+
+{% import _self as menu %}
+
+<div class="row">
+  <div class="col-md-3 footer-items-wrapper">
+    <h3 class="footer-heading-title">{{ (items|slice(0,1)|first).title }}</h3>
+    {{ menu.menu_links((items|slice(0,1)|first).below, attributes, 0) }}
+  </div>
+  <div class="col-md-6 footer-items-wrapper">
+    <h3 class="footer-heading-title">{{ (items|slice(1,1)|first).title }}</h3>
+    <div class="columns-2">
+    {{ menu.menu_links((items|slice(1,1)|first).below, attributes, 0) }}
+    </div>
+  </div>
+  <div class="col-md-3 footer-items-wrapper">
+    <h3 class="footer-heading-title">{{ (items|slice(2,1)|first).title }}</h3>
+    {{ menu.menu_links((items|slice(2,1)|first).below, attributes, 0) }}
+    <h3 class="footer-heading-title mt-5">{{ (items|slice(3,1)|first).title }}</h3>
+    {{ menu.menu_links((items|slice(3,1)|first).below, attributes, 0) }}
+  </div>
+</div>
+
+
+{% macro menu_links(items, attributes, menu_level) %}
+  <ul{{attributes.addClass(['menu', 'menu-level-'~items|first.menu_level]).addClass('m-0') }}>
+    {% for key, item in items %}
+      {% if key|first != '#' %}
+        {% set menu_item_classes = [
+          'menu-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
+        ] %}
+
+        <li{{item.attributes.addClass(menu_item_classes)}}>
+
+          {% set attributi = create_attribute({}) %}
+          {% for item in  item.entity.field_attributi %}
+            {% set attributi = attributi.setAttribute((item.value|split('=')[0]|raw),(item.value|split('=')[1]|replace({'"': ''}))) %}
+          {% endfor %}
+
+          {% if item.in_active_trail is not empty %}
+            {% set attributi = attributi.addClass('active') %}
+          {% endif %}
+
+          {{ link(item.title, item.url, attributi.addClass('lh-lg')) }}
+          {% set rendered_content = item.content|without('')|render %}
+          {% if rendered_content %}
+            {{ rendered_content }}
+          {% endif %}
+        </li>
+      {% endif %}
+  {% endfor %}
+  </ul>
+{% endmacro %}

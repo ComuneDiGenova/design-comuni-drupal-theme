@@ -16,8 +16,8 @@ provider: null
 plugin: 'system_menu_block:topright'
 settings:
   id: 'system_menu_block:topright'
-  label: topright
-  label_display: visible
+  label: Secondaria
+  label_display: '0'
   provider: system
   level: 1
   depth: 0

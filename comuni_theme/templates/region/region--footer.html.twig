@@ -7,29 +7,19 @@
             <div class="row variable-gutters">
               <div class="col">
                 <div class="modal-title">
-                  <button class="search-link d-md-none" type="submit"
-                    data-bs-toggle="modal" data-bs-target="#search-modal"
-                    aria-label="Chiudi e torna alla pagina precedente">
-                    <svg class="icon icon-md">
-                      <use href="#it-arrow-left" />
-                    </svg>
+                  <button class="search-link d-md-none" type="submit" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Chiudi e torna alla pagina precedente">
+                    <svg class="icon icon-md"><use href="#it-arrow-left"></use></svg>
                   </button>
                   <h2>Cerca</h2>
-                  <button class="search-link d-none d-md-block" type="button"
-                    data-bs-toggle="modal" data-bs-target="#search-modal"
-                    aria-label="Chiudi e torna alla pagina precedente">
-                    <svg class="icon icon-md">
-                      <use href="#it-close-big" />
-                    </svg>
+                  <button class="search-link d-none d-md-block" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Chiudi e torna alla pagina precedente">
+                    <svg class="icon icon-md"><use href="#it-close-big"></use></svg>
                   </button>
                 </div>
                 <div class="form-group autocomplete-wrapper">
                   <label for="autocomplete-two" class="visually-hidden">Cerca nel sito</label>
                   <input type="search" class="autocomplete ps-5" placeholder="Cerca nel sito" id="autocomplete-two" name="search_api_fulltext" data-bs-autocomplete="[]">
                   <span class="autocomplete-icon" aria-hidden="true">
-                    <svg class="icon">
-                      <use href="#it-search" />
-                    </svg>
+                    <svg class="icon"><use href="#it-search"></use></svg>
                   </span>
                   <button type="submit" class="btn btn-primary">
                     <span class="">Cerca</span>
@@ -45,9 +35,9 @@
                     {% for link in site_settings.infocomune.info_comune.field_forse_stavi_cercando %}
                       {% set field = drupal_field('title', 'node', link['target_id']) %}
                       {% set link2 = path('entity.node.canonical', {'node': link['target_id']})  %}
-                      <li><a href="{{ link2 }}"
-                        >{{ field["#items"][0].value }}
-                      </a></li>
+                      <li>
+                        <a href="{{ link2 }}">{{ field["#items"][0].value }}</a>
+                      </li>
                     {% endfor %}
                   </ul>
                 </div>
@@ -67,8 +57,7 @@
           <div class="ue-logo"><span class="visually-hidden">logo Unione Europea</span></div>
           <div class="it-brand-wrapper">
             <a href="{{ url('<front>') }}">
-                <img aria-hidden="true"
-                     src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt="logo Comune"/>
+              <img aria-hidden="true" src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt="logo Comune">
               <div class="it-brand-text">
                 <h2 class="no_toc">{{ site_settings.infocomune.info_comune.field_nome_comune }}</h2>
               </div>
@@ -78,10 +67,26 @@
       </div>
       <div class="row">
         {{ elements.footernavigazione }}
-        {{ elements.footercontatti }}
+      </div>
+      
+      <div class="row">
+        <div class="col-md-9 mt-md-4 footer-items-wrapper">
+          <h3 class="footer-heading-title">Contatti</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="footer-info pt-1">
+                {{ site_settings.infocomune.info_comune.field_contatti.value|raw }}
+              </div>
+            </div>
+            <div class="col-md-8">
+              {{ elements.footercontatti }}
+            </div>
+          </div>
+        </div>
+
         <div class="col-md-3 mt-md-4 footer-items-wrapper">
           <h3 class="footer-heading-title">Seguici su</h3>
-          <ul class="list-inline text-start social">
+          <ul class="list-inline text-start social pt-2">
             {% for social in site_settings.infocomune.info_comune.field_icone_social %}
               {{ drupal_entity('paragraph', social.target_id, 'social') }}
             {% endfor %}

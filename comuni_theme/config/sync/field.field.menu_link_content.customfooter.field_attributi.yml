@@ -1,0 +1,19 @@
+uuid: 0bc845c4-dc95-468b-9371-a62edc534b5a
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_attributi
+    - system.menu.customfooter
+id: menu_link_content.customfooter.field_attributi
+field_name: field_attributi
+entity_type: menu_link_content
+bundle: customfooter
+label: Attributi
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

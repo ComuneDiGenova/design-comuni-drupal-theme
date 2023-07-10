@@ -8,7 +8,7 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674173812'
   revision_user:
@@ -35,14 +35,16 @@
     value: '1'
   parent: false
   changed:
-    value: '1683546967'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 9:
   id:
     value: '9'
@@ -53,19 +55,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174084'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Categorie di servizio'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -80,17 +80,18 @@
     value: '2'
   expanded:
     value: '1'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674174411'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 10:
   id:
     value: '10'
@@ -101,19 +102,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174287'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Agricoltura e pesca'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -131,14 +130,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 11:
   id:
     value: '11'
@@ -149,19 +150,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174326'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Ambiente
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -179,14 +178,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 12:
   id:
     value: '12'
@@ -197,19 +198,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174377'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Anagrafe e stato civile'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -227,14 +226,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 13:
   id:
     value: '13'
@@ -245,19 +246,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174400'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Appalti pubblici'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -275,14 +274,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 14:
   id:
     value: '14'
@@ -293,19 +294,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174438'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Autorizzazioni
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -323,14 +322,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 15:
   id:
     value: '15'
@@ -341,19 +342,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174455'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Catasto e urbanistica'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -371,14 +370,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1684423419'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 16:
   id:
     value: '16'
@@ -389,19 +390,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174471'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Cultura e tempo libero'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -419,14 +418,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 17:
   id:
     value: '17'
@@ -437,19 +438,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174489'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Educazione e formazione'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -467,14 +466,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 18:
   id:
     value: '18'
@@ -485,19 +486,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174518'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Giustizia e sicurezza pubblica'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -515,14 +514,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 19:
   id:
     value: '19'
@@ -533,19 +534,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174541'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Imprese e commercio'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -563,14 +562,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 20:
   id:
     value: '20'
@@ -581,19 +582,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174557'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Mobilità e trasporti'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -611,14 +610,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 21:
   id:
     value: '21'
@@ -629,19 +630,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174577'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Salute, benessere e assistenza'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -659,14 +658,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 22:
   id:
     value: '22'
@@ -677,19 +678,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174591'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Tributi, finanze e contravvenzioni'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -707,14 +706,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 23:
   id:
     value: '23'
@@ -725,19 +726,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174605'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Turismo
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -755,14 +754,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 24:
   id:
     value: '24'
@@ -773,19 +774,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174622'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Vita lavorativa'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -803,14 +802,16 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 25:
   id:
     value: '25'
@@ -821,19 +822,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174687'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Novità
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -848,17 +847,18 @@
     value: '3'
   expanded:
     value: '1'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674174687'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 26:
   id:
     value: '26'
@@ -869,19 +869,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174705'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Vivere il comune'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -896,17 +894,18 @@
     value: '4'
   expanded:
     value: '1'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674174705'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 27:
   id:
     value: '27'
@@ -917,7 +916,7 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174783'
   revision_user:
@@ -931,7 +930,7 @@
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/tipi-di-notizia/avvisi'
+    uri: 'internal:/novita/avvisi'
     title: ''
     options: {  }
   external:
@@ -945,14 +944,16 @@
   parent:
     value: 'menu_link_content:57504d6c-5c93-4c23-8eef-d26829e68381'
   changed:
-    value: '1688022306'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 28:
   id:
     value: '28'
@@ -963,7 +964,7 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174784'
   revision_user:
@@ -977,7 +978,7 @@
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/tipi-di-notizia/comunicati'
+    uri: 'internal:/novita/comunicati'
     title: ''
     options: {  }
   external:
@@ -991,14 +992,16 @@
   parent:
     value: 'menu_link_content:57504d6c-5c93-4c23-8eef-d26829e68381'
   changed:
-    value: '1688022302'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 29:
   id:
     value: '29'
@@ -1009,7 +1012,7 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174876'
   revision_user:
@@ -1023,7 +1026,7 @@
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/tipi-di-notizia/notizie'
+    uri: 'internal:/novita/notizie'
     title: ''
     options: {  }
   external:
@@ -1037,14 +1040,16 @@
   parent:
     value: 'menu_link_content:57504d6c-5c93-4c23-8eef-d26829e68381'
   changed:
-    value: '1688022297'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 30:
   id:
     value: '30'
@@ -1055,7 +1060,7 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174928'
   revision_user:
@@ -1083,14 +1088,16 @@
   parent:
     value: 'menu_link_content:a4f0f73b-fc92-46d8-af5e-35d136e548da'
   changed:
-    value: '1688456496'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
 31:
   id:
     value: '31'
@@ -1101,7 +1108,7 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1674174945'
   revision_user:
@@ -1129,302 +1136,16 @@
   parent:
     value: 'menu_link_content:a4f0f73b-fc92-46d8-af5e-35d136e548da'
   changed:
-    value: '1688456505'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
-50:
-  id:
-    value: '50'
-  uuid:
-    value: 2824b713-c35d-4758-b36b-06e1de7401be
-  revision_id:
-    value: '50'
-  langcode:
-    value: it
-  bundle:
-    value: menu_link_content
-  revision_created:
-    value: '1684423013'
-  revision_user:
-    target_id: '0'
-  revision_log_message:
-    value: ''
-  enabled:
-    value: '1'
-  title:
-    value: 'Organi di governo'
-  description:
-    value: ''
-  menu_name:
-    value: customfooter
-  link:
-    uri: 'internal:/amministrazione/organi-di-governo'
-    title: ''
-    options: {  }
-  external:
-    value: '0'
-  rediscover:
-    value: '1'
-  weight:
-    value: '-50'
-  expanded:
-    value: '0'
-  parent:
-    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
-  changed:
-    value: '1684423154'
-  default_langcode:
-    value: '1'
-  revision_default:
-    value: '1'
-  revision_translation_affected:
-    value: '1'
-  metatag: false
-51:
-  id:
-    value: '51'
-  uuid:
-    value: 6651d70b-f708-4322-b944-1718c0fa6f28
-  revision_id:
-    value: '51'
-  langcode:
-    value: it
-  bundle:
-    value: menu_link_content
-  revision_created:
-    value: '1684423034'
-  revision_user:
-    target_id: '0'
-  revision_log_message:
-    value: ''
-  enabled:
-    value: '1'
-  title:
-    value: 'Aree amministrative'
-  description:
-    value: ''
-  menu_name:
-    value: customfooter
-  link:
-    uri: 'internal:/amministrazione/aree-amministrative'
-    title: ''
-    options: {  }
-  external:
-    value: '0'
-  rediscover:
-    value: '1'
-  weight:
-    value: '-49'
-  expanded:
-    value: '0'
-  parent:
-    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
-  changed:
-    value: '1684423154'
-  default_langcode:
-    value: '1'
-  revision_default:
-    value: '1'
-  revision_translation_affected:
-    value: '1'
-  metatag: false
-52:
-  id:
-    value: '52'
-  uuid:
-    value: a9815885-f717-49f1-b8aa-3f91fd93bade
-  revision_id:
-    value: '52'
-  langcode:
-    value: it
-  bundle:
-    value: menu_link_content
-  revision_created:
-    value: '1684423062'
-  revision_user:
-    target_id: '0'
-  revision_log_message:
-    value: ''
-  enabled:
-    value: '1'
-  title:
-    value: Uffici
-  description:
-    value: ''
-  menu_name:
-    value: customfooter
-  link:
-    uri: 'internal:/amministrazione/uffici'
-    title: ''
-    options: {  }
-  external:
-    value: '0'
-  rediscover:
-    value: '1'
-  weight:
-    value: '-48'
-  expanded:
-    value: '0'
-  parent:
-    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
-  changed:
-    value: '1684423154'
-  default_langcode:
-    value: '1'
-  revision_default:
-    value: '1'
-  revision_translation_affected:
-    value: '1'
-  metatag: false
-53:
-  id:
-    value: '53'
-  uuid:
-    value: 31455369-8f41-491c-a51c-d9f835a8753a
-  revision_id:
-    value: '53'
-  langcode:
-    value: it
-  bundle:
-    value: menu_link_content
-  revision_created:
-    value: '1684423095'
-  revision_user:
-    target_id: '0'
-  revision_log_message:
-    value: ''
-  enabled:
-    value: '1'
-  title:
-    value: 'Enti e fondazioni'
-  description:
-    value: ''
-  menu_name:
-    value: customfooter
-  link:
-    uri: 'internal:/amministrazione/enti-e-fondazioni'
-    title: ''
-    options: {  }
-  external:
-    value: '0'
-  rediscover:
-    value: '1'
-  weight:
-    value: '-47'
-  expanded:
-    value: '0'
-  parent:
-    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
-  changed:
-    value: '1684423154'
-  default_langcode:
-    value: '1'
-  revision_default:
-    value: '1'
-  revision_translation_affected:
-    value: '1'
-  metatag: false
-54:
-  id:
-    value: '54'
-  uuid:
-    value: cd481624-e5f2-437c-b4a9-6bbef4051312
-  revision_id:
-    value: '54'
-  langcode:
-    value: it
-  bundle:
-    value: menu_link_content
-  revision_created:
-    value: '1684423124'
-  revision_user:
-    target_id: '0'
-  revision_log_message:
-    value: ''
-  enabled:
-    value: '1'
-  title:
-    value: Politici
-  description:
-    value: ''
-  menu_name:
-    value: customfooter
-  link:
-    uri: 'internal:/amministrazione/politici'
-    title: ''
-    options: {  }
-  external:
-    value: '0'
-  rediscover:
-    value: '1'
-  weight:
-    value: '-46'
-  expanded:
-    value: '0'
-  parent:
-    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
-  changed:
-    value: '1684423195'
-  default_langcode:
-    value: '1'
-  revision_default:
-    value: '1'
-  revision_translation_affected:
-    value: '1'
-  metatag: false
-55:
-  id:
-    value: '55'
-  uuid:
-    value: 889115c3-2585-402f-bf2c-43b7dd86ce56
-  revision_id:
-    value: '55'
-  langcode:
-    value: it
-  bundle:
-    value: menu_link_content
-  revision_created:
-    value: '1684423137'
-  revision_user:
-    target_id: '0'
-  revision_log_message:
-    value: ''
-  enabled:
-    value: '1'
-  title:
-    value: 'Personale amministrativo'
-  description:
-    value: ''
-  menu_name:
-    value: customfooter
-  link:
-    uri: 'internal:/amministrazione/personale-amministrativo'
-    title: ''
-    options: {  }
-  external:
-    value: '0'
-  rediscover:
-    value: '1'
-  weight:
-    value: '-45'
-  expanded:
-    value: '0'
-  parent:
-    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
-  changed:
-    value: '1684423195'
-  default_langcode:
-    value: '1'
-  revision_default:
-    value: '1'
-  revision_translation_affected:
-    value: '1'
-  metatag: false
+  field_attributi: false
 56:
   id:
     value: '56'
@@ -1435,19 +1156,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: customfooter
   revision_created:
     value: '1684423170'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Documenti e dati'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -1465,14 +1184,298 @@
   parent:
     value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
   changed:
-    value: '1684423195'
+    value: '1688724659'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode: false
   metatag: false
+  field_attributi: false
+61:
+  id:
+    value: '61'
+  uuid:
+    value: fba5c306-ded7-43e6-996e-efe6ce2fbe8f
+  revision_id:
+    value: '61'
+  langcode:
+    value: it
+  bundle:
+    target_id: customfooter
+  revision_created:
+    value: '1688568105'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Organi di governo'
+  description: false
+  menu_name:
+    value: customfooter
+  link:
+    uri: 'internal:/amministrazione/organi-di-governo'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '-50'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
+  changed:
+    value: '1688724659'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  view_mode: false
+  metatag: false
+  field_attributi: false
+62:
+  id:
+    value: '62'
+  uuid:
+    value: c189326c-1f8e-428a-9fbc-1fe7d5f7f77f
+  revision_id:
+    value: '62'
+  langcode:
+    value: it
+  bundle:
+    target_id: customfooter
+  revision_created:
+    value: '1688568121'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Aree amministrative'
+  description: false
+  menu_name:
+    value: customfooter
+  link:
+    uri: 'internal:/amministrazione/aree-amministrative'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '-49'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
+  changed:
+    value: '1688724659'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  view_mode: false
+  metatag: false
+  field_attributi: false
+63:
+  id:
+    value: '63'
+  uuid:
+    value: 6e0a1c9e-db32-4e22-91c7-437035e64aac
+  revision_id:
+    value: '63'
+  langcode:
+    value: it
+  bundle:
+    target_id: customfooter
+  revision_created:
+    value: '1688568152'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Uffici
+  description: false
+  menu_name:
+    value: customfooter
+  link:
+    uri: 'internal:/amministrazione/uffici'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '-48'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
+  changed:
+    value: '1688724659'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  view_mode: false
+  metatag: false
+  field_attributi: false
+64:
+  id:
+    value: '64'
+  uuid:
+    value: f39af0fd-b4f5-46b9-81c3-c94bdb22ce61
+  revision_id:
+    value: '64'
+  langcode:
+    value: it
+  bundle:
+    target_id: customfooter
+  revision_created:
+    value: '1688568164'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Enti e Fondazioni'
+  description: false
+  menu_name:
+    value: customfooter
+  link:
+    uri: 'internal:/amministrazione/enti-e-fondazioni'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '-47'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
+  changed:
+    value: '1688724659'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  view_mode: false
+  metatag: false
+  field_attributi: false
+65:
+  id:
+    value: '65'
+  uuid:
+    value: bb6c8b00-9508-4e6f-9544-6a7809ffb0a1
+  revision_id:
+    value: '65'
+  langcode:
+    value: it
+  bundle:
+    target_id: customfooter
+  revision_created:
+    value: '1688568186'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Politici
+  description: false
+  menu_name:
+    value: customfooter
+  link:
+    uri: 'internal:/amministrazione/politici'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '-46'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
+  changed:
+    value: '1688724659'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  view_mode: false
+  metatag: false
+  field_attributi: false
+66:
+  id:
+    value: '66'
+  uuid:
+    value: 6df76bdd-deb8-43c9-ab9d-ca32322786a2
+  revision_id:
+    value: '66'
+  langcode:
+    value: it
+  bundle:
+    target_id: customfooter
+  revision_created:
+    value: '1688568205'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Personale amministrativo'
+  description: false
+  menu_name:
+    value: customfooter
+  link:
+    uri: 'internal:/amministrazione/personale-amministrativo'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '1'
+  weight:
+    value: '-45'
+  expanded:
+    value: '0'
+  parent:
+    value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
+  changed:
+    value: '1688724659'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+  view_mode: false
+  metatag: false
+  field_attributi: false
 32:
   id:
     value: '32'
@@ -1483,19 +1486,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: footer
   revision_created:
     value: '1674173372'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Mappa del sito'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer
   link:
@@ -1510,17 +1511,20 @@
     value: '-49'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600119'
+    value: '1688729222'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'class="nav-link text-white"'
 33:
   id:
     value: '33'
@@ -1531,19 +1535,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: footer
   revision_created:
     value: '1674173376'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Media policy'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer
   link:
@@ -1558,17 +1560,20 @@
     value: '-50'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1675086266'
+    value: '1688729226'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'class="nav-link text-white"'
 34:
   id:
     value: '34'
@@ -1579,19 +1584,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: footer---contatti
   revision_created:
     value: '1674173519'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Amministrazione trasparente'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
@@ -1606,17 +1609,20 @@
     value: '-46'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600102'
+    value: '1688729286'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'class="nav-link text-white"'
 35:
   id:
     value: '35'
@@ -1627,19 +1633,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: footer---contatti
   revision_created:
     value: '1674173538'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Dichiarazione di accessibilità'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
@@ -1654,17 +1658,20 @@
     value: '-43'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600102'
+    value: '1688732484'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'data-element="accessibility-link"'
 36:
   id:
     value: '36'
@@ -1675,7 +1682,7 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: footer---contatti
   revision_created:
     value: '1674173547'
   revision_user:
@@ -1702,14 +1709,18 @@
     value: '0'
   parent: false
   changed:
-    value: '1683546967'
+    value: '1688732462'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'data-element="privacy-policy-link"'
 37:
   id:
     value: '37'
@@ -1720,19 +1731,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: footer---contatti
   revision_created:
     value: '1674173554'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Leggi le FAQ'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
@@ -1747,17 +1756,20 @@
     value: '-50'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1675082611'
+    value: '1688732383'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'data-element="faq"'
 38:
   id:
     value: '38'
@@ -1768,7 +1780,7 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: footer---contatti
   revision_created:
     value: '1674173626'
   revision_user:
@@ -1795,14 +1807,18 @@
     value: '0'
   parent: false
   changed:
-    value: '1683546967'
+    value: '1688732472'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'data-element="legal-notes"'
 39:
   id:
     value: '39'
@@ -1813,19 +1829,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: footer---contatti
   revision_created:
     value: '1674173642'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Prenotazione appuntamento'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
@@ -1840,17 +1854,20 @@
     value: '-49'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1675082627'
+    value: '1688729275'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'class="nav-link text-white"'
 40:
   id:
     value: '40'
@@ -1861,19 +1878,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: footer---contatti
   revision_created:
     value: '1674173687'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Richiesta d''assistenza'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
@@ -1888,17 +1903,20 @@
     value: '-47'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1675086242'
+    value: '1688729282'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'class="nav-link text-white"'
 41:
   id:
     value: '41'
@@ -1909,7 +1927,7 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: footer---contatti
   revision_created:
     value: '1674173708'
   revision_user:
@@ -1936,14 +1954,18 @@
     value: '0'
   parent: false
   changed:
-    value: '1683546967'
+    value: '1688732417'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'data-element="report-inefficiency"'
 42:
   id:
     value: '42'
@@ -1954,7 +1976,7 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: topleft
   revision_created:
     value: '1674596233'
   revision_user:
@@ -1981,14 +2003,18 @@
     value: '0'
   parent: false
   changed:
-    value: '1688052113'
+    value: '1688727293'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'data-element="management"'
 43:
   id:
     value: '43'
@@ -1999,19 +2025,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: topleft
   revision_created:
     value: '1674596246'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Novità
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topleft
   link:
@@ -2026,17 +2050,20 @@
     value: '-49'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1675082748'
+    value: '1688727414'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'class="nav-link"'
 44:
   id:
     value: '44'
@@ -2047,19 +2074,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: topleft
   revision_created:
     value: '1674596255'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Servizi
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topleft
   link:
@@ -2074,17 +2099,20 @@
     value: '-48'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1675082760'
+    value: '1688727243'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'data-element="all-services"'
 45:
   id:
     value: '45'
@@ -2095,19 +2123,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: topleft
   revision_created:
     value: '1674596269'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Vivere il Comune'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topleft
   link:
@@ -2122,17 +2148,20 @@
     value: '-47'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1675082773'
+    value: '1688727240'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'data-element="live"'
 46:
   id:
     value: '46'
@@ -2143,19 +2172,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: topright
   revision_created:
     value: '1674596578'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Iscrizioni
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topright
   link:
@@ -2170,17 +2197,20 @@
     value: '-50'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600144'
+    value: '1688727419'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'class="nav-link"'
 48:
   id:
     value: '48'
@@ -2191,19 +2221,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: topright
   revision_created:
     value: '1674596654'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Polizia locale'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topright
   link:
@@ -2218,17 +2246,20 @@
     value: '-48'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600144'
+    value: '1688727428'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'class="nav-link"'
 49:
   id:
     value: '49'
@@ -2239,19 +2270,17 @@
   langcode:
     value: it
   bundle:
-    value: menu_link_content
+    target_id: topright
   revision_created:
     value: '1674596694'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Tutti gli argomenti...'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topright
   link:
@@ -2266,14 +2295,17 @@
     value: '-47'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600144'
+    value: '1688727467'
   default_langcode:
     value: '1'
   revision_default:
     value: '1'
   revision_translation_affected:
     value: '1'
+  view_mode:
+    value: default
   metatag: false
+  field_attributi:
+    value: 'class="nav-link fw-bold"'

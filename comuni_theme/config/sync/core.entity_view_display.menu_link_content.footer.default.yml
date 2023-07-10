@@ -1,0 +1,21 @@
+uuid: e07ffff6-81b8-4aee-b12b-970126fd7236
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.footer.field_attributi
+    - system.menu.footer
+id: menu_link_content.footer.default
+targetEntityType: menu_link_content
+bundle: footer
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_attributi: true
+  langcode: true
+  search_api_excerpt: true

@@ -107,3 +107,7 @@ footer .it-brand-wrapper img {
 [aria-expanded="false"] > .rotable {
 	transform: rotate(-180deg);
 }
+/* Menu su due colonne per footer */
+.columns-2 {
+	columns: 2;
+}
