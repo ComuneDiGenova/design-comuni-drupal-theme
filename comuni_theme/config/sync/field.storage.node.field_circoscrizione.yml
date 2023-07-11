@@ -1,4 +1,4 @@
-uuid: cbc0e3c6-ddf3-43d5-ade7-ccaddacb4f61
+uuid: 6828b9a0-56fa-41fe-987f-0bb16a55520b
 langcode: it
 status: true
 dependencies:
@@ -7,11 +7,9 @@ dependencies:
 id: node.field_circoscrizione
 field_name: field_circoscrizione
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: node
 module: core
 locked: false
 cardinality: 1

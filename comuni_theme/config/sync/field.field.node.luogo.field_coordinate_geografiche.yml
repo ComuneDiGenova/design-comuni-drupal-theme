@@ -1,0 +1,21 @@
+uuid: 3ae5dac5-f2b5-4f07-a0d1-2ec66b4e5088
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coordinate_geografiche
+    - node.type.luogo
+  module:
+    - geofield
+id: node.luogo.field_coordinate_geografiche
+field_name: field_coordinate_geografiche
+entity_type: node
+bundle: luogo
+label: 'Coordinate geografiche'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

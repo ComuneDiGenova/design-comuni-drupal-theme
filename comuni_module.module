@@ -34,12 +34,13 @@ function comuni_module_form_alter(&$form, FormStateInterface $form_state, $form_
   }
 }
 
-function comuni_module_preprocess_region(&$variables)
-{
-    $bit_svg =  './modules/custom/design-comuni-drupal-theme/comuni_theme/node_modules/bootstrap-italia/dist/svg/sprites.svg';
-    if(file_exists($bit_svg)){
-   $variables['bit_svg'] = file_get_contents($bit_svg);
-    }else{
-        $variables['bit_svg'] =  $bit_svg;
+function comuni_module_preprocess_region(&$variables) {
+    $variables['bit_svg'] = './modules/custom/design-comuni-drupal-theme/comuni_theme/node_modules/bootstrap-italia/dist/svg/sprites.svg';
+    if(file_exists($variables['bit_svg'])){
+      $variables['bit_svg'] = file_get_contents($variables['bit_svg']);
+    }
+    $variables['logo_svg'] = './modules/custom/design-comuni-drupal-theme/comuni_theme/assets/img/logo-comune.svg';
+    if(file_exists($variables['logo_svg'])){
+      $variables['logo_svg'] = file_get_contents($variables['logo_svg']);
     }
 }

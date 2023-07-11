@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-10">
+    <div class="col-12">
       <div class="cmp-heading pb-3 pb-lg-4">
         <div class="row">
           <div class="col-lg-8">
@@ -258,16 +258,12 @@
         <section class="it-page-section mb-30 card-indirizzo-luogo">
           <h2 class="title-xxlarge mb-3" id="modalita_di_accesso">Indirizzo</h2>
           <div class="container">
-            {{ drupal_view('contenuto_collegato', 'block_1', node.id) }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_quartiere[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="field_quartiere">Quartiere</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_quartiere }}
+            <h3 class="text-paragraph-medium u-grey-light mb-3">
+              {{ content.field_indirizzo[0]['#context'].value }}, {{ content.field_cap[0]['#context'].value }}{% if content.field_quartiere[0] is not empty %}, {{ content.field_quartiere[0]['#context'].value }}{% endif %}
+            </h3>
+            {% if content.field_coordinate_geografiche[0] is not empty %}
+              {{ content.field_coordinate_geografiche }}
+            {% endif %}
           </div>
         </section>
         {% endif %}
@@ -275,8 +271,12 @@
         {% if content.field_circoscrizione[0] is not empty %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="field_circoscrizione">Circoscrizione</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_circoscrizione }}
+          <div class="container">
+            <div class="row row-cols-lg-2">
+              <div class="col">
+                {{ content.field_circoscrizione }}
+              </div>
+            </div>
           </div>
         </section>
         {% endif %}
@@ -290,11 +290,11 @@
         </section>
         {% endif %}
 
-        {% if drupal_view_result('unita_organizzative_collegate', 'block_1', node.id) %}
+        {% if drupal_view_result('unita_organizzative_collegate', 'block_5', node.id) %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="sede_di">Sede di</h2>
           <div class="container">
-            {{ drupal_view('unita_organizzative_collegate', 'block_1', node.id) }}
+            {{ drupal_view('unita_organizzative_collegate', 'block_5', node.id) }}
           </div>
         </section>
         {% endif %}

@@ -2,9 +2,9 @@ _core:
   default_config_hash: 94d95421-24ae-4514-bfd3-7b52524a23cd
 langcode: it
 uuid: 94d95421-24ae-4514-bfd3-7b52524a23cd
-name: 'Nome del comune'
+name: 'Il mio Comune'
 mail: v2comunidrupalct@example.com
-slogan: 'Slogan del comune'
+slogan: 'Un comune da vivere'
 page:
   403: ''
   404: ''

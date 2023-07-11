@@ -57,8 +57,14 @@
           <div class="ue-logo"><span class="visually-hidden">logo Unione Europea</span></div>
           <div class="it-brand-wrapper">
             <a href="{{ url('<front>') }}">
-              <img aria-hidden="true" src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt="logo Comune">
-              <div class="it-brand-text">
+
+              {% if site_settings.infocomune.info_comune.field_logo is not empty %}
+                {{ drupal_entity('media', site_settings.infocomune.info_comune.field_logo) }}
+              {% else %}
+                <svg class="icon me-0" aria-hidden="true" fill="currentColor"><use href="#it-logo"></use></svg>
+              {% endif %}
+
+              <div class="ms-2 it-brand-text">
                 <h2 class="no_toc">{{ site_settings.infocomune.info_comune.field_nome_comune }}</h2>
               </div>
             </a>
@@ -102,3 +108,4 @@
   </div>
 </footer>
 <div class="visually-hidden">{{ bit_svg|raw }}</div>
+<div class="visually-hidden">{{ logo_svg|raw }}</div>

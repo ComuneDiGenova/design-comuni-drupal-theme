@@ -4,24 +4,27 @@
     'vocabulary-' ~ term.bundle|clean_class,
   ]
 %}
+
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
-  <div class="container page-name">
-    <div class="row justify-content-center row-shadow">
-      <div class="col-12 col-lg-10">
-        <div class="cmp-hero">
-          <div class="it-hero-wrapper bg-white align-items-start">
-            <div class="it-hero-text-wrapper pt-0 ps-0 mb-5">
-              <h1 class="text-black hero-title" data-element="page-name">{{ name[0]['#context'].value }}</h1>
-              <p class="hero-text">
-                {% if content.field_descrizione_breve[0] %}
-                  {{ content.field_descrizione_breve[0]["#context"].value }}
-                {% endif %}
-              </p>
-            </div>
-          </div>
-        </div>
+
+  <div class="container mb-2">
+    <div class="row">
+      <div class="col">
+        {% include directory ~ '/templates/node/parts/node--parts--title.html.twig' with { 'title': name[0]['#context'].value } %}
       </div>
     </div>
   </div>
+
+  {% if content.field_descrizione_breve[0] is not empty %}
+    <div class="container">
+      <div class="row row-shadow pb-5">
+        <div class="col">
+          {% include directory ~ '/templates/node/parts/node--parts--text.html.twig' with { 'text': content.field_descrizione_breve[0]["#context"].value } %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
   {{ content|without('field_descrizione_breve')|without('field_link_a_eurovoc') }}
+  
 </div>

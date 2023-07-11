@@ -1,12 +1,12 @@
-uuid: 4b303d5c-6005-4eff-b3e1-57a8e7c0cdec
+uuid: 4fd8cb4d-c1eb-4e01-8b29-78e220b6c472
 langcode: it
 status: true
 dependencies:
   module:
-    - node
-id: node.field_gps_latitude
-field_name: field_gps_latitude
-entity_type: node
+    - site_settings
+id: site_setting_entity.field_slogan
+field_name: field_slogan
+entity_type: site_setting_entity
 type: string
 settings:
   max_length: 255

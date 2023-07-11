@@ -1,4 +1,4 @@
-uuid: 45b6028c-6345-4ac4-b418-f509dce8e35d
+uuid: f5579bf5-c64a-4943-adf4-9a8d935ab6c2
 langcode: it
 status: true
 dependencies:
@@ -10,10 +10,16 @@ field_name: field_circoscrizione
 entity_type: node
 bundle: luogo
 label: Circoscrizione
-description: 'Se il territorio è mappato in circoscrizioni, riportare la Circoscrizione dove è situato il luogo'
+description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: filtro_contenuti
+      display_name: entity_reference_2
+      arguments: {  }
+field_type: entity_reference

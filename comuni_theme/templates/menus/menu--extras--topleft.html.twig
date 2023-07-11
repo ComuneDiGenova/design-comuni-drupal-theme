@@ -20,9 +20,12 @@
             {% set attributi = attributi.setAttribute((item.value|split('=')[0]|raw),(item.value|split('=')[1]|replace({'"': ''}))) %}
           {% endfor %}
 
+          {% set attributi = attributi.addClass('px-lg-3 me-lg-3') %}
+          
           {% if item.in_active_trail is not empty %}
-            {% set attributi = attributi.addClass('class', 'active') %}
+            {% set attributi = attributi.addClass('active') %}
           {% endif %}
+          
           {{ link(item.title, item.url, attributi) }}
           {% set rendered_content = item.content|without('')|render %}
           {% if rendered_content %}

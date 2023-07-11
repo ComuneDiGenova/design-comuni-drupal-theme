@@ -8,23 +8,30 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
-{% set isFront = (path('<current>') == '/homepage') %}
+
 <article{{ attributes.addClass(classes) }}>
-  <div class="container page-name {% if isFront %}visually-hidden{% endif %}">
-    <div class="row justify-content-center row-shadow">
-      <div class="col-12 col-lg-10">
-        <div class="cmp-hero">
-          <section class="it-hero-wrapper bg-white align-items-start">
-            <div class="it-hero-text-wrapper pt-0 ps-0 mb-5">
-              <h1 class="text-black hero-title" data-element="page-name">{{ node.label }}</h1>
-              {% if content.field_descrizione_breve %}
-                <div class="hero-text">{{ content.field_descrizione_breve }}</div>
-              {% endif %}
-            </div>
-          </section>
+
+  {% if path('<current>') != '/homepage' %}
+    <div class="container mb-2">
+      <div class="row">
+        <div class="col">
+          {% include directory ~ '/templates/node/parts/node--parts--title.html.twig' with { 'title': node.label } %}
         </div>
       </div>
     </div>
-  </div>
+
+    {% if content.field_descrizione_breve[0] is not empty %}
+      <div class="container">
+        <div class="row row-shadow pb-5">
+          <div class="col">
+            {% include directory ~ '/templates/node/parts/node--parts--text.html.twig' with { 'text': content.field_descrizione_breve[0]["#context"].value } %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+  {% endif %}
+
   {{ content|without('field_descrizione_breve') }}
+
 </article>

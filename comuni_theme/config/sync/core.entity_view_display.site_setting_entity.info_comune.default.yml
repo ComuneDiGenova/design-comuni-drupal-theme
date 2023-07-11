@@ -10,13 +10,14 @@ dependencies:
     - field.field.site_setting_entity.info_comune.field_logo
     - field.field.site_setting_entity.info_comune.field_nome_comune
     - field.field.site_setting_entity.info_comune.field_nome_regione
+    - field.field.site_setting_entity.info_comune.field_slogan
     - field.field.site_setting_entity.info_comune.field_url_regione
     - site_settings.site_setting_entity_type.info_comune
   module:
     - entity_reference_revisions
     - link
+    - media
     - text
-    - user
 id: site_setting_entity.info_comune.default
 targetEntityType: site_setting_entity
 bundle: info_comune
@@ -24,57 +25,67 @@ mode: default
 content:
   field_contatti:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 5
     region: content
   field_forse_stavi_cercando:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 9
+    weight: 6
     region: content
   field_icone_social:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_logo:
-    type: entity_reference_entity_view
-    label: above
+    type: media_thumbnail
+    label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 4
+    weight: 2
     region: content
   field_nome_comune:
     type: string
-    label: above
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_nome_regione:
+    type: string
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 3
     region: content
-  field_nome_regione:
+  field_slogan:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 1
     region: content
   field_url_regione:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -82,31 +93,11 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 7
-    region: content
-  fieldset:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  user_id:
-    type: author
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
 hidden:
   field_amministrazione_trasparent: true
+  fieldset: true
+  name: true
   search_api_excerpt: true
+  user_id: true

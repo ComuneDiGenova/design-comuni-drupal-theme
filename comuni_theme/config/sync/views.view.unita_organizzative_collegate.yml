@@ -7,9 +7,13 @@ dependencies:
     - field.storage.node.field_unita_organizzativa
     - node.type.incarico
     - node.type.unita_organizzativa
+    - taxonomy.vocabulary.tipi_unita_organizzativa
+  content:
+    - 'taxonomy_term:tipi_unita_organizzativa:e4d21c58-d2d6-41e6-b0a7-81979fafb0a4'
   module:
     - comuni_module
     - node
+    - taxonomy
     - user
 id: unita_organizzative_collegate
 label: 'Unità organizzative collegate'
@@ -547,28 +551,25 @@ display:
         - user.permissions
       tags:
         - 'config:core.entity_view_display.node.appuntamento.default'
-        - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.dataset.default'
         - 'config:core.entity_view_display.node.documento_pubblico.default'
         - 'config:core.entity_view_display.node.evento.default'
         - 'config:core.entity_view_display.node.faq.default'
+        - 'config:core.entity_view_display.node.fase_del_servizio.default'
         - 'config:core.entity_view_display.node.incarico.default'
         - 'config:core.entity_view_display.node.luogo.default'
         - 'config:core.entity_view_display.node.messaggio.default'
         - 'config:core.entity_view_display.node.notizia.default'
         - 'config:core.entity_view_display.node.pagamento.default'
         - 'config:core.entity_view_display.node.pagina.default'
-        - 'config:core.entity_view_display.node.persona.card'
         - 'config:core.entity_view_display.node.persona.default'
         - 'config:core.entity_view_display.node.pratica.default'
-        - 'config:core.entity_view_display.node.punto_di_contatto.card'
         - 'config:core.entity_view_display.node.punto_di_contatto.default'
         - 'config:core.entity_view_display.node.servizio.card'
         - 'config:core.entity_view_display.node.servizio.default'
         - 'config:core.entity_view_display.node.unita_organizzativa.card'
         - 'config:core.entity_view_display.node.unita_organizzativa.default'
         - 'config:core.entity_view_display.node.valutazione.default'
-        - 'config:core.entity_view_display.node.valutazione.teaser'
   block_3:
     id: block_3
     display_title: 'Da Incarico'
@@ -961,3 +962,195 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_unita_organizzativa'
+  block_5:
+    id: block_5
+    display_title: '2 Card - Da Luoghi esclusi i Municipi'
+    display_plugin: block
+    position: 1
+    display_options:
+      arguments:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: field_sede_principale
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: node_nid
+          default_action: 'not found'
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            unita_organizzativa: unita_organizzativa
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_tipo_di_organizzazione_target_id:
+          id: field_tipo_di_organizzazione_target_id
+          table: node__field_tipo_di_organizzazione
+          field: field_tipo_di_organizzazione_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: not
+          value:
+            438: 438
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: tipi_unita_organizzativa
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: card_container
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+          columns: '2'
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: card
+      defaults:
+        style: false
+        row: false
+        relationships: false
+        arguments: false
+        filters: false
+        filter_groups: false
+      relationships:
+        field_sede_principale:
+          id: field_sede_principale
+          table: node__field_sede_principale
+          field: field_sede_principale
+          relationship: none
+          group_type: group
+          admin_label: 'field_sede_principale: Content'
+          plugin_id: standard
+          required: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

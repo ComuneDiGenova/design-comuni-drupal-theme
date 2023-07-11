@@ -16,7 +16,7 @@
           <h4 class="title-xsmall-semi-bold text-uppercase mb-1">{{ content.field_nome_alternativo[0] }}</h4>
         {% endif %}
 
-        {% include directory ~ '/templates/card/parts/card--parts--address.html.twig' with { 'address': content.field_indirizzo[0]["#context"].value, 'url': ('https://www.google.com/maps/place/' ~ content.field_indirizzo[0]["#context"].value|replace({' ': "+"}) ~ ',' ~ content.field_cap[0]["#context"].value) } %}
+        {% include directory ~ '/templates/card/parts/card--parts--address.html.twig' with { 'address': content.field_indirizzo[0]["#context"].value, 'url': ('https://www.google.com/maps/place/' ~ content.field_indirizzo[0]["#context"].value|replace({' ': "+"}) ~ ',' ~ content.field_cap[0]["#context"].value ~ ', genova') } %}
         {% include directory ~ '/templates/card/parts/card--parts--text.html.twig' with { 'content': content.field_descrizione_breve[0] } %}
         
       </div>
@@ -24,6 +24,6 @@
   </div>
 
   {% include directory ~ '/templates/card/parts/card--parts--read-more.html.twig' with { 'url': url, 'title': label[0]["#context"].value } %}
-  {% include directory ~ '/templates/card/parts/card--parts--map.html.twig' with { 'url': ('https://www.google.com/maps/place/' ~ content.field_indirizzo[0]["#context"].value|replace({' ': "+"}) ~ ',' ~ content.field_cap[0]["#context"].value) } %}
+  {% include directory ~ '/templates/card/parts/card--parts--map.html.twig' with { 'url': ('https://www.google.com/maps/place/' ~ content.field_indirizzo[0]["#context"].value|replace({' ': "+"}) ~ ',' ~ content.field_cap[0]["#context"].value ~ ', genova') } %}
 
 </div>

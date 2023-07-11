@@ -6,11 +6,10 @@ dependencies:
     - field.field.node.luogo.field_argomenti
     - field.field.node.luogo.field_cap
     - field.field.node.luogo.field_circoscrizione
+    - field.field.node.luogo.field_coordinate_geografiche
     - field.field.node.luogo.field_descrizione_breve
     - field.field.node.luogo.field_descrizione_estesa
     - field.field.node.luogo.field_galleria_immagini
-    - field.field.node.luogo.field_gps_latitude
-    - field.field.node.luogo.field_gps_longitude
     - field.field.node.luogo.field_identificativo
     - field.field.node.luogo.field_immagine
     - field.field.node.luogo.field_indirizzo
@@ -30,6 +29,7 @@ dependencies:
     - views.view.contenuto_collegato
   module:
     - entity_reference_revisions
+    - leaflet
     - media
     - text
     - user
@@ -53,15 +53,109 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 13
+    weight: 14
     region: content
   field_circoscrizione:
-    type: string
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link_to_entity: false
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 12
+    region: content
+  field_coordinate_geografiche:
+    type: leaflet_formatter_default
+    label: hidden
+    settings:
+      multiple_map: false
+      leaflet_map: 'OSM Mapnik'
+      height: 400
+      height_unit: px
+      hide_empty_map: true
+      disable_wheel: true
+      gesture_handling: false
+      reset_map:
+        control: false
+        options: '{"position":"topleft","title":"Reset View"}'
+      map_scale:
+        control: false
+        options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
+      locate:
+        control: false
+        options: '{"position":"topright","setView":"untilPanOrZoom","returnToPrevBounds":true,"keepCurrentZoomLevel":true,"strings":{"title":"Locate my position"}}'
+        automatic: false
+      leaflet_tooltip:
+        value: ''
+        options: '{"permanent":false,"direction":"center"}'
+      popup: false
+      popup_content: ''
+      leaflet_popup:
+        control: '0'
+        content: ''
+        options: '{"maxWidth":"300","minWidth":"50","autoPan":true}'
+      map_position:
+        force: false
+        center:
+          lat: !!float 0
+          lon: !!float 0
+        zoomControlPosition: topleft
+        zoom: 15
+        minZoom: 1
+        maxZoom: 18
+        zoomFiner: 0
+      icon:
+        iconType: marker
+        iconUrl: ''
+        shadowUrl: ''
+        className: ''
+        iconSize:
+          x: ''
+          'y': ''
+        iconAnchor:
+          x: ''
+          'y': ''
+        shadowSize:
+          x: ''
+          'y': ''
+        shadowAnchor:
+          x: ''
+          'y': ''
+        popupAnchor:
+          x: ''
+          'y': ''
+        html: '<div></div>'
+        html_class: leaflet-map-divicon
+        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+      leaflet_markercluster:
+        control: false
+        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
+        include_path: false
+      fullscreen:
+        control: false
+        options: '{"position":"topleft","pseudoFullscreen":false}'
+      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+      feature_properties:
+        values: ''
+      geocoder:
+        control: false
+        settings:
+          autocomplete:
+            placeholder: 'Search Address'
+            title: 'Search an Address on the Map'
+          position: topright
+          input_size: 20
+          providers: {  }
+          min_terms: 4
+          delay: 800
+          zoom: 16
+          popup: false
+          options: ''
+      map_lazy_load:
+        lazy_load: true
+      weight: null
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_descrizione_breve:
     type: string
@@ -85,23 +179,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 21
-    region: content
-  field_gps_latitude:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 18
-    region: content
-  field_gps_longitude:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 19
+    weight: 22
     region: content
   field_identificativo:
     type: string
@@ -109,7 +187,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 17
+    weight: 18
     region: content
   field_immagine:
     type: media_thumbnail
@@ -174,7 +252,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 14
+    weight: 15
     region: content
   field_punti_di_contatto:
     type: views_field_formatter
@@ -198,7 +276,7 @@ content:
       multiple: true
       implode_character: +
     third_party_settings: {  }
-    weight: 20
+    weight: 21
     region: content
   field_quartiere:
     type: string
@@ -206,7 +284,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 11
+    weight: 13
     region: content
   field_servizi_presenti_nel_luogo:
     type: text_default
@@ -237,7 +315,7 @@ content:
       multiple: true
       implode_character: +
     third_party_settings: {  }
-    weight: 15
+    weight: 16
     region: content
   field_tipo_di_luogo:
     type: entity_reference_label
@@ -252,7 +330,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 16
+    weight: 17
     region: content
   field_video_esterno:
     type: entity_reference_revisions_entity_view
@@ -261,7 +339,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 22
+    weight: 23
     region: content
   links:
     settings: {  }

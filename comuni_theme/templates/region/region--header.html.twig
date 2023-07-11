@@ -9,7 +9,7 @@
       <div class="col-12">
           {% set nome_regione = site_settings.infocomune.info_comune.field_nome_regione %}
           {% set url_regione = site_settings.infocomune.info_comune.field_url_regione.uri %}
-          <div class="it-header-slim-wrapper-content">
+          <div class="it-header-slim-wrapper-content px-0">
             <a class="d-lg-block navbar-brand"
               href="{{ url_regione }}" target="_blank"
               aria-label="Vai al portale {{ nome_regione }} - link esterno - apertura nuova scheda"
@@ -47,13 +47,9 @@
                   </div>
                 </div>
               </div>
-              <a href="#"
-                 class="btn btn-primary btn-icon btn-full"
-                 data-element="personal-area-login"
-              ><span class="rounded-icon" aria-hidden="true">
-                  <svg class="icon icon-primary">
-                        <use href="#it-user" />
-                  </svg>
+              <a href="#" class="btn btn-primary btn-icon pe-0" data-element="personal-area-login">
+                <span class="rounded-icon" aria-hidden="true">
+                  <svg class="icon icon-primary"><use href="#it-user"></use></svg>
                 </span>
                 <span class="d-none d-lg-block">Accedi all'area personale</span>
               </a>
@@ -68,13 +64,19 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="it-header-center-content-wrapper">
+            <div class="it-header-center-content-wrapper px-0">
               <div class="it-brand-wrapper">
                 <a href="{{ url('<front>') }}" title="Vai alla homepage">
-                  <img aria-hidden="true"
-                       src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt="logo Comune"/>
-                  <div class="it-brand-text">
+
+                  {% if site_settings.infocomune.info_comune.field_logo is not empty %}
+                    {{ drupal_entity('media', site_settings.infocomune.info_comune.field_logo) }}
+                  {% else %}
+                    <svg class="icon me-0" aria-hidden="true" fill="currentColor"><use href="#it-logo"></use></svg>
+                  {% endif %}
+
+                  <div class="ms-4 it-brand-text">
                     <div class="it-brand-title">{{ site_settings.infocomune.info_comune.field_nome_comune }}</div>
+                    <div class="it-brand-tagline d-none d-md-block">{{ site_settings.infocomune.info_comune.field_slogan }}</div>
                   </div>
                 </a>
               </div>
@@ -105,7 +107,7 @@
     <div class="it-header-navbar-wrapper" id="header-nav-wrapper">
       <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 px-lg-0">
             <div class="navbar navbar-expand-lg has-megamenu">
               <button class="custom-navbar-toggler" type="button"
                       data-bs-target="#nav4" data-bs-toggle="navbarcollapsible"
@@ -126,12 +128,15 @@
                   </button>
                 </div>
                 <div class="menu-wrapper">
-                  <a href="{{ path('<front>') }}" class="logo-hamburger"
-                     aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
-                  >
-                    <img style="width:82px;margin-right:16px;" aria-hidden="true"
-                         src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
-                    <div class="it-brand-text">
+                  <a href="{{ path('<front>') }}" class="logo-hamburger" aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}">
+                    
+                    {% if site_settings.infocomune.info_comune.field_logo is not empty %}
+                      {{ drupal_entity('media', site_settings.infocomune.info_comune.field_logo) }}
+                    {% else %}
+                      <svg class="icon me-0" aria-hidden="true" fill="currentColor"><use href="#it-logo"></use></svg>
+                    {% endif %}
+                    
+                    <div class="it-brand-text ms-3">
                       <div class="it-brand-title">{{ site_settings.infocomune.info_comune.field_nome_comune }}</div>
                     </div>
                   </a>

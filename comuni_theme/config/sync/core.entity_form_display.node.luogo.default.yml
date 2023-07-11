@@ -6,11 +6,10 @@ dependencies:
     - field.field.node.luogo.field_argomenti
     - field.field.node.luogo.field_cap
     - field.field.node.luogo.field_circoscrizione
+    - field.field.node.luogo.field_coordinate_geografiche
     - field.field.node.luogo.field_descrizione_breve
     - field.field.node.luogo.field_descrizione_estesa
     - field.field.node.luogo.field_galleria_immagini
-    - field.field.node.luogo.field_gps_latitude
-    - field.field.node.luogo.field_gps_longitude
     - field.field.node.luogo.field_identificativo
     - field.field.node.luogo.field_immagine
     - field.field.node.luogo.field_indirizzo
@@ -27,6 +26,7 @@ dependencies:
     - field.field.node.luogo.field_video_esterno
     - node.type.luogo
   module:
+    - leaflet
     - media_library
     - media_library_edit
     - path
@@ -50,19 +50,82 @@ content:
     third_party_settings: {  }
   field_cap:
     type: string_textfield
-    weight: 20
+    weight: 21
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_circoscrizione:
-    type: string_textfield
+    type: options_select
     weight: 19
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_coordinate_geografiche:
+    type: leaflet_widget_default
+    weight: 18
+    region: content
     settings:
-      size: 60
-      placeholder: ''
+      map:
+        leaflet_map: 'OSM Mapnik'
+        height: 400
+        auto_center: 1
+        map_position:
+          force: false
+          center:
+            lat: !!float 0
+            lon: !!float 0
+          zoomControlPosition: topleft
+          zoom: 12
+          minZoom: 1
+          maxZoom: 18
+          zoomFiner: 0
+        scroll_zoom_enabled: 1
+      input:
+        show: true
+        readonly: false
+      toolbar:
+        position: topright
+        marker: defaultMarker
+        drawPolyline: true
+        drawRectangle: true
+        drawPolygon: true
+        drawCircle: false
+        drawText: false
+        editMode: true
+        dragMode: true
+        cutPolygon: false
+        removalMode: true
+        rotateMode: false
+      reset_map:
+        control: false
+        options: '{"position": "topleft", "title": "Reset View"}'
+      map_scale:
+        control: false
+        options: '{"position":"bottomright","maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":false}'
+      fullscreen:
+        control: false
+        options: '{"position":"topleft","pseudoFullscreen":false}'
+      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+      locate:
+        control: false
+        options: '{"position": "topright", "setView": "untilPanOrZoom", "returnToPrevBounds":true, "keepCurrentZoomLevel": true, "strings": {"title": "Locate my position"}}'
+        automatic: false
+      geocoder:
+        control: false
+        settings:
+          position: topright
+          input_size: 20
+          providers: {  }
+          min_terms: 4
+          delay: 800
+          zoom: 16
+          popup: false
+          options: ''
+      geometry_validation: false
+      feature_properties:
+        values: ''
     third_party_settings: {  }
   field_descrizione_breve:
     type: string_textarea
@@ -80,25 +143,9 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_gps_latitude:
-    type: string_textfield
-    weight: 25
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_gps_longitude:
-    type: string_textfield
-    weight: 26
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_identificativo:
     type: string_textfield
-    weight: 24
+    weight: 25
     region: content
     settings:
       size: 60
@@ -149,7 +196,7 @@ content:
     third_party_settings: {  }
   field_orario_per_il_pubblico:
     type: text_textarea
-    weight: 21
+    weight: 22
     region: content
     settings:
       rows: 5
@@ -157,7 +204,7 @@ content:
     third_party_settings: {  }
   field_punti_di_contatto:
     type: entity_reference_autocomplete
-    weight: 27
+    weight: 28
     region: content
     settings:
       match_operator: CONTAINS
@@ -167,7 +214,7 @@ content:
     third_party_settings: {  }
   field_quartiere:
     type: string_textfield
-    weight: 18
+    weight: 20
     region: content
     settings:
       size: 60
@@ -183,7 +230,7 @@ content:
     third_party_settings: {  }
   field_struttura_responsabile:
     type: entity_reference_autocomplete
-    weight: 22
+    weight: 23
     region: content
     settings:
       match_operator: CONTAINS
@@ -199,7 +246,7 @@ content:
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
-    weight: 23
+    weight: 24
     region: content
     settings:
       rows: 5

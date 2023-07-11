@@ -3,7 +3,7 @@
     <svg class="icon icon-xs flex-shrink-0 mt-1"><use href="#it-map-marker-circle" xlink:href="#it-map-marker-circle"></use></svg>
     <div class="title-xsmall-semi-bold">
       {% if url is not empty %}
-        <a class="text-decoration-none" href="{{ url }}">{{ address }}</a>
+        <a class="text-decoration-none" title="Apri indirizzo su google map" href="{{ url }}">{{ address }}</a>
       {% else %}
         {{ address }}
       {% endif %}
