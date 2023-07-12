@@ -1,16 +1,16 @@
-uuid: d385f540-a13f-49e9-a5c8-ae55aa98c3da
+uuid: c7b31030-09bd-4b28-8f48-df37b0947f80
 langcode: it
 status: true
 dependencies:
   config:
-    - field.field.media.image_svg.field_media_file
-    - media.type.image_svg
+    - field.field.media.svg.field_svg_image
+    - media.type.svg
   module:
-    - file
     - path
-id: media.image_svg.default
+    - svg_image_field
+id: media.svg.default
 targetEntityType: media
-bundle: image_svg
+bundle: svg
 mode: default
 content:
   created:
@@ -19,12 +19,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_media_file:
-    type: file_generic
+  field_svg_image:
+    type: svg_image_field_widget
     weight: 0
     region: content
     settings:
       progress_indicator: throbber
+      preview_image_max_width: 300
+      preview_image_max_height: 300
     third_party_settings: {  }
   langcode:
     type: language_select

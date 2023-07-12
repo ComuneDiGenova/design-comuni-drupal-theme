@@ -5,7 +5,6 @@ dependencies:
   config:
     - media.type.document
     - media.type.image
-    - media.type.image_svg
     - node.type.dataset
     - node.type.documento_pubblico
     - node.type.evento
@@ -83,7 +82,6 @@ permissions:
   - 'create url aliases'
   - 'delete any document media'
   - 'delete any image media'
-  - 'delete any image_svg media'
   - 'delete own dataset content'
   - 'delete own documento_pubblico content'
   - 'delete own evento content'
@@ -102,7 +100,6 @@ permissions:
   - 'edit any evento content'
   - 'edit any fase_del_servizio content'
   - 'edit any image media'
-  - 'edit any image_svg media'
   - 'edit any incarico content'
   - 'edit any luogo content'
   - 'edit any notizia content'

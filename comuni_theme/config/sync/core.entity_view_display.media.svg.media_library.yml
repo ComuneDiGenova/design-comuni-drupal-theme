@@ -1,24 +1,25 @@
-uuid: ce463386-31ca-4a6d-ac71-ed75b58639c5
+uuid: 021fdf86-90ec-4efd-b9f0-44391761191c
 langcode: it
 status: true
 dependencies:
   config:
-    - field.field.media.logo_content_type.field_media_image_1
-    - image.style.large
-    - media.type.logo_content_type
+    - core.entity_view_mode.media.media_library
+    - field.field.media.svg.field_svg_image
+    - image.style.medium
+    - media.type.svg
   module:
     - image
-id: media.logo_content_type.default
+id: media.svg.media_library
 targetEntityType: media
-bundle: logo_content_type
-mode: default
+bundle: svg
+mode: media_library
 content:
-  field_media_image_1:
+  thumbnail:
     type: image
-    label: visually_hidden
+    label: hidden
     settings:
       image_link: ''
-      image_style: large
+      image_style: medium
       image_loading:
         attribute: lazy
     third_party_settings: {  }
@@ -26,8 +27,8 @@ content:
     region: content
 hidden:
   created: true
+  field_svg_image: true
   langcode: true
   name: true
   search_api_excerpt: true
-  thumbnail: true
   uid: true

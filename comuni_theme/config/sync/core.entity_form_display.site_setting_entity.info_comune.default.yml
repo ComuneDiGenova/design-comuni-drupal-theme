@@ -16,6 +16,7 @@ dependencies:
   module:
     - link
     - media_library
+    - media_library_edit
     - paragraphs
     - text
 id: site_setting_entity.info_comune.default
@@ -64,8 +65,12 @@ content:
     weight: 2
     region: content
     settings:
-      media_types: {  }
-    third_party_settings: {  }
+      media_types:
+        - image
+        - svg
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_nome_comune:
     type: string_textfield
     weight: 0
