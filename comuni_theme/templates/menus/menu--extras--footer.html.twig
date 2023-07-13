@@ -22,10 +22,10 @@
             {% endfor %}
 
             {% if item.in_active_trail is not empty %}
-              {% set attributi = attributi.addClass('class', 'active') %}
+              {% set attributi = attributi.addClass('active') %}
             {% endif %}
 
-            {{ link(item.title, item.url, attributi) }}
+            {{ link(item.title, item.url, attributi.addClass('lh-lg text-white')) }}
             {% set rendered_content = item.content|without('')|render %}
             {% if rendered_content %}
               {{ rendered_content }}

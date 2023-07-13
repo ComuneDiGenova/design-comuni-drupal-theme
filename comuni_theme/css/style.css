@@ -121,3 +121,20 @@ footer .it-brand-wrapper img {
 	opacity: 1;
 	font-style: normal;
 }
+/* Corretto colore link nel menu contestuale */
+.contextual-region .contextual .contextual-links a {
+	color: #333 !important;
+}
+/* Corretto stile on hover nel menu menu_local_task */
+.tabs a:focus, .tabs a:hover {
+	background-color: transparent;
+	text-decoration: underline;
+}
+/* Corretto hover (delle "a" hanno il text-decoration in assenza di hover, con questo stile diamo un feedback per questi casi)*/
+a:hover {
+	text-decoration: none;
+}
+/* Corretta posizione del button contextual */
+.contextual {
+	top: 6px !important;
+}

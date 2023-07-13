@@ -1,17 +1,19 @@
 global-styling:
   version: 1.x
   js:
-    node_modules/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js: {},
+    node_modules/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js: {}
     js/scripts.js: {}
     js/rating.js: {}
     js/search.js: {}
     js/assistenza.js: {}
     js/booking.js: {}
+    js/script.js: {}
   css:
     theme:
-      css/fonts.css: {},
-      node_modules/bootstrap-italia/dist/css/bootstrap-italia-comuni.min.css: {},
-      css/styles.css: {},
-      css/chosen.css: {},
-      css/style.css: {},
-      css/drupal.css: {},
+      css/fonts.css: {}
+      node_modules/bootstrap-italia/dist/css/bootstrap-italia-comuni.min.css: {}
+      css/styles.css: {}
+      css/chosen.css: {}
+      css/style.css: {}
+      css/drupal.css: {}
+      css/colors.css: {}

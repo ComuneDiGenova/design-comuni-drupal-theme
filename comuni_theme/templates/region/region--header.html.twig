@@ -2,29 +2,21 @@
   <a class="visually-hidden-focusable" accesskey="1" href="#main-container">Vai ai contenuti</a>
   <a class="visually-hidden-focusable" accesskey="2" href="#footer">Vai al footer</a>
 </div>
-<header class="it-header-wrapper it-header-sticky" data-bs-toggle="sticky" data-bs-position-type="fixed" data-bs-sticky-class-name="is-sticky" data-bs-target="#header-nav-wrapper">
-  <div class="it-header-slim-wrapper">
+<header class="it-header-wrapper it-header-sticky bg-black" data-bs-toggle="sticky" data-bs-position-type="fixed" data-bs-sticky-class-name="is-sticky" data-bs-target="#header-nav-wrapper">
+  <div class="it-header-slim-wrapper bg-opacity-75">
     <div class="container">
       <div class="row">
       <div class="col-12">
           {% set nome_regione = site_settings.infocomune.info_comune.field_nome_regione %}
           {% set url_regione = site_settings.infocomune.info_comune.field_url_regione.uri %}
           <div class="it-header-slim-wrapper-content px-0">
-            <a class="d-lg-block navbar-brand"
-              href="{{ url_regione }}" target="_blank"
-              aria-label="Vai al portale {{ nome_regione }} - link esterno - apertura nuova scheda"
-              title="Vai al portale {{ nome_regione }}"
-            >{{ nome_regione }}</a>
+            <a class="d-lg-block navbar-brand" href="{{ url_regione }}" target="_blank" aria-label="Vai al portale {{ nome_regione }} - link esterno - apertura nuova scheda" title="Vai al portale {{ nome_regione }}">{{ nome_regione }}</a>
             <div class="it-header-slim-right-zone" role="navigation">
               <div class="nav-item dropdown">
-                <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                  aria-expanded="false" aria-controls="languages" aria-haspopup="true"
-                >
+                <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="languages" aria-haspopup="true">
                   <span class="visually-hidden">Lingua attiva:</span>
                   <span>ITA</span>
-                  <svg class="icon">
-                    <use href="#it-expand" />
-                  </svg>
+                  <svg class="icon"><use href="#it-expand"></use></svg>
                 </button>
                 <div class="dropdown-menu">
                   <div class="row">
@@ -67,7 +59,6 @@
             <div class="it-header-center-content-wrapper px-0">
               <div class="it-brand-wrapper">
                 <a href="{{ url('<front>') }}" title="Vai alla homepage">
-
                   {% if site_settings.infocomune.info_comune.field_logo is not empty %}
                     {{ drupal_entity('media', site_settings.infocomune.info_comune.field_logo) }}
                   {% else %}
@@ -84,18 +75,15 @@
                 <div class="it-socials d-none d-lg-flex">
                   <span class="me-3">Seguici su</span>
                   <ul>
-                      {% for social in site_settings.infocomune.info_comune.field_icone_social %}
-                          {{ drupal_entity('paragraph',social.target_id,'social') }}
-                      {% endfor %}
+                    {% for social in site_settings.infocomune.info_comune.field_icone_social %}
+                      {{ drupal_entity('paragraph',social.target_id,'social') }}
+                    {% endfor %}
                   </ul>
                 </div>
-                <div class="it-search-wrapper" data-bs-toggle="modal" data-bs-target="#search-modal"
-                     aria-label="Cerca nel sito">
+                <div class="it-search-wrapper" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Cerca nel sito">
                   <span class="d-none d-md-block">Cerca</span>
                   <button class="search-link rounded-icon" type="button">
-                    <svg class="icon">
-                      <use href="#it-search" />
-                    </svg>
+                    <svg class="icon"><use href="#it-search"></use></svg>
                   </button>
                 </div>
               </div>
@@ -109,27 +97,19 @@
         <div class="row">
           <div class="col-12 px-lg-0">
             <div class="navbar navbar-expand-lg has-megamenu">
-              <button class="custom-navbar-toggler" type="button"
-                      data-bs-target="#nav4" data-bs-toggle="navbarcollapsible"
-                      aria-controls="nav4" aria-expanded="false"
-                      aria-label="Mostra/Nascondi la navigazione">
-                <svg class="icon">
-                  <use href="#it-burger" />
-                </svg>
+              <button class="custom-navbar-toggler" type="button" data-bs-target="#nav4" data-bs-toggle="navbarcollapsible" aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione">
+                <svg class="icon"><use href="#it-burger"></use></svg>
               </button>
               <div class="navbar-collapsable" id="nav4">
                 <div class="overlay" style="display: none;"></div>
                 <div class="close-div">
                   <button class="btn close-menu" type="button">
                     <span class="visually-hidden">Nascondi la navigazione</span>
-                    <svg class="icon">
-                      <use href="#it-close-big" />
-                    </svg>
+                    <svg class="icon"><use href="#it-close-big"></use></svg>
                   </button>
                 </div>
                 <div class="menu-wrapper">
                   <a href="{{ path('<front>') }}" class="logo-hamburger" aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}">
-                    
                     {% if site_settings.infocomune.info_comune.field_logo is not empty %}
                       {{ drupal_entity('media', site_settings.infocomune.info_comune.field_logo) }}
                     {% else %}
@@ -140,13 +120,13 @@
                       <div class="it-brand-title">{{ site_settings.infocomune.info_comune.field_nome_comune }}</div>
                     </div>
                   </a>
-                    {{ elements.topleft }}
-                    {{ elements.topright }}
+                  {{ elements.topleft }}
+                  {{ elements.topright }}
                   <div class="it-socials">
                     <span>Seguici su</span>
                     <ul>
                         {% for social in site_settings.infocomune.info_comune.field_icone_social %}
-                            {{ drupal_entity('paragraph',social.target_id,'social') }}
+                          {{ drupal_entity('paragraph',social.target_id,'social') }}
                         {% endfor %}
                     </ul>
                   </div>
