@@ -23,7 +23,7 @@ third_party_settings:
       status: false
       settings:
         age: 1
-name: Evento
+name: Eventi
 type: evento
 description: 'Tipologia che struttura le informazioni relative a un evento di interesse pubblico pubblicato sul sito di un comune.'
 help: ''

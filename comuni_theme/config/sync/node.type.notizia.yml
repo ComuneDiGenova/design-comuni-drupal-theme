@@ -23,7 +23,7 @@ third_party_settings:
       status: false
       settings:
         age: 1
-name: Notizia
+name: Notizie
 type: notizia
 description: 'Tipologia che struttura le informazioni relative agli aggiornamenti d un comune.'
 help: ''

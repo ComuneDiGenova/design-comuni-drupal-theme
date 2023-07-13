@@ -23,7 +23,7 @@ third_party_settings:
       status: false
       settings:
         age: 1
-name: Servizio
+name: Servizi
 type: servizio
 description: 'Struttura delle informazioni relative a un servizio pubblico, funzionale alla creazione di una scheda servizio'
 help: ''

@@ -23,7 +23,7 @@ third_party_settings:
       status: false
       settings:
         age: 1
-name: Incarico
+name: Incarichi
 type: incarico
 description: 'Questa Tipologia descrive la struttura di cariche, incarichi o ruoli salienti per il dominio (sito di un comune), funzionale alla creazione di una scheda persona'
 help: ''

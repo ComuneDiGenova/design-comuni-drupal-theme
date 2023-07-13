@@ -23,7 +23,7 @@ third_party_settings:
       status: false
       settings:
         age: 1
-name: 'Punto di contatto'
+name: 'Punti di contatto'
 type: punto_di_contatto
 description: 'Questa Tipologia descrive la struttura di un punto di contatto, che può essere fisico, virtuale o digitale.'
 help: ''

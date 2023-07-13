@@ -23,7 +23,7 @@ third_party_settings:
       status: false
       settings:
         age: 1
-name: 'Documento pubblico'
+name: 'Documenti pubblici'
 type: documento_pubblico
 description: 'Struttura delle informazioni relative utili a presentare un documento pubblico.'
 help: ''

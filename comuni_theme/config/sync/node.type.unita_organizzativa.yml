@@ -23,7 +23,7 @@ third_party_settings:
       status: false
       settings:
         age: 1
-name: 'Unità organizzativa'
+name: 'Unità organizzative'
 type: unita_organizzativa
 description: 'Questa Tipologia descrive la struttura di un''organizzazione comunale funzionale alla creazione di contenuti come uffici o altre unità organizzative'
 help: ''

@@ -102,6 +102,13 @@ class ComuniTwig extends AbstractExtension
           "is_safe" => TRUE,
         ],
       ]),
+      new TwigFunction('nodeTypeGetNames', [
+        $this,
+        'nodeTypeGetNames',
+        [
+          "is_safe" => TRUE,
+        ],
+      ]),
     ];
   }
 
@@ -118,7 +125,8 @@ class ComuniTwig extends AbstractExtension
       new TwigFilter('getUrlFromMedia', [$this, 'getUrlFromMedia']),
       new TwigFilter('dayEn2It', [$this, 'dayEn2It']),
       new TwigFilter('monthEn2It', [$this, 'monthEn2It']),
-      new TwigFilter('strpad', [$this, 'strpad'])
+      new TwigFilter('strpad', [$this, 'strpad']),
+      new TwigFilter('json_decode', [$this, 'jsonDecode'])
     ];
   }
 
@@ -308,4 +316,23 @@ class ComuniTwig extends AbstractExtension
       return str_pad($string, $length, $pad_string, STR_PAD_LEFT);
     }
   }
+
+  /*
+    @ComuneDiGenova
+    Creata funzione per twig
+  */
+  public function jsonDecode($string) {
+    return json_decode($string,true);
+  }
+
+  /*
+    @ComuneDiGenova
+    Creata funzione per elencare su twig i tipi di contenuto
+  */
+  public function nodeTypeGetNames() {
+    return json_encode(node_type_get_names());
+  }
+
+
+
 }

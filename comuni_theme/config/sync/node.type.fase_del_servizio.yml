@@ -23,7 +23,7 @@ third_party_settings:
       status: false
       settings:
         age: 1
-name: 'Fase del servizio'
+name: 'Fasi del servizio'
 type: fase_del_servizio
 description: 'Content type referenziato nel campo tempi e scadenze del content type Servizio.'
 help: ''
