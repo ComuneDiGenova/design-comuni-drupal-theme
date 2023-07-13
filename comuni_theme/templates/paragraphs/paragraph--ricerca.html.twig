@@ -33,12 +33,14 @@
                       </div>
                     </div>
                   </div>
+                  {% if content.field_links[0] is not empty %}
                   <div class="link-list-wrapper">
                     <div class="link-list-heading text-uppercase mb-3 ps-0">Link utili</div>
                     <ul class="link-list">
                       {{ content.field_links }}
                     </ul>
                   </div>
+                  {% endif %}
                 </form>
               </div>
             </div>
