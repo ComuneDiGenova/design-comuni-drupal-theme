@@ -57,16 +57,6 @@ if(false){ // Primary color Easter Egg
         </div>
       `).appendTo(jQuery("body"));
 
-
-      /*
-              <div class="notification with-icon success dismissable" role="alert" aria-labelledby="not5c-title" id="not5c">
-          <h2 id="not5c-title" class="h5">
-            <svg class="icon"><use href="#it-check-circle"></use></svg>
-            Questo colore è R:${backgroundColor[0]} V:${backgroundColor[1]} B:${backgroundColor[2]} 
-          </h2>
-        </div>
-        */
-
       jQuery(".notification").toggle()
 
       break;
@@ -75,8 +65,11 @@ if(false){ // Primary color Easter Egg
     }
 
   }
-
-
-
-
 }
+
+
+
+//Aggiunto link alla Task bar che manda ad una vista che esporta un nodo in CSV
+$('.block-local-tasks-block nav ul').append('<li class="mx-0"><a href="/esportazione-download/'+$('.block-local-tasks-block a[href*="node/"][href*="/edit"]').attr('href').split("/")[2]+'" class="px-lg-3 me-lg-3">Esporta CSV</a></li>');
+
+
