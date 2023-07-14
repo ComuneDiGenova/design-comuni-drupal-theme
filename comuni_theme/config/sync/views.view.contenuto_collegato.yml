@@ -111,10 +111,9 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: some
+        type: none
         options:
           offset: 0
-          items_per_page: 5
       exposed_form:
         type: basic
         options:
@@ -287,6 +286,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      use_ajax: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -305,6 +305,8 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      defaults:
+        pager: true
       display_description: ''
       display_extenders: {  }
     cache_metadata:
