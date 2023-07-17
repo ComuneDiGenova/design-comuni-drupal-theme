@@ -25,7 +25,7 @@
   {% else %}
     {% for item in items %}
       <div{{ attributes.addClass(classes, 'field__item') }}>
-        {% include directory ~ '/templates/card/card--media.html.twig' with { 'content': item.content } %}
+        {% include '@comuni_theme/templates/card/card--media.html.twig' with { 'content': item.content } %}
       </div>
     {% endfor %}
   {% endif %}

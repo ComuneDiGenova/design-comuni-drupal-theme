@@ -34,7 +34,7 @@ function comuni_module_form_alter(&$form, FormStateInterface $form_state, $form_
   }
 }
 
-function comuni_module_preprocess_region(&$variables) {
+function comuni_module_preprocess_page(&$variables) {
     $variables['bit_svg'] = './modules/custom/design-comuni-drupal-theme/comuni_theme/node_modules/bootstrap-italia/dist/svg/sprites.svg';
     if(file_exists($variables['bit_svg'])){
       $variables['bit_svg'] = file_get_contents($variables['bit_svg']);

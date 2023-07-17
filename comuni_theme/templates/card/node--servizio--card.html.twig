@@ -4,14 +4,14 @@
     <div class="row mx-0 gap-3">
       <div class="col px-0">
 
-        {% include directory ~ '/templates/card/parts/card--parts--category.html.twig' with { 'icon': 'it-settings', 'taxonomy': content.field_categoria_del_servizio } %}
-        {% include directory ~ '/templates/card/parts/card--parts--title.html.twig' with { 'label': label } %}
-        {% include directory ~ '/templates/card/parts/card--parts--text.html.twig' with { 'content': content.field_descrizione_breve[0] } %}
+        {% include '@comuni_theme/templates/card/parts/card--parts--category.html.twig' with { 'icon': 'it-settings', 'taxonomy': content.field_categoria_del_servizio } %}
+        {% include '@comuni_theme/templates/card/parts/card--parts--title.html.twig' with { 'label': label } %}
+        {% include '@comuni_theme/templates/card/parts/card--parts--text.html.twig' with { 'content': content.field_descrizione_breve[0] } %}
 
       </div>
     </div>
   </div>
 
-  {% include directory ~ '/templates/card/parts/card--parts--read-more.html.twig' with { 'url': url, 'title': label[0]["#context"].value, 'data_element': 'service-link' } %}
+  {% include '@comuni_theme/templates/card/parts/card--parts--read-more.html.twig' with { 'url': url, 'title': label[0]["#context"].value, 'data_element': 'service-link' } %}
 
 </div>

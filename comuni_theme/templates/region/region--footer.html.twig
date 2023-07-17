@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="row">
-        {{ elements.footernavigazione }}
+        {{ drupal_entity('block', 'footernavigazione') }}
       </div>
       
       <div class="row">
@@ -85,7 +85,7 @@
               </div>
             </div>
             <div class="col-md-8">
-              {{ elements.footercontatti }}
+              {{ drupal_entity('block', 'footercontatti') }}
             </div>
           </div>
         </div>
@@ -101,11 +101,9 @@
       </div>
       <div class="row">
         <div class="col-12 footer-items-wrapper">
-          {{ elements.footer }}
+          {{ drupal_entity('block', 'footer') }}
         </div>
       </div>
     </div>
   </div>
 </footer>
-<div class="visually-hidden">{{ bit_svg|raw }}</div>
-<div class="visually-hidden">{{ logo_svg|raw }}</div>
