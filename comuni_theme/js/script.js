@@ -24,7 +24,25 @@ jQuery( document ).ready(function() {
       return luminance;
     }
 
-    // Esempio di utilizzo
+    const RGBToHSL = (r, g, b) => {
+      r /= 255;
+      g /= 255;
+      b /= 255;
+      const l = Math.max(r, g, b);
+      const s = l - Math.min(r, g, b);
+      const h = s
+        ? l === r
+          ? (g - b) / s
+          : l === g
+          ? 2 + (b - r) / s
+          : 4 + (r - g) / s
+        : 0;
+      return [
+        60 * h < 0 ? 60 * h + 360 : 60 * h,
+        100 * (s ? (l <= 0.5 ? s / (2 * l - s) : s / (2 - (2 * l - s))) : 0),
+        (100 * (2 * l - s)) / 2,
+      ];
+    };
 
     while(true){
 
@@ -39,9 +57,16 @@ jQuery( document ).ready(function() {
 
       // Verifica se il contrasto è maggiore o uguale a 4.5
       if (contrast >= 4.5) {
-        document.documentElement.style.setProperty('--bs-primary-red', backgroundColor[0]);
-        document.documentElement.style.setProperty('--bs-primary-green', backgroundColor[1]);
-        document.documentElement.style.setProperty('--bs-primary-blue', backgroundColor[2]);
+        document.documentElement.style.setProperty('--bs-primary-red', backgroundColor[0])
+        document.documentElement.style.setProperty('--bs-primary-green', backgroundColor[1])
+        document.documentElement.style.setProperty('--bs-primary-blue', backgroundColor[2])
+        document.documentElement.style.setProperty('--bs-primary-rgb', backgroundColor.join(', '))
+        let primary = RGBToHSL(backgroundColor[0], backgroundColor[1], backgroundColor[2])
+        primary = 'hsl('+Math.floor(primary[0].toString())+'deg, '+ Math.floor(primary[1].toString())+'%, '+ Math.floor(primary[2].toString())+'%)'
+        document.documentElement.style.setProperty('--bs-primary', primary)
+        console.log(primary)
+        console.log('hsl(214deg, 59%, 20%)')
+        
 
         jQuery(`
           <div class="alert alert-success alert-dismissible" role="alert" style="
