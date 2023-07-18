@@ -1,0 +1,5 @@
+bootstrap_italia_css:
+  path: '/modules/custom/design-comuni-drupal-theme/comuni_theme/css/bootstrap-italia.min.css'
+  defaults: { _controller: '\Drupal\comuni_module\comuni_module::bootstrap_italia_css' }
+  methods: [GET]
+  requirements: { _permission: 'access content' }
