@@ -15,7 +15,7 @@
     <div class="container mb-2">
       <div class="row">
         <div class="col">
-          {% include '@comuni_theme/templates/node/parts/node--parts--title.html.twig' with { 'title': node.label } %}
+          {% include '@comuni_theme/templates/node/parts/node--parts--title.html.twig' with { 'title': node.label, 'data_element': 'page-name' } %}
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
       <div class="container">
         <div class="row row-shadow pb-5">
           <div class="col">
-            {% include '@comuni_theme/templates/node/parts/node--parts--text.html.twig' with { 'text': content.field_descrizione_breve[0]["#context"].value } %}
+            {% include '@comuni_theme/templates/node/parts/node--parts--descrizione-breve.html.twig' with { 'text': content.field_descrizione_breve[0]["#context"].value } %}
           </div>
         </div>
       </div>
