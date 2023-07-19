@@ -1,562 +1,267 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col">
-      <div class="cmp-heading pb-3 pb-lg-4">
-        <div class="row">
-          <div class="col-lg-8">
-            {{ title_prefix }}
-            {% if node.label %}
-              <h1{{ title_attributes.addClass('title-xxxlarge') }} data-element="service-title">
-                {{ node.label }}
-              </h1>
-            {% endif %}
-            {{ title_suffix }}
-            {% if content.field_stato_del_servizio %}
-              <ul class="d-flex flex-wrap gap-1 my-3">
-                <li>
-                  <div class="chip {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'chip-simple' : 'chip-simple chip-danger' }} text-button" data-element="service-status">
-                    <span class="chip-label">Servizio {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'attivo' : 'non attivo' }}</span>
-                  </div>
-                </ul>
-              </li>
-            {% endif %}
-            {% if content.field_motivo_dello_stato and content.field_stato_del_servizio.0['#markup'] == 'Off' %}
-              <div class="subtitle-small mb-3 text-danger">
-                {{ content.field_motivo_dello_stato }}
-              </div>
-            {% endif %}
-            {% if content.field_descrizione_breve %}
-              <div class="subtitle-small mb-3" data-element="service-description">
-                {{ content.field_descrizione_breve }}
-              </div>
-            {% endif %}
-            {% if content.field_canale_digitale[0] %}
-              <a href="{{ content.field_canale_digitale[0]['#url'] }}" type="button" class="btn btn-primary fw-bold" data-focus-mouse="false">
-                <span>{{ content.field_canale_digitale['#items'][0].title }}</span>
-              </a>
-            {% endif %}
-          </div>
-          <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
+<div class="container mb-4 border-bottom pb-4">
+  <div class="row">
+    <div class="col-lg-8">
 
-            <div class="callout p-4 border-primary mt-0">
-              <div class="callout-title px-3 me-0">
-                <svg class="icon icon-primary me-0"><use href="#it-info-circle"></use></svg>
-              </div>
+      {% include '@comuni_theme/templates/node/parts/node--parts--title.html.twig' with { 'title': node.label, 'data_element': 'service-title' } %}
 
-              {{ drupal_block("social_sharing_buttons_block") }}
-
-              <div class="dropdown pb-0">
-                <button type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                  class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0 px-0"
-                  aria-label="vedi azioni da compiere sulla pagina"
-                  >
-                  <svg class="icon">
-                    <use href="#it-more-items" />
-                  </svg>
-                  <small>Vedi azioni</small>
-                </button>
-                <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
-                  <div class="link-list-wrapper">
-                    <ul class="link-list">
-                      <li>
-                        <a class="list-item" href="javascript:window.print()">
-                          <svg class="icon">
-                            <use href="#it-print" />
-                          </svg>
-                          <span>Stampa</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="list-item" href="#">
-                          <svg class="icon">
-                            <use href="#it-hearing" />
-                          </svg>
-                          <span>Ascolta</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="list-item" href="mailto:?subject={{ node.label }}&body={{ url }}"
-                          target="_blank" rel="noopener">
-                          <svg class="icon">
-                            <use href="#it-mail" />
-                          </svg>
-                          <span>Invia</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-4 mb-4">
-                {% if content.field_argomenti %}
-                  <span class="subtitle-small">Argomenti</span>
-                  <div class="chip-wrapper mt-2">
-                    {% for item in attribute(content.field_argomenti, "#items") %}
-                      {% set arg_name = item.entity.name.value %}
-                      <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
-                        data-element="service-topic"
-                      >
-                        <div class="chip chip-simple chip-primary">
-                          <span class="chip-label">{{ arg_name }}</span>
-                        </div>
-                      </a>
-                    {% endfor %}
-                  </div>
-                {% endif %}
-              </div>
-
-              <div class="mt-4">
-                {% if content.field_categoria_del_servizio %}
-                  <span class="subtitle-small">Categoria del servizio</span>
-                  <div class="chip-wrapper mt-2">
-                    {% for item in attribute(content.field_categoria_del_servizio, "#items") %}
-                      {% set arg_name = item.entity.name.value %}
-                      <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
-                        <div class="chip chip-simple chip-primary">
-                          <span class="chip-label">{{ arg_name }}</span>
-                        </div>
-                      </a>
-                    {% endfor %}
-                  </div>
-                {% endif %}
-              </div>
-
+      {% if content.field_stato_del_servizio[0] is not empty %}
+        <ul class="d-flex flex-wrap gap-1 my-3">
+          <li>
+            <div class="chip {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'chip-simple' : 'chip-simple chip-danger' }} text-button" data-element="service-status">
+              <span class="chip-label">Servizio {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'attivo' : 'non attivo' }}</span>
             </div>
-            
-          </div>
+          </ul>
+        </li>
+      {% endif %}
+      {% if content.field_motivo_dello_stato[0] is not empty and content.field_stato_del_servizio.0['#markup'] == 'Off' %}
+        <div class="subtitle-small mb-3 text-danger">
+          {{ content.field_motivo_dello_stato }}
         </div>
+      {% endif %}
+
+      {% if content.field_descrizione_breve[0] is not empty %}
+        <div class="mb-3">
+          {% include '@comuni_theme/templates/node/parts/node--parts--descrizione-breve.html.twig' with { 'text': content.field_descrizione_breve[0]["#context"].value, 'data_element': 'service-description' } %}
+        </div>
+      {% endif %}
+
+      {% if content.field_canale_digitale[0] is not empty %}
+        <div class="cmp-heading">
+          <a href="{{ content.field_canale_digitale[0]['#url'] }}" type="button" class="btn btn-primary fw-bold" data-focus-mouse="false">
+            <span>{{ content.field_canale_digitale['#items'][0].title }}</span>
+          </a>
+        </div>
+      {% endif %}
+
+    </div>
+    <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
+      <div class="callout p-4 border-primary mt-0">
+        <svg class="callout-title icon icon-primary flag-icon px-3 me-0"><use href="#it-info-circle"></use></svg>
+        {{ drupal_block("social_sharing_buttons_block") }}
+        {% include '@comuni_theme/templates/node/parts/node--parts--azioni.html.twig' %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--taxonomy-chips.html.twig' with { 'label': 'Argomenti', 'taxonomy': content.field_argomenti, 'data_element': 'service-topic' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--taxonomy-chips.html.twig' with { 'label': 'Categoria del servizio', 'taxonomy': content.field_categoria_del_servizio } %}
       </div>
     </div>
-    <hr class="d-none d-lg-block mt-2">
   </div>
+  
 </div>
 
-<div class="container">
-  <div class="row row-column-menu-left mt-4 mt-lg-80 pb-lg-80 pb-40">
-    <div class="col-12 col-lg-3 mb-4 border-col">
-      <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
-        <nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INDICE DELLA PAGINA" data-bs-navscroll>
-          <div class="navbar-custom" id="navbarNavProgress">
-            <div class="menu-wrapper">
-              <div class="link-list-wrapper">
-                <div class="accordion">
-                  <div class="accordion-item">
-                    <span class="accordion-header" id="accordion-title-one">
-                      <button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-one" aria-expanded="true" aria-controls="collapse-one">
-                        INDICE DELLA PAGINA
-                        <svg class="icon icon-xs right">
-                          <use href="#it-expand" />
-                        </svg>
-                      </button>
-                    </span>
-                    <div class="progress">
-                      <div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <div id="collapse-one" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
-                      <div class="accordion-body">
-                        <ul class="link-list" data-element="page-index">
-                          {% if content.field_a_chi_rivolto[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#who-needs">
-                                <span class="title-medium">A chi è rivolto</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_descrizione_estesa[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#description">
-                                <span class="title-medium">Descrizione</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_copertura_geografica[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#geographical-coverage">
-                                <span class="title-medium">Copertura geografica</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_come_fare[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#how-to">
-                                <span class="title-medium">Come fare</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_cosa_serve[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#needed">
-                                <span class="title-medium">Cosa serve</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_cosa_si_ottiene[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#obtain">
-                                <span class="title-medium">Cosa si ottiene</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_promemoria_scadenze[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#deadlines">
-                                <span class="title-medium">Tempi e scadenze</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_costi[0] is not empty or content.field_costi_allegati[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#costs">
-                                <span class="title-medium">Quanto costa</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_procedure_collegate_esito[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#procedure-collegate-esito">
-                                <span class="title-medium">Procedure collegate all'esito</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#submit-request">
-                                <span class="title-medium">Accedi al servizio</span>
-                              </a>
-                            </li>
-                          {% if content.field_vincoli[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#constraints">
-                                <span class="title-medium">Vincoli</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_casi_particolari[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#special-cases">
-                                <span class="title-medium">Casi particolari</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_condizioni_di_servizio_par[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#conditions">
-                                <span class="title-medium">Condizioni di servizio</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          <li class="nav-item">
-                            <a class="nav-link" href="#contacts">
-                              <span class="title-medium">Contatti</span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#field_unita_org_responsabile">
-                              <span class="title-medium">Ufficio responsabile</span>
-                            </a>
-                          </li>
-                          {% if content.field_documenti[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#documents">
-                                <span class="title-medium">Documenti</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                          {% if content.field_ulteriori_informazioni[0] is not empty %}
-                            <li class="nav-item">
-                              <a class="nav-link" href="#more-info">
-                                <span class="title-medium">Ulteriori informazioni</span>
-                              </a>
-                            </li>
-                          {% endif %}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <div class="col-12 col-lg-8 offset-lg-1">
-      <div class="it-page-sections-container">
-        {% if content.field_a_chi_rivolto[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="who-needs">A chi è rivolto</h2>
-          <div class="richtext-wrapper lora" data-element="service-addressed">
-            {{ content.field_a_chi_rivolto }}
-          </div>
-        </section>
-        {% endif %}
-        {% if content.field_descrizione_estesa[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="description">Descrizione</h2>
-          <div class="richtext-wrapper lora" data--element="service-extended-description">
-            {{ content.field_descrizione_estesa }}
-          </div>
-        </section>
-        {% endif %}
-        {% if content.field_copertura_geografica[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="geographical-coverage">Copertura geografica</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_copertura_geografica }}
-          </div>
-        </section>
-        {% endif %}
-        {% if content.field_come_fare[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="how-to">Come fare</h2>
-          <div class="richtext-wrapper lora" data-element="service-how-to">
-            {{ content.field_come_fare }}
-          </div>
-        </section>
-        {% endif %}
-        {% if content.field_cosa_serve[0] is not empty %}
-        <section class="it-page-section  mb-30 has-bg-grey shadow-sm rounded border border-light p-3">
-          <h2 class="title-xxlarge mb-3" id="needed">Cosa serve</h2>
-          <div class="richtext-wrapper lora" data-element="service-needed">
-            {{ content.field_cosa_serve }}
-          </div>
-        </section>
-        {% endif %}
-        {% if content.field_cosa_si_ottiene[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="obtain">Cosa si ottiene</h2>
-          <div class="richtext-wrapper lora" data-element="service-achieved">
-            {{ content.field_cosa_si_ottiene }}
-          </div>
-        </section>
-        {% endif %}
-        {% if content.field_promemoria_scadenze[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <div class="cmp-timeline">
-            <h2 class="title-xxlarge mb-3" id="deadlines">Tempi e scadenze</h2>
-            {% if content.field_promemoria_scadenze[0] %}
-              <div class="richtext-wrapper lora mb-2" data-element="service-calendar-text">
-                {{ content.field_promemoria_scadenze }}
-              </div>
-            {% endif %}
-            <div class="calendar-vertical mb-3" data-element="service-calendar-list">
-              {% for fase in content.field_fase_semplice["#items"] %}
-                {% if fase.entity.field_titolo is not empty or fase.entity.field_descrizione is not empty %}
-                <div class="calendar-date">
-                  <div class="calendar-date-day">
-                    {% if fase.entity.field_giorni is not empty %}
-                    <span class="title-xxlarge-regular d-flex justify-content-center">
-                      {{ fase.entity.field_giorni.value }}
-                    </span>
-                    <small class="calendar-date-day__month">
-                      {{ fase.entity.field_giorni.value == 1 ? 'giorno' : 'giorni' }}
-                    </small>
-                    {% endif %}
-                  </div>
-                  <div class="calendar-date-description rounded">
-                    <div class="calendar-date-description-content">
-                      <h3 class="title-medium-2 mb-0">{{ fase.entity.field_titolo.value }}</h3>
-                      {% if fase.entity.field_descrizione is not empty %}
-                      <p class="info-text mt-1 mb-0">{{ fase.entity.field_descrizione.value }}</p>
-                      {% endif %}
-                    </div>
-                  </div>
-                </div>
-                {% endif %}
-              {% endfor %}
+<div class="container mt-5 pb-5">
+  <div class="row">
 
+    <div class="col-12 col-lg-3 border-right border-light px-0 mb-5 mb-lg-0">
+      {% set indice_della_pagina = {
+        'field_a_chi_rivolto': {
+          'attivo': (content.field_a_chi_rivolto[0] is not empty),
+          'titolo': (content.field_a_chi_rivolto["#title"]),
+        },
+        'field_descrizione_estesa': {
+          'attivo': (content.field_descrizione_estesa[0] is not empty),
+          'titolo': 'Descrizione'
+        },
+        'field_copertura_geografica': {
+          'attivo': (content.field_copertura_geografica[0] is not empty),
+          'titolo': (content.field_copertura_geografica["#title"]),
+        },
+        'field_come_fare': {
+          'attivo': (content.field_come_fare[0] is not empty),
+          'titolo': (content.field_come_fare["#title"]),
+        },
+        'field_cosa_serve': {
+          'attivo': (content.field_cosa_serve[0] is not empty),
+          'titolo': (content.field_cosa_serve["#title"]),
+        },
+        'field_cosa_si_ottiene': {
+          'attivo': (content.field_cosa_si_ottiene[0] is not empty),
+          'titolo': (content.field_cosa_si_ottiene["#title"]),
+        },
+        'field_promemoria_scadenze': {
+          'attivo': (content.field_promemoria_scadenze[0] is not empty),
+          'titolo': 'Tempi e scadenze',
+        },
+        'field_costi': {
+          'attivo': (content.field_costi[0] is not empty or content.field_costi_allegati[0] is not empty),
+          'titolo': 'Costi',
+        },
+        'field_procedure_collegate_esito': {
+          'attivo': (content.field_procedure_collegate_esito[0] is not empty),
+          'titolo': (content.field_procedure_collegate_esito["#title"]),
+        },
+        'field_canale_digitale': {
+          'attivo': true,
+          'titolo': 'Accedi al servizio'
+        },
+        'field_vincoli': {
+          'attivo': (content.field_vincoli[0] is not empty),
+          'titolo': (content.field_vincoli["#title"]),
+        },
+        'field_casi_particolari': {
+          'attivo': (content.field_casi_particolari[0] is not empty),
+          'titolo': (content.field_casi_particolari["#title"]),
+        },
+        'field_condizioni_di_servizio_par': {
+          'attivo': (content.field_condizioni_di_servizio_par[0] is not empty),
+          'titolo': (content.field_condizioni_di_servizio_par["#title"]),
+        },
+        'field_contatti': {
+          'attivo': (content.field_contatti[0] is not empty),
+          'titolo': (content.field_contatti["#title"]),
+        },
+        'field_unita_org_responsabile': {
+          'attivo': (content.field_unita_org_responsabile[0] is not empty),
+          'titolo': 'Ufficio responsabile'
+        },
+        'field_documenti': {
+          'attivo': (content.field_documenti[0] is not empty),
+          'titolo': (content.field_documenti["#title"]),
+        },
+        'field_ulteriori_informazioni': {
+          'attivo': (content.field_ulteriori_informazioni[0] is not empty),
+          'titolo': (content.field_ulteriori_informazioni["#title"]),
+        },
+      } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--indice.html.twig' with { 'content': indice_della_pagina } %}
+    </div>
+
+    <div class="col-12 col-lg-8 offset-lg-1 it-page-sections-container">
+
+      {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_a_chi_rivolto'].titolo, 'content': content.field_a_chi_rivolto, 'id': 'field_a_chi_rivolto', 'data_element': 'service-addressed' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_descrizione_estesa'].titolo, 'content': content.field_descrizione_estesa, 'id': 'field_descrizione_estesa', 'data_element': 'service-extended-description' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_copertura_geografica'].titolo, 'content': content.field_copertura_geografica, 'id': 'field_copertura_geografica' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_come_fare'].titolo, 'content': content.field_come_fare, 'id': 'field_come_fare', 'data_element': 'service-how-to' } %}
+
+      <div class="has-bg-grey shadow-sm rounded border border-light p-3 mb-5">
+        {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_cosa_serve'].titolo, 'content': content.field_cosa_serve, 'id': 'field_cosa_serve', 'data_element': 'service-needed' } %}
+      </div>
+
+      {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_cosa_si_ottiene'].titolo, 'content': content.field_cosa_si_ottiene, 'id': 'field_cosa_si_ottiene', 'data_element': 'service-achieved' } %}
+
+      {% if content.field_promemoria_scadenze[0] is not empty %}
+        <section class="it-page-section mb-5">
+          <div class="cmp-timeline">
+            <h2 class="title-xxlarge mb-3">Tempi e scadenze</h2>
+            <div class="richtext-wrapper lora mb-2" data-element="service-calendar-text">
+              {{ content.field_promemoria_scadenze }}
+            </div>
+            <div class="calendar-vertical mb-3" data-element="service-calendar-list">
+              {{ content.field_fase_semplice }}
               {{ content.field_tempi_e_scadenze }}
-              
             </div>
           </div>
         </section>
-        {% endif %}
-        {% if content.field_costi[0] is not empty or content.field_costi_allegati[0] is not empty %}
-        <section class="it-page-section mb-30" data-element="service-cost">
-          <h2 class="title-xxlarge mb-3" id="costs">Quanto costa</h2>
+      {% endif %}
+
+      {% if content.field_costi[0] is not empty or content.field_costi_allegati[0] is not empty %}
+        <section class="it-page-section mb-5" data-element="service-cost">
+          <h2 class="title-xxlarge mb-3" id="field_costi">{{ indice_della_pagina['field_costi'].titolo }}</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_costi }}
           </div>
-            {{ content.field_costi_allegati }}
-        </section>
-        {% endif %}
-        {% if content.field_procedure_collegate_esito[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="procedure-collegate-esito">Procedure collegate all'esito</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_procedure_collegate_esito }}
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                {{ content.field_costi_allegati }}
+              </div>
+            </div>
           </div>
         </section>
-        {% endif %}
-        <section class="it-page-section mb-30 has-bg-grey shadow-sm rounded border border-light p-4">
-          <h2 class="mb-3" id="submit-request">Accedi al servizio</h2>
-          {% if content.field_canale_digitale[0] %}
-          <p class="text-paragraph lora mb-4" data-element="service-generic-access">
-            Puoi accedere a {{ node.label }} direttamente online.
-          </p>
-          <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-            type="button" class="btn btn-primary mobile-full" data-element="service-online-access"
-          >
-            <span class="">{{ content.field_canale_digitale['#items'][0].title }}</span>
+      {% endif %}
+
+      {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_procedure_collegate_esito'].titolo, 'content': content.field_procedure_collegate_esito, 'id': 'field_procedure_collegate_esito' } %}
+
+      <section class="it-page-section mb-30 has-bg-grey shadow-sm rounded border border-light p-4">
+        <h2 class="mb-3" id="field_canale_digitale">Accedi al servizio</h2>
+        {% if content.field_canale_digitale[0] %}
+          <p class="text-paragraph lora mb-4" data-element="service-generic-access">Puoi accedere a {{ node.label }} direttamente online.</p>
+          <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank" type="button" class="btn btn-primary mobile-full" data-element="service-online-access">
+            <span>{{ content.field_canale_digitale['#items'][0].title }}</span>
           </a>
-          <p class="text-paragraph lora mt-4" data-element="service-generic-access">
-            Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.
-          </p>
-          {% else %}
-          <p class="text-paragraph lora mt-4" data-element="service-generic-access">
-            Puoi prenotare un appuntamento e presentarti presso gli uffici.
-          </p>
-          {% endif %}
-          <a href='/prenotazione-appuntamento' target="_blank"
-            class="btn btn-outline-primary t-primary bg-white mobile-full"
-            data-element="service-booking-access"
-          ><span>Prenota appuntamento</span>
-          </a>
-        </section>
-        {% if content.field_vincoli[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="constraints">Vincoli</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_vincoli }}
-          </div>
-        </section>
+          <p class="text-paragraph lora mt-4" data-element="service-generic-access">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+        {% else %}
+          <p class="text-paragraph lora mt-4" data-element="service-generic-access">Puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
         {% endif %}
-        {% if content.field_casi_particolari[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="special-cases">Casi particolari</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_casi_particolari }}
-          </div>
-        </section>
-        {% endif %}
-        {% if content.field_condizioni_di_servizio_par[0] is not empty %}
+
+        <a href='/prenotazione-appuntamento' target="_blank" class="btn btn-outline-primary t-primary bg-white mobile-full" data-element="service-booking-access">
+          <span>Prenota appuntamento</span>
+        </a>
+      </section>
+
+      {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_vincoli'].titolo, 'content': content.field_vincoli, 'id': 'field_vincoli' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_casi_particolari'].titolo, 'content': content.field_casi_particolari, 'id': 'field_casi_particolari' } %}
+
+      {% if content.field_condizioni_di_servizio_par[0] is not empty %}
         <section class="it-page-section  mb-30" data-element="service-file">
-          <h2 class="title-xxlarge mb-3" id="conditions">Condizioni di servizio</h2>
+          <h2 class="title-xxlarge mb-3" id="field_condizioni_di_servizio_par">Condizioni di servizio</h2>
           <p class="text-paragraph lora mb-1">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
           <div class="container my-3">
             {{ content.field_condizioni_di_servizio_par }}
           </div>
         </section>
-        {% endif %}
+      {% endif %}
 
-        {% if content.field_contatti[0] is not empty or content.field_unita_org_responsabile[0] is not empty %}
-        <section class="it-page-section mb-30">
-            <div class="container p-0 my-3">
-              <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
-              
-                {% if content.field_contatti[0] is not empty %}
-                  <div class="col px-0">
-                    <h2 class="mb-3" id="contacts">Contatti</h2>
-                    <div class="container">
-                      {{ content.field_contatti }}
-                    </div>
-                  </div>
-                {% else %}
-                  <div class="col px-0">
-                    <h2 class="mb-3" id="contacts">Contatti</h2>
-                    <div class="container">
-                      <div class="row row-cols-1 g-4">
-                        {% for item in node.field_unita_org_responsabile %}
-                          {% if drupal_field('field_contatti', 'node', item.target_id)[0] is not empty %}
-                            <div class="col">
-                              {{ drupal_field('field_contatti', 'node', item.target_id) }}
-                            </div>
-                          {% else %}
-                            <div class="col">
-                              {{ drupal_view('punti_di_contatto_collegati', 'block_2', item.target_id) }}
-                            </div>
-                          {% endif %}
-                        {% endfor %}
-                      </div>
-                    </div>
-                  </div>
-                {% endif %}
-
-                {% if content.field_unita_org_responsabile[0] is not empty %}
-                  <div class="col px-0">
-                    <h2 class="mb-3" id="field_unita_org_responsabile">Ufficio responsabile</h2>
-                    <div class="container">
-                      {{ content.field_unita_org_responsabile }}
-                    </div>
-                  </div>
-                {% endif %}
-              </div>
-            </div>
-        </section>
-        {% endif %}
-
-
-        {% if content.field_documenti[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="documents">Documenti</h2>
-          <div class="container">
-            {{ content.field_documenti }}
-          </div>
-        </section>
-        {% endif %}
-
-        {#% if content.field_argomenti[0] is not empty or node.changed.value %}
-          <section class="it-page-section">
-            <div class="mb-30">
-              {% if content.field_argomenti[0] is not empty %}
-              <span class="text-paragraph-small">Argomenti:</span>
-              <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
-              {% for argomento in content.field_argomenti['#items'] %}
-                {% set argName = argomento.entity.name.value %}
-                <li>
-                  <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}" 
-                    class="chip chip-simple" data-element="service-topic"
-                  >
-                    <span class="chip-label">
-                      {{ argName }}
-                    </span>
-                  </a>
-                </li>
-              {% endfor %}
-              {% endif %}
-              </ul>
-              {% if node.changed.value %}
-              <p class="text-paragraph-small mb-0">Pagina aggiornata il {{ node.changed.value|date("d/m/Y") }}</p>
-              {% endif %}
-            </div>
-          </section>
-        {% endif %#}
-
-        {% if content.field_ulteriori_informazioni[0] is not empty %}
-          <section id="ulteriori-informazioni" class="it-page-section mb-5">
-            <h2 class="mb-3" id="ulteriori_informazioni">Ulteriori informazioni</h2>
-                <div class="mt-4">
-                  <div class="callout">
-                    <div class="callout-title">
-                      <svg class="icon">
-                        <use href="#it-info-circle" />
-                      </svg>
-                    </div>
-                      {{ content.field_ulteriori_informazioni }}
+      {% if content.field_contatti[0] is not empty or content.field_unita_org_responsabile[0] is not empty %}
+      <section class="it-page-section mb-30">
+          <div class="container p-0 my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
+            
+              {% if content.field_contatti[0] is not empty %}
+                <div class="col px-0">
+                  <h2 class="mb-3" id="contacts">Contatti</h2>
+                  <div class="container">
+                    {{ content.field_contatti }}
                   </div>
                 </div>
-          </section>
-        {% endif %}
+              {% else %}
+                <div class="col px-0">
+                  <h2 class="mb-3" id="contacts">Contatti</h2>
+                  <div class="container">
+                    <div class="row row-cols-1 g-4">
+                      {% for item in node.field_unita_org_responsabile %}
+                        {% if drupal_field('field_contatti', 'node', item.target_id)[0] is not empty %}
+                          <div class="col">
+                            {{ drupal_field('field_contatti', 'node', item.target_id) }}
+                          </div>
+                        {% else %}
+                          <div class="col">
+                            {{ drupal_view('punti_di_contatto_collegati', 'block_2', item.target_id) }}
+                          </div>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
 
-        {% if node.changed[0] %}
-          <article id="ultimo-aggiornamento" class="anchor-offset mt-5">
-            <h5 class="font-serif">Ultimo aggiornamento</h5>
-            <p class="h6"><strong>{{ node.changed[0].value | format_date('medium') }}</strong></p>
-          </article>
-        {% endif %}
-      </div>
+              {% if content.field_unita_org_responsabile[0] is not empty %}
+                <div class="col px-0">
+                  <h2 class="mb-3" id="field_unita_org_responsabile">Ufficio responsabile</h2>
+                  <div class="container">
+                    {{ content.field_unita_org_responsabile }}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+      </section>
+      {% endif %}
+
+      {% include '@comuni_theme/templates/node/parts/node--parts--allegati.html.twig' with { 'label': indice_della_pagina['field_documenti'].titolo, 'content': content.field_documenti, 'id': 'field_documenti' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--ulteriori-informazioni.html.twig' with { 'label': indice_della_pagina['field_ulteriori_informazioni'].titolo, 'content': content.field_ulteriori_informazioni, 'id': 'field_ulteriori_informazioni' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--ultimo-aggiornamento.html.twig' with { 'content': node.changed } %}
     </div>
   </div>
 </div>
+
 <script data-element="metatag" type="application/ld+json">
   {% if node.field_copertura_geografica.value %}
-  {%  set  areaServed = node.field_copertura_geografica.value|raw|striptags|trim %}
+    {% set areaServed = node.field_copertura_geografica.value|raw|striptags|trim %}
   {% endif %}
- {% if node.field_a_chi_rivolto.value %}
-  {%  set  audience = node.field_a_chi_rivolto.value|raw|striptags|trim %}
+  {% if node.field_a_chi_rivolto.value %}
+    {% set audience = node.field_a_chi_rivolto.value|raw|striptags|trim %}
   {% endif %}
-   {% if content.field_unita_org_responsabile['#items'][0].entity.field_sede_principale.entity.field_indirizzo.value %}
-  {%  set  streetAddress = content.field_unita_org_responsabile['#items'][0].entity.field_sede_principale.entity.field_indirizzo.value|raw|striptags %}
+  {% if content.field_unita_org_responsabile['#items'][0].entity.field_sede_principale.entity.field_indirizzo.value %}
+    {% set streetAddress = content.field_unita_org_responsabile['#items'][0].entity.field_sede_principale.entity.field_indirizzo.value|raw|striptags %}
   {% endif %}
   {
     "name": "{{ node.label }}",
@@ -582,5 +287,4 @@
       }
     }
   }
-
 </script>

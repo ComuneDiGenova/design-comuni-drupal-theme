@@ -1,0 +1,20 @@
+<div class="calendar-date">
+  <div class="calendar-date-day">
+    {% if elements.field_giorni[0] is not empty %}
+    <span class="title-xxlarge-regular d-flex justify-content-center">
+      {{ elements.field_giorni[0]["#markup"] }}
+    </span>
+    <small class="calendar-date-day__month">
+      {{ elements.field_giorni[0]["#markup"] == 1 ? 'giorno' : 'giorni' }}
+    </small>
+    {% endif %}
+  </div>
+  <div class="calendar-date-description rounded mb-4">
+    <div class="calendar-date-description-content">
+      <h3 class="title-medium-2 mb-0">{{ elements.field_titolo[0]["#context"].value }}</h3>
+      {% if elements.field_descrizione[0] is not empty %}
+      <p class="info-text mt-1 mb-0">{{ elements.field_descrizione[0]["#context"].value }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>

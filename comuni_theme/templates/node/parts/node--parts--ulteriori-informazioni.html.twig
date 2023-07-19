@@ -1,0 +1,15 @@
+{% if content[0] is not empty %}
+  <section class="it-page-section mb-5">
+    <h2 class="mb-3" id="{{ id }}">{{ label }}</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="callout">
+            <svg class="callout-title icon icon-primary flag-icon px-3 me-0"><use href="#it-info-circle"></use></svg>
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}

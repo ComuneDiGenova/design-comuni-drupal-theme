@@ -1,0 +1,30 @@
+<div class="dropdown pb-0 d-inline-block">
+  <button type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0 px-0" aria-label="vedi azioni da compiere sulla pagina">
+    <svg class="icon"><use href="#it-more-items"></use></svg>
+    <small>Vedi azioni</small>
+  </button>
+  <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
+    <div class="link-list-wrapper">
+      <ul class="link-list">
+        <li>
+          <a class="list-item" href="javascript:window.print()">
+            <svg class="icon"><use href="#it-print"></use></svg>
+            <span>Stampa</span>
+          </a>
+        </li>
+        <li>
+          <a class="list-item" href="#">
+            <svg class="icon"><use href="#it-hearing"></use></svg>
+            <span>Ascolta</span>
+          </a>
+        </li>
+        <li>
+          <a class="list-item" href="mailto:?subject={{ node.label }}&body={{ url }}" target="_blank" rel="noopener">
+            <svg class="icon"><use href="#it-mail"></use></svg>
+            <span>Invia</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

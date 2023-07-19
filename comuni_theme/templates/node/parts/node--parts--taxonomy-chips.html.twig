@@ -1,0 +1,15 @@
+{% if taxonomy %}
+  <div class="mt-4">
+      <span class="subtitle-small">{{ label }}</span>
+      <div class="chip-wrapper mt-2">
+        {% for item in attribute(taxonomy, "#items") %}
+          {% set arg_name = item.entity.name.value %}
+          <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}" {% if data_element %}data-element="{{ data_element }}"{% endif %}>
+            <div class="chip chip-simple chip-primary">
+              <span class="chip-label">{{ arg_name }}</span>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+  </div>
+{% endif %}
