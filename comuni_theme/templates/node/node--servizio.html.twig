@@ -191,7 +191,7 @@
           <h2 class="title-xxlarge mb-3" id="field_condizioni_di_servizio_par">Condizioni di servizio</h2>
           <p class="text-paragraph lora mb-3">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
           
-          {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'content': node.field_condizioni_di_servizio_par } %}
+          {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': null, 'content': node.field_condizioni_di_servizio_par } %}
         </section>
       {% endif %}
 
@@ -225,7 +225,7 @@
         </section>
       {% endif %}
 
-      {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': indice_della_pagina['field_documenti'].titolo, 'content': (content.field_documenti["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_documenti' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': indice_della_pagina['field_documenti'].titolo, 'content': (content.field_documenti["#items"] is null ? null : content.field_documenti["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_documenti' } %}
       {% include '@comuni_theme/templates/node/parts/node--parts--ulteriori-informazioni.html.twig' with { 'label': indice_della_pagina['field_ulteriori_informazioni'].titolo, 'content': content.field_ulteriori_informazioni, 'id': 'field_ulteriori_informazioni' } %}
       {% include '@comuni_theme/templates/node/parts/node--parts--ultimo-aggiornamento.html.twig' with { 'content': node.changed } %}
     </div>

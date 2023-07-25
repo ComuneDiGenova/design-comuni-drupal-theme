@@ -191,7 +191,7 @@
     <div class="col-12 col-lg-8 offset-lg-1">
       <div class="it-page-sections-container">
 
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Incaricato', 'content': (content.field_persona["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_persona' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Incaricato', 'content': (content.field_persona["#items"] is null ? null : content.field_persona["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_persona' } %}
 
         {% if content.field_compensi[0] is not empty %}
         <section class="it-page-section mb-30">
@@ -211,9 +211,9 @@
         </section>
         {% endif %}
 
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Unità organizzativa', 'content': (content.field_unita_organizzativa["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_unita_organizzativa' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Responsabile della struttura', 'content': (content.field_responsabile_struttura["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_responsabile_struttura' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Atto di nomina', 'content': (content.field_atto_di_nomina["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_atto_di_nomina' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Unità organizzativa', 'content': (content.field_unita_organizzativa["#items"] is null ? null : content.field_unita_organizzativa["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_unita_organizzativa' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Responsabile della struttura', 'content': (content.field_responsabile_struttura["#items"] is null ? null : content.field_responsabile_struttura["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_responsabile_struttura' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Atto di nomina', 'content': (content.field_atto_di_nomina["#items"] is null ? null : content.field_atto_di_nomina["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_atto_di_nomina' } %}
 
         {% if content.field_ulteriori_informazioni[0] is not empty %}
           <section id="ulteriori-informazioni" class="it-page-section mb-5">

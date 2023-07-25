@@ -202,7 +202,7 @@
         </section>
         {% endif %}
 
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Titolare', 'content': (content.field_titolare["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_titolare' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Titolare', 'content': (content.field_titolare["#items"] is null ? null : content.field_titolare["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_titolare' } %}
 
         {% if node.changed[0] %}
         <section id="ultimo-aggiornamento" class="anchor-offset mt-5">

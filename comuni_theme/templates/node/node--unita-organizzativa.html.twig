@@ -242,8 +242,8 @@
           </section>
         {% endif %}
         
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Sede principale', 'content': (content.field_sede_principale["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'sede-principale' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Altre sedi', 'content': (content.field_altre_sedi["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'altre-sedi' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Sede principale', 'content': (content.field_sede_principale["#items"] is null ? null : content.field_sede_principale["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'sede-principale' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Altre sedi', 'content': (content.field_altre_sedi["#items"] is null ? null : content.field_altre_sedi["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'altre-sedi' } %}
         
         <section class="it-page-section">
           <div class="container p-0">
@@ -268,7 +268,7 @@
           </div>
         </section>
 
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Allegati', 'content': (content.field_allegati_doc_pubblico["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'allegati-doc-pubblico' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Allegati', 'content': (content.field_allegati_doc_pubblico["#items"] is null ? null : content.field_allegati_doc_pubblico["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'allegati-doc-pubblico' } %}
 
         {% include '@comuni_theme/templates/node/parts/node--parts--ulteriori-informazioni.html.twig' with { 'label': 'Ulteriori informazioni', 'content': content.field_ulteriori_informazioni, 'id': 'ulteriori_informazioni' } %}
         {% include '@comuni_theme/templates/node/parts/node--parts--ultimo-aggiornamento.html.twig' with { 'content': node.changed } %}

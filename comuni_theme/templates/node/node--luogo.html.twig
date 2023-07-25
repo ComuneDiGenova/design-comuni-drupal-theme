@@ -220,7 +220,7 @@
         </section>
         {% endif %}
         
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Luoghi collegati', 'content': (content.field_luoghi_collegati["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'luoghi_collegati' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Luoghi collegati', 'content': (content.field_luoghi_collegati["#items"] is null ? null : content.field_luoghi_collegati["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'luoghi_collegati' } %}
 
         {% if drupal_view_result('servizi_collegati', 'block_3', node.id) or (content.field_servizi_presenti_nel_luogo[0] is not empty) %}
         <section class="it-page-section mb-30">

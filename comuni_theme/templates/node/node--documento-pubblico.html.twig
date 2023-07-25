@@ -295,7 +295,7 @@
         {% endif %}
         
         {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Documento', 'content': content.field_paragraph_documento, 'id': 'field_paragraph_documento' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Ufficio responsabile del documento', 'content': (content.field_ufficio_respons_documento["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_ufficio_respons_documento' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Ufficio responsabile del documento', 'content': (content.field_ufficio_respons_documento["#items"] is null ? null : content.field_ufficio_respons_documento["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_ufficio_respons_documento' } %}
 
         {% if content.field_autori[0] is not empty %}
         <section class="it-page-section mb-30">
@@ -360,8 +360,8 @@
         </section>
         {% endif %}
 
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Documenti collegati', 'content': (content.field_documenti_collegati["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_documenti_collegati' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Dataset', 'content': (content.field_dataset["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_dataset' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Documenti collegati', 'content': (content.field_documenti_collegati["#items"] is null ? null : content.field_documenti_collegati["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_documenti_collegati' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Dataset', 'content': (content.field_dataset["#items"] is null ? null : content.field_dataset["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_dataset' } %}
 
         {% if content.field_riferimenti_normativi[0] is not empty %}
         <section class="it-page-section  mb-30">

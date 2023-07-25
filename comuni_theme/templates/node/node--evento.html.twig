@@ -206,7 +206,7 @@
           <div class="font-serif">
               {{ content.field_descrizione_completa }}
           </div>
-          {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Parteciperanno', 'content': (content.field_persone["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_persone' } %}
+          {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Parteciperanno', 'content': (content.field_persone["#items"] is null ? null : content.field_persone["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_persone' } %}
           {#% if content.field_galleria_immagini[0] is not empty %}
             <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide="" id="splide01">
                 {{ content.field_galleria_immagini }}
@@ -305,7 +305,7 @@
       {% endif %}
 
       {% if content.field_evento_genitore[0] is not empty %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Evento principale', 'content': (content.field_evento_genitore["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_evento_genitore' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Evento principale', 'content': (content.field_evento_genitore["#items"] is null ? null : content.field_evento_genitore["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_evento_genitore' } %}
       {% endif %}
 
       {% if drupal_view_result('eventi_collegati', 'block_1', node.id) is not empty %}
