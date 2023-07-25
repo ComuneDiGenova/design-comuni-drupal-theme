@@ -200,218 +200,137 @@
       </div>
     </aside>
     <section class="col-lg-8 it-page-sections-container border-light">
-        {% if content.field_descrizione_completa [0] is not empty %}
-          <article id="cos-e" class="it-page-section mb-30" data-audio>
-            <h2 class="title-xxlarge mb-3">Cos'è?</h2>
-            <div class="font-serif">
-                {{ content.field_descrizione_completa }}
+      {% if content.field_descrizione_completa [0] is not empty %}
+        <article id="cos-e" class="it-page-section mb-30" data-audio>
+          <h2 class="title-xxlarge mb-3">Cos'è?</h2>
+          <div class="font-serif">
+              {{ content.field_descrizione_completa }}
+          </div>
+          {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Parteciperanno', 'content': (content.field_persone["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_persone' } %}
+          {#% if content.field_galleria_immagini[0] is not empty %}
+            <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide="" id="splide01">
+                {{ content.field_galleria_immagini }}
             </div>
-            {% if content.field_persone[0] is not empty %}
-              <div class="pt-3 mb-4">
-                <h2 class="title-xxlarge mb-3">Parteciperanno</h2>
-                <div class="container">
-                  {{ content.field_persone }}
+          {% endif %#}
+          {#% if content.field_video_esterno %}
+              {{content.field_video_esterno}}
+          {% endif %#}
+        </article>
+      {% endif %}
+
+      {% if content.field_a_chi_e_rivolto [0] is not empty %}
+        <article id="destinatari" class="it-page-section mb-30">
+          <h2 class="mb-3">A chi è rivolto</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_a_chi_e_rivolto }}
+          </div>
+        </article>
+      {% endif %}
+
+      {% if content.field_luogo[0] is not empty %}
+        {% set tmp = drupal_entity('node', content.field_luogo["#items"][0].target_id)["#node"] %}
+        <section class="it-page-section mb-5 card-indirizzo-luogo">
+          <h2 class="title-xxlarge mb-3" id="luogo">Luogo</h2>
+          <p class="richtext-wrapper lora">
+            {{ tmp.field_indirizzo[0].value }}, {{ tmp.field_cap[0].value }}{% if tmp.field_quartiere[0] is not empty %}, {{ tmp.field_quartiere[0].value }}{% endif %}
+          </p>
+          <div class="container">
+            {% if tmp.field_coordinate_geografiche[0] is not empty %}
+              {{ drupal_field('field_coordinate_geografiche', 'node', content.field_luogo["#items"][0].target_id) }}
+            {% endif %}
+          </div>
+        </section>
+      {% endif %}
+
+      {% if content.field_data_e_orario_di_inizio[0] is not empty %}
+        <article id="date-e-orari" class="it-page-section mb-30">
+          <h2 class="mb-3">Date e orari</h2>
+          <div class="point-list-wrapper">
+            <div class="point-list">
+              <h3 class="point-list-aside point-list-primary fw-normal">
+                <div class="point-date font-monospace">{{ content.field_data_e_orario_di_inizio[0]["#text"]|date('d') }}</div>
+                <div class="point-month font-monospace">{{ content.field_data_e_orario_di_inizio[0]["#text"]|date('M')|t }}</div>
+              </h3>
+              <div class="point-list-content">
+                <div class="card card-teaser shadow rounded">
+                  <div class="card-body">
+                    <h3 class="card-title h5 m-0">{% if content.field_data_e_orario_di_inizio[0]["#text"]|date('H') != '00' or content.field_data_e_orario_di_inizio[0]["#text"]|date('i') != '00' or content.field_data_e_orario_di_inizio[0]["#text"]|date('s') != '00' %}{{ content.field_data_e_orario_di_inizio[0]["#text"]|date('H:i')}} - {% endif %}Inizio evento </h3>
+                  </div>
                 </div>
               </div>
-            {% endif %}
-            {#% if content.field_galleria_immagini[0] is not empty %}
-              <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide="" id="splide01">
-                  {{ content.field_galleria_immagini }}
-              </div>
-            {% endif %#}
-            {#% if content.field_video_esterno %}
-                {{content.field_video_esterno}}
-            {% endif %#}
-          </article>
-        {% endif %}
-
-        {% if content.field_a_chi_e_rivolto [0] is not empty %}
-          <article id="destinatari" class="it-page-section mb-30">
-            <h2 class="mb-3">A chi è rivolto</h2>
-            <div class="richtext-wrapper lora">
-              {{ content.field_a_chi_e_rivolto }}
             </div>
-          </article>
-        {% endif %}
-
-        {% if node.field_luogo[0] is not empty %}
-          <article id="luogo" class="it-page-section mb-30">
-            <h2 class="mb-3">Luogo</h2>
-            <div class="container mb-30">
-              {{ content.field_luogo }}
-            </div>
-              {# TODO: check map controls at https://openlayers.org/en/latest/examples/ #}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.13.1/OpenLayers.js"></script>
-            <script type="text/javascript">
-                var lat="{{ node.field_luogo.entity.field_gps_latitude.value }}";
-                var lon="{{ node.field_luogo.entity.field_gps_longitude.value }}";
-                var zoom=13;
-                window.addEventListener('load', (event) => {
-                    map = new OpenLayers.Map ("map", {
-                        controls:[
-                            new OpenLayers.Control.Navigation(),
-                            new OpenLayers.Control.PanZoomBar(),
-                            new OpenLayers.Control.ScaleLine(),
-                            new OpenLayers.Control.Permalink('permalink'),
-                            new OpenLayers.Control.MousePosition(),
-                            new OpenLayers.Control.Attribution()
-                        ],
-                        projection: new OpenLayers.Projection("EPSG:900913"),
-                        displayProjection: new OpenLayers.Projection("EPSG:4326")
-                    } );
-
-                var mapnik = new OpenLayers.Layer.OSM("OpenStreetMap (Mapnik)");
-                map.addLayer(mapnik);
-                var lonLat = new OpenLayers.LonLat( lon ,lat )
-                    .transform(
-                        new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-                        map.getProjectionObject() // to Spherical Mercator Projection
-                    );
-                var markers = new OpenLayers.Layer.Markers( "Markers" );
-                map.addLayer(markers);
-                markers.addMarker(new OpenLayers.Marker(lonLat));
-                map.setCenter (lonLat, zoom);
-                });
-
-            </script>
-            <div class="map-wrapper map-column mb-30">
-              <div style="width:100%; height:476px; position: relative;" id="map" tabindex="1"></div>
-            </div>
-          </article>
-        {% endif %}
-
-        {% if content.field_data_e_orario_di_inizio[0] is not empty %}
-          <article id="date-e-orari" class="it-page-section mb-30">
-            <h2 class="mb-3">Date e orari</h2>
-            <div class="point-list-wrapper">
-              <div class="point-list">
+            {% if content.field_data_e_orario_di_fine[0] is not empty %}
+              <div class="point-list mb-30">
                 <h3 class="point-list-aside point-list-primary fw-normal">
-                  <div class="point-date font-monospace">{{ content.field_data_e_orario_di_inizio[0]["#text"]|date('d') }}</div>
-                  <div class="point-month font-monospace">{{ content.field_data_e_orario_di_inizio[0]["#text"]|date('M')|t }}</div>
+                  <div class="point-date font-monospace">{{ content.field_data_e_orario_di_fine[0]["#text"]|date('d') }}</div>
+                  <div class="point-month font-monospace">{{ content.field_data_e_orario_di_fine[0]["#text"]|date('M')|t }}</div>
                 </h3>
                 <div class="point-list-content">
                   <div class="card card-teaser shadow rounded">
                     <div class="card-body">
-                      <h3 class="card-title h5 m-0">{% if content.field_data_e_orario_di_inizio[0]["#text"]|date('H') != '00' or content.field_data_e_orario_di_inizio[0]["#text"]|date('i') != '00' or content.field_data_e_orario_di_inizio[0]["#text"]|date('s') != '00' %}{{ content.field_data_e_orario_di_inizio[0]["#text"]|date('H:i')}} - {% endif %}Inizio evento </h3>
+                      <h3 class="card-title h5 m-0">{% if content.field_data_e_orario_di_fine[0]["#text"]|date('H') != '00' or content.field_data_e_orario_di_fine[0]["#text"]|date('i') != '00' or content.field_data_e_orario_di_fine[0]["#text"]|date('s') != '00' %}{{ content.field_data_e_orario_di_fine[0]["#text"]|date('H:i')}} - {% endif %}Fine evento</h3>
                     </div>
                   </div>
                 </div>
               </div>
-              {% if content.field_data_e_orario_di_fine[0] is not empty %}
-                <div class="point-list mb-30">
-                  <h3 class="point-list-aside point-list-primary fw-normal">
-                    <div class="point-date font-monospace">{{ content.field_data_e_orario_di_fine[0]["#text"]|date('d') }}</div>
-                    <div class="point-month font-monospace">{{ content.field_data_e_orario_di_fine[0]["#text"]|date('M')|t }}</div>
-                  </h3>
-                  <div class="point-list-content">
-                    <div class="card card-teaser shadow rounded">
-                      <div class="card-body">
-                        <h3 class="card-title h5 m-0">{% if content.field_data_e_orario_di_fine[0]["#text"]|date('H') != '00' or content.field_data_e_orario_di_fine[0]["#text"]|date('i') != '00' or content.field_data_e_orario_di_fine[0]["#text"]|date('s') != '00' %}{{ content.field_data_e_orario_di_fine[0]["#text"]|date('H:i')}} - {% endif %}Fine evento</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              {% endif %}
-            </div>
-              {# TODO Label #}<p class="font-serif">Per informazioni sul programma dettagliato degli appuntamenti religiosi e civili, consultare il programma nella sezione documenti.</p>
-            <div class="mt-3">
-              {% set calendar_inizio = content.field_data_e_orario_di_inizio[0]["#text"]|date('Ymd', 'UTC') %}
-              {% set calendar_inizio = calendar_inizio ~ 'T' ~ content.field_data_e_orario_di_inizio[0]["#text"]|date('His', 'UTC') %}
-              {% set calendar_inizio = calendar_inizio ~ 'Z' %}
-              {% set calendar_fine = content.field_data_e_orario_di_fine[0]["#text"]|date('Ymd', 'UTC') %}
-              {% set calendar_fine = calendar_fine ~ 'T' ~ content.field_data_e_orario_di_fine[0]["#text"]|date('His', 'UTC') %}
-              {% set calendar_fine = calendar_fine ~ 'Z' %}
-              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{ calendar_inizio }}/{{ calendar_fine }}&text={{ node.label|replace({' ': '%20'}) }}" target="_blank" class="btn btn-outline-primary btn-icon">
-                  <svg class="icon icon-primary">
-                      <use href="#it-plus-circle" />
-                  </svg>
-                <span>Aggiungi al calendario</span>{# TODO Label #}
-              </a>
-            </div>
-          </article>
-        {% endif %}
-
-        {% if content.field_costo[0] is not empty %}
-          <article id="costi" class="it-page-section mb-30">
-            <h2 class="mb-3">Costi</h2>
-              {{ content.field_costo }}
-          </article>
-        {% endif %}
-
-        {% if content.field_allegati[0] is not empty %}
-          <article id="allegati" class="it-page-section mb-30">
-            <h2 class="mb-3">Allegati</h2>
-            <div class="container">
-              {{ content.field_allegati }}
-            </div>
-          </article>
-        {% endif %}
-
-        {% if content.field_evento_genitore[0] is not empty %}
-              <div class="pt-3 mb-30">
-                <h2 class="title-xxlarge mb-3">Evento principale</h2>
-                <div class="container">
-                  {{ content.field_evento_genitore }}
-                </div>
-              </div>
-        {% endif %}
-
-        {% if drupal_view_result('eventi_collegati', 'block_1', node.id) is not empty %}
-          <article id="appuntamenti" class="it-page-section mb-30">
-            <h2 class="mb-3">Appuntamenti</h2>
-            <div class="container">
-              {{ drupal_view('eventi_collegati', 'block_1', node.id) }}
-            </div>
-          </article>
-        {% endif %}
-
-        {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
-          <article id="contatti" class="it-page-section mb-30">
-              <div class="container p-0 my-3">
-                <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
-                  {% if content.field_punti_di_contatto[0] is not empty %}
-                    <div class="col px-0">
-                      <h2 class="mb-3" id="contacts">Contatti</h2>
-                      <div class="container">
-                        {{ content.field_punti_di_contatto }}
-                      </div>
-                    </div>
-                  {% endif %}
-                  {% if content.field_organizzato_da[0] is not empty %}
-                    <div class="col px-0">
-                      <h2 class="mb-3">Con il supporto di</h2>
-                      <div class="container">
-                        {{ content.field_organizzato_da }}
-                      </div>
-                    </div>
-                  {% endif %}
-                </div>
-              </div>
-          </article>
-        {% endif %}
-
-      {% if content.field_patrocinato_da[0] is not empty %}
-        <article id="patrocinato-da" class="it-page-section">  
-            <div class="mb-30">
-              <h2 class="mb-3">Patrocinato da:</h2>
-              <div class="container">
-                <div class="row row-cols-lg-2 row-cols-1 g-4">
-                  {{ content.field_patrocinato_da }}
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          {% if content.field_sponsor[0] is not empty %}
-            <div class="mb-30">
-              <h2 class="mb-3">Sponsor:</h2>
-              <div class="container">
-                <div class="row row-cols-lg-2 row-cols-1 g-4">
-                  {{ content.field_sponsor }}
-                </div>
-              </div>
-            </div>
+            {% endif %}
+          </div>
+            {# TODO Label #}<p class="font-serif">Per informazioni sul programma dettagliato degli appuntamenti religiosi e civili, consultare il programma nella sezione documenti.</p>
+          <div class="mt-3">
+            {% set calendar_inizio = content.field_data_e_orario_di_inizio[0]["#text"]|date('Ymd', 'UTC') %}
+            {% set calendar_inizio = calendar_inizio ~ 'T' ~ content.field_data_e_orario_di_inizio[0]["#text"]|date('His', 'UTC') %}
+            {% set calendar_inizio = calendar_inizio ~ 'Z' %}
+            {% set calendar_fine = content.field_data_e_orario_di_fine[0]["#text"]|date('Ymd', 'UTC') %}
+            {% set calendar_fine = calendar_fine ~ 'T' ~ content.field_data_e_orario_di_fine[0]["#text"]|date('His', 'UTC') %}
+            {% set calendar_fine = calendar_fine ~ 'Z' %}
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{ calendar_inizio }}/{{ calendar_fine }}&text={{ node.label|replace({' ': '%20'}) }}" target="_blank" class="btn btn-outline-primary btn-icon">
+                <svg class="icon icon-primary">
+                    <use href="#it-plus-circle" />
+                </svg>
+              <span>Aggiungi al calendario</span>{# TODO Label #}
+            </a>
+          </div>
         </article>
       {% endif %}
+
+      {% if content.field_costo[0] is not empty %}
+        <article id="costi" class="it-page-section mb-30">
+          <h2 class="mb-3">Costi</h2>
+            {{ content.field_costo }}
+        </article>
+      {% endif %}
+
+      {% if content.field_allegati[0] is not empty %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Allegati', 'content': content.field_allegati, 'id': 'allegati' } %}
+      {% endif %}
+
+      {% if content.field_evento_genitore[0] is not empty %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Evento principale', 'content': (content.field_evento_genitore["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_evento_genitore' } %}
+      {% endif %}
+
+      {% if drupal_view_result('eventi_collegati', 'block_1', node.id) is not empty %}
+        <article id="appuntamenti" class="it-page-section mb-30">
+          <h2 class="mb-3">Appuntamenti</h2>
+          <div class="container">
+            {{ drupal_view('eventi_collegati', 'block_1', node.id) }}
+          </div>
+        </article>
+      {% endif %}
+
+      {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
+        <article id="contatti" class="it-page-section mb-5">
+          <div class="container p-0">
+            <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Contatti', 'content': (content.field_punti_di_contatto["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'contacts' } %}
+
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Con il supporto di', 'content': (content.field_organizzato_da["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_organizzato_da' } %}
+            </div>
+          </div>
+        </article>
+      {% endif %}
+
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Patrocinato da:', 'content': content.field_patrocinato_da, 'id': 'patrocinato-da' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Sponsor:', 'content': content.field_sponsor, 'id': 'patrocinato-da' } %}
 
       {% if content.field_ulteriori_informazioni[0] is not empty %}
         <article id="ulteriori-informazioni" class="it-page-section mb-5">
