@@ -27,13 +27,11 @@ dependencies:
     - field.field.node.documento_pubblico.field_ufficio_respons_documento
     - field.field.node.documento_pubblico.field_ulteriori_informazioni
     - node.type.documento_pubblico
-    - views.view.contenuto_collegato
   module:
     - datetime
     - entity_reference_revisions
     - text
     - user
-    - views_field_formatter
 id: node.documento_pubblico.default
 targetEntityType: node
 bundle: documento_pubblico
@@ -90,26 +88,9 @@ content:
     weight: 3
     region: content
   field_dataset:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_1'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 20
     region: content
@@ -129,26 +110,9 @@ content:
     weight: 9
     region: content
   field_documenti_collegati:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_1'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 17
     region: content
@@ -242,26 +206,9 @@ content:
     weight: 6
     region: content
   field_ufficio_respons_documento:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_1'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 10
     region: content
