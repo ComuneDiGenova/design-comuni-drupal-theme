@@ -242,89 +242,37 @@
           </section>
         {% endif %}
         
-        {% if content.field_sede_principale[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="sede-principale">Sede principale</h2>
-          <div class="container my-3">
-            {{ content.field_sede_principale }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_altre_sedi[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="altre-sedi">Altre sedi</h2>
-          <div class="container my-3">
-            {{ content.field_altre_sedi }}
-          </div>
-        </section>
-        {% endif %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Sede principale', 'content': (content.field_sede_principale["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'sede-principale' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Altre sedi', 'content': (content.field_altre_sedi["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'altre-sedi' } %}
         
         <section class="it-page-section mb-30">
-            <div class="container p-0 my-3">
-              <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
-                {% if content.field_contatti[0] is not empty %}
-                  <div class="col px-0">
-                    <h2 class="mb-3" id="contacts">Contatti</h2>
-                    <div class="container">
-                      {{ content.field_contatti }}
-                    </div>
-                  </div>
-                {% else %}
-                  <div class="col px-0">
-                    <h2 class="mb-3" id="contacts">Contatti</h2>
-                    <div class="container">
-                      {% if content.field_sede_principale[0] is not empty %}
-                        {% set arg_id = content.field_sede_principale["#object"].field_sede_principale[0].target_id %}
-                        {{ drupal_field('field_punti_di_contatto', 'node', arg_id) }}
-                      {% endif %}
-                    </div>
-                  </div>
-                {% endif %}
+          <div class="container p-0 my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
+              {% set contatti = [] %}
+              {% if content.field_contatti[0] is not empty %}
+                {#} unita_organizzativa.field_contatti è popolato {#}
+                {% set contatti = contatti|merge([content.field_contatti["#items"]|map(item => "#{item.target_id}" )|join(',')]) %}
+              {% else %}
+                {% for item in node.field_sede_principale %}
+                  {% set tmp_field_contatti = drupal_field('field_punti_di_contatto', 'node', item.target_id) %}
+                  {% if tmp_field_contatti[0] is not empty %}
+                    {#} luogo.field_punti_di_contatto è popolato {#}
+                    {% set contatti = contatti|merge([tmp_field_contatti["#items"]|map(item => "#{item.target_id}" )|join(',')]) %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Contatti', 'content': contatti|join(','), 'id': 'contatti' } %}
 
-                {% if content.field_unita_org_genitore[0] is not empty %}
-                  <div class="col px-0">
-                    <h2 class="mb-3" id="unita-org-genitore">Ufficio responsabile</h2>
-                    <div class="container">
-                      {{ content.field_unita_org_genitore }}
-                    </div>
-                  </div>
-                {% endif %}
-              </div>
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Ufficio responsabile', 'content': (content.field_unita_org_genitore["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'unita-org-genitore' } %}
             </div>
-        </section>
-
-        {% if content.field_allegati_doc_pubblico[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="allegati-doc-pubblico">Allegati</h2>
-          <div class="container my-3">
-            {{ content.field_allegati_doc_pubblico }}
           </div>
         </section>
-        {% endif %}
 
-        {% if content.field_ulteriori_informazioni[0] is not empty %}
-          <section id="ulteriori-informazioni" class="it-page-section mb-5">
-            <h2 class="mb-3" id="ulteriori_informazioni">Ulteriori informazioni</h2>
-                <div class="mt-4">
-                  <div class="callout">
-                    <div class="callout-title">
-                      <svg class="icon">
-                        <use href="#it-info-circle" />
-                      </svg>
-                    </div>
-                      {{ content.field_ulteriori_informazioni }}
-                  </div>
-                </div>
-          </section>
-        {% endif %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Allegati', 'content': (content.field_allegati_doc_pubblico["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'allegati-doc-pubblico' } %}
 
-        {% if node.changed[0] %}
-          <article id="ultimo-aggiornamento" class="anchor-offset mt-5">
-            <h5 class="font-serif">Ultimo aggiornamento</h5>
-            <p class="h6"><strong>{{ node.changed[0].value | format_date('medium') }}</strong></p>
-          </article>
-        {% endif %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--ulteriori-informazioni.html.twig' with { 'label': 'Ulteriori informazioni', 'content': content.field_ulteriori_informazioni, 'id': 'ulteriori_informazioni' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--ultimo-aggiornamento.html.twig' with { 'content': node.changed } %}
+
       </div>
     </div>
   </div>
