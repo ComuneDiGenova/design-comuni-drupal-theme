@@ -1,5 +1,5 @@
 {% if content is not empty %}
-  <section class="it-page-section mb-30">
+  <section class="it-page-section mb-5">
     <h2 class="title-xxlarge mb-3" id="{{ id }}">{{ label}}</h2>
     <div class="container" {% if data_element %}data-element="{{ data_element }}"{% endif %}>
       {{ drupal_view('contenuto_collegato', 'block_1', content) }}

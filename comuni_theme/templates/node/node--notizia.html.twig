@@ -215,65 +215,21 @@
         </article>
       {% endif %}
 
-      {% if content.field_luoghi[0] is not empty %}
-        <article class="it-page-section mb-30" id="field_luoghi">
-          <h2 class="mb-3">Luoghi</h2>
-            <div class="container my-3">
-              {{ content.field_luoghi }}
-            </div>
-        </article>
-      {% endif %}
-
-      {% if content.field_documenti[0] is not empty %}
-        <article class="it-page-section mb-30" id="documenti">
-          <h2 class="mb-3">Documenti</h2>
-          <div class="container">
-            {{ content.field_documenti }}
-          </div>
-        </article>
-      {% endif %}
-
-      {% if content.field_allegati[0] is not empty %}
-        <article id="allegati" class="it-page-section mb-30">
-          <h2 class="mb-3">Allegati</h2>
-          <div class="container">
-            {{ content.field_allegati }}
-          </div>
-        </article>
-      {% endif %}
-
-      {% if content.field_dataset[0] is not empty %}
-        <article id="dataset" class="it-page-section mb-30">
-          <h2 class="mb-3">Dataset</h2>
-          <div class="container">
-            {{ content.field_dataset }}
-          </div>
-        </article>
-      {% endif %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Luoghi', 'content': (content.field_luoghi["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_luoghi' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Documenti', 'content': (content.field_documenti["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'documenti' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Allegati', 'content': content.field_allegati, 'id': 'allegati' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Dataset', 'content': (content.field_dataset["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'dataset' } %}
 
       {% if content.field_a_cura_di[0] is not empty or content.field_unita_org_responsabile[0] is not empty %}
-        <article id="a-cura-di" class="it-page-section mb-30">
-          <div class="container p-0 my-3">
+        <section class="it-page-section">
+          <div class="container p-0">
             <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
-              {% if content.field_a_cura_di[0] is not empty %}
-                <div class="col px-0">
-                  <h2 class="mb-3">A cura di</h2>
-                  <div class="container">
-                    {{ content.field_a_cura_di }}
-                  </div>
-                </div>
-              {% endif %}
-              {% if content.field_persone[0] is not empty %}
-                <div class="col px-0">
-                  <h2 class="mb-3">&nbsp;</h2>
-                  <div class="container">
-                    {{ content.field_persone }}
-                  </div>
-                </div>
-              {% endif %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'A cura di', 'content': (content.field_a_cura_di["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'a-cura-di' } %}
+
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Persone', 'content': (content.field_persone["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_persone' } %}
             </div>
           </div>
-        </article>
+        </section>
       {% endif %}
 
       {% if content.field_ulteriori_informazioni[0] is not empty %}
