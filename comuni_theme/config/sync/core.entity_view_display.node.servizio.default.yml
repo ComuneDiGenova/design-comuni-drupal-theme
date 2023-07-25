@@ -40,13 +40,11 @@ dependencies:
     - field.field.node.servizio.field_unita_organizzative
     - field.field.node.servizio.field_vincoli
     - node.type.servizio
-    - views.view.contenuto_collegato
   module:
     - entity_reference_revisions
     - link
     - text
     - user
-    - views_field_formatter
 id: node.servizio.default
 targetEntityType: node
 bundle: servizio
@@ -112,26 +110,9 @@ content:
     weight: 21
     region: content
   field_contatti:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_2'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 22
     region: content
@@ -188,26 +169,9 @@ content:
     weight: 6
     region: content
   field_documenti:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_1'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 24
     region: content
@@ -268,26 +232,9 @@ content:
     weight: 25
     region: content
   field_unita_org_responsabile:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_2'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 23
     region: content

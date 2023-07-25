@@ -12,11 +12,11 @@
             </div>
           </ul>
         </li>
-      {% endif %}
-      {% if content.field_motivo_dello_stato[0] is not empty and content.field_stato_del_servizio.0['#markup'] == 'Off' %}
-        <div class="subtitle-small mb-3 text-danger">
-          {{ content.field_motivo_dello_stato }}
-        </div>
+        {% if content.field_motivo_dello_stato[0] is not empty and content.field_stato_del_servizio.0['#markup'] == 'Off' %}
+          <div class="subtitle-small mb-3 text-danger">
+            {{ content.field_motivo_dello_stato }}
+          </div>
+        {% endif %}
       {% endif %}
 
       {% if content.field_descrizione_breve[0] is not empty %}
@@ -105,8 +105,8 @@
           'titolo': (content.field_condizioni_di_servizio_par["#title"]),
         },
         'field_contatti': {
-          'attivo': (content.field_contatti[0] is not empty),
-          'titolo': (content.field_contatti["#title"]),
+          'attivo': true,
+          'titolo': 'Contatti',
         },
         'field_unita_org_responsabile': {
           'attivo': (content.field_unita_org_responsabile[0] is not empty),
@@ -155,16 +155,13 @@
       {% if content.field_costi[0] is not empty or content.field_costi_allegati[0] is not empty %}
         <section class="it-page-section mb-5" data-element="service-cost">
           <h2 class="title-xxlarge mb-3" id="field_costi">{{ indice_della_pagina['field_costi'].titolo }}</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_costi }}
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                {{ content.field_costi_allegati }}
-              </div>
+          {% if content.field_costi[0] is not empty %}
+            <div class="richtext-wrapper lora">
+              {{ content.field_costi }}
             </div>
-          </div>
+          {% endif %}
+          
+          {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'content': node.field_costi_allegati } %}
         </section>
       {% endif %}
 
@@ -174,15 +171,14 @@
         <h2 class="mb-3" id="field_canale_digitale">Accedi al servizio</h2>
         {% if content.field_canale_digitale[0] %}
           <p class="text-paragraph lora mb-4" data-element="service-generic-access">Puoi accedere a {{ node.label }} direttamente online.</p>
-          <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank" type="button" class="btn btn-primary mobile-full" data-element="service-online-access">
+          <a href="{{ content.field_canale_digitale['#items'][0].uri }}" type="button" class="btn btn-primary mobile-full" data-element="service-online-access">
             <span>{{ content.field_canale_digitale['#items'][0].title }}</span>
           </a>
           <p class="text-paragraph lora mt-4" data-element="service-generic-access">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
         {% else %}
           <p class="text-paragraph lora mt-4" data-element="service-generic-access">Puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
         {% endif %}
-
-        <a href='/prenotazione-appuntamento' target="_blank" class="btn btn-outline-primary t-primary bg-white mobile-full" data-element="service-booking-access">
+        <a href='/prenotazione-appuntamento' class="btn btn-outline-primary t-primary bg-white mobile-full" data-element="service-booking-access">
           <span>Prenota appuntamento</span>
         </a>
       </section>
@@ -193,60 +189,43 @@
       {% if content.field_condizioni_di_servizio_par[0] is not empty %}
         <section class="it-page-section  mb-30" data-element="service-file">
           <h2 class="title-xxlarge mb-3" id="field_condizioni_di_servizio_par">Condizioni di servizio</h2>
-          <p class="text-paragraph lora mb-1">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
-          <div class="container my-3">
-            {{ content.field_condizioni_di_servizio_par }}
-          </div>
+          <p class="text-paragraph lora mb-3">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
+          
+          {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'content': node.field_condizioni_di_servizio_par } %}
         </section>
       {% endif %}
 
       {% if content.field_contatti[0] is not empty or content.field_unita_org_responsabile[0] is not empty %}
-      <section class="it-page-section mb-30">
+        <section class="it-page-section mb-30">
           <div class="container p-0 my-3">
             <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
-            
+              {% set contatti = [] %}
               {% if content.field_contatti[0] is not empty %}
-                <div class="col px-0">
-                  <h2 class="mb-3" id="contacts">Contatti</h2>
-                  <div class="container">
-                    {{ content.field_contatti }}
-                  </div>
-                </div>
+                {#} servizio.field_contatti è popolato {#}
+                {% set contatti = contatti|merge([content.field_contatti["#items"]|map(item => "#{item.target_id}" )|join(',')]) %}
               {% else %}
-                <div class="col px-0">
-                  <h2 class="mb-3" id="contacts">Contatti</h2>
-                  <div class="container">
-                    <div class="row row-cols-1 g-4">
-                      {% for item in node.field_unita_org_responsabile %}
-                        {% if drupal_field('field_contatti', 'node', item.target_id)[0] is not empty %}
-                          <div class="col">
-                            {{ drupal_field('field_contatti', 'node', item.target_id) }}
-                          </div>
-                        {% else %}
-                          <div class="col">
-                            {{ drupal_view('punti_di_contatto_collegati', 'block_2', item.target_id) }}
-                          </div>
-                        {% endif %}
-                      {% endfor %}
-                    </div>
-                  </div>
-                </div>
+                {% for item in node.field_unita_org_responsabile %}
+                  {% set tmp_field_contatti = drupal_field('field_contatti', 'node', item.target_id) %}
+                  {% if tmp_field_contatti[0] is not empty %}
+                    {#} unita_organizzativa.field_contatti è popolato {#}
+                    {% set contatti = contatti|merge([tmp_field_contatti["#items"]|map(item => "#{item.target_id}" )|join(',')]) %}
+                  {% else %}
+                    {#} luogo.field_punti_di_contatto è popolato {#}
+                    {% set field_sede_principale = drupal_field('field_sede_principale', 'node', item.target_id)["#items"][0] %}
+                    {% set field_punti_di_contatto = drupal_field('field_punti_di_contatto', 'node', field_sede_principale.target_id) %}
+                    {% set contatti = contatti|merge([field_punti_di_contatto["#items"]|map(item => "#{item.target_id}" )|join(',')]) %}
+                  {% endif %}
+                {% endfor %}
               {% endif %}
-
-              {% if content.field_unita_org_responsabile[0] is not empty %}
-                <div class="col px-0">
-                  <h2 class="mb-3" id="field_unita_org_responsabile">Ufficio responsabile</h2>
-                  <div class="container">
-                    {{ content.field_unita_org_responsabile }}
-                  </div>
-                </div>
-              {% endif %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': indice_della_pagina['field_contatti'].titolo, 'content': contatti|join(','), 'id': 'field_contatti' } %}
+              
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': indice_della_pagina['field_unita_org_responsabile'].titolo, 'content': (content.field_unita_org_responsabile["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_unita_org_responsabile' } %}
             </div>
           </div>
-      </section>
+        </section>
       {% endif %}
 
-      {% include '@comuni_theme/templates/node/parts/node--parts--allegati.html.twig' with { 'label': indice_della_pagina['field_documenti'].titolo, 'content': content.field_documenti, 'id': 'field_documenti' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': indice_della_pagina['field_documenti'].titolo, 'content': (content.field_documenti["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_documenti' } %}
       {% include '@comuni_theme/templates/node/parts/node--parts--ulteriori-informazioni.html.twig' with { 'label': indice_della_pagina['field_ulteriori_informazioni'].titolo, 'content': content.field_ulteriori_informazioni, 'id': 'field_ulteriori_informazioni' } %}
       {% include '@comuni_theme/templates/node/parts/node--parts--ultimo-aggiornamento.html.twig' with { 'content': node.changed } %}
     </div>
