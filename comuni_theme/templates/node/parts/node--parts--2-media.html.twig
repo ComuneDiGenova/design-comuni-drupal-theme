@@ -6,9 +6,9 @@
 
       <div class="container" {% if data_element %}data-element="{{ data_element }}"{% endif %}>
         <div class="row row-cols-lg-2 row-cols-1 g-4">
-          {% for item in (content.entity.entityTypeId == "paragraph" ? content : content["#items"]) %}
+          {% for item in (content["#items"] is not null ? content["#items"] : content ) %}
 
-            {% if content.entity.entityTypeId == "paragraph" %}
+            {% if content.entity.entityTypeId == "paragraph" or item.entity.entityTypeId == "paragraph" %}
               {% set tmp = drupal_entity('paragraph', item.target_id)["#paragraph"] %}
               {% if tmp.field_documento is not null %}
                 {# paragraph documento #}
@@ -16,8 +16,12 @@
               {% elseif tmp.field_link is not null %}
                 {# paragraph link #}
                 {% set risultato = [tmp.field_link[0]|file_url, tmp.field_link[0].title ] %}
+              {% elseif tmp.field_dataset is not null %}
+                {# paragraph dataset #}
+                {% set risultato = [tmp.field_dataset[0]|file_url, drupal_entity('media', tmp.field_dataset[0].target_id )['#media'].name[0].value ] %}
               {% else %}
-                NON ANCORA GESTITO
+                {# eventuali nuovi campi #}
+                <!-- eventuali nuovi campi -->
               {% endif %}
             {% else %}
               {# media #}

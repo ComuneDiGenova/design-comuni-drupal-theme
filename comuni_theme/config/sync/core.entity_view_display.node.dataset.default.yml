@@ -12,13 +12,11 @@ dependencies:
     - field.field.node.dataset.field_ultima_modifica
     - field.field.node.dataset.field_url_dataset
     - node.type.dataset
-    - views.view.contenuto_collegato
   module:
     - datetime
     - entity_reference_revisions
     - text
     - user
-    - views_field_formatter
 id: node.dataset.default
 targetEntityType: node
 bundle: dataset
@@ -64,26 +62,9 @@ content:
     weight: 2
     region: content
   field_titolare:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_1'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 7
     region: content

@@ -173,14 +173,7 @@
         </section>
         {% endif %}
 
-        {% if content.field_url_dataset[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="field_url_dataset">Risorse</h2>
-          <div class="container">
-            {{ content.field_url_dataset }}
-          </div>
-        </section>
-        {% endif %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Risorse', 'content': content.field_url_dataset, 'id': 'field_url_dataset' } %}
 
         {% if content.field_ultima_modifica[0] is not empty %}
         <section class="it-page-section mb-30">
@@ -209,14 +202,7 @@
         </section>
         {% endif %}
 
-        {% if content.field_titolare[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="field_titolare">Titolare</h2>
-          <div class="container">
-            {{ content.field_titolare }}
-          </div>
-        </section>
-        {% endif %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Titolare', 'content': (content.field_titolare["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_titolare' } %}
 
         {% if node.changed[0] %}
         <section id="ultimo-aggiornamento" class="anchor-offset mt-5">
