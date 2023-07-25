@@ -26,14 +26,12 @@ dependencies:
     - field.field.node.luogo.field_video_esterno
     - image.style.hero_desktop
     - node.type.luogo
-    - views.view.contenuto_collegato
   module:
     - entity_reference_revisions
     - leaflet
     - media
     - text
     - user
-    - views_field_formatter
 id: node.luogo.default
 targetEntityType: node
 bundle: luogo
@@ -209,26 +207,9 @@ content:
     weight: 10
     region: content
   field_luoghi_collegati:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_1'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 7
     region: content
@@ -255,26 +236,9 @@ content:
     weight: 15
     region: content
   field_punti_di_contatto:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_2'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 21
     region: content
@@ -294,26 +258,9 @@ content:
     weight: 8
     region: content
   field_struttura_responsabile:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_2'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 16
     region: content

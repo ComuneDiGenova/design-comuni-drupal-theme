@@ -220,14 +220,7 @@
         </section>
         {% endif %}
         
-        {% if content.field_luoghi_collegati[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="luoghi_collegati">Luoghi collegati</h2>
-          <div class="container">
-            {{ content.field_luoghi_collegati }}
-          </div>
-        </section>
-        {% endif %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Luoghi collegati', 'content': (content.field_luoghi_collegati["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'luoghi_collegati' } %}
 
         {% if drupal_view_result('servizi_collegati', 'block_3', node.id) or (content.field_servizi_presenti_nel_luogo[0] is not empty) %}
         <section class="it-page-section mb-30">
@@ -302,23 +295,9 @@
         <section class="it-page-section mb-30">
           <div class="container p-0 my-3">
             <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
-              {% if content.field_punti_di_contatto[0] is not empty %}
-                <div class="col px-0">
-                  <h2 class="title-xxlarge mb-3" id="punti_di_contatto">Contatti</h2>
-                  <div class="container">
-                    {{ content.field_punti_di_contatto }}
-                  </div>
-                </div>
-              {% endif %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Contatti', 'content': (content.field_punti_di_contatto["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'punti_di_contatto' } %}
 
-              {% if content.field_struttura_responsabile[0] is not empty %}
-                <div class="col px-0">
-                  <h2 class="title-xxlarge mb-3" id="struttura_responsabile">Struttura responsabile</h2>
-                  <div class="container">
-                    {{ content.field_struttura_responsabile }}
-                  </div>
-                </div>
-              {% endif %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Struttura responsabile', 'content': (content.field_struttura_responsabile["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'struttura_responsabile' } %}
             </div>
           </div>
         </section>
