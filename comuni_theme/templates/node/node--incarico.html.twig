@@ -191,14 +191,7 @@
     <div class="col-12 col-lg-8 offset-lg-1">
       <div class="it-page-sections-container">
 
-        {% if content.field_persona[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="field_persona">Incaricato</h2>
-          <div class="container">
-            {{ content.field_persona }}
-          </div>
-        </section>
-        {% endif %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Incaricato', 'content': (content.field_persona["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_persona' } %}
 
         {% if content.field_compensi[0] is not empty %}
         <section class="it-page-section mb-30">
@@ -218,32 +211,9 @@
         </section>
         {% endif %}
 
-        {% if content.field_unita_organizzativa[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="field_unita_organizzativa">Unità organizzativa</h2>
-          <div class="container">
-            {{ content.field_unita_organizzativa }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_responsabile_struttura[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="field_responsabile_struttura">Responsabile della struttura</h2>
-          <div class="container">
-            {{ content.field_responsabile_struttura }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_atto_di_nomina[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="field_atto_di_nomina">Atto di nomina</h2>
-          <div class="container">
-            {{ content.field_atto_di_nomina }}
-          </div>
-        </section>
-        {% endif %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Unità organizzativa', 'content': (content.field_unita_organizzativa["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_unita_organizzativa' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Responsabile della struttura', 'content': (content.field_responsabile_struttura["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_responsabile_struttura' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Atto di nomina', 'content': (content.field_atto_di_nomina["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_atto_di_nomina' } %}
 
         {% if content.field_ulteriori_informazioni[0] is not empty %}
           <section id="ulteriori-informazioni" class="it-page-section mb-5">

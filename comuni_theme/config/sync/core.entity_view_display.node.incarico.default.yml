@@ -15,38 +15,19 @@ dependencies:
     - field.field.node.incarico.field_ulteriori_informazioni
     - field.field.node.incarico.field_unita_organizzativa
     - node.type.incarico
-    - views.view.contenuto_collegato
   module:
     - datetime
     - text
     - user
-    - views_field_formatter
 id: node.incarico.default
 targetEntityType: node
 bundle: incarico
 mode: default
 content:
   field_atto_di_nomina:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_1'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 111
     region: content
@@ -92,50 +73,16 @@ content:
     weight: 102
     region: content
   field_persona:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_1'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 103
     region: content
   field_responsabile_struttura:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_1'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 105
     region: content
@@ -155,26 +102,9 @@ content:
     weight: 109
     region: content
   field_unita_organizzativa:
-    type: views_field_formatter
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view: 'contenuto_collegato::block_1'
-      arguments:
-        field_value:
-          checked: true
-          weight: 0
-        entity_id:
-          checked: false
-          weight: 0
-        delta:
-          checked: false
-          weight: 0
-        entity_revision_id:
-          checked: false
-          weight: 0
-      hide_empty: true
-      multiple: true
-      implode_character: +
+    settings: {  }
     third_party_settings: {  }
     weight: 104
     region: content
