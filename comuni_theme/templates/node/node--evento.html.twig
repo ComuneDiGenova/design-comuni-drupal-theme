@@ -321,9 +321,9 @@
         <article id="contatti" class="it-page-section mb-5">
           <div class="container p-0">
             <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
-              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Contatti', 'content': (content.field_punti_di_contatto["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'contacts' } %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Contatti', 'content': (content.field_punti_di_contatto["#items"] is null ? null : content.field_punti_di_contatto["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'contacts' } %}
 
-              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Con il supporto di', 'content': (content.field_organizzato_da["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_organizzato_da' } %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Con il supporto di', 'content': (content.field_organizzato_da["#items"] is null ? null : content.field_organizzato_da["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_organizzato_da' } %}
             </div>
           </div>
         </article>

@@ -263,7 +263,7 @@
               {% endif %}
               {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Contatti', 'content': contatti|join(','), 'id': 'contatti' } %}
 
-              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Ufficio responsabile', 'content': (content.field_unita_org_genitore["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'unita-org-genitore' } %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Ufficio responsabile', 'content': (content.field_unita_org_genitore["#items"] is null ? null : content.field_unita_org_genitore["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'unita-org-genitore' } %}
             </div>
           </div>
         </section>

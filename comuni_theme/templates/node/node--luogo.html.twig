@@ -295,9 +295,9 @@
         <section class="it-page-section mb-30">
           <div class="container p-0 my-3">
             <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
-              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Contatti', 'content': (content.field_punti_di_contatto["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'punti_di_contatto' } %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Contatti', 'content': (content.field_punti_di_contatto["#items"] is null ? null : content.field_punti_di_contatto["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'punti_di_contatto' } %}
 
-              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Struttura responsabile', 'content': (content.field_struttura_responsabile["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'struttura_responsabile' } %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Struttura responsabile', 'content': (content.field_struttura_responsabile["#items"] is null ? null : content.field_struttura_responsabile["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'struttura_responsabile' } %}
             </div>
           </div>
         </section>

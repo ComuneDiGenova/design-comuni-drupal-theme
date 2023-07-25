@@ -224,9 +224,9 @@
         <section class="it-page-section">
           <div class="container p-0">
             <div class="row row-cols-lg-2 row-cols-1 g-4 mx-0">
-              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'A cura di', 'content': (content.field_a_cura_di["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'a-cura-di' } %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'A cura di', 'content': (content.field_a_cura_di["#items"] is null ? null : content.field_a_cura_di["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'a-cura-di' } %}
 
-              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Persone', 'content': (content.field_persone["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_persone' } %}
+              {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': 'Persone', 'content': (content.field_persone["#items"] is null ? null : content.field_persone["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_persone' } %}
             </div>
           </div>
         </section>
