@@ -245,69 +245,15 @@
         </section>
         {% endif %}
 
-        {% if content.field_punti_di_contatto[0] is not empty %}
-        <section class="it-page-section mb-30">
-            <h2 class="mb-3" id="punti_di_contatto">Contatti</h2>
-            <div class="container">
-              {{ content.field_punti_di_contatto }}
-            </div>
-        </section>
-        {% endif %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Contatti', 'content': (content.field_punti_di_contatto["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'punti_di_contatto' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Curriculum Vitae', 'content': content.field_curriculum_vitae, 'id': 'curriculum_vitae' } %}
 
-        {% if content.field_curriculum_vitae[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="curriculum_vitae">Curriculum Vitae</h2>
-          <div class="container">
-            {{ content.field_curriculum_vitae }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_situazione_patrimoniale[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="situazione_patrimoniale">Situazione patrimoniale</h2>
-          <div class="container">
-            {{ content.field_situazione_patrimoniale }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_dichiarazione_dei_redditi[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="dichiarazione_dei_redditi">Dichiarazione dei redditi</h2>
-          <div class="container">
-            {{ content.field_dichiarazione_dei_redditi }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_spese_elettorali[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="spese_elettorali">Spese elettorali</h2>
-          <div class="container">
-            {{ content.field_spese_elettorali }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_v_situazione_patrimoniale[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="v_situazione_patrimoniale">Variazioni situazione patrimoniale</h2>
-          <div class="container">
-            {{ content.field_v_situazione_patrimoniale }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_altre_cariche[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="altre_cariche">Altre cariche</h2>
-          <div class="container">
-            {{ content.field_altre_cariche }}
-          </div>
-        </section>
-        {% endif %}
-
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Situazione patrimoniale', 'content': content.field_situazione_patrimoniale, 'id': 'situazione_patrimoniale' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Dichiarazione dei redditi', 'content': content.field_dichiarazione_dei_redditi, 'id': 'dichiarazione_dei_redditi' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Spese elettorali', 'content': content.field_spese_elettorali, 'id': 'spese_elettorali' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Variazioni situazione patrimoniale', 'content': content.field_v_situazione_patrimoniale, 'id': 'v_situazione_patrimoniale' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Altre cariche', 'content': content.field_altre_cariche, 'id': 'altre_cariche' } %}
+        
         {% if content.field_ulteriori_informazioni[0] is not empty %}
           <section id="ulteriori-informazioni" class="it-page-section mb-5">
             <h2 class="mb-3" id="ulteriori_informazioni">Ulteriori informazioni</h2>

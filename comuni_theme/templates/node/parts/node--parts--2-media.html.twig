@@ -1,49 +1,47 @@
 {% if content is not empty %}
- 
-  <div class="container">
-    <div class="row row-cols-lg-2 row-cols-1 g-4">
+  {% if label is not empty %}
+    <section class="it-page-section mb-30">
+      <h2 class="title-xxlarge mb-3" id="{{ id }}">{{ label}}</h2>
+  {% endif %}
 
-      {% set risultati = [] %}
-      {% for item in content %}
+      <div class="container" {% if data_element %}data-element="{{ data_element }}"{% endif %}>
+        <div class="row row-cols-lg-2 row-cols-1 g-4">
+          {% for item in (content.entity.entityTypeId == "paragraph" ? content : content["#items"]) %}
 
-        {% set tmp = drupal_entity('paragraph', item.target_id)["#paragraph"] %}
-
-        {% if tmp.field_documento is not null %}
-          {% set risultati = risultati|merge([[
-              tmp.field_documento[0]|file_url,
-              drupal_entity('media', tmp.field_documento[0].target_id )['#media'].name[0].value
-            ]])
-          %}
-        {% elseif tmp.field_link is not null %}
-           
-          {% set risultati = risultati|merge([[
-              tmp.field_link[0]|file_url,
-              tmp.field_link[0].title
-            ]])
-          %}
-
-        {% elseif tmp.field_dataset is not null %}
-          NON ANCORA GESTITO
-        {% endif %}
-  
-        <div class="col">
-          <div class="card py-2 px-4 h-100 rounded shadow-sm border border-light no-after">
-            <div class="category-top d-flex gap-1">
-              <svg class="icon icon-sm flex-shrink-0 mt-1"><use href="#it-clip" xlink:href="#it-clip"></use></svg>
-              <h3 class="title-xsmall-semi-bold mt-1 fw-semibold">
-                <div class="gap-1 d-flex align-items-center">
-                  <a class="text fw-bold text-decoration-none text-break" title="{{ risultati[loop.index0][1] }}" href="{{ risultati[loop.index0][0] }}" target="_blank" rel="noopener noreferrer">{{ risultati[loop.index0][1] }}</a>
-                  <a class="read-more position-static mt-1"><svg class="icon flex-shrink-0 ms-0"><use href="#it-arrow-right" xlink:href="#it-arrow-right"></use></svg></a>
+            {% if content.entity.entityTypeId == "paragraph" %}
+              {% set tmp = drupal_entity('paragraph', item.target_id)["#paragraph"] %}
+              {% if tmp.field_documento is not null %}
+                {# paragraph documento #}
+                {% set risultato = [tmp.field_documento[0]|file_url, drupal_entity('media', tmp.field_documento[0].target_id )['#media'].name[0].value ] %}
+              {% elseif tmp.field_link is not null %}
+                {# paragraph link #}
+                {% set risultato = [tmp.field_link[0]|file_url, tmp.field_link[0].title ] %}
+              {% else %}
+                NON ANCORA GESTITO
+              {% endif %}
+            {% else %}
+              {# media #}
+              {% set risultato = [item|file_url, drupal_entity('media', item.target_id )['#media'].name[0].value ] %}
+            {% endif %}
+      
+            <div class="col">
+              <div class="card py-2 px-4 h-100 rounded shadow-sm border border-light no-after">
+                <div class="category-top d-flex gap-1">
+                  <svg class="icon icon-sm flex-shrink-0 mt-1"><use href="#it-clip" xlink:href="#it-clip"></use></svg>
+                  <h3 class="title-xsmall-semi-bold mt-1 fw-semibold">
+                    <div class="gap-1 d-flex align-items-center">
+                      <a class="text fw-bold text-decoration-none text-break" title="{{ risultato[1] }}" href="{{ risultato[0] }}" target="_blank" rel="noopener noreferrer">{{ risultato[1] }}</a>
+                      <a class="read-more position-static mt-1"><svg class="icon flex-shrink-0 ms-0"><use href="#it-arrow-right" xlink:href="#it-arrow-right"></use></svg></a>
+                    </div>
+                  </h3>
                 </div>
-              </h3>
+              </div>
             </div>
-          </div>
+          {% endfor %}
         </div>
-      {% endfor %}
+      </div>
 
-    </div>
-  </div>
-
-
-
+  {% if label is not empty %}
+    </section>
+  {% endif %}
 {% endif %}
