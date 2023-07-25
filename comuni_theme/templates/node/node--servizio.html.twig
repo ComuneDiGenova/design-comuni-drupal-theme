@@ -161,7 +161,7 @@
             </div>
           {% endif %}
           
-          {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'content': node.field_costi_allegati } %}
+          {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'content': (content.field_costi_allegati[0] is null ? null : node.field_costi_allegati) } %}
         </section>
       {% endif %}
 
@@ -191,7 +191,7 @@
           <h2 class="title-xxlarge mb-3" id="field_condizioni_di_servizio_par">Condizioni di servizio</h2>
           <p class="text-paragraph lora mb-3">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
           
-          {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': null, 'content': node.field_condizioni_di_servizio_par } %}
+          {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': null, 'content': (content.field_condizioni_di_servizio_par[0] is null ? null : node.field_condizioni_di_servizio_par) } %}
         </section>
       {% endif %}
 

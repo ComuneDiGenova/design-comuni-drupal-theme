@@ -246,13 +246,12 @@
         {% endif %}
 
         {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Contatti', 'content': (content.field_punti_di_contatto["#items"] is null ? null : content.field_punti_di_contatto["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'punti_di_contatto' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Curriculum Vitae', 'content': content.field_curriculum_vitae, 'id': 'curriculum_vitae' } %}
-
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Situazione patrimoniale', 'content': content.field_situazione_patrimoniale, 'id': 'situazione_patrimoniale' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Dichiarazione dei redditi', 'content': content.field_dichiarazione_dei_redditi, 'id': 'dichiarazione_dei_redditi' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Spese elettorali', 'content': content.field_spese_elettorali, 'id': 'spese_elettorali' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Variazioni situazione patrimoniale', 'content': content.field_v_situazione_patrimoniale, 'id': 'v_situazione_patrimoniale' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Altre cariche', 'content': content.field_altre_cariche, 'id': 'altre_cariche' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Curriculum Vitae', 'content': (content.field_curriculum_vitae[0] is null ? null : content.field_curriculum_vitae), 'id': 'curriculum_vitae' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Situazione patrimoniale', 'content': (content.field_situazione_patrimoniale[0] is null ? null : content.field_situazione_patrimoniale), 'id': 'situazione_patrimoniale' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Dichiarazione dei redditi', 'content': (content.field_dichiarazione_dei_redditi[0] is null ? null : content.field_dichiarazione_dei_redditi, 'id': 'dichiarazione_dei_redditi' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Spese elettorali', 'content': (content.field_spese_elettorali[0] is null ? null : content.field_spese_elettorali), 'id': 'spese_elettorali' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Variazioni situazione patrimoniale', 'content': (content.field_v_situazione_patrimoniale[0] is null ? null : content.field_v_situazione_patrimoniale), 'id': 'v_situazione_patrimoniale' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Altre cariche', 'content': (content.field_altre_cariche[0] is null ? null : content.field_altre_cariche), 'id': 'altre_cariche' } %}
         
         {% if content.field_ulteriori_informazioni[0] is not empty %}
           <section id="ulteriori-informazioni" class="it-page-section mb-5">

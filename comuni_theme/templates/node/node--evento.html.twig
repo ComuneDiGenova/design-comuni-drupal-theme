@@ -300,9 +300,7 @@
         </article>
       {% endif %}
 
-      {% if content.field_allegati[0] is not empty %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Allegati', 'content': content.field_allegati, 'id': 'allegati' } %}
-      {% endif %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Allegati', 'content': (content.field_allegati[0] is null ? null : content.field_allegati), 'id': 'allegati' } %}
 
       {% if content.field_evento_genitore[0] is not empty %}
         {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Evento principale', 'content': (content.field_evento_genitore["#items"] is null ? null : content.field_evento_genitore["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_evento_genitore' } %}
@@ -329,8 +327,8 @@
         </article>
       {% endif %}
 
-      {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Patrocinato da:', 'content': content.field_patrocinato_da, 'id': 'patrocinato-da' } %}
-      {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Sponsor:', 'content': content.field_sponsor, 'id': 'patrocinato-da' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Patrocinato da:', 'content': (content.field_patrocinato_da[0] is null ? null : content.field_patrocinato_da), 'id': 'patrocinato-da' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Sponsor:', 'content': (content.field_sponsor[0] is null ? null : content.field_sponsor), 'id': 'patrocinato-da' } %}
 
       {% if content.field_ulteriori_informazioni[0] is not empty %}
         <article id="ulteriori-informazioni" class="it-page-section mb-5">

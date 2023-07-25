@@ -173,7 +173,7 @@
         </section>
         {% endif %}
 
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Risorse', 'content': content.field_url_dataset, 'id': 'field_url_dataset' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Risorse', 'content': (content.field_url_dataset[0] is null ? null : content.field_url_dataset), 'id': 'field_url_dataset' } %}
 
         {% if content.field_ultima_modifica[0] is not empty %}
         <section class="it-page-section mb-30">

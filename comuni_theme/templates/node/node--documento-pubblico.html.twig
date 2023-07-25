@@ -294,7 +294,7 @@
         </section>
         {% endif %}
         
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Documento', 'content': content.field_paragraph_documento, 'id': 'field_paragraph_documento' } %}
+        {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Documento', 'content': (content.field_paragraph_documento[0] is null ? null : content.field_paragraph_documento), 'id': 'field_paragraph_documento' } %}
         {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Ufficio responsabile del documento', 'content': (content.field_ufficio_respons_documento["#items"] is null ? null : content.field_ufficio_respons_documento["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_ufficio_respons_documento' } %}
 
         {% if content.field_autori[0] is not empty %}

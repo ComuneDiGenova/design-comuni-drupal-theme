@@ -217,7 +217,7 @@
 
       {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Luoghi', 'content': (content.field_luoghi["#items"] is null ? null : content.field_luoghi["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_luoghi' } %}
       {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Documenti', 'content': (content.field_documenti["#items"] is null ? null : content.field_documenti["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'documenti' } %}
-      {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Allegati', 'content': content.field_allegati, 'id': 'allegati' } %}
+      {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': 'Allegati', 'content': (content.field_allegati[0] is null ? null : content.field_allegati), 'id': 'allegati' } %}
       {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Dataset', 'content': (content.field_dataset["#items"] is null ? null : content.field_dataset["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'dataset' } %}
 
       {% if content.field_a_cura_di[0] is not empty or content.field_unita_org_responsabile[0] is not empty %}
