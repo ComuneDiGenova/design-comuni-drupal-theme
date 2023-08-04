@@ -22,9 +22,7 @@
                           <span class="accordion-header" id="accordion-title-one">
                             <button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-one" aria-expanded="true" aria-controls="collapse-one">
                               INFORMAZIONI RICHIESTE
-								<svg class="icon icon-xs right">
-									  <use href="#it-expand" />
-								</svg>
+								              <svg class="icon icon-xs right"><use href="#it-expand" /></svg>
                             </button>
                           </span>
                           <div class="progress">
@@ -55,7 +53,7 @@
             </div>
 					</div>
 					<div class="col-12 col-lg-8 offset-lg-1">
-						<form class="steppers-content" aria-live="polite" id="justValidateForm">
+						<form class="steppers-content richiedi-assistenza" aria-live="polite" id="justValidateForm">
 							<div class="it-page-sections-container">
                 <section class="it-page-section" id="applicant">
 									<div class="cmp-card mb-40">
@@ -104,27 +102,66 @@
 											<div class="card-body p-0">
 												<div class="form-wrapper bg-white p-4">
 													<div class="select-wrapper mb-40 mt-4 bg-transparent p-0">
-														<label for="category" class="">Categoria di servizio*</label>
-														<select id="category" class="bg-transparent form-control" required="">
-															{% set categorie_dei_servizi = drupal_view_result(
-																'elenca_tassonomie_per_vocabolario', 'plain_text', 'categorie_dei_servizi'
-															) %}
-															<option selected="selected" value="">Seleziona categoria</option>
-															{% for categoria in categorie_dei_servizi %}
-																{% set categoria_nome = categoria._entity.name.0.value %}
-																<option value="{{ categoria_nome }}">{{ categoria_nome }}</option>
-															{% endfor %}
-														</select>
-														<div class="d-flex">
-															<span class="form-text cmp-input__text">
-																Seleziona la categoria del servizio per cui vuoi richiedere assistenza</span>
-														</div>
+														<label for="category">Categoria di servizio*</label>
+                            {% set categorie_dei_servizi = drupal_view_result('richiedi_assistenza', 'rest_export_1') %}
+                            <select id="category" class="bg-transparent form-control" required="">
+                              <option selected="selected" disabled="disabled" value="">Seleziona categoria</option>
+                              {% for categoria in categorie_dei_servizi %}
+                                {% set categoria_obj = categoria._relationship_entities.field_categoria_del_servizio %}
+                                <option value="{{ categoria_obj.tid[0].value }}">{{ categoria_obj.name[0].value }}</option>
+                              {% endfor %}
+                            </select>
+                            <div class="d-flex">
+                              <span class="form-text cmp-input__text">
+                                Seleziona la categoria del servizio per cui vuoi richiedere assistenza</span>
+                            </div>
 													</div>
 													<div class="select-wrapper p-big bg-transparent p-0">
 														<label for="service" class="">Servizio*</label>
+                            {% set servizi = drupal_view_result('richiedi_assistenza', 'rest_export_2', 40) %}
 														<select id="service" class="bg-transparent form-control" required="" disabled>
-															<option selected="selected" value="">Scegli il servizio</option>
+                              <option selected="selected" value="" hidden>Scegli il servizio</option>
+                              {% for servizio in servizi %}
+                                <option value="{{ servizio.nid }}">{{ servizio.node_field_data_title }}</option>
+                              {% endfor %}
 														</select>
+
+														<script>
+															jQuery(function() {
+																$ = jQuery;
+																
+																$("body").on("change", ".richiedi-assistenza #category", function(){
+
+																	if(!$("#category").val().length)
+																	{ 
+																		$('#service').attr("disabled");
+																		return;
+																	}
+
+																	$.getJSON( "{{ path("<front>") }}api/richiedi-assistenza/servizi/" + $("#category").val(), function( data ) {
+																		$('#service').attr("disabled");
+																		$('#service').html($('<option>', {
+																			selected: "selected",
+																			value: "",
+																			hidden: "",
+																			text: 'Scegli il servizio'
+																		}));
+
+																		$.each( data, function( key, val ) {
+																			$('#service').append($('<option>', {
+																					value: val.nid,
+																					text: val.title
+																			}));
+																		});
+																		$('#service').removeAttr("disabled");
+																	});
+																});
+
+																$(".richiedi-assistenza #category").trigger("change");
+
+															});
+														</script>
+
 														<div class="d-flex">
 															<span class="form-text cmp-input__text">
 																Seleziona il servizio per cui vuoi richiedere assistenza</span>

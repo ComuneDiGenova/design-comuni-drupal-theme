@@ -3,10 +3,10 @@ global-styling:
   js:
     node_modules/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js: {}
     js/scripts.js: {}
-    js/rating.js: {}
+    #js/rating.js: {}
     js/search.js: {}
-    js/assistenza.js: {}
-    js/booking.js: {}
+    #js/assistenza.js: {}
+    #js/booking.js: {}
     js/script.js: {}
   css:
     theme:

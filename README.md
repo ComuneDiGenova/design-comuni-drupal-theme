@@ -131,6 +131,11 @@ drush cr
 - In modifica del termine /amministrazione/documenti-e-dati, nel componente "Elenco card termini da un vocabolario", selezionare il vocabolario "Tipi di documento".
 - In modifica del termine /amministrazione/politici, nel componente "Vista", selezionare la Vista "Politici" e il Display Id "Block".
 
+#### Librerie originali per i moduli rating, assistenza, booking
+Sono state disattivate in quanto attualmente risultano incomplete
+  #js/rating.js: {}
+  #js/assistenza.js: {}
+  #js/booking.js: {}
 
 #### **Supporto tecnico ed editoriale**
 Sul [canale Slack #design-siti-comuni](http://developersitalia.slack.com/messages/design-siti-comuni) puoi confrontarti sulle risorse e trovare le risposte a tutte le domande riguardo problemi tecnici o l’architettura dei contenuti.
