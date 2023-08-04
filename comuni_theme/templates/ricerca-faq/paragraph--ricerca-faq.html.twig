@@ -1,0 +1,19 @@
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'py-5',
+  'bg-grey'
+] %}
+
+
+
+
+<section{{attributes.addClass(classes).addClass(wrapper_classes)}}>
+  <div class="container">
+    <div class="row">
+      {{ drupal_view("ricerca_faq", 'ricerca', paragraph.id[0].value) }}
+    </div>
+  </div>
+</section>

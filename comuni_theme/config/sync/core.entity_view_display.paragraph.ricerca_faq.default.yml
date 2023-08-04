@@ -1,0 +1,25 @@
+uuid: a6ce8a25-94e2-4847-9293-2e186a99f253
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ricerca_faq.field_faq
+    - paragraphs.paragraphs_type.ricerca_faq
+  module:
+    - entity_reference_revisions
+id: paragraph.ricerca_faq.default
+targetEntityType: paragraph
+bundle: ricerca_faq
+mode: default
+content:
+  field_faq:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

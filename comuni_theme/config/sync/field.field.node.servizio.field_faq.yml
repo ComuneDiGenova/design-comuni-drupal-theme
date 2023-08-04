@@ -1,0 +1,115 @@
+uuid: 4bd478dd-995a-42bd-be25-37737d38d817
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq
+    - node.type.servizio
+    - paragraphs.paragraphs_type.faq
+  module:
+    - entity_reference_revisions
+id: node.servizio.field_faq
+field_name: field_faq
+entity_type: node
+bundle: servizio
+label: FAQ
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      faq: faq
+    negate: 0
+    target_bundles_drag_drop:
+      backend_info:
+        weight: 30
+        enabled: false
+      biglietto_evento:
+        weight: 31
+        enabled: false
+      blocco:
+        weight: 32
+        enabled: false
+      calendario:
+        weight: 33
+        enabled: false
+      card_assistenza:
+        weight: 34
+        enabled: false
+      card_in_evidenza:
+        weight: 35
+        enabled: false
+      contenuto:
+        weight: 36
+        enabled: false
+      dataset:
+        weight: 37
+        enabled: false
+      documento:
+        weight: 38
+        enabled: false
+      elenco_card_da_termine:
+        weight: 39
+        enabled: false
+      elenco_card_da_vocabolario:
+        weight: 40
+        enabled: false
+      faq:
+        weight: 41
+        enabled: true
+      fase_intitolata:
+        weight: 42
+        enabled: false
+      fase_semplice:
+        weight: 43
+        enabled: false
+      gallery:
+        weight: 44
+        enabled: false
+      link:
+        weight: 45
+        enabled: false
+      link_con_icona:
+        weight: 46
+        enabled: false
+      orari_giorni:
+        weight: 47
+        enabled: false
+      orari_ore:
+        weight: 48
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 49
+        enabled: false
+      punto_di_contatto:
+        weight: 50
+        enabled: false
+      ricerca:
+        weight: 51
+        enabled: false
+      ricerca_faq:
+        weight: 52
+        enabled: false
+      richiesta_assistenza:
+        weight: 53
+        enabled: false
+      tassonomia:
+        weight: 54
+        enabled: false
+      testo:
+        weight: 55
+        enabled: false
+      ultima_notizia:
+        weight: 56
+        enabled: false
+      ultimo_aggiornamento:
+        weight: 57
+        enabled: false
+      vista:
+        weight: 58
+        enabled: false
+field_type: entity_reference_revisions

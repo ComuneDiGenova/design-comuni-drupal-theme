@@ -1,0 +1,21 @@
+uuid: 5534bfd9-78dc-4d4e-a2df-52bf4214cdf8
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_descrizione_lunga
+    - paragraphs.paragraphs_type.faq
+  module:
+    - text
+id: paragraph.faq.field_descrizione_lunga
+field_name: field_descrizione_lunga
+entity_type: paragraph
+bundle: faq
+label: Descrizione
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

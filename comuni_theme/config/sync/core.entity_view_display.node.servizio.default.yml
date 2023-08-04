@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.servizio.field_descrizione_breve
     - field.field.node.servizio.field_descrizione_estesa
     - field.field.node.servizio.field_documenti
+    - field.field.node.servizio.field_faq
     - field.field.node.servizio.field_fase_semplice
     - field.field.node.servizio.field_immagine
     - field.field.node.servizio.field_life_events
@@ -174,6 +175,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 24
+    region: content
+  field_faq:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 26
     region: content
   field_fase_semplice:
     type: entity_reference_revisions_entity_view

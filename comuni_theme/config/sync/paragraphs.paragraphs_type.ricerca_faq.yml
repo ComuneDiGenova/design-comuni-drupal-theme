@@ -1,0 +1,10 @@
+uuid: 8deb8665-4b3e-4aad-95b8-bcb85b6a8682
+langcode: it
+status: true
+dependencies: {  }
+id: ricerca_faq
+label: 'Ricerca FAQ'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

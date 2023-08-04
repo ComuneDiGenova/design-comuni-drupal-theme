@@ -9,7 +9,6 @@ dependencies:
     - node.type.documento_privato
     - node.type.documento_pubblico
     - node.type.evento
-    - node.type.faq
     - node.type.fase_del_servizio
     - node.type.incarico
     - node.type.luogo
@@ -237,7 +236,6 @@ display:
             documento_privato: documento_privato
             documento_pubblico: documento_pubblico
             evento: evento
-            faq: faq
             fase_del_servizio: fase_del_servizio
             incarico: incarico
             luogo: luogo

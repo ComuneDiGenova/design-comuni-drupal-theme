@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.prenotazione_appuntamento
     - paragraphs.paragraphs_type.ricerca
+    - paragraphs.paragraphs_type.ricerca_faq
     - paragraphs.paragraphs_type.richiesta_assistenza
     - paragraphs.paragraphs_type.testo
     - paragraphs.paragraphs_type.ultima_notizia
@@ -37,6 +38,7 @@ settings:
       ultima_notizia: ultima_notizia
       calendario: calendario
       ultimo_aggiornamento: ultimo_aggiornamento
+      ricerca_faq: ricerca_faq
       elenco_card_da_vocabolario: elenco_card_da_vocabolario
       card_in_evidenza: card_in_evidenza
       blocco: blocco
@@ -67,6 +69,9 @@ settings:
       card_in_evidenza:
         weight: 57
         enabled: true
+      contenuto:
+        weight: 35
+        enabled: false
       dataset:
         weight: 68
         enabled: false
@@ -79,6 +84,9 @@ settings:
       elenco_card_da_vocabolario:
         weight: 55
         enabled: true
+      faq:
+        weight: 40
+        enabled: false
       fase_intitolata:
         weight: 23
         enabled: false
@@ -109,9 +117,15 @@ settings:
       ricerca:
         weight: 58
         enabled: true
+      ricerca_faq:
+        weight: 52
+        enabled: true
       richiesta_assistenza:
         weight: 89
         enabled: true
+      tassonomia:
+        weight: 52
+        enabled: false
       testo:
         weight: 99
         enabled: true

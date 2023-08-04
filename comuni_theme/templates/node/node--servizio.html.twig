@@ -116,6 +116,10 @@
           'attivo': (content.field_documenti[0] is not empty),
           'titolo': (content.field_documenti["#title"]),
         },
+        'field_faq': {
+          'attivo': (content.field_faq[0] is not empty),
+          'titolo': (content.field_faq["#title"]),
+        },
         'field_ulteriori_informazioni': {
           'attivo': (content.field_ulteriori_informazioni[0] is not empty),
           'titolo': (content.field_ulteriori_informazioni["#title"]),
@@ -167,7 +171,7 @@
 
       {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_procedure_collegate_esito'].titolo, 'content': content.field_procedure_collegate_esito, 'id': 'field_procedure_collegate_esito' } %}
 
-      <section class="it-page-section mb-30 has-bg-grey shadow-sm rounded border border-light p-4">
+      <section class="it-page-section mb-5 has-bg-grey shadow-sm rounded border border-light p-4">
         <h2 class="mb-3" id="field_canale_digitale">Accedi al servizio</h2>
         {% if content.field_canale_digitale[0] %}
           <p class="text-paragraph lora mb-4" data-element="service-generic-access">Puoi accedere a {{ node.label }} direttamente online.</p>
@@ -226,8 +230,19 @@
       {% endif %}
 
       {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': indice_della_pagina['field_documenti'].titolo, 'content': (content.field_documenti["#items"] is null ? null : content.field_documenti["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_documenti' } %}
+      
+      {% if content.field_faq[0] is not empty %}
+        <section class="it-page-section mb-5 has-bg-grey shadow-sm rounded border border-light p-4">
+          <h2 class="title-xxlarge mb-3" id="field_faq">FAQ</h2>
+          <div class="container">
+            {{ drupal_view("ricerca_faq", 'ricerca', content.field_faq[0]["#paragraph"].parent_id.value) }}
+          </div>
+        </section>
+      {% endif %}
+      
       {% include '@comuni_theme/templates/node/parts/node--parts--ulteriori-informazioni.html.twig' with { 'label': indice_della_pagina['field_ulteriori_informazioni'].titolo, 'content': content.field_ulteriori_informazioni, 'id': 'field_ulteriori_informazioni' } %}
       {% include '@comuni_theme/templates/node/parts/node--parts--ultimo-aggiornamento.html.twig' with { 'content': node.changed } %}
+
     </div>
   </div>
 </div>
