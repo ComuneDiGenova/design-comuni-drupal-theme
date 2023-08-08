@@ -1,0 +1,10 @@
+uuid: 0ec07587-49a3-4f92-bf10-d35374f738d6
+langcode: it
+status: true
+dependencies: {  }
+id: feed_remoto
+label: 'Feed remoto'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

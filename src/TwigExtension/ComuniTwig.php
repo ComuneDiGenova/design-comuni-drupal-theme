@@ -126,7 +126,8 @@ class ComuniTwig extends AbstractExtension
       new TwigFilter('dayEn2It', [$this, 'dayEn2It']),
       new TwigFilter('monthEn2It', [$this, 'monthEn2It']),
       new TwigFilter('strpad', [$this, 'strpad']),
-      new TwigFilter('json_decode', [$this, 'jsonDecode'])
+      new TwigFilter('json_decode', [$this, 'jsonDecode']),
+      new TwigFilter('json_remote', [$this, 'jsonRemote'])
     ];
   }
 
@@ -333,6 +334,13 @@ class ComuniTwig extends AbstractExtension
     return json_encode(node_type_get_names());
   }
 
+  /*
+    @ComuneDiGenova
+    Creata funzione per elencare su twig i tipi di contenuto
+  */
+  public function jsonRemote($string) {
+    return json_decode(file_get_contents($string));
+  }
 
 
 }

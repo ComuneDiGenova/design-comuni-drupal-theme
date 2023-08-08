@@ -1,0 +1,23 @@
+uuid: e3c45596-2a52-4f50-81ea-a3c13707fb91
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_mode
+    - paragraphs.paragraphs_type.feed_remoto
+  module:
+    - options
+id: paragraph.feed_remoto.field_view_mode
+field_name: field_view_mode
+entity_type: paragraph
+bundle: feed_remoto
+label: Visualizzazione
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '3 Card'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

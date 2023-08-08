@@ -1,0 +1,32 @@
+{% set titolo = elements.field_titolo["#items"][0].value %}
+{% set visualizzazione = elements.field_view_mode["#items"][0].value %}
+{% set url = elements.field_link["#items"][0].uri %}
+{% set obj = url|json_remote %}
+
+{% if visualizzazione ends with " Card" %}
+  <div class="container my-5">
+
+    <h2 class="mb-4 title-xxlarge">{{ titolo }}</h2>
+
+    <div class="row row-cols-lg-{{ visualizzazione|replace({" Card": ""}) }} row-cols-1 g-4">
+      {% for item in obj %}
+        <div class="col">
+          {% include '@comuni_theme/templates/card/feed-remoto--card.html.twig' with { 'item': item } %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% elseif visualizzazione ends with " Banner" %}
+  <div class="container my-5">
+
+    <h2 class="mb-4 title-xxlarge">{{ titolo }}</h2>
+
+    <div class="row row-cols-lg-{{ visualizzazione|replace({" Banner": ""}) }} row-cols-1 g-4">
+      {% for item in obj %}
+        <div class="col">
+          {% include '@comuni_theme/templates/banner/feed-remoto--banner.html.twig' with { 'item': item } %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

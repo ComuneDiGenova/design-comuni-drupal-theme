@@ -131,6 +131,24 @@ drush cr
 - In modifica del termine /amministrazione/documenti-e-dati, nel componente "Elenco card termini da un vocabolario", selezionare il vocabolario "Tipi di documento".
 - In modifica del termine /amministrazione/politici, nel componente "Vista", selezionare la Vista "Politici" e il Display Id "Block".
 
+#### Al Paragraph Feed Remoto bisogna indicare il link di un file json, questo è un esempio di come va configurato:
+```json
+[
+  {
+    "titolo": "Titolo della card o banner",
+    "immagine": "https://picsum.photos/400/300",
+    "immagine_alt": "Immagine generata automaticamente da picsum",
+    "link": "https://italia.github.io/design-comuni-pagine-statiche/"
+  },
+  {
+    "titolo": "Titolo della seconda card o banner",
+    "immagine": "https://picsum.photos/400/300",
+    "immagine_alt": "Seconda immagine generata automaticamente da picsum",
+    "link": "https://italia.github.io/design-comuni-pagine-statiche/"
+  }
+]
+```
+
 #### Librerie originali per i moduli rating, assistenza, booking
 Sono state disattivate in quanto attualmente risultano incomplete
   #js/rating.js: {}

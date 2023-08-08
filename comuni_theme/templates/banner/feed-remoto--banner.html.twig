@@ -1,0 +1,28 @@
+<div class="card  h-100 rounded shadow-sm border border-light">
+  {% if item.immagine is not empty %}
+    <div class="rounded border border-light shadow-sm">
+      <img src="{{ item.immagine }}" alt="{{ item.immagine_alt }}" class="w-100 h-auto">
+    </div>
+  {% endif %}
+  <div class="container px-0 py-3 px-4">
+    <div class="row mx-0 gap-3">
+      <div class="col px-0">
+        <div class="row mx-0 gap-2">
+          <div class="col px-0">
+            <div class="category-top mb-3 d-flex gap-2">
+              <svg class="icon flex-shrink-0"><use href="#it-external-link" xlink:href="#it-external-link"></use></svg>
+              <h3 class="title-xsmall-semi-bold mt-1 fw-semibold text-uppercase">
+                {{ item.titolo }}
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        {% include '@comuni_theme/templates/card/parts/card--parts--text.html.twig' with { 'content': item.testo } %}
+      </div>
+    </div>
+  </div>
+
+  {% include '@comuni_theme/templates/card/parts/card--parts--read-more.html.twig' with { 'url': item.link, 'title': 'testo' } %}
+
+</div>

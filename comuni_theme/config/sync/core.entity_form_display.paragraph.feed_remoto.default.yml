@@ -1,0 +1,41 @@
+uuid: 4334e656-9097-4b6f-b307-1283b0d41468
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feed_remoto.field_link
+    - field.field.paragraph.feed_remoto.field_titolo
+    - field.field.paragraph.feed_remoto.field_view_mode
+    - paragraphs.paragraphs_type.feed_remoto
+  module:
+    - link
+id: paragraph.feed_remoto.default
+targetEntityType: paragraph
+bundle: feed_remoto
+mode: default
+content:
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_titolo:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_view_mode:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

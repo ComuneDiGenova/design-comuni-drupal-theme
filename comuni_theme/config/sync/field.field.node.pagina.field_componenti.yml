@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.card_in_evidenza
     - paragraphs.paragraphs_type.elenco_card_da_termine
     - paragraphs.paragraphs_type.elenco_card_da_vocabolario
+    - paragraphs.paragraphs_type.feed_remoto
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.prenotazione_appuntamento
     - paragraphs.paragraphs_type.ricerca
@@ -37,6 +38,7 @@ settings:
     target_bundles:
       ultima_notizia: ultima_notizia
       calendario: calendario
+      feed_remoto: feed_remoto
       ultimo_aggiornamento: ultimo_aggiornamento
       ricerca_faq: ricerca_faq
       elenco_card_da_vocabolario: elenco_card_da_vocabolario
@@ -93,6 +95,9 @@ settings:
       fase_semplice:
         weight: 74
         enabled: false
+      feed_remoto:
+        weight: 45
+        enabled: true
       gallery:
         weight: 92
         enabled: true

@@ -1,0 +1,33 @@
+uuid: 06990853-a6fd-4100-a2ec-e914e49e9f27
+langcode: it
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_view_mode
+field_name: field_view_mode
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '3 Card'
+      label: '3 Card'
+    -
+      value: '2 Card'
+      label: '2 Card'
+    -
+      value: '3 Banner'
+      label: '3 Banner'
+    -
+      value: '2 Banner'
+      label: '2 Banner'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
