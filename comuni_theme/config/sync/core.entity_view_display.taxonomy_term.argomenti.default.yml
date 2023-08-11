@@ -3,14 +3,26 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.argomenti.field_componenti
     - field.field.taxonomy_term.argomenti.field_descrizione_breve
     - field.field.taxonomy_term.argomenti.field_link_a_eurovoc
     - taxonomy.vocabulary.argomenti
+  module:
+    - entity_reference_revisions
 id: taxonomy_term.argomenti.default
 targetEntityType: taxonomy_term
 bundle: argomenti
 mode: default
 content:
+  field_componenti:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_descrizione_breve:
     type: string
     label: hidden

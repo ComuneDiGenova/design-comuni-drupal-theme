@@ -25,8 +25,6 @@
     </div>
   {% endif %}
 
-  {{ content|without('field_descrizione_breve')|without('field_link_a_eurovoc') }}
-
 
   {% set count = 0 %}
   {% for key, item in nodeTypeGetNames()|json_decode %}
@@ -48,5 +46,7 @@
       {% set count = count + 1 %}
     {% endif %}
   {% endfor %}
+
+  {{ content|without('field_descrizione_breve')|without('field_link_a_eurovoc') }}
 
 </div>

@@ -1,0 +1,19 @@
+uuid: 2e9d317b-dba9-49ae-a9d7-522ff940b24d
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titolo
+    - paragraphs.paragraphs_type.ricerca_faq
+id: paragraph.ricerca_faq.field_titolo
+field_name: field_titolo
+entity_type: paragraph
+bundle: ricerca_faq
+label: Titolo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

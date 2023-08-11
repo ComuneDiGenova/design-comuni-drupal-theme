@@ -117,8 +117,8 @@
           'titolo': (content.field_documenti["#title"]),
         },
         'field_faq': {
-          'attivo': (content.field_faq[0] is not empty),
-          'titolo': (content.field_faq["#title"]),
+          'attivo': true,
+          'titolo': 'Domande frequenti',
         },
         'field_ulteriori_informazioni': {
           'attivo': (content.field_ulteriori_informazioni[0] is not empty),
@@ -231,14 +231,22 @@
 
       {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': indice_della_pagina['field_documenti'].titolo, 'content': (content.field_documenti["#items"] is null ? null : content.field_documenti["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'field_documenti' } %}
       
-      {% if content.field_faq[0] is not empty %}
-        <section class="it-page-section mb-5 has-bg-grey shadow-sm rounded border border-light p-4">
-          <h2 class="title-xxlarge mb-3" id="field_faq">FAQ</h2>
-          <div class="container">
+      
+      <section class="it-page-section mb-5 has-bg-grey shadow-sm rounded border border-light p-4">
+        <h2 class="title-xxlarge mb-3" id="field_faq">Domande frequenti</h2>
+        {% if content.field_faq[0] is not empty %}
+          <div class="container mb-5 border-bottom px-0 pb-5">
             {{ drupal_view("ricerca_faq", 'ricerca', content.field_faq[0]["#paragraph"].parent_id.value) }}
           </div>
-        </section>
-      {% endif %}
+        {% endif %}
+        
+        <div class="container px-0">
+          <h3 class="h4">Potresti trovare risposte alle domande frequenti nei tag assegnati a questo servizio:</h3>
+          {% include '@comuni_theme/templates/node/parts/node--parts--taxonomy-chips.html.twig' with { 'label': 'Argomenti', 'taxonomy': content.field_argomenti, 'data_element': 'service-topic' } %}
+          {% include '@comuni_theme/templates/node/parts/node--parts--taxonomy-chips.html.twig' with { 'label': 'Categoria del servizio', 'taxonomy': content.field_categoria_del_servizio } %}
+        </div>
+      </section>
+      
       
       {% include '@comuni_theme/templates/node/parts/node--parts--ulteriori-informazioni.html.twig' with { 'label': indice_della_pagina['field_ulteriori_informazioni'].titolo, 'content': content.field_ulteriori_informazioni, 'id': 'field_ulteriori_informazioni' } %}
       {% include '@comuni_theme/templates/node/parts/node--parts--ultimo-aggiornamento.html.twig' with { 'content': node.changed } %}
