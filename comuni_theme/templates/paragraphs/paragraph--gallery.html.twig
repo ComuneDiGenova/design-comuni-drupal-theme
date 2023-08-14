@@ -17,11 +17,13 @@
 {% set num_elementi_lg = 3 %}
 {% set num_elementi_md = 2 %}
 {% set num_elementi_sm = 1 %}
+{% set stile_desktop = '4_3' %}
 {% for stili in content.field_tipi_di_stili %}
   {% if stili["#title"] == "1 elemento per riga" %}
     {% set num_elementi_lg = 1 %}
     {% set num_elementi_md = 1 %}
     {% set num_elementi_sm = 1 %}
+    {% set stile_desktop = 'slider_desktop' %}
   {% elseif stili["#title"] == "2 elementi per riga" %}
     {% set num_elementi_lg = 2 %}
     {% set num_elementi_md = 2 %}
@@ -57,27 +59,24 @@
     {% if content.field_titolo[0] is not empty %}
       <h2 class="mb-4 title-xxlarge">{{ content.field_titolo }}</h2>
     {% endif %}
-		<div class="row">
-			<div class="col-12">
-				<div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide data-splide='{{ data_splide|json_encode }}'>
-					<div class="splide__track">
-						<ul class="splide__list">
-							{% for contenuto in content.field_immagini["#items"] %}
-							<li class="splide__slide">
-                {% set immagine = drupal_entity('media', contenuto.target_id, 'default') %}
-                {% set caption = immagine["#media"].field_media_image[0].alt %}
-                {% set stile_desktop = (loop.length == 1 ? content.field_stile_immagine[0]["#plain_text"] : '4_3') %}
-                {{ drupal_image(immagine["#media"].field_media_image[0].target_id, stile_desktop, {class: 'w-100 h-auto d-none d-sm-block', alt: caption|t, title: caption|t}) }}
-                {{ drupal_image(immagine["#media"].field_media_image[0].target_id, '4_3', {class: 'w-100 h-auto d-block d-sm-none', alt: caption|t, title: caption|t}) }}
-                <p class="title-xsmall cmp-hero-img-small__description">
-                  {{ caption }}
-                </p>
-							</li>
-							{% endfor %}
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide data-splide='{{ data_splide|json_encode }}'>
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for contenuto in content.field_immagini["#items"] %}
+          <li class="splide__slide">
+            {% set immagine = drupal_entity('media', contenuto.target_id, 'default') %}
+            {% set caption = immagine["#media"].field_media_image[0].alt %}
+            {% set stile_desktop = (loop.length == 1 ? content.field_stile_immagine[0]["#plain_text"] : stile_desktop) %}
+            {{ drupal_image(immagine["#media"].field_media_image[0].target_id, stile_desktop, {class: 'w-100 h-auto d-none d-sm-block', alt: caption|t, title: caption|t}) }}
+            {{ drupal_image(immagine["#media"].field_media_image[0].target_id, '4_3', {class: 'w-100 h-auto d-block d-sm-none', alt: caption|t, title: caption|t}) }}
+            <p class="title-xsmall cmp-hero-img-small__description">
+              {{ caption }}
+            </p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
 	</div>
 </section>
