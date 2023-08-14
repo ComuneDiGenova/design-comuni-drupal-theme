@@ -339,8 +339,12 @@ class ComuniTwig extends AbstractExtension
     Creata funzione per elencare su twig i tipi di contenuto
   */
   public function jsonRemote($string) {
-    return json_decode(file_get_contents($string));
+    try {
+      $json = @file_get_contents($string);
+    } catch (Exception $e) {
+      $json = "{}";
+    }
+    return json_decode($json);
   }
-
 
 }

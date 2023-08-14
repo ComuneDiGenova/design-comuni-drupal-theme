@@ -3,85 +3,88 @@
 {% set url = elements.field_link["#items"][0].uri %}
 {% set obj = url|json_remote %}
 
+{% if obj is not empty %}
 
-{% set num_elementi = ("Card" in visualizzazione ? visualizzazione|replace({" Card": ""}) : ("Banner" in visualizzazione ? visualizzazione|replace({" Banner": ""}) : "")) %}
-{% set num_elementi_lg = 3 %}
-{% set num_elementi_md = 2 %}
-{% set num_elementi_sm = 1 %}
-
-{% if num_elementi == "1" %}
-  {% set num_elementi_lg = 1 %}
-  {% set num_elementi_md = 1 %}
-  {% set num_elementi_sm = 1 %}
-{% elseif num_elementi == "2" %}
-  {% set num_elementi_lg = 2 %}
-  {% set num_elementi_md = 2 %}
-  {% set num_elementi_sm = 1 %}
-{% elseif num_elementi == "3" %}
+  {% set num_elementi = ("Card" in visualizzazione ? visualizzazione|replace({" Card": ""}) : ("Banner" in visualizzazione ? visualizzazione|replace({" Banner": ""}) : "")) %}
   {% set num_elementi_lg = 3 %}
   {% set num_elementi_md = 2 %}
   {% set num_elementi_sm = 1 %}
-{% endif %}
 
-{% set num_items = obj|length %}
-{%
-  set data_splide = {
-    "type": "slide",
-    "gap": 25,
-    "drag": (num_items > 1) ? true : false,
-    "perPage": num_elementi_lg,
-    "arrows": false,
-    "breakpoints": {
-		  991: {
-			  perPage: num_elementi_md,
-      },
-      767: {
-			  perPage: num_elementi_sm,
-      }    
+  {% if num_elementi == "1" %}
+    {% set num_elementi_lg = 1 %}
+    {% set num_elementi_md = 1 %}
+    {% set num_elementi_sm = 1 %}
+  {% elseif num_elementi == "2" %}
+    {% set num_elementi_lg = 2 %}
+    {% set num_elementi_md = 2 %}
+    {% set num_elementi_sm = 1 %}
+  {% elseif num_elementi == "3" %}
+    {% set num_elementi_lg = 3 %}
+    {% set num_elementi_md = 2 %}
+    {% set num_elementi_sm = 1 %}
+  {% endif %}
+
+  {% set num_items = obj|length %}
+  {%
+    set data_splide = {
+      "type": "slide",
+      "gap": 25,
+      "drag": (num_items > 1) ? true : false,
+      "perPage": num_elementi_lg,
+      "arrows": false,
+      "breakpoints": {
+        991: {
+          perPage: num_elementi_md,
+        },
+        767: {
+          perPage: num_elementi_sm,
+        }    
+      }
     }
-  }
-%}
+  %}
 
 
 
 
 
 
-{% if visualizzazione ends with " Card" %}
-  <div class="container my-5">
+  {% if visualizzazione ends with " Card" %}
+    <div class="container my-5">
 
-    <h2 class="mb-4 title-xxlarge">{{ titolo }}</h2>
+      <h2 class="mb-4 title-xxlarge">{{ titolo }}</h2>
 
-    <div class="it-carousel-wrapper splide" data-bs-carousel-splide data-splide='{{ data_splide|json_encode }}'>
-      <div class="splide__track">
-        <ul class="splide__list">
-          {% for item in obj %}
-          <li class="splide__slide">
-            {% include '@comuni_theme/templates/card/feed-remoto--card.html.twig' with { 'item': item } %}
-          </li>
-          {% endfor %}
-        </ul>
+      <div class="it-carousel-wrapper splide" data-bs-carousel-splide data-splide='{{ data_splide|json_encode }}'>
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for item in obj %}
+            <li class="splide__slide">
+              {% include '@comuni_theme/templates/card/feed-remoto--card.html.twig' with { 'item': item } %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
-    </div>
 
-  </div>
-{% elseif visualizzazione ends with " Banner" %}
-  <div class="container my-5">
-    <h2 class="mb-4 title-xxlarge">{{ titolo }}</h2>
-    <div class="row">
-      <div class="col">
-        <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide data-splide='{{ data_splide|json_encode }}'>
-          <div class="splide__track">
-            <ul class="splide__list">
-              {% for item in obj %}
-              <li class="splide__slide">
-                {% include '@comuni_theme/templates/banner/feed-remoto--banner.html.twig' with { 'item': item } %}
-              </li>
-              {% endfor %}
-            </ul>
+    </div>
+  {% elseif visualizzazione ends with " Banner" %}
+    <div class="container my-5">
+      <h2 class="mb-4 title-xxlarge">{{ titolo }}</h2>
+      <div class="row">
+        <div class="col">
+          <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide data-splide='{{ data_splide|json_encode }}'>
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for item in obj %}
+                <li class="splide__slide">
+                  {% include '@comuni_theme/templates/banner/feed-remoto--banner.html.twig' with { 'item': item } %}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  {% endif %}
+  
 {% endif %}
