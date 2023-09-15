@@ -21,7 +21,7 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Predefinito
     display_plugin: default
     position: 0
     display_options:
@@ -246,20 +246,20 @@ display:
         options:
           items_per_page: 50
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
+            next: 'Seguente ›'
+            previous: '‹ Precedente'
+            first: '« Prima'
+            last: 'Ultima »'
       exposed_form:
         type: basic
         options:
           submit_button: Filter
           reset_button: true
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Ripristina
+          exposed_sorts_label: 'Ordina per'
           expose_sort_order: true
           sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_desc_label: Disc
       access:
         type: perm
         options:
@@ -634,7 +634,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Pagina
     display_plugin: page
     position: 1
     display_options:
