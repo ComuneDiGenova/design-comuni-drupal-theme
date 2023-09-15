@@ -5,14 +5,8 @@
       <li class="pager__item">
         {% set show_more = '@show_more' |t({'@show_more': item.text}) %}
         {% if item.href %}
-          {% set path = url('<current>')['#markup']|split('/')|last %}
-          {% if path == 'servizi' %}
-            {% set dataElem = 'load-other-cards' %}
-          {% else %}
-            {% set dataElem = '' %}
-          {% endif %}            
           <a href="{{ item.href }}" rel="next">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#" data-element="{{ dataElem }}" class="btn btn-outline-primary pt-15 pb-15 pl-90 pr-90 full-mb text-button">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#" data-element="load-other-cards" class="btn btn-outline-primary pt-15 pb-15 pl-90 pr-90 full-mb text-button">
               {{ show_more }}
             </button>
           </a>
