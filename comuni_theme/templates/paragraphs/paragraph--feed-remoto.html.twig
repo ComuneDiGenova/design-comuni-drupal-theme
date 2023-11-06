@@ -54,7 +54,7 @@
       <h2 class="mb-4 title-xxlarge">{{ titolo }}</h2>
 
       <div class="it-carousel-wrapper splide" data-bs-carousel-splide data-splide='{{ data_splide|json_encode }}'>
-        <div class="splide__track">
+        <div class="splide__track pt-0">
           <ul class="splide__list">
             {% for item in obj %}
             <li class="splide__slide">
@@ -72,10 +72,10 @@
       <div class="row">
         <div class="col">
           <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide data-splide='{{ data_splide|json_encode }}'>
-            <div class="splide__track">
+            <div class="splide__track pt-0">
               <ul class="splide__list">
                 {% for item in obj %}
-                <li class="splide__slide">
+                <li class="splide__slide pb-1">
                   {% include '@comuni_theme/templates/banner/feed-remoto--banner.html.twig' with { 'item': item } %}
                 </li>
                 {% endfor %}
