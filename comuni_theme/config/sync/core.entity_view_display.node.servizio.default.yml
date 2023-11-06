@@ -87,14 +87,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 27
+    weight: 26
     region: content
   field_casi_particolari:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 20
+    weight: 19
     region: content
   field_categoria_del_servizio:
     type: entity_reference_label
@@ -118,14 +118,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 21
+    weight: 20
     region: content
   field_contatti:
     type: entity_reference_entity_id
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 22
+    weight: 21
     region: content
   field_copertura_geografica:
     type: text_default
@@ -184,7 +184,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 24
+    weight: 23
     region: content
   field_faq:
     type: entity_reference_revisions_entity_view
@@ -193,7 +193,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 26
+    weight: 25
     region: content
   field_fase_semplice:
     type: entity_reference_revisions_entity_view
@@ -249,30 +249,21 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 25
+    weight: 24
     region: content
   field_unita_org_responsabile:
     type: entity_reference_entity_id
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 23
-    region: content
-  field_unita_organizzative:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: teaser
-      link: false
-    third_party_settings: {  }
-    weight: 18
+    weight: 22
     region: content
   field_vincoli:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 19
+    weight: 18
     region: content
 hidden:
   field_backend_info: true
@@ -285,6 +276,7 @@ hidden:
   field_promemoria_accesso: true
   field_settore_merceologico: true
   field_sottotitolo: true
+  field_unita_organizzative: true
   langcode: true
   links: true
   node_read_time: true

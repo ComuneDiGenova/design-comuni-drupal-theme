@@ -10,7 +10,7 @@ id: node.servizio.field_unita_organizzative
 field_name: field_unita_organizzative
 entity_type: node
 bundle: servizio
-label: 'Canale fisico'
+label: 'Canale fisico (da non usare)'
 description: '<a target="_blank" href="//[site:url-brief]/node/add/unita_organizzativa">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: false
