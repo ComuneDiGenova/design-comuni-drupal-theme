@@ -55,12 +55,12 @@
 %}
 
 <section{{attributes.addClass(classes).addClass(wrapper_classes)}}>
-	<div class="{{ container_classes|join(' ') }} py-5">
+	<div class="{{ container_classes|join(' ') }} mb-5">
     {% if content.field_titolo[0] is not empty %}
       <h2 class="mb-4 title-xxlarge">{{ content.field_titolo }}</h2>
     {% endif %}
     <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide data-splide='{{ data_splide|json_encode }}'>
-      <div class="splide__track">
+      <div class="splide__track pt-0">
         <ul class="splide__list">
           {% for contenuto in content.field_immagini["#items"] %}
           <li class="splide__slide">
