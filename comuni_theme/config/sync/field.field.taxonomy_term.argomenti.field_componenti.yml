@@ -4,7 +4,11 @@ status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_componenti
+    - paragraphs.paragraphs_type.documenti_per_tassonomia
+    - paragraphs.paragraphs_type.notizie_per_tassonomia
     - paragraphs.paragraphs_type.ricerca_faq
+    - paragraphs.paragraphs_type.servizi_per_tassonomia
+    - paragraphs.paragraphs_type.uo_per_tassonomia
     - taxonomy.vocabulary.argomenti
   module:
     - entity_reference_revisions
@@ -13,7 +17,7 @@ field_name: field_componenti
 entity_type: taxonomy_term
 bundle: argomenti
 label: Componenti
-description: ''
+description: 'Se non ci sono componenti, la pagina mostrerà automaticamente la struttura contenuti di default.'
 required: false
 translatable: true
 default_value: {  }
@@ -22,7 +26,11 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      documenti_per_tassonomia: documenti_per_tassonomia
+      notizie_per_tassonomia: notizie_per_tassonomia
       ricerca_faq: ricerca_faq
+      servizi_per_tassonomia: servizi_per_tassonomia
+      uo_per_tassonomia: uo_per_tassonomia
     negate: 0
     target_bundles_drag_drop:
       backend_info:
@@ -37,6 +45,9 @@ settings:
       calendario:
         weight: 34
         enabled: false
+      canale_fisico:
+        weight: 37
+        enabled: false
       card_assistenza:
         weight: 35
         enabled: false
@@ -49,6 +60,9 @@ settings:
       dataset:
         weight: 38
         enabled: false
+      documenti_per_tassonomia:
+        weight: 45
+        enabled: true
       documento:
         weight: 39
         enabled: false
@@ -79,6 +93,9 @@ settings:
       link_con_icona:
         weight: 48
         enabled: false
+      notizie_per_tassonomia:
+        weight: 52
+        enabled: true
       orari_giorni:
         weight: 49
         enabled: false
@@ -100,6 +117,9 @@ settings:
       richiesta_assistenza:
         weight: 55
         enabled: false
+      servizi_per_tassonomia:
+        weight: 64
+        enabled: true
       tassonomia:
         weight: 56
         enabled: false
@@ -112,6 +132,9 @@ settings:
       ultimo_aggiornamento:
         weight: 59
         enabled: false
+      uo_per_tassonomia:
+        weight: 69
+        enabled: true
       vista:
         weight: 60
         enabled: false

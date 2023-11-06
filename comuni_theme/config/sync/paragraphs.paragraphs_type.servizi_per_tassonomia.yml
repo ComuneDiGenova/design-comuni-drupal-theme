@@ -1,0 +1,10 @@
+uuid: 7a5bb60b-8c74-4f6c-89c6-1714ee716978
+langcode: it
+status: true
+dependencies: {  }
+id: servizi_per_tassonomia
+label: 'Servizi per tassonomia'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

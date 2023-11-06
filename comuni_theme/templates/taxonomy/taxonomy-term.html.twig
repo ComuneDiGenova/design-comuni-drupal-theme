@@ -25,27 +25,28 @@
     </div>
   {% endif %}
 
-
-  {% set count = 0 %}
-  {% for key, item in nodeTypeGetNames()|json_decode %}
-    {% if drupal_view_result('contenuto_collegato', 'block_3', term.id, key) %}
-      <div class="py-5 {% if count % 2 == 0 %}has-bg-grey{% endif %}">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <section class="it-page-section mb-30">
-                <h2 class="title-xxlarge mb-3">{{ item }}</h2>
-                <div class="container">
-                  {{ drupal_view('contenuto_collegato', 'block_3', term.id, key) }}
-                </div>
-              </section>
+  {% if elements.field_componenti.0 is empty %}{#Se non ci sono componenti carichiamo la struttura contenuti di default#}
+    {% set count = 0 %}
+    {% for key, item in nodeTypeGetNames()|json_decode %}
+      {% if drupal_view_result('contenuto_collegato', 'block_3', term.id, key) %}
+        <div class="py-5 {% if count % 2 == 0 %}has-bg-grey{% endif %}">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <section class="it-page-section mb-30">
+                  <h2 class="title-xxlarge mb-3">{{ item }}</h2>
+                  <div class="container">
+                    {{ drupal_view('contenuto_collegato', 'block_3', term.id, key) }}
+                  </div>
+                </section>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {% set count = count + 1 %}
-    {% endif %}
-  {% endfor %}
+        {% set count = count + 1 %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 
   {{ content|without('field_descrizione_breve') }}
 

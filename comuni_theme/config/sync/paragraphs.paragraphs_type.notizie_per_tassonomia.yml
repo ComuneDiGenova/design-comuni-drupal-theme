@@ -1,0 +1,10 @@
+uuid: e99eef8e-251d-45bf-a6bc-48218325a1ba
+langcode: it
+status: true
+dependencies: {  }
+id: notizie_per_tassonomia
+label: 'Notizie per tassonomia'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

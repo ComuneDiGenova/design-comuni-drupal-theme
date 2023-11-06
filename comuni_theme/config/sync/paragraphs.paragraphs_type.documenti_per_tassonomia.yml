@@ -1,0 +1,10 @@
+uuid: 2d34029f-1638-4299-813d-fa53d86b8bb8
+langcode: it
+status: true
+dependencies: {  }
+id: documenti_per_tassonomia
+label: 'Documenti per tassonomia'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

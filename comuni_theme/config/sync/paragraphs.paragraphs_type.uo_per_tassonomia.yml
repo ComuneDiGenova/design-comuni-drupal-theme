@@ -1,0 +1,10 @@
+uuid: ec918d24-5b7d-4f5d-a8ee-5010bf323c30
+langcode: it
+status: true
+dependencies: {  }
+id: uo_per_tassonomia
+label: 'Unità Organizzative per tassonomia'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

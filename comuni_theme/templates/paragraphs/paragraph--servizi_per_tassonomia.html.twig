@@ -1,0 +1,25 @@
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'my-5',
+  'it-page-section'
+] %}
+
+{% if drupal_view_result('contenuto_collegato', 'block_3', elements['#paragraph'].parent_id.0.value, 'servizio') %}
+  <section{{attributes.addClass(classes)}}>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2 class="title-xxlarge mb-3">Servizi</h2>
+            <div class="container">
+              {{ drupal_view('contenuto_collegato', 'block_3', elements['#paragraph'].parent_id.0.value, 'servizio') }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
