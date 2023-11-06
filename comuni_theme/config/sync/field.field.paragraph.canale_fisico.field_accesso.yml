@@ -1,0 +1,23 @@
+uuid: 23b8e91c-da7c-41c3-ba61-62e3bba0bfcc
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accesso
+    - paragraphs.paragraphs_type.canale_fisico
+  module:
+    - options
+id: paragraph.canale_fisico.field_accesso
+field_name: field_accesso
+entity_type: paragraph
+bundle: canale_fisico
+label: Accesso
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

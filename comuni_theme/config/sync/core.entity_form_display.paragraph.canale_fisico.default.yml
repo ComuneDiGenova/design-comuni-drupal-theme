@@ -1,0 +1,32 @@
+uuid: cc9ae311-0a87-4b38-83a7-de69c580ad91
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.canale_fisico.field_accesso
+    - field.field.paragraph.canale_fisico.field_unita_organizzativa
+    - paragraphs.paragraphs_type.canale_fisico
+id: paragraph.canale_fisico.default
+targetEntityType: paragraph
+bundle: canale_fisico
+mode: default
+content:
+  field_accesso:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_unita_organizzativa:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

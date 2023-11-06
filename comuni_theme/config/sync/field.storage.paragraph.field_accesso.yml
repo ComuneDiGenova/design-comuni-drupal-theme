@@ -1,0 +1,27 @@
+uuid: 790588c8-f7aa-4b8a-9f7f-cf9d73c3e166
+langcode: it
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_accesso
+field_name: field_accesso
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: 'Senza prenotazione'
+    -
+      value: '2'
+      label: 'Con prenotazione'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

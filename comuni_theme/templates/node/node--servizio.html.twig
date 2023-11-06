@@ -174,17 +174,58 @@
       <section class="it-page-section mb-5 has-bg-grey shadow-sm rounded border border-light p-4">
         <h2 class="mb-3" id="field_canale_digitale">Accedi al servizio</h2>
         {% if content.field_canale_digitale[0] %}
-          <p class="text-paragraph lora mb-4" data-element="service-generic-access">Puoi accedere a {{ node.label }} direttamente online.</p>
-          <a href="{{ content.field_canale_digitale['#items'][0].uri }}" type="button" class="btn btn-primary mobile-full" data-element="service-online-access">
+          <p class="text-paragraph lora mb-4">Puoi accedere a {{ node.label }} direttamente online.</p>
+          <a href="{{ content.field_canale_digitale['#items'][0].uri }}" type="button" class="btn btn-primary mobile-full mb-4" data-element="service-online-access">
             <span>{{ content.field_canale_digitale['#items'][0].title }}</span>
           </a>
-          <p class="text-paragraph lora mt-4" data-element="service-generic-access">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
-        {% else %}
-          <p class="text-paragraph lora mt-4" data-element="service-generic-access">Puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+          
+          {% if content.field_canale_fisico[0] %}
+            <p class="text-paragraph lora mb-4">Oppure puoi presentarti direttamente agli uffici</p>
+          {% endif %}
+
         {% endif %}
-        <a href='/prenotazione-appuntamento' class="btn btn-outline-primary t-primary bg-white mobile-full" data-element="service-booking-access">
-          <span>Prenota appuntamento</span>
-        </a>
+        
+        {% if content.field__test_id_da_czrm[0] is not empty %}
+          <a href='/prenotazione-appuntamento' class="btn btn-outline-primary t-primary mobile-full mb-4 bg-white" data-element="service-booking-access">
+            <span>Prenota appuntamento</span>
+          </a>
+        {% endif %}
+        
+        {% if content.field_canale_fisico[0] is not empty %}
+          <p class="text-paragraph lora mb-4">Puoi presentarti senza prenotazione ai seguenti uffici</p>
+          <div class="container p-0">
+            <div class="row row-cols-lg-2 row-cols-1 g-4">
+              {% for item in content.field_canale_fisico["#items"] %}
+
+                {% if item.entity.field_accesso.value == 1 %}{# ufficio senza prenotazione #}
+
+                  {% set sede_principale = item.entity.field_unita_organizzativa[0].entity.field_sede_principale[0].target_id %}
+                  {% set altre_sedi = item.entity.field_unita_organizzativa[0].entity.field_altre_sedi|map(item => "#{item.target_id}" ) %}
+
+                  <div class="col">
+                    <div class="card py-3 px-4 h-100 rounded shadow-sm border border-light no-after">
+                      <h3 class="card-title text-paragraph-medium u-grey-light mb-1">{{ item.entity.field_unita_organizzativa[0].entity.title.value }}</h3>
+                      
+                      
+                        <p class="text-paragraph-card u-grey-light mb-4" data-element="service-generic-access">Puoi accedere al servizio direttamente senza prenotare.</p>
+
+                        <div>
+                          <a class="btn btn-xs btn-primary card-title py-1 mb-3 mt-0" href="javascript: void(0);" data-bs-toggle="collapse" data-bs-target="#sedi-{{ item.entity.field_unita_organizzativa[0].entity.nid.value }}" aria-expanded="false">Sedi <svg class="icon icon-sm rotable" fill="#fff" aria-hidden="true"><use href="#it-collapse" xlink:href="#it-collapse"></use></svg></a>
+                          <div id="sedi-{{ item.entity.field_unita_organizzativa[0].entity.nid.value }}" class="position-absolute collapse text-paragraph-card u-grey-light m-0 bg-white start-0 end-0 p-3 rounded shadow-sm mb-0 border ms-3" style="z-index: 1; width: 80%;">
+                            {{ drupal_view("contenuto_collegato", 'block_4', [sede_principale]|merge(altre_sedi)|join(',')) }}
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                {% elseif item.entity.field_accesso.value == 2 %}{# ufficio con prenotazione #}
+                {% else %}
+                {% endif %}
+
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
       </section>
 
       {% include '@comuni_theme/templates/node/parts/node--parts--testo-libero.html.twig' with { 'label': indice_della_pagina['field_vincoli'].titolo, 'content': content.field_vincoli, 'id': 'field_vincoli' } %}

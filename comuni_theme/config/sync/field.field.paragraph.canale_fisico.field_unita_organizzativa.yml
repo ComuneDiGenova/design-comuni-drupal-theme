@@ -1,0 +1,29 @@
+uuid: a302e0f9-a118-41f1-af7b-406501ef29a8
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_unita_organizzativa
+    - node.type.unita_organizzativa
+    - paragraphs.paragraphs_type.canale_fisico
+id: paragraph.canale_fisico.field_unita_organizzativa
+field_name: field_unita_organizzativa
+entity_type: paragraph
+bundle: canale_fisico
+label: 'Unità organizzativa'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

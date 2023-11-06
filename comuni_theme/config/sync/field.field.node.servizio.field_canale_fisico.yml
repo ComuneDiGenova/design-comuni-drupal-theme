@@ -1,0 +1,121 @@
+uuid: 7c564ea8-27de-4960-ad27-78844229789b
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_canale_fisico
+    - node.type.servizio
+    - paragraphs.paragraphs_type.canale_fisico
+  module:
+    - entity_reference_revisions
+id: node.servizio.field_canale_fisico
+field_name: field_canale_fisico
+entity_type: node
+bundle: servizio
+label: 'Canale fisico'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      canale_fisico: canale_fisico
+    negate: 0
+    target_bundles_drag_drop:
+      backend_info:
+        weight: 32
+        enabled: false
+      biglietto_evento:
+        weight: 33
+        enabled: false
+      blocco:
+        weight: 34
+        enabled: false
+      calendario:
+        weight: 35
+        enabled: false
+      canale_fisico:
+        weight: 36
+        enabled: true
+      card_assistenza:
+        weight: 37
+        enabled: false
+      card_in_evidenza:
+        weight: 38
+        enabled: false
+      contenuto:
+        weight: 39
+        enabled: false
+      dataset:
+        weight: 40
+        enabled: false
+      documento:
+        weight: 41
+        enabled: false
+      elenco_card_da_termine:
+        weight: 42
+        enabled: false
+      elenco_card_da_vocabolario:
+        weight: 43
+        enabled: false
+      faq:
+        weight: 44
+        enabled: false
+      fase_intitolata:
+        weight: 45
+        enabled: false
+      fase_semplice:
+        weight: 46
+        enabled: false
+      feed_remoto:
+        weight: 47
+        enabled: false
+      gallery:
+        weight: 48
+        enabled: false
+      link:
+        weight: 49
+        enabled: false
+      link_con_icona:
+        weight: 50
+        enabled: false
+      orari_giorni:
+        weight: 51
+        enabled: false
+      orari_ore:
+        weight: 52
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 53
+        enabled: false
+      punto_di_contatto:
+        weight: 54
+        enabled: false
+      ricerca:
+        weight: 55
+        enabled: false
+      ricerca_faq:
+        weight: 56
+        enabled: false
+      richiesta_assistenza:
+        weight: 57
+        enabled: false
+      tassonomia:
+        weight: 58
+        enabled: false
+      testo:
+        weight: 59
+        enabled: false
+      ultima_notizia:
+        weight: 60
+        enabled: false
+      ultimo_aggiornamento:
+        weight: 61
+        enabled: false
+      vista:
+        weight: 62
+        enabled: false
+field_type: entity_reference_revisions

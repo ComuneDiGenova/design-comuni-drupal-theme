@@ -1,0 +1,10 @@
+uuid: 6e2a557a-aad6-47ff-a1b8-c65e91a052b0
+langcode: it
+status: true
+dependencies: {  }
+id: canale_fisico
+label: 'Canale fisico'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
