@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_componenti
     - paragraphs.paragraphs_type.documenti_per_tassonomia
+    - paragraphs.paragraphs_type.fascia_di_link
     - paragraphs.paragraphs_type.notizie_per_tassonomia
     - paragraphs.paragraphs_type.ricerca_faq
     - paragraphs.paragraphs_type.servizi_per_tassonomia
@@ -27,6 +28,7 @@ settings:
   handler_settings:
     target_bundles:
       documenti_per_tassonomia: documenti_per_tassonomia
+      fascia_di_link: fascia_di_link
       notizie_per_tassonomia: notizie_per_tassonomia
       ricerca_faq: ricerca_faq
       servizi_per_tassonomia: servizi_per_tassonomia
@@ -75,6 +77,9 @@ settings:
       faq:
         weight: 42
         enabled: false
+      fascia_di_link:
+        weight: 51
+        enabled: true
       fase_intitolata:
         weight: 43
         enabled: false

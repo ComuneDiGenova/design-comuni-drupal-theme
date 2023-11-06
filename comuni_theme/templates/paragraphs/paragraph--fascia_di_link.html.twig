@@ -1,0 +1,12 @@
+<div class="container my-5">
+  <h3 class="title-xxlarge mb-3">{{ content.field_titolo['#items'].0.value }}</h3>
+  <div class="container">
+	  <div class="row row-cols-lg-4 row-cols-1 g-4">
+      {% for item in content.field_links['#items'] %}
+        <div class="col">
+          {{ link(item.title, item.uri, {'class':'btn btn-primary w-100'})}}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

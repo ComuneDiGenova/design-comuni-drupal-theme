@@ -1,0 +1,37 @@
+uuid: 60a493f2-dc84-4972-b9e3-17ba161c8963
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fascia_di_link.field_links
+    - field.field.paragraph.fascia_di_link.field_titolo
+    - paragraphs.paragraphs_type.fascia_di_link
+  module:
+    - link
+id: paragraph.fascia_di_link.default
+targetEntityType: paragraph
+bundle: fascia_di_link
+mode: default
+content:
+  field_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_titolo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

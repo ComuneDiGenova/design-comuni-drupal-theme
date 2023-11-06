@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.card_in_evidenza
     - paragraphs.paragraphs_type.elenco_card_da_termine
     - paragraphs.paragraphs_type.elenco_card_da_vocabolario
+    - paragraphs.paragraphs_type.fascia_di_link
     - paragraphs.paragraphs_type.feed_remoto
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.prenotazione_appuntamento
@@ -40,6 +41,7 @@ settings:
       calendario: calendario
       feed_remoto: feed_remoto
       ultimo_aggiornamento: ultimo_aggiornamento
+      fascia_di_link: fascia_di_link
       ricerca_faq: ricerca_faq
       elenco_card_da_vocabolario: elenco_card_da_vocabolario
       card_in_evidenza: card_in_evidenza
@@ -65,6 +67,9 @@ settings:
       calendario:
         weight: 37
         enabled: true
+      canale_fisico:
+        weight: 41
+        enabled: false
       card_assistenza:
         weight: 38
         enabled: false
@@ -76,6 +81,9 @@ settings:
         enabled: false
       dataset:
         weight: 68
+        enabled: false
+      documenti_per_tassonomia:
+        weight: 46
         enabled: false
       documento:
         weight: 20
@@ -89,6 +97,9 @@ settings:
       faq:
         weight: 40
         enabled: false
+      fascia_di_link:
+        weight: 51
+        enabled: true
       fase_intitolata:
         weight: 23
         enabled: false
@@ -106,6 +117,9 @@ settings:
         enabled: false
       link_con_icona:
         weight: 28
+        enabled: false
+      notizie_per_tassonomia:
+        weight: 58
         enabled: false
       orari_giorni:
         weight: 92
@@ -128,6 +142,9 @@ settings:
       richiesta_assistenza:
         weight: 89
         enabled: true
+      servizi_per_tassonomia:
+        weight: 66
+        enabled: false
       tassonomia:
         weight: 52
         enabled: false
@@ -140,6 +157,9 @@ settings:
       ultimo_aggiornamento:
         weight: 49
         enabled: true
+      uo_per_tassonomia:
+        weight: 71
+        enabled: false
       vista:
         weight: 112
         enabled: true

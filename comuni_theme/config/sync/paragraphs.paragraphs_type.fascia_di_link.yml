@@ -1,0 +1,10 @@
+uuid: 3672b615-6b27-4731-952d-d967bca34b47
+langcode: it
+status: true
+dependencies: {  }
+id: fascia_di_link
+label: 'Fascia di link'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
