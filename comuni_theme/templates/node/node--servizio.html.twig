@@ -165,7 +165,7 @@
             </div>
           {% endif %}
           
-          {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'content': (content.field_costi_allegati[0] is null ? null : node.field_costi_allegati) } %}
+          {% include '@comuni_theme/templates/node/parts/node--parts--2-media.html.twig' with { 'label': null, 'content': (content.field_costi_allegati[0] is null ? null : node.field_costi_allegati) } %}
         </section>
       {% endif %}
 
@@ -185,14 +185,7 @@
 
         {% endif %}
         
-        {% set esiste_prenotazione = false %}
-        {% for item in content.field_canale_fisico["#items"] %}
-          {% if item.entity.field_accesso.value == 2 %}{# ufficio con prenotazione #}
-            {% set esiste_prenotazione = true %}
-          {% endif %}
-        {% endfor %}
-
-        {% if esiste_prenotazione %}
+        {% if content.field__test_id_da_czrm[0] is not empty %}
           <a href='/prenotazione-appuntamento/?service_id={{ content.field__test_id_da_czrm["#items"][0].value }}' class="btn btn-outline-primary t-primary mobile-full mb-4 bg-white" data-element="service-booking-access">
             <span>Prenota appuntamento</span>
           </a>
