@@ -1,12 +1,23 @@
-<div class="container my-5">
-  <h3 class="title-xxlarge mb-3">{{ content.field_titolo['#items'].0.value }}</h3>
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'py-5',
+  'it-page-section'
+] %}
+
+<section{{attributes.addClass(classes)}}>
   <div class="container">
-	  <div class="row row-cols-lg-4 row-cols-1 g-4">
-      {% for item in content.field_links['#items'] %}
-        <div class="col">
-          {{ link(item.title, item.uri, {'class':'btn btn-primary w-100'})}}
-        </div>
-      {% endfor %}
+    <h3 class="title-xxlarge mb-3">{{ content.field_titolo['#items'].0.value }}</h3>
+    <div class="container">
+      <div class="row row-cols-lg-4 row-cols-1 g-4">
+        {% for item in content.field_links['#items'] %}
+          <div class="col">
+            {{ link(item.title, item.uri, {'class':'btn btn-primary w-100'})}}
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
-</div>
+</section>

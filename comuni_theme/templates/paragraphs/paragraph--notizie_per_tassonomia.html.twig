@@ -3,20 +3,18 @@
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished',
-  'my-5',
+  'py-5',
   'it-page-section'
 ] %}
 
 {% if drupal_view_result('contenuto_collegato', 'block_3', elements['#paragraph'].parent_id.0.value, 'notizia') %}
   <section{{attributes.addClass(classes)}}>
-    <div class="my-5">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h2 class="title-xxlarge mb-3">Notizie</h2>
-            <div class="container">
-              {{ drupal_view('contenuto_collegato', 'block_3', elements['#paragraph'].parent_id.0.value, 'notizia') }}
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="title-xxlarge mb-3">Notizie</h2>
+          <div class="container">
+            {{ drupal_view('contenuto_collegato', 'block_3', elements['#paragraph'].parent_id.0.value, 'notizia') }}
           </div>
         </div>
       </div>

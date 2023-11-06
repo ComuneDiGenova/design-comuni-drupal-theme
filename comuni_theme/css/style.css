@@ -138,3 +138,13 @@ a:hover {
 .contextual {
 	top: 6px !important;
 }
+
+/* Taxonomy colorazione alternata dei componenti */
+.field--name-field-componenti > *:nth-child(odd) {
+	background-color: rgba(0,122,82,.05);
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+.field--name-field-componenti > *:first-child {
+	margin-top: 0 !important;
+}
