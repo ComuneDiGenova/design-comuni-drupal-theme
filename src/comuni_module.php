@@ -25,6 +25,8 @@ class comuni_module
         $o = str_ireplace("0,122,82", $primary_rgb, $o);//button shadow
         $o = str_ireplace("#005c3e", "hsl(".$primary_h."deg, 100%, 18%)", $o);//border+dropdown+bg
 
+        file_put_contents(DRUPAL_ROOT."/modules/custom/design-comuni-drupal-theme/comuni_theme/css/bootstrap-italia.min.css", $o);
+
         print $o;
         exit;
 
