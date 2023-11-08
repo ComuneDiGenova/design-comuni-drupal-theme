@@ -61,7 +61,8 @@
                     <div class="card card-bg">
                       <div class="card-body">
                         <h4 class="card-title pb-4 mb-10">{{ currentDay }}<span>{{ currentDayName }}</span></h4>
-                        {{ drupal_view("calendario", calendarDisplays[i]) }}
+                        {% set tag_eventi = elements['#paragraph'].field_termini_di_tassonomia|map(e => "#{e.target_id}")|join('+') %}
+                        {{ drupal_view("calendario", calendarDisplays[i], tag_eventi != "" ? tag_eventi : null) }}
                       </div>
                     </div>
                   </div>

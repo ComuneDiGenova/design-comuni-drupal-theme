@@ -1,0 +1,31 @@
+uuid: 81b025c8-b7be-4eb4-9f0d-49c72cad0375
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_termini_di_tassonomia
+    - paragraphs.paragraphs_type.calendario
+    - taxonomy.vocabulary.argomenti
+    - taxonomy.vocabulary.tipi_di_evento
+id: paragraph.calendario.field_termini_di_tassonomia
+field_name: field_termini_di_tassonomia
+entity_type: paragraph
+bundle: calendario
+label: 'Termini di tassonomia'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      argomenti: argomenti
+      tipi_di_evento: tipi_di_evento
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: argomenti
+field_type: entity_reference

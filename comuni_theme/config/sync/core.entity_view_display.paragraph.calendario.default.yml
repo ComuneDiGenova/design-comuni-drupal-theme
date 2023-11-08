@@ -3,6 +3,7 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.paragraph.calendario.field_termini_di_tassonomia
     - field.field.paragraph.calendario.field_titolo
     - paragraphs.paragraphs_type.calendario
 id: paragraph.calendario.default
@@ -19,4 +20,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_termini_di_tassonomia: true
   search_api_excerpt: true

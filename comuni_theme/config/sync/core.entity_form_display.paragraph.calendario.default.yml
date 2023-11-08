@@ -3,6 +3,7 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.paragraph.calendario.field_termini_di_tassonomia
     - field.field.paragraph.calendario.field_titolo
     - paragraphs.paragraphs_type.calendario
 id: paragraph.calendario.default
@@ -10,6 +11,12 @@ targetEntityType: paragraph
 bundle: calendario
 mode: default
 content:
+  field_termini_di_tassonomia:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_titolo:
     type: string_textfield
     weight: 0
