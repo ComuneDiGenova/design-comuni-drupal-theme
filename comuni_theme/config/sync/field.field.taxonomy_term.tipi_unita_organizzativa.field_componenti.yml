@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_componenti
     - paragraphs.paragraphs_type.card_in_evidenza
+    - paragraphs.paragraphs_type.elenco_card_da_termine
     - taxonomy.vocabulary.tipi_unita_organizzativa
   module:
     - entity_reference_revisions
@@ -23,6 +24,7 @@ settings:
   handler_settings:
     target_bundles:
       card_in_evidenza: card_in_evidenza
+      elenco_card_da_termine: elenco_card_da_termine
     negate: 0
     target_bundles_drag_drop:
       backend_info:
@@ -37,6 +39,9 @@ settings:
       calendario:
         weight: 31
         enabled: false
+      canale_fisico:
+        weight: 41
+        enabled: false
       card_assistenza:
         weight: 32
         enabled: false
@@ -49,20 +54,32 @@ settings:
       dataset:
         weight: 35
         enabled: false
+      documenti_per_tassonomia:
+        weight: 46
+        enabled: false
       documento:
         weight: 36
         enabled: false
       elenco_card_da_termine:
         weight: 37
-        enabled: false
+        enabled: true
       elenco_card_da_vocabolario:
         weight: 38
+        enabled: false
+      faq:
+        weight: 50
+        enabled: false
+      fascia_di_link:
+        weight: 51
         enabled: false
       fase_intitolata:
         weight: 39
         enabled: false
       fase_semplice:
         weight: 40
+        enabled: false
+      feed_remoto:
+        weight: 54
         enabled: false
       gallery:
         weight: 41
@@ -72,6 +89,9 @@ settings:
         enabled: false
       link_con_icona:
         weight: 43
+        enabled: false
+      notizie_per_tassonomia:
+        weight: 58
         enabled: false
       orari_giorni:
         weight: 44
@@ -88,8 +108,14 @@ settings:
       ricerca:
         weight: 48
         enabled: false
+      ricerca_faq:
+        weight: 64
+        enabled: false
       richiesta_assistenza:
         weight: 49
+        enabled: false
+      servizi_per_tassonomia:
+        weight: 66
         enabled: false
       tassonomia:
         weight: 50
@@ -102,6 +128,9 @@ settings:
         enabled: false
       ultimo_aggiornamento:
         weight: 53
+        enabled: false
+      uo_per_tassonomia:
+        weight: 71
         enabled: false
       vista:
         weight: 54
