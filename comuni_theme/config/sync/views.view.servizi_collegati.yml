@@ -8,6 +8,7 @@ dependencies:
   module:
     - comuni_module
     - node
+    - paragraphs
     - user
 id: servizi_collegati
 label: 'Servizi collegati'
@@ -424,7 +425,7 @@ display:
           id: field_sede_principale_target_id
           table: node__field_sede_principale
           field: field_sede_principale_target_id
-          relationship: field_unita_organizzative
+          relationship: field_unita_organizzativa
           group_type: group
           admin_label: ''
           plugin_id: numeric
@@ -508,16 +509,25 @@ display:
         filters: false
         filter_groups: false
       relationships:
-        field_unita_organizzative:
-          id: field_unita_organizzative
-          table: node__field_unita_organizzative
-          field: field_unita_organizzative
+        field_canale_fisico:
+          id: field_canale_fisico
+          table: node__field_canale_fisico
+          field: field_canale_fisico
           relationship: none
           group_type: group
-          admin_label: 'field_unita_organizzative: Content'
+          admin_label: 'field_canale_fisico: Paragraph'
           plugin_id: standard
           required: false
-      css_class: provetta
+        field_unita_organizzativa:
+          id: field_unita_organizzativa
+          table: paragraph__field_unita_organizzativa
+          field: field_unita_organizzativa
+          relationship: field_canale_fisico
+          group_type: group
+          admin_label: 'field_unita_organizzativa: Content'
+          plugin_id: standard
+          required: false
+      css_class: ''
       use_ajax: true
       display_description: ''
       display_extenders: {  }
