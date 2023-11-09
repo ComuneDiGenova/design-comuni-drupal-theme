@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_componenti
+    - paragraphs.paragraphs_type.card_in_evidenza
     - paragraphs.paragraphs_type.documenti_per_tassonomia
     - paragraphs.paragraphs_type.fascia_di_link
     - paragraphs.paragraphs_type.notizie_per_tassonomia
@@ -27,6 +28,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      card_in_evidenza: card_in_evidenza
       documenti_per_tassonomia: documenti_per_tassonomia
       fascia_di_link: fascia_di_link
       notizie_per_tassonomia: notizie_per_tassonomia
@@ -55,7 +57,7 @@ settings:
         enabled: false
       card_in_evidenza:
         weight: 36
-        enabled: false
+        enabled: true
       contenuto:
         weight: 37
         enabled: false
