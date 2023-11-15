@@ -1,0 +1,21 @@
+uuid: 96f853ca-35ad-48cd-bd81-4437cf900a27
+langcode: it
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_longitudine
+field_name: field_longitudine
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

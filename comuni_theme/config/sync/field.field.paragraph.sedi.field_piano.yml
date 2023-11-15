@@ -1,0 +1,19 @@
+uuid: 1ac37a73-6a5e-443c-948f-c414dc52a9b5
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_piano
+    - paragraphs.paragraphs_type.sedi
+id: paragraph.sedi.field_piano
+field_name: field_piano
+entity_type: paragraph
+bundle: sedi
+label: Piano
+description: 'Piano e/o Settore'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

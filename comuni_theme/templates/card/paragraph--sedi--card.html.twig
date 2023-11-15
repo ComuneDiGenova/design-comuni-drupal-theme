@@ -1,0 +1,26 @@
+<div class="card py-3 px-4 h-100 rounded shadow-sm border border-light">{{ title_suffix }}
+
+  <div class="container px-0">
+    <div class="row mx-0 gap-3">
+      <div class="col px-0">
+
+        <div class="row mx-0 gap-2">
+          <div class="col px-0">
+            {% include '@comuni_theme/templates/card/parts/card--parts--sede.html.twig' with { 'icon': 'it-pin',  'address': paragraph.field_indirizzo.0.value, 'url': ('https://www.google.com/maps/place/' ~ paragraph.field_indirizzo[0].value|replace({' ': "+"})) } %}
+          </div>
+        </div>
+
+        {% if paragraph.field_nome_alternativo.0 is not empty %}
+          <h3 class="card-title text-paragraph-medium u-grey-light mb-1">{{ paragraph.field_nome_alternativo.0.value }}</h3>
+        {% endif %}
+
+        {% include '@comuni_theme/templates/card/parts/card--parts--text.html.twig' with { 'content': (paragraph.field_stanza.0 is not empty) ? "Stanza: " ~ paragraph.field_stanza.0.value : "" } %}
+        {% include '@comuni_theme/templates/card/parts/card--parts--text.html.twig' with { 'content': (paragraph.field_piano.0 is not empty) ? "Piano: " ~ paragraph.field_piano.0.value : "" } %}
+        
+      </div>
+    </div>
+  </div>
+
+  {% include '@comuni_theme/templates/card/parts/card--parts--map.html.twig' with { 'url': ('https://www.google.com/maps/place/' ~ paragraph.field_indirizzo.0.value|replace({' ': "+"})) } %}
+
+</div>

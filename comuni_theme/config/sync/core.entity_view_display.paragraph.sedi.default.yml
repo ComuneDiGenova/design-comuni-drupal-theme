@@ -1,0 +1,53 @@
+uuid: 0be0f147-e520-474a-a3d5-172edc70edee
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sedi.field_indirizzo
+    - field.field.paragraph.sedi.field_latitudine
+    - field.field.paragraph.sedi.field_longitudine
+    - field.field.paragraph.sedi.field_nome_alternativo
+    - field.field.paragraph.sedi.field_piano
+    - field.field.paragraph.sedi.field_stanza
+    - paragraphs.paragraphs_type.sedi
+id: paragraph.sedi.default
+targetEntityType: paragraph
+bundle: sedi
+mode: default
+content:
+  field_indirizzo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_nome_alternativo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_piano:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_stanza:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_latitudine: true
+  field_longitudine: true
+  search_api_excerpt: true

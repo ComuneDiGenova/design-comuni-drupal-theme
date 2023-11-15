@@ -12,7 +12,7 @@ entity_type: node
 bundle: unita_organizzativa
 label: Contatti
 description: "Se non compilato verranno presi i contatti del campo sede principale<br>\r\n<a target=\"_blank\" href=\"//[site:url-brief]/node/add/punto_di_contatto\">Aggiungi nuovo contenuto</a><br>\r\nEventuali contatti dell'unità organizzativa"
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

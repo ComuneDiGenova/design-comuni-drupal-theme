@@ -1,0 +1,19 @@
+uuid: 2631c8ec-9031-481b-a725-3d33ea49743c
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_stanza
+    - paragraphs.paragraphs_type.sedi
+id: paragraph.sedi.field_stanza
+field_name: field_stanza
+entity_type: paragraph
+bundle: sedi
+label: Stanza
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -4,19 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.unita_organizzativa.field_allegati_doc_pubblico
-    - field.field.node.unita_organizzativa.field_altre_sedi
     - field.field.node.unita_organizzativa.field_argomenti
     - field.field.node.unita_organizzativa.field_competenze
     - field.field.node.unita_organizzativa.field_contatti
     - field.field.node.unita_organizzativa.field_descrizione_breve
     - field.field.node.unita_organizzativa.field_immagine
-    - field.field.node.unita_organizzativa.field_sede_principale
+    - field.field.node.unita_organizzativa.field_sedi
     - field.field.node.unita_organizzativa.field_tipo_di_organizzazione
     - field.field.node.unita_organizzativa.field_ulteriori_informazioni
     - field.field.node.unita_organizzativa.field_unita_org_genitore
     - image.style.4_3
     - node.type.unita_organizzativa
   module:
+    - entity_reference_revisions
     - media
     - text
     - user
@@ -30,35 +30,28 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 115
-    region: content
-  field_altre_sedi:
-    type: entity_reference_entity_id
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 113
+    weight: 12
     region: content
   field_argomenti:
     type: entity_reference_entity_id
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 110
+    weight: 7
     region: content
   field_competenze:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_contatti:
     type: entity_reference_entity_id
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 108
+    weight: 5
     region: content
   field_descrizione_breve:
     type: string
@@ -66,7 +59,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   field_immagine:
     type: media_thumbnail
@@ -77,14 +70,16 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
-  field_sede_principale:
-    type: entity_reference_entity_id
+  field_sedi:
+    type: entity_reference_revisions_entity_view
     label: hidden
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 112
+    weight: 9
     region: content
   field_tipo_di_organizzazione:
     type: entity_reference_label
@@ -92,26 +87,26 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 111
+    weight: 8
     region: content
   field_ulteriori_informazioni:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 109
+    weight: 6
     region: content
   field_unita_org_genitore:
     type: entity_reference_entity_id
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true

@@ -1,0 +1,10 @@
+uuid: ba37bc77-04a5-44d9-977e-5e478390ac0a
+langcode: it
+status: true
+dependencies: {  }
+id: sedi
+label: Sede
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

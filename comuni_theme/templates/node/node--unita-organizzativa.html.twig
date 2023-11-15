@@ -242,8 +242,7 @@
           </section>
         {% endif %}
         
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Sede principale', 'content': (content.field_sede_principale["#items"] is null ? null : content.field_sede_principale["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'sede-principale' } %}
-        {% include '@comuni_theme/templates/node/parts/node--parts--2-card.html.twig' with { 'label': 'Altre sedi', 'content': (content.field_altre_sedi["#items"] is null ? null : content.field_altre_sedi["#items"]|map(item => "#{item.target_id}" )|join(',')), 'id': 'altre-sedi' } %}
+        {% include '@comuni_theme/templates/paragraphs/parts/paragraph--parts--2-card.html.twig' with { 'label': 'Sede principale', 'content': (content.field_sedi["#items"] is null ? null : content.field_sedi["#items"]|map(item => "#{item.target_id}")|join(',')), 'id': 'sede-principale' } %}
         
         <section class="it-page-section">
           <div class="container p-0">

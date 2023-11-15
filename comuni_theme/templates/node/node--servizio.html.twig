@@ -262,15 +262,8 @@
               {% else %}
                 {% for item in node.field_unita_org_responsabile %}
                   {% set tmp_field_contatti = drupal_field('field_contatti', 'node', item.target_id) %}
-                  {% if tmp_field_contatti[0] is not empty %}
-                    {#} unita_organizzativa.field_contatti è popolato {#}
-                    {% set contatti = contatti|merge([tmp_field_contatti["#items"]|map(item => "#{item.target_id}" )|join(',')]) %}
-                  {% else %}
-                    {#} luogo.field_punti_di_contatto è popolato {#}
-                    {% set field_sede_principale = drupal_field('field_sede_principale', 'node', item.target_id)["#items"][0] %}
-                    {% set field_punti_di_contatto = drupal_field('field_punti_di_contatto', 'node', field_sede_principale.target_id) %}
-                    {% set contatti = contatti|merge([field_punti_di_contatto["#items"]|map(item => "#{item.target_id}" )|join(',')]) %}
-                  {% endif %}
+                  {#} unita_organizzativa.field_contatti è popolato {#}
+                  {% set contatti = contatti|merge([tmp_field_contatti["#items"]|map(item => "#{item.target_id}" )|join(',')]) %}
                 {% endfor %}
               {% endif %}
               {% include '@comuni_theme/templates/node/parts/node--parts--1-card.html.twig' with { 'label': indice_della_pagina['field_contatti'].titolo, 'content': contatti|join(','), 'id': 'field_contatti' } %}
