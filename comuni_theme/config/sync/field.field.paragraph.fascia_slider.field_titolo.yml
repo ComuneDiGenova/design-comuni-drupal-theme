@@ -1,0 +1,19 @@
+uuid: bc856161-323a-4150-9b2a-8acbf04bf29f
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titolo
+    - paragraphs.paragraphs_type.fascia_slider
+id: paragraph.fascia_slider.field_titolo
+field_name: field_titolo
+entity_type: paragraph
+bundle: fascia_slider
+label: Titolo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

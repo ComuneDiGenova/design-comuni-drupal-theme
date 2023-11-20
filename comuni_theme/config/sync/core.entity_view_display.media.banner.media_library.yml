@@ -1,0 +1,40 @@
+uuid: 7be4b354-bb7e-4726-adb0-60a04f767b69
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.banner.field_link
+    - field.field.media.banner.field_media_image
+    - field.field.media.banner.field_mobile_media_image
+    - field.field.media.banner.field_testo
+    - image.style.medium
+    - media.type.banner
+  module:
+    - image
+id: media.banner.media_library
+targetEntityType: media
+bundle: banner
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_link: true
+  field_media_image: true
+  field_mobile_media_image: true
+  field_testo: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

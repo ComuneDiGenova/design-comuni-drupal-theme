@@ -1,0 +1,11 @@
+uuid: 9483fa0c-4e3c-4d05-b449-1812062467de
+langcode: it
+status: true
+dependencies:
+  config:
+    - media.type.banner
+id: media.banner
+target_entity_type_id: media
+target_bundle: banner
+default_langcode: site_default
+language_alterable: false

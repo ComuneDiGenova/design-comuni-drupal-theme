@@ -1,0 +1,79 @@
+uuid: eae4677e-46d6-4944-8ae6-6a1ae8837bd5
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.media.banner.field_link
+    - field.field.media.banner.field_media_image
+    - field.field.media.banner.field_mobile_media_image
+    - field.field.media.banner.field_testo
+    - media.type.banner
+  module:
+    - file_rename
+    - image_widget_crop
+    - link
+    - text
+id: media.banner.default
+targetEntityType: media
+bundle: banner
+mode: default
+content:
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_media_image:
+    type: image_widget_crop
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: ''
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - slider_desktop
+      crop_types_required:
+        - slider_desktop
+      warn_multiple_usages: false
+      show_crop_area: true
+      show_default_crop: true
+    third_party_settings:
+      file_rename:
+        show_rename_link: 0
+  field_mobile_media_image:
+    type: image_widget_crop
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: ''
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - '4_3'
+      crop_types_required:
+        - '4_3'
+      warn_multiple_usages: false
+      show_crop_area: true
+      show_default_crop: true
+    third_party_settings:
+      file_rename:
+        show_rename_link: 0
+  field_testo:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  name: true
+  path: true
+  status: true
+  uid: true

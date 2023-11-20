@@ -89,10 +89,9 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: some
+        type: none
         options:
           offset: 0
-          items_per_page: 6
       exposed_form:
         type: basic
         options:
@@ -186,7 +185,7 @@ display:
           row_class: col
           default_row_class: true
           uses_fields: false
-          columns: '2'
+          columns: '1'
       row:
         type: 'entity:paragraph'
         options:
@@ -201,6 +200,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      use_ajax: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -211,12 +211,249 @@ display:
         - 'languages:language_interface'
         - url
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: 'Paragraph collegati'
+  card_1:
+    id: card_1
+    display_title: 'Paragraph collegati - 1 Card'
     display_plugin: block
     position: 1
     display_options:
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 1
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« Prima'
+            last: 'Ultima »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Voci per pagina'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- Tutto -'
+            offset: false
+            offset_label: Scostamento
+          quantity: 9
+      style:
+        type: card_container
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+          columns: '1'
+      row:
+        type: 'entity:paragraph'
+        options:
+          relationship: none
+          view_mode: card
+      defaults:
+        pager: false
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+      tags: {  }
+  card_2:
+    id: card_2
+    display_title: 'Paragraph collegati - 2 Card'
+    display_plugin: block
+    position: 1
+    display_options:
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 2
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« Prima'
+            last: 'Ultima »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Voci per pagina'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- Tutto -'
+            offset: false
+            offset_label: Scostamento
+          quantity: 9
+      style:
+        type: card_container
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+          columns: '2'
+      row:
+        type: 'entity:paragraph'
+        options:
+          relationship: none
+          view_mode: card
+      defaults:
+        pager: false
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+      tags: {  }
+  card_3:
+    id: card_3
+    display_title: 'Paragraph collegati - 3 Card'
+    display_plugin: block
+    position: 1
+    display_options:
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 3
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« Prima'
+            last: 'Ultima »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Voci per pagina'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- Tutto -'
+            offset: false
+            offset_label: Scostamento
+          quantity: 9
+      style:
+        type: card_container
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+          columns: '3'
+      row:
+        type: 'entity:paragraph'
+        options:
+          relationship: none
+          view_mode: card
+      defaults:
+        pager: false
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+      tags: {  }
+  card_tutte_1:
+    id: card_tutte_1
+    display_title: '1 Card - Paragraph collegati - Senza paginatore'
+    display_plugin: block
+    position: 1
+    display_options:
+      style:
+        type: card_container
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+          columns: '1'
+      row:
+        type: 'entity:paragraph'
+        options:
+          relationship: none
+          view_mode: card
+      defaults:
+        pager: true
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+      tags: {  }
+  card_tutte_2:
+    id: card_tutte_2
+    display_title: '2 Card - Paragraph collegati - Senza paginatore'
+    display_plugin: block
+    position: 1
+    display_options:
+      style:
+        type: card_container
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+          columns: '2'
+      row:
+        type: 'entity:paragraph'
+        options:
+          relationship: none
+          view_mode: card
+      defaults:
+        pager: true
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+      tags: {  }
+  card_tutte_3:
+    id: card_tutte_3
+    display_title: '3 Card - Paragraph collegati - Senza paginatore'
+    display_plugin: block
+    position: 1
+    display_options:
+      style:
+        type: card_container
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+          columns: '3'
+      row:
+        type: 'entity:paragraph'
+        options:
+          relationship: none
+          view_mode: card
+      defaults:
+        pager: true
+        style: false
+        row: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:

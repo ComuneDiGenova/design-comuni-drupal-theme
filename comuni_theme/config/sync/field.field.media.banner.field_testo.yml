@@ -1,0 +1,21 @@
+uuid: 4fee41a8-5caf-4aad-9dbd-f660ee5a03c7
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_testo
+    - media.type.banner
+  module:
+    - text
+id: media.banner.field_testo
+field_name: field_testo
+entity_type: media
+bundle: banner
+label: Testo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,32 @@
+uuid: 17fed479-b0e5-4a37-8612-b07252005b07
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fascia_slider.field_banner
+    - field.field.paragraph.fascia_slider.field_titolo
+    - paragraphs.paragraphs_type.fascia_slider
+id: paragraph.fascia_slider.default
+targetEntityType: paragraph
+bundle: fascia_slider
+mode: default
+content:
+  field_banner:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_titolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

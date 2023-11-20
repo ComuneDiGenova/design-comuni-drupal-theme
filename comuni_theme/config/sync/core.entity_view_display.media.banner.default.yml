@@ -1,0 +1,56 @@
+uuid: eba0d0b9-0654-4a94-a316-eeb04d14c895
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.media.banner.field_link
+    - field.field.media.banner.field_media_image
+    - field.field.media.banner.field_mobile_media_image
+    - field.field.media.banner.field_testo
+    - image.style.4_3
+    - media.type.banner
+  module:
+    - image
+    - text
+id: media.banner.default
+targetEntityType: media
+bundle: banner
+mode: default
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: slider_desktop
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_mobile_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: '4_3'
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_testo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  created: true
+  field_link: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

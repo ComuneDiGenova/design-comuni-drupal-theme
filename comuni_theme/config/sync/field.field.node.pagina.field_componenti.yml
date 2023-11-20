@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.elenco_card_da_termine
     - paragraphs.paragraphs_type.elenco_card_da_vocabolario
     - paragraphs.paragraphs_type.fascia_di_link
+    - paragraphs.paragraphs_type.fascia_slider
     - paragraphs.paragraphs_type.feed_remoto
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.prenotazione_appuntamento
@@ -43,6 +44,7 @@ settings:
       ultimo_aggiornamento: ultimo_aggiornamento
       fascia_di_link: fascia_di_link
       ricerca_faq: ricerca_faq
+      fascia_slider: fascia_slider
       elenco_card_da_vocabolario: elenco_card_da_vocabolario
       card_in_evidenza: card_in_evidenza
       blocco: blocco
@@ -100,6 +102,9 @@ settings:
       fascia_di_link:
         weight: 51
         enabled: true
+      fascia_slider:
+        weight: 54
+        enabled: true
       fase_intitolata:
         weight: 23
         enabled: false
@@ -142,6 +147,9 @@ settings:
       richiesta_assistenza:
         weight: 89
         enabled: true
+      sedi:
+        weight: 69
+        enabled: false
       servizi_per_tassonomia:
         weight: 66
         enabled: false

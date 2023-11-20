@@ -1,0 +1,10 @@
+uuid: 5faa0ffc-0336-4c6b-aed8-5dc7846a9d73
+langcode: it
+status: true
+dependencies: {  }
+id: fascia_slider
+label: 'Fascia Slider'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
