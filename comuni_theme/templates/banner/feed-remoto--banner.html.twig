@@ -1,7 +1,13 @@
 <div class="card h-100 rounded shadow-sm border border-light">
-  {% if item.immagine is not empty %}
+  {% if item.immagine %}
     <div class="rounded border border-light shadow-sm">
       <img src="{{ item.immagine }}" alt="{{ item.immagine_alt }}" class="w-100 h-auto">
+    </div>
+  {% else %}
+    <div class="rounded border border-light shadow-sm">
+      <div class="overflow-hidden d-flex align-content-center justify-content-center p-5" style="aspect-ratio: 2 / 1">
+        <img src="https://smart.comune.genova.it/stemma_BNcroce_Comune.png" alt="Logo del Comune di Genova">
+      </div>
     </div>
   {% endif %}
   <div class="container px-0 py-3 px-4">
