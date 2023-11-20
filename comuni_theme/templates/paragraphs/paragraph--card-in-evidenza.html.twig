@@ -47,6 +47,8 @@
 </section>
 {% endif %}
 
+
+
 {% if content.field_contenuti_o_tassonomie[0] is not empty %}
 <section{{attributes.addClass(classes).addClass(wrapper_classes)}}>
   <div class="{{ container_classes|join(' ') }} py-5">
@@ -54,21 +56,21 @@
       <h2 class="mb-4 title-xxlarge">{{ content.field_titolo }}</h2>
     {% endif %}
     
-    <div class="row {{ row_classes|join(' ') }}">
-      {% for contenuto in content.field_contenuti_o_tassonomie["#items"] %}
-        <div class="col">
-          {% set tmp = drupal_entity('paragraph', contenuto.target_id)["#paragraph"] %}
-          
-          {% if tmp.type[0].value.target_id == "contenuto" %}
-            {{ drupal_entity('node', tmp.field_contenuto[0].target_id, 'card') }}
+    {% set cols = 1 %}
+    {% set senza_paginatore = "" %}
+    {% for stili in content.field_tipi_di_stili["#items"] %}
+      {% if stili.entity.name.0.value == "2 elementi per riga" %}
+        {% set cols = 2 %}
+      {% elseif stili.entity.name.0.value == "3 elementi per riga" %}
+        {% set cols = 3 %}
+      {% endif %}
 
-          {% elseif tmp.type[0].value.target_id == "tassonomia" %}
-            {{ drupal_entity('taxonomy_term', tmp.field_tassonomia[0].target_id, 'card') }}
+      {% if stili.entity.name.0.value == "Senza paginatore" %}
+        {% set senza_paginatore = "tutte_" %}
+      {% endif %}
+    {% endfor %}
 
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
+    {% include '@comuni_theme/templates/paragraphs/parts/paragraph--parts--card.html.twig' with { 'cols': senza_paginatore ~ cols, 'content': (content.field_contenuti_o_tassonomie["#items"] is null ? null : content.field_contenuti_o_tassonomie["#items"]|map(item => "#{item.target_id}")|join('+')) } %}
   </div>
 </section>
 {% endif %}
