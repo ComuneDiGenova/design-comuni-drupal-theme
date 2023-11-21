@@ -1,0 +1,149 @@
+uuid: b496a3aa-43d1-424b-a3ff-a70be5c6330f
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_componente_extra
+    - paragraphs.paragraphs_type.componenti_extra
+    - paragraphs.paragraphs_type.prenotazione_appuntamento
+    - paragraphs.paragraphs_type.ricerca
+    - paragraphs.paragraphs_type.richiesta_assistenza
+  module:
+    - entity_reference_revisions
+id: paragraph.componenti_extra.field_componente_extra
+field_name: field_componente_extra
+entity_type: paragraph
+bundle: componenti_extra
+label: 'Componente extra'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      prenotazione_appuntamento: prenotazione_appuntamento
+      ricerca: ricerca
+      richiesta_assistenza: richiesta_assistenza
+    negate: 0
+    target_bundles_drag_drop:
+      backend_info:
+        weight: 40
+        enabled: false
+      biglietto_evento:
+        weight: 41
+        enabled: false
+      blocco:
+        weight: 42
+        enabled: false
+      calendario:
+        weight: 43
+        enabled: false
+      canale_fisico:
+        weight: 44
+        enabled: false
+      card_assistenza:
+        weight: 45
+        enabled: false
+      card_in_evidenza:
+        weight: 46
+        enabled: false
+      componenti_extra:
+        weight: 47
+        enabled: false
+      contenuto:
+        weight: 48
+        enabled: false
+      dataset:
+        weight: 49
+        enabled: false
+      documenti_per_tassonomia:
+        weight: 50
+        enabled: false
+      documento:
+        weight: 51
+        enabled: false
+      elenco_card_da_termine:
+        weight: 52
+        enabled: false
+      elenco_card_da_vocabolario:
+        weight: 53
+        enabled: false
+      faq:
+        weight: 54
+        enabled: false
+      fascia_di_link:
+        weight: 55
+        enabled: false
+      fascia_slider:
+        weight: 56
+        enabled: false
+      fase_intitolata:
+        weight: 57
+        enabled: false
+      fase_semplice:
+        weight: 58
+        enabled: false
+      feed_remoto:
+        weight: 59
+        enabled: false
+      gallery:
+        weight: 60
+        enabled: false
+      link:
+        weight: 61
+        enabled: false
+      link_con_icona:
+        weight: 62
+        enabled: false
+      notizie_per_tassonomia:
+        weight: 63
+        enabled: false
+      orari_giorni:
+        weight: 64
+        enabled: false
+      orari_ore:
+        weight: 65
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 66
+        enabled: true
+      punto_di_contatto:
+        weight: 67
+        enabled: false
+      ricerca:
+        weight: 68
+        enabled: true
+      ricerca_faq:
+        weight: 69
+        enabled: false
+      richiesta_assistenza:
+        weight: 70
+        enabled: true
+      sedi:
+        weight: 71
+        enabled: false
+      servizi_per_tassonomia:
+        weight: 72
+        enabled: false
+      tassonomia:
+        weight: 73
+        enabled: false
+      testo:
+        weight: 74
+        enabled: false
+      ultima_notizia:
+        weight: 75
+        enabled: false
+      ultimo_aggiornamento:
+        weight: 76
+        enabled: false
+      uo_per_tassonomia:
+        weight: 77
+        enabled: false
+      vista:
+        weight: 78
+        enabled: false
+field_type: entity_reference_revisions

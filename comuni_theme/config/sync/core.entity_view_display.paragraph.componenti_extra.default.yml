@@ -1,0 +1,25 @@
+uuid: 7732eddb-91fd-497f-b508-60168fe0aaf3
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.componenti_extra.field_componente_extra
+    - paragraphs.paragraphs_type.componenti_extra
+  module:
+    - entity_reference_revisions
+id: paragraph.componenti_extra.default
+targetEntityType: paragraph
+bundle: componenti_extra
+mode: default
+content:
+  field_componente_extra:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

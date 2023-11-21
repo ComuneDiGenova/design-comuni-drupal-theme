@@ -8,16 +8,14 @@ dependencies:
     - paragraphs.paragraphs_type.blocco
     - paragraphs.paragraphs_type.calendario
     - paragraphs.paragraphs_type.card_in_evidenza
+    - paragraphs.paragraphs_type.componenti_extra
     - paragraphs.paragraphs_type.elenco_card_da_termine
     - paragraphs.paragraphs_type.elenco_card_da_vocabolario
     - paragraphs.paragraphs_type.fascia_di_link
     - paragraphs.paragraphs_type.fascia_slider
     - paragraphs.paragraphs_type.feed_remoto
     - paragraphs.paragraphs_type.gallery
-    - paragraphs.paragraphs_type.prenotazione_appuntamento
-    - paragraphs.paragraphs_type.ricerca
     - paragraphs.paragraphs_type.ricerca_faq
-    - paragraphs.paragraphs_type.richiesta_assistenza
     - paragraphs.paragraphs_type.testo
     - paragraphs.paragraphs_type.ultima_notizia
     - paragraphs.paragraphs_type.ultimo_aggiornamento
@@ -41,6 +39,7 @@ settings:
       ultima_notizia: ultima_notizia
       calendario: calendario
       feed_remoto: feed_remoto
+      componenti_extra: componenti_extra
       ultimo_aggiornamento: ultimo_aggiornamento
       fascia_di_link: fascia_di_link
       ricerca_faq: ricerca_faq
@@ -48,10 +47,7 @@ settings:
       elenco_card_da_vocabolario: elenco_card_da_vocabolario
       card_in_evidenza: card_in_evidenza
       blocco: blocco
-      ricerca: ricerca
       elenco_card_da_termine: elenco_card_da_termine
-      prenotazione_appuntamento: prenotazione_appuntamento
-      richiesta_assistenza: richiesta_assistenza
       gallery: gallery
       testo: testo
       vista: vista
@@ -77,6 +73,9 @@ settings:
         enabled: false
       card_in_evidenza:
         weight: 57
+        enabled: true
+      componenti_extra:
+        weight: 47
         enabled: true
       contenuto:
         weight: 35
@@ -134,19 +133,19 @@ settings:
         enabled: false
       prenotazione_appuntamento:
         weight: 83
-        enabled: true
+        enabled: false
       punto_di_contatto:
         weight: 84
         enabled: false
       ricerca:
         weight: 58
-        enabled: true
+        enabled: false
       ricerca_faq:
         weight: 52
         enabled: true
       richiesta_assistenza:
         weight: 89
-        enabled: true
+        enabled: false
       sedi:
         weight: 69
         enabled: false

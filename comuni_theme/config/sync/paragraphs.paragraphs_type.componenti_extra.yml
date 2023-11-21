@@ -1,0 +1,10 @@
+uuid: 6d35aa4e-7802-48a1-b5d4-a997293c0a15
+langcode: it
+status: true
+dependencies: {  }
+id: componenti_extra
+label: 'Componenti extra'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
