@@ -4,7 +4,7 @@ description: "Theme for Comuni"
 dependencies:
   - comuni_module
 package: Comuni
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 libraries:
   - comuni_theme/global-styling
 

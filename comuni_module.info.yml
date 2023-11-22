@@ -2,5 +2,5 @@ name: 'Design Comuni Italia'
 type: module
 description: 'Design Comuni Italia Configuration'
 dependencies:
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 package: Comuni
