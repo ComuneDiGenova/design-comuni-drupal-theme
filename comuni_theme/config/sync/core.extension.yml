@@ -23,10 +23,8 @@ module:
   contextual: 0
   crop: 0
   csv_serialization: 0
-  ctools: 0
   datetime: 0
   dblog: 0
-  devel: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
@@ -66,7 +64,6 @@ module:
   menu_ui: 0
   metatag: 0
   metatag_extended_perms: 0
-  mix: 0
   mysql: 0
   node: 0
   node_read_time: 0
