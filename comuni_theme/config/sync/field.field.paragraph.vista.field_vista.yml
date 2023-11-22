@@ -18,25 +18,24 @@ required: false
 translatable: false
 default_value:
   -
+    target_uuid: 3f9cb8ca-8e18-4de7-b9f1-1c1935587a69
+    display_id: default
+    data: null
     options:
       title: 0
       argument: ''
-    display_id: default
     argument: null
     title: 0
-    data: null
-    target_uuid: 3f9cb8ca-8e18-4de7-b9f1-1c1935587a69
 default_value_callback: ''
 settings:
   handler: 'default:view'
   handler_settings:
     target_bundles: null
-    auto_create: 0
+    auto_create: false
   plugin_types:
     default: default
     block: block
     page: page
-    entity_reference: 0
   preselect_views:
     faq: faq
     politici: politici
@@ -44,34 +43,7 @@ settings:
     ricerca_faq: ricerca_faq
     ricerca_novita: ricerca_novita
     ricerca_servizi: ricerca_servizi
-    appuntamenti_eventi: 0
-    argomenti_correlati: 0
-    bandi: 0
-    block_content: 0
-    content: 0
-    content_recent: 0
-    content_servizi: 0
-    contenuto_collegato: 0
-    elenca_contenuti: 0
-    elenca_tassonomie_per_vocabolario: 0
-    elenco_card_contenuti_da_un_termine: 0
-    elenco_card_termini_da_un_vocabolario: 0
-    elenco_chip_termini_da_un_termine: 0
-    eventi_collegati: 0
-    files: 0
-    filtro_contenuti: 0
-    incarichi_collegati: 0
-    manutenzione_files: 0
-    media: 0
-    media_collegato: 0
-    media_library: 0
-    persone_collegate: 0
-    punti_di_contatto_collegati: 0
-    ricerca: 0
-    servizi_collegati: 0
-    unita_organizzative_collegate: 0
-    user_admin_people: 0
-    watchdog: 0
-    who_s_new: 0
-    who_s_online: 0
+  enabled_settings:
+    argument: argument
+    title: true
 field_type: viewsreference

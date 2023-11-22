@@ -11,7 +11,7 @@ field_name: field_servizio_origina_pratica
 entity_type: node
 bundle: pratica
 label: 'Servizio che origina la pratica'
-description: 'Servizio che genera la pratica (es: pagare qualcosa, effettuare un''iscrizione, richiedere un documento specifico)'
+description: "Servizio che genera la pratica (es: pagare qualcosa, effettuare un'iscrizione, richiedere un documento specifico)"
 required: false
 translatable: false
 default_value: {  }

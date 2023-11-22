@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Stati di una pratica'
 vid: stati_di_una_pratica
-description: 'Tassonomia provvisoria degli stati di pratica, definibile come lo stato dell''iter conseguente a una richiesta.'
+description: "Tassonomia provvisoria degli stati di pratica, definibile come lo stato dell'iter conseguente a una richiesta."
 weight: 0

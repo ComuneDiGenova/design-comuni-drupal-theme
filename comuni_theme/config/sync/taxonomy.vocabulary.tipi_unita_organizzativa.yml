@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Tipi unità organizzativa'
 vid: tipi_unita_organizzativa
-description: 'Classificazione multi livello dei tipi di unità organizzativa che distingue tra macro ambiti di un''amministrazione locale.'
+description: "Classificazione multi livello dei tipi di unità organizzativa che distingue tra macro ambiti di un'amministrazione locale."
 weight: 0

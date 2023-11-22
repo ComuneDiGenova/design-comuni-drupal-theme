@@ -12,7 +12,7 @@ field_name: field_servizi_presenti_nel_luogo
 entity_type: node
 bundle: luogo
 label: 'Servizi presenti nel luogo'
-description: 'Se il luogo presenta servizi di carattere privato, descrizione testuale del servizio e link esterno al servizio. Se il luogo è sede di unità organizzativa abbiamo i servizi collegati all''unità organizzativa'
+description: "Se il luogo presenta servizi di carattere privato, descrizione testuale del servizio e link esterno al servizio. Se il luogo è sede di unità organizzativa abbiamo i servizi collegati all'unità organizzativa"
 required: false
 translatable: false
 default_value: {  }

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Tipi di notizia'
 vid: tipi_di_notizia
-description: 'Classificazione multi livello dei tipi notizie pubblicate da un''amministrazione locale.'
+description: "Classificazione multi livello dei tipi notizie pubblicate da un'amministrazione locale."
 weight: 0

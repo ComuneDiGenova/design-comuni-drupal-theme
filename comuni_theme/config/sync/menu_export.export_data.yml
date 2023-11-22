@@ -1887,7 +1887,7 @@
   enabled:
     value: '1'
   title:
-    value: 'Richiesta d''assistenza'
+    value: "Richiesta d'assistenza"
   description: false
   menu_name:
     value: footer---contatti

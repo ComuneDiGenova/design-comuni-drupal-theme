@@ -10,7 +10,7 @@ field_name: field_valore_punto_di_contatto
 entity_type: node
 bundle: punto_di_contatto
 label: 'Valore punto di contatto'
-description: 'Il valore del punto di contatto: il numero compreso di prefisso internazionale (se telefono), l''account (se social network), l''URL (se sito o pagina web), l''indirizzo email (se email)'
+description: "Il valore del punto di contatto: il numero compreso di prefisso internazionale (se telefono), l'account (se social network), l'URL (se sito o pagina web), l'indirizzo email (se email)"
 required: true
 translatable: false
 default_value: {  }

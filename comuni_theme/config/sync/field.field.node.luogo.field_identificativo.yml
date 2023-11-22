@@ -10,7 +10,7 @@ field_name: field_identificativo
 entity_type: node
 bundle: luogo
 label: Identificativo
-description: 'Codice identificativo del luogo. Nel MIBAC c''è il codice del DBUnico per i luoghi della cultura e il codice ISIL per le biblioteche. Non deve comparire nel frontend del sito.'
+description: "Codice identificativo del luogo. Nel MIBAC c'è il codice del DBUnico per i luoghi della cultura e il codice ISIL per le biblioteche. Non deve comparire nel frontend del sito."
 required: false
 translatable: false
 default_value: {  }

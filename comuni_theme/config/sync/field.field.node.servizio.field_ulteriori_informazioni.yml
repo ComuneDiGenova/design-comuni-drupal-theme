@@ -12,7 +12,7 @@ field_name: field_ulteriori_informazioni
 entity_type: node
 bundle: servizio
 label: 'Ulteriori informazioni'
-description: 'Eventuali link a pagine web, siti, servizi esterni all''ambito comunale utili all''erogazione del servizio descritto.'
+description: "Eventuali link a pagine web, siti, servizi esterni all'ambito comunale utili all'erogazione del servizio descritto."
 required: false
 translatable: true
 default_value: {  }

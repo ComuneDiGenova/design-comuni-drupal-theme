@@ -11,8 +11,8 @@ id: node.servizio.field_procedure_collegate_esito
 field_name: field_procedure_collegate_esito
 entity_type: node
 bundle: servizio
-label: 'Procedure collegate all''esito'
-description: 'Spiegazione relativa all''esito della procedura, e dove eventualmente ritirare l''esito'
+label: "Procedure collegate all'esito"
+description: "Spiegazione relativa all'esito della procedura, e dove eventualmente ritirare l'esito"
 required: false
 translatable: false
 default_value: {  }

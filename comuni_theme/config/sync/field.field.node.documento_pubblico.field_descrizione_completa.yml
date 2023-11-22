@@ -12,7 +12,7 @@ field_name: field_descrizione_completa
 entity_type: node
 bundle: documento_pubblico
 label: Descrizione
-description: 'L''oggetto del documento, utilizzando un linguaggio semplice che possa aiutare qualsiasi utente a identificare con chiarezza il documento.'
+description: "L'oggetto del documento, utilizzando un linguaggio semplice che possa aiutare qualsiasi utente a identificare con chiarezza il documento."
 required: false
 translatable: true
 default_value: {  }

@@ -12,7 +12,7 @@ field_name: field_compensi
 entity_type: node
 bundle: incarico
 label: Compensi
-description: 'Solo per incarico politico: compensi di qualsiasi natura connessi all''assunzione della carica'
+description: "Solo per incarico politico: compensi di qualsiasi natura connessi all'assunzione della carica"
 required: false
 translatable: false
 default_value: {  }

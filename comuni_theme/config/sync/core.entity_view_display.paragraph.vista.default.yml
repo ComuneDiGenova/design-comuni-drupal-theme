@@ -38,8 +38,8 @@ content:
         default: default
         block: block
         page: page
-        rest_export: 0
-        feed: 0
+        rest_export: '0'
+        feed: '0'
     third_party_settings: {  }
     weight: 1
     region: content

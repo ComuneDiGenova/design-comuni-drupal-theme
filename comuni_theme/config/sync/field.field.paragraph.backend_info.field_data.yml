@@ -11,7 +11,7 @@ id: paragraph.backend_info.field_data
 field_name: field_data
 entity_type: paragraph
 bundle: backend_info
-label: 'Data dell''ultima verifica'
+label: "Data dell'ultima verifica"
 description: 'Se questo contenuto risulta interamente completo inserire la data corrente.'
 required: false
 translatable: false

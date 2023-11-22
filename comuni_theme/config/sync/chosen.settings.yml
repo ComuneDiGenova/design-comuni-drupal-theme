@@ -16,5 +16,5 @@ disabled_themes:
   comuni_theme: '0'
 chosen_include: 2
 placeholder_text_multiple: 'Scegli una o più opzioni'
-placeholder_text_single: 'Scegliere un''opzione'
+placeholder_text_single: "Scegliere un'opzione"
 no_results_text: 'Nessun risultato corrispondente'

@@ -10,7 +10,7 @@ field_name: field_numero_comunicato_stampa
 entity_type: node
 bundle: notizia
 label: 'Numero progressivo comunicato stampa'
-description: 'Se è un comunicato stampa, indica un''eventuale numero progressivo del comunicato stampa'
+description: "Se è un comunicato stampa, indica un'eventuale numero progressivo del comunicato stampa"
 required: false
 translatable: false
 default_value: {  }
