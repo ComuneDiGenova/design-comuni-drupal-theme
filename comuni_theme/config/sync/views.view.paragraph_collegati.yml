@@ -7,7 +7,6 @@ dependencies:
   module:
     - comuni_module
     - paragraphs
-    - views_arg_order_sort
 id: paragraph_collegati
 label: 'Paragraph collegati'
 module: views
@@ -110,23 +109,19 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        weight:
-          id: weight
-          table: views_arg_order_sort
-          field: weight
+        field_titolo_value:
+          id: field_titolo_value
+          table: paragraph__field_titolo
+          field: field_titolo_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: views_arg_order_sort_default
+          plugin_id: standard
           order: ASC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
-          inherit_type: 1
-          null_below: 1
-          argument_number: '0'
-          field_type: 'node_field_data::nid'
       arguments:
         id:
           id: id
