@@ -1,7 +1,12 @@
 uuid: 48c0b2ed-6c83-4f4a-9af7-391e44f3994d
 langcode: it
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_trail_by_path
+third_party_settings:
+  menu_trail_by_path:
+    trail_source: ''
 id: footer---contatti
 label: 'Footer - Contatti'
 description: ''

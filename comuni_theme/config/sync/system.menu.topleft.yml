@@ -1,7 +1,12 @@
 uuid: d81d3e96-2ea2-4492-a3ff-2b6c2fae7e6b
 langcode: it
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_trail_by_path
+third_party_settings:
+  menu_trail_by_path:
+    trail_source: ''
 id: topleft
 label: topleft
 description: ''
