@@ -3,6 +3,7 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.argomenti.field_backend_info
     - field.field.taxonomy_term.argomenti.field_componenti
     - field.field.taxonomy_term.argomenti.field_descrizione_breve
     - taxonomy.vocabulary.argomenti
@@ -20,7 +21,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_descrizione_breve:
     type: string
@@ -32,5 +33,6 @@ content:
     region: content
 hidden:
   description: true
+  field_backend_info: true
   langcode: true
   search_api_excerpt: true
