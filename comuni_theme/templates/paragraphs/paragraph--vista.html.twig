@@ -36,12 +36,16 @@
     {% endif %}
 
     <div class="row {{ row_classes|join(' ') }}">
-      {% if paragraph.field_vista[0].argument|split('/')|length == 0 %}
+      {% set argument = null %}
+      {% if paragraph.field_vista[0].data is not empty %}
+        {% set argument = (paragraph.field_vista[0].data|unserialize).argument %}
+      {% endif %}
+      {% if argument == null %}
         {{ drupal_view(paragraph.field_vista[0].target_id, paragraph.field_vista[0].display_id) }}
-      {% elseif paragraph.field_vista[0].argument|split('/')|length == 1 %}
-        {{ drupal_view(paragraph.field_vista[0].target_id, paragraph.field_vista[0].display_id, paragraph.field_vista[0].argument|split('/')[0]) }}
-      {% elseif paragraph.field_vista[0].argument|split('/')|length == 2 %}
-        {{ drupal_view(paragraph.field_vista[0].target_id, paragraph.field_vista[0].display_id, paragraph.field_vista[0].argument|split('/')[0], paragraph.field_vista[0].argument|split('/')[1]) }}
+      {% elseif argument|split('/')|length == 1 %}
+        {{ drupal_view(paragraph.field_vista[0].target_id, paragraph.field_vista[0].display_id, argument|split('/')[0]) }}
+      {% elseif argument|split('/')|length == 2 %}
+        {{ drupal_view(paragraph.field_vista[0].target_id, paragraph.field_vista[0].display_id, argument|split('/')[0], argument|split('/')[1]) }}
       {% else %}
         <!-- Inserita vista con piu di 2 parametri - Gestire eccezione -->
       {% endif %}
