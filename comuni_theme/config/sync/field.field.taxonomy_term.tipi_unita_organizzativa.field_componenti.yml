@@ -6,6 +6,7 @@ dependencies:
     - field.storage.taxonomy_term.field_componenti
     - paragraphs.paragraphs_type.card_in_evidenza
     - paragraphs.paragraphs_type.elenco_card_da_termine
+    - paragraphs.paragraphs_type.vista
     - taxonomy.vocabulary.tipi_unita_organizzativa
   module:
     - entity_reference_revisions
@@ -25,6 +26,7 @@ settings:
     target_bundles:
       card_in_evidenza: card_in_evidenza
       elenco_card_da_termine: elenco_card_da_termine
+      vista: vista
     negate: 0
     target_bundles_drag_drop:
       backend_info:
@@ -48,6 +50,9 @@ settings:
       card_in_evidenza:
         weight: 33
         enabled: true
+      componenti_extra:
+        weight: 47
+        enabled: false
       contenuto:
         weight: 34
         enabled: false
@@ -71,6 +76,9 @@ settings:
         enabled: false
       fascia_di_link:
         weight: 51
+        enabled: false
+      fascia_slider:
+        weight: 56
         enabled: false
       fase_intitolata:
         weight: 39
@@ -114,6 +122,9 @@ settings:
       richiesta_assistenza:
         weight: 49
         enabled: false
+      sedi:
+        weight: 71
+        enabled: false
       servizi_per_tassonomia:
         weight: 66
         enabled: false
@@ -134,5 +145,5 @@ settings:
         enabled: false
       vista:
         weight: 54
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions
