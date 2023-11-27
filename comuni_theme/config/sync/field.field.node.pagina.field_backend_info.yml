@@ -1,0 +1,145 @@
+uuid: 63020b75-efd6-4f82-8077-f578a6e3a5c1
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_backend_info
+    - node.type.pagina
+    - paragraphs.paragraphs_type.backend_info
+  module:
+    - entity_reference_revisions
+id: node.pagina.field_backend_info
+field_name: field_backend_info
+entity_type: node
+bundle: pagina
+label: 'Campi di gestione interna'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      backend_info: backend_info
+    negate: 0
+    target_bundles_drag_drop:
+      backend_info:
+        weight: 65
+        enabled: true
+      biglietto_evento:
+        weight: 66
+        enabled: false
+      blocco:
+        weight: 67
+        enabled: false
+      calendario:
+        weight: 68
+        enabled: false
+      canale_fisico:
+        weight: 44
+        enabled: false
+      card_assistenza:
+        weight: 69
+        enabled: false
+      card_in_evidenza:
+        weight: 71
+        enabled: false
+      componenti_extra:
+        weight: 47
+        enabled: false
+      contenuto:
+        weight: 48
+        enabled: false
+      dataset:
+        weight: 82
+        enabled: false
+      documenti_per_tassonomia:
+        weight: 50
+        enabled: false
+      documento:
+        weight: 83
+        enabled: false
+      elenco_card_da_termine:
+        weight: 85
+        enabled: false
+      elenco_card_da_vocabolario:
+        weight: 86
+        enabled: false
+      faq:
+        weight: 54
+        enabled: false
+      fascia_di_link:
+        weight: 55
+        enabled: false
+      fascia_slider:
+        weight: 56
+        enabled: false
+      fase_intitolata:
+        weight: 89
+        enabled: false
+      fase_semplice:
+        weight: 90
+        enabled: false
+      feed_remoto:
+        weight: 59
+        enabled: false
+      gallery:
+        weight: 37
+        enabled: false
+      link:
+        weight: 95
+        enabled: false
+      link_con_icona:
+        weight: 97
+        enabled: false
+      notizie_per_tassonomia:
+        weight: 63
+        enabled: false
+      orari_giorni:
+        weight: 99
+        enabled: false
+      orari_ore:
+        weight: 100
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 101
+        enabled: false
+      punto_di_contatto:
+        weight: 102
+        enabled: false
+      ricerca:
+        weight: 103
+        enabled: false
+      ricerca_faq:
+        weight: 69
+        enabled: false
+      richiesta_assistenza:
+        weight: 107
+        enabled: false
+      sedi:
+        weight: 71
+        enabled: false
+      servizi_per_tassonomia:
+        weight: 72
+        enabled: false
+      tassonomia:
+        weight: 73
+        enabled: false
+      testo:
+        weight: 110
+        enabled: false
+      ultima_notizia:
+        weight: 114
+        enabled: false
+      ultimo_aggiornamento:
+        weight: 76
+        enabled: false
+      uo_per_tassonomia:
+        weight: 77
+        enabled: false
+      vista:
+        weight: 116
+        enabled: false
+field_type: entity_reference_revisions

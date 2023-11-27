@@ -12,26 +12,38 @@
 <article{{ attributes.addClass(classes) }}>
 
   {% if path('<current>') != '/homepage' %}
-    <div class="container mb-2">
+    <div class="container mb-4 border-bottom pb-4">
       <div class="row">
-        <div class="col">
-          {% include '@comuni_theme/templates/node/parts/node--parts--title.html.twig' with { 'title': node.label, 'data_element': 'page-name' } %}
+        <div class="col-lg-8">
+          <div class="container mb-2">
+            <div class="row">
+              <div class="col">
+                {% include '@comuni_theme/templates/node/parts/node--parts--title.html.twig' with { 'title': node.label, 'data_element': 'page-name' } %}
+              </div>
+            </div>
+          </div>
+          {% if content.field_descrizione_breve[0] is not empty %}
+            <div class="container">
+              <div class="row row-shadow pb-5">
+                <div class="col">
+                  {% include '@comuni_theme/templates/node/parts/node--parts--descrizione-breve.html.twig' with { 'text': content.field_descrizione_breve[0]["#context"].value } %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
         </div>
-      </div>
-    </div>
-
-    {% if content.field_descrizione_breve[0] is not empty %}
-      <div class="container">
-        <div class="row row-shadow pb-5">
-          <div class="col">
-            {% include '@comuni_theme/templates/node/parts/node--parts--descrizione-breve.html.twig' with { 'text': content.field_descrizione_breve[0]["#context"].value } %}
+        <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
+          <div class="callout p-4 border-primary mt-0">
+            <svg class="callout-title icon icon-primary flag-icon px-3 me-0"><use href="#it-info-circle"></use></svg>
+            {{ drupal_block("social_sharing_buttons_block") }}
+            {% include '@comuni_theme/templates/node/parts/node--parts--azioni.html.twig' %}
+            {% include '@comuni_theme/templates/node/parts/node--parts--taxonomy-chips.html.twig' with { 'label': 'Argomenti', 'taxonomy': content.field_argomenti, 'data_element': '' } %}
           </div>
         </div>
       </div>
-    {% endif %}
-
+    </div>
   {% endif %}
 
-  {{ content|without('field_descrizione_breve') }}
+  {{ content|without('field_descrizione_breve')|without('field_argomenti') }}
 
 </article>

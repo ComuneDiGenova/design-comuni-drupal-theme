@@ -1,0 +1,29 @@
+uuid: 8d800741-0603-4f02-aad5-db99eae6d0d3
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_argomenti
+    - node.type.pagina
+    - taxonomy.vocabulary.argomenti
+id: node.pagina.field_argomenti
+field_name: field_argomenti
+entity_type: node
+bundle: pagina
+label: Argomenti
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      argomenti: argomenti
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
