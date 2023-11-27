@@ -11,6 +11,7 @@ dependencies:
     - node.type.ticket
     - node.type.valutazione
     - system.menu.admin
+    - taxonomy.vocabulary.argomenti
     - taxonomy.vocabulary.categorie_dei_servizi
   module:
     - datetime
@@ -1141,6 +1142,54 @@ display:
           hierarchy: true
           limit: true
           error_message: true
+        field_argomenti_target_id:
+          id: field_argomenti_target_id
+          table: node__field_argomenti
+          field: field_argomenti_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_argomenti_target_id_op
+            label: Argomenti
+            description: ''
+            use_operator: false
+            operator: field_argomenti_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_argomenti_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              content_editor: '0'
+              administrator: '0'
+              anonymous: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: argomenti
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
         uid:
           id: uid
           table: node_field_data
@@ -1728,6 +1777,54 @@ display:
             group_items: {  }
           reduce_duplicates: false
           vid: categorie_dei_servizi
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+        field_argomenti_target_id:
+          id: field_argomenti_target_id
+          table: node__field_argomenti
+          field: field_argomenti_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_argomenti_target_id_op
+            label: Argomenti
+            description: ''
+            use_operator: false
+            operator: field_argomenti_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_argomenti_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              content_editor: '0'
+              administrator: '0'
+              anonymous: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: argomenti
           type: select
           hierarchy: true
           limit: true
@@ -2445,6 +2542,54 @@ display:
             group_items: {  }
           reduce_duplicates: false
           vid: categorie_dei_servizi
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+        field_argomenti_target_id:
+          id: field_argomenti_target_id
+          table: node__field_argomenti
+          field: field_argomenti_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_argomenti_target_id_op
+            label: Argomenti
+            description: ''
+            use_operator: false
+            operator: field_argomenti_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_argomenti_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              content_editor: '0'
+              administrator: '0'
+              anonymous: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: argomenti
           type: select
           hierarchy: true
           limit: true
