@@ -127,7 +127,8 @@ class ComuniTwig extends AbstractExtension
       new TwigFilter('monthEn2It', [$this, 'monthEn2It']),
       new TwigFilter('strpad', [$this, 'strpad']),
       new TwigFilter('json_decode', [$this, 'jsonDecode']),
-      new TwigFilter('json_remote', [$this, 'jsonRemote'])
+      new TwigFilter('json_remote', [$this, 'jsonRemote']),
+      new TwigFilter('unserialize', [$this, 'Unserialize']),
     ];
   }
 
@@ -324,6 +325,9 @@ class ComuniTwig extends AbstractExtension
   */
   public function jsonDecode($string) {
     return json_decode($string,true);
+  }
+  public function Unserialize($string) {
+    return unserialize($string);
   }
 
   /*
