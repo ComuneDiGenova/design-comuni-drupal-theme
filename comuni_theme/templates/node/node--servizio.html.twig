@@ -207,21 +207,22 @@
                 {% if item.entity.field_accesso.value == 1 %}{# ufficio senza prenotazione #}
 
                   {% set sede_principale = item.entity.field_unita_organizzativa[0].entity.field_sede_principale[0].target_id %}
-                  {% set altre_sedi = item.entity.field_unita_organizzativa[0].entity.field_altre_sedi|map(item => "#{item.target_id}" ) %}
+
 
                   <div class="col">
                     <div class="card py-3 px-4 h-100 rounded shadow-sm border border-light no-after">
                       <h3 class="card-title text-paragraph-medium u-grey-light mb-1">{{ item.entity.field_unita_organizzativa[0].entity.title.value }}</h3>
                       
-                      
                         <p class="text-paragraph-card u-grey-light mb-4" data-element="service-generic-access">Accesso diretto senza prenotazione.</p>
-
+                        {% include '@comuni_theme/templates/card/parts/card--parts--read-more.html.twig' with { 'url': path('entity.node.canonical', {'node': item.entity.field_unita_organizzativa[0].entity.nid.0.value}), 'title': 'Vai al contenuto' } %}
+                        {#
                         <div>
                           <a class="btn btn-xs btn-primary card-title py-1 mb-3 mt-0" href="javascript: void(0);" data-bs-toggle="collapse" data-bs-target="#sedi-{{ item.entity.field_unita_organizzativa[0].entity.nid.value }}" aria-expanded="false">Sedi <svg class="icon icon-sm rotable" fill="#fff" aria-hidden="true"><use href="#it-collapse" xlink:href="#it-collapse"></use></svg></a>
                           <div id="sedi-{{ item.entity.field_unita_organizzativa[0].entity.nid.value }}" class="position-absolute collapse text-paragraph-card u-grey-light m-0 bg-white start-0 end-0 p-3 rounded shadow-sm mb-0 border ms-3" style="z-index: 1; width: 80%;">
-                            {{ drupal_view("contenuto_collegato", 'block_4', [sede_principale]|merge(altre_sedi)|join(',')) }}
+                            {{ drupal_view("contenuto_collegato", 'block_4', [sede_principale]|join(',')) }}
                           </div>
                         </div>
+                        #}
                     </div>
                   </div>
                 {% elseif item.entity.field_accesso.value == 2 %}{# ufficio con prenotazione #}

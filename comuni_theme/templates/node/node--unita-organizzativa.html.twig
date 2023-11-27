@@ -150,17 +150,10 @@
                             </a>
                           </li>
                           {% endif %}
-                          {% if content.field_sede_principale[0] is not empty %}
+                          {% if content.field_sedi["#items"].0 is not empty %}
                           <li class="nav-item">
                             <a class="nav-link" href="#sede-principale">
                               <span class="title-medium">Sede principale</span>
-                            </a>
-                          </li>
-                          {% endif %}
-                          {% if content.field_altre_sedi[0] is not empty %}
-                          <li class="nav-item">
-                            <a class="nav-link" href="#altre-sedi">
-                              <span class="title-medium">Altre sedi</span>
                             </a>
                           </li>
                           {% endif %}
