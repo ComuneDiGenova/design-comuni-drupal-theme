@@ -20,12 +20,9 @@ default_value:
   -
     target_uuid: 3f9cb8ca-8e18-4de7-b9f1-1c1935587a69
     display_id: default
-    data: null
+    data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";N;}'
     options:
-      title: 0
       argument: ''
-    argument: null
-    title: 0
 default_value_callback: ''
 settings:
   handler: 'default:view'
@@ -37,7 +34,7 @@ settings:
     block: block
     page: page
   preselect_views:
-    faq: faq
+    notizie_da_tassonomia: notizie_da_tassonomia
     politici: politici
     ricerca_documenti_e_dataset: ricerca_documenti_e_dataset
     ricerca_faq: ricerca_faq
@@ -45,5 +42,4 @@ settings:
     ricerca_servizi: ricerca_servizi
   enabled_settings:
     argument: argument
-    title: true
 field_type: viewsreference
