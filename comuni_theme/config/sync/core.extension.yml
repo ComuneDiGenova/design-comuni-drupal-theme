@@ -88,6 +88,7 @@ module:
   svg_image_field: 0
   system: 0
   taxonomy: 0
+  term_revision: 0
   text: 0
   textarea_widget_for_text: 0
   time_field: 0
